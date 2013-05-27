@@ -1,8 +1,8 @@
-require "ucum/version"
-require "ucum/item"
-require "ucum/derived_unit"
+require "unitwise/version"
+require "unitwise/item"
+require "unitwise/derived_unit"
 
-module Ucum
+module Unitwise
 
   def self.base_path
     @base_path ||= File.dirname(File.dirname(__FILE__))

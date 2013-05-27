@@ -1,4 +1,4 @@
-module Ucum::Parser
+module Unitwise::Parser
   class BaseUnit < Item
 
     def self.remote_key

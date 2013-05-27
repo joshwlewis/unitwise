@@ -1,6 +1,6 @@
 require 'yaml'
 
-module Ucum
+module Unitwise
   class Item
 
     def self.all
@@ -14,7 +14,7 @@ module Ucum
     end
 
     def self.data_file
-      @data_file ||= Ucum.data_file(key)
+      @data_file ||= Unitwise.data_file(key)
     end
 
     def initialize(attrs)

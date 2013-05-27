@@ -1,4 +1,4 @@
-module Ucum::Parser
+module Unitwise::Parser
   class Item
     attr_accessor :attributes
 
@@ -11,7 +11,7 @@ module Ucum::Parser
     end
 
     def self.read
-      Ucum::Parser.hash[remote_key].inject([]){|a,h| a << self.new(h)}
+      Unitwise::Parser.hash[remote_key].inject([]){|a,h| a << self.new(h)}
     end
 
     def self.hash
@@ -19,7 +19,7 @@ module Ucum::Parser
     end
 
     def self.path
-      File.join Ucum.data_path, "#{self.local_key}.yaml"
+      File.join Unitwise.data_path, "#{self.local_key}.yaml"
     end
 
     def self.write

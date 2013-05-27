@@ -1,4 +1,4 @@
-module Ucum::Parser
+module Unitwise::Parser
   class Scale
     attr_accessor :nori
 

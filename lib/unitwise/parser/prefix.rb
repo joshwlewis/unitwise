@@ -1,4 +1,4 @@
-module Ucum::Parser
+module Unitwise::Parser
   class Prefix < Item
 
     def self.remote_key

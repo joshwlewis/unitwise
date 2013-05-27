@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ucum/version'
+require 'unitwise/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "ucum"
-  gem.version       = Ucum::VERSION
+  gem.name          = "unitwise"
+  gem.version       = Unitwise::VERSION
   gem.authors       = ["Josh Lewis"]
   gem.email         = ["josh.w.lewis@gmail.com"]
   gem.description   = %q{TODO: Write a gem description}

@@ -1,4 +1,4 @@
-module Ucum::Parser
+module Unitwise::Parser
   class Function
 
     attr_accessor :attributes

@@ -1,12 +1,14 @@
-# Ucum
+# Unitwise
 
-TODO: Write a gem description
+Unitwise is a Ruby implementation of the [Unified Code for Units of Measure (UCUM)](http://unitsofmeasure.org/).
+
+It is currently under development.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'ucum'
+    gem 'unitwise'
 
 And then execute:
 
@@ -14,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install ucum
+    $ gem install unitwise
 
 ## Usage
 
