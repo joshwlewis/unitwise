@@ -6,7 +6,6 @@ require 'unitwise/parser/base_unit'
 require 'unitwise/parser/derived_unit'
 require 'unitwise/parser/scale'
 require 'unitwise/parser/function'
-require 'unitwise/parser/hash'
 
 module Unitwise
   module Parser

@@ -1,5 +1,8 @@
+require 'unitwise/parser/extras'
 module Unitwise::Parser
   class Item
+    include Unitwise::Parser::Extras
+
     attr_accessor :attributes
 
     def self.local_key
@@ -41,8 +44,8 @@ module Unitwise::Parser
     end
 
     def symbol
-      if attributes["printSymbol"].respond_to?(:to_xml)
-        attributes["printSymbol"].to_xml
+      if attributes["printSymbol"].is_a?(Hash)
+        hash_to_markup(attributes["printSymbol"])
       else
         attributes["printSymbol"].to_s
       end
