@@ -8,3 +8,14 @@ Rake::TestTask.new do |t|
 end
 
 task default: :test
+
+namespace :unitwise do
+  desc "Update Ucum Data"
+  task :update_ucum do
+    require 'unitwise'
+    require 'unitwise/parser'
+    Unitwise::Parser::BaseUnit.write
+    Unitwise::Parser::DerivedUnit.write
+    Unitwise::Parser::Prefix.write
+  end
+end

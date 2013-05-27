@@ -1,5 +1,5 @@
 module Unitwise::Parser
-  class Unit < Item
+  class DerivedUnit < Item
 
     def self.remote_key
       "unit"

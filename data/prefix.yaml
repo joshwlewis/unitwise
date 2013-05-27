@@ -3,215 +3,119 @@
   :symbol: Y
   :primary_code: Y
   :secondary_code: YA
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>24</sup>
-      attributes:
-        value: 1e24
+  :scale: 1e24
 - :names: zetta
   :symbol: Z
   :primary_code: Z
   :secondary_code: ZA
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>21</sup>
-      attributes:
-        value: 1e21
+  :scale: 1e21
 - :names: exa
   :symbol: E
   :primary_code: E
   :secondary_code: EX
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>18</sup>
-      attributes:
-        value: 1e18
+  :scale: 1e18
 - :names: peta
   :symbol: P
   :primary_code: P
   :secondary_code: PT
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>15</sup>
-      attributes:
-        value: 1e15
+  :scale: 1e15
 - :names: tera
   :symbol: T
   :primary_code: T
   :secondary_code: TR
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>12</sup>
-      attributes:
-        value: 1e12
+  :scale: 1e12
 - :names: giga
   :symbol: G
   :primary_code: G
   :secondary_code: GA
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>9</sup>
-      attributes:
-        value: 1e9
+  :scale: 1e9
 - :names: mega
   :symbol: M
   :primary_code: M
   :secondary_code: MA
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>6</sup>
-      attributes:
-        value: 1e6
+  :scale: 1e6
 - :names: kilo
   :symbol: k
   :primary_code: k
   :secondary_code: K
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>3</sup>
-      attributes:
-        value: 1e3
+  :scale: 1e3
 - :names: hecto
   :symbol: h
   :primary_code: h
   :secondary_code: H
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>2</sup>
-      attributes:
-        value: 1e2
+  :scale: 1e2
 - :names: deka
   :symbol: da
   :primary_code: da
   :secondary_code: DA
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>1</sup>
-      attributes:
-        value: 1e1
+  :scale: 1e1
 - :names: deci
   :symbol: d
   :primary_code: d
   :secondary_code: D
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-1</sup>
-      attributes:
-        value: 1e-1
+  :scale: 1e-1
 - :names: centi
   :symbol: c
   :primary_code: c
   :secondary_code: C
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-2</sup>
-      attributes:
-        value: 1e-2
+  :scale: 1e-2
 - :names: milli
   :symbol: m
   :primary_code: m
   :secondary_code: M
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-3</sup>
-      attributes:
-        value: 1e-3
+  :scale: 1e-3
 - :names: micro
   :symbol: μ
   :primary_code: u
   :secondary_code: U
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-6</sup>
-      attributes:
-        value: 1e-6
+  :scale: 1e-6
 - :names: nano
   :symbol: n
   :primary_code: n
   :secondary_code: N
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-9</sup>
-      attributes:
-        value: 1e-9
+  :scale: 1e-9
 - :names: pico
   :symbol: p
   :primary_code: p
   :secondary_code: P
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-12</sup>
-      attributes:
-        value: 1e-12
+  :scale: 1e-12
 - :names: femto
   :symbol: f
   :primary_code: f
   :secondary_code: F
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-15</sup>
-      attributes:
-        value: 1e-15
+  :scale: 1e-15
 - :names: atto
   :symbol: a
   :primary_code: a
   :secondary_code: A
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-18</sup>
-      attributes:
-        value: 1e-18
+  :scale: 1e-18
 - :names: zepto
   :symbol: z
   :primary_code: z
   :secondary_code: ZO
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-21</sup>
-      attributes:
-        value: 1e-21
+  :scale: 1e-21
 - :names: yocto
   :symbol: y
   :primary_code: y
   :secondary_code: YO
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: 1 × 10<sup>-24</sup>
-      attributes:
-        value: 1e-24
+  :scale: 1e-24
 - :names: kibi
   :symbol: Ki
   :primary_code: Ki
   :secondary_code: KIB
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: '1024'
-      attributes:
-        value: '1024'
+  :scale: '1024'
 - :names: mebi
   :symbol: Mi
   :primary_code: Mi
   :secondary_code: MIB
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: '1048576'
-      attributes:
-        value: '1048576'
+  :scale: '1048576'
 - :names: gibi
   :symbol: Gi
   :primary_code: Gi
   :secondary_code: GIB
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: '1073741824'
-      attributes:
-        value: '1073741824'
+  :scale: '1073741824'
 - :names: tebi
   :symbol: Ti
   :primary_code: Ti
   :secondary_code: TIB
-  :scale: !ruby/object:Unitwise::Parser::Scale
-    nori: !ruby/string:Nori::StringWithAttributes
-      str: '1099511627776'
-      attributes:
-        value: '1099511627776'
+  :scale: '1099511627776'

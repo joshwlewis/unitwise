@@ -6,7 +6,7 @@ module Unitwise::Parser
     end
 
     def scale
-      Scale.new attributes["value"]
+      attributes["value"].attributes["value"]
     end
 
     def to_hash
