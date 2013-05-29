@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'unitwise'
 
 describe Unitwise::DerivedUnit do
   it "should have data" do
