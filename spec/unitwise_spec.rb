@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'unitwise'
 
-describe Unitwise::Item do
+describe Unitwise do
   it "should have a base path" do
     Unitwise.base_path.must_match /unitwise$/
   end
