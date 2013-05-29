@@ -1,6 +1,7 @@
 require "unitwise/version"
 require "unitwise/base"
 require "unitwise/derived_unit"
+require "unitwise/base_unit"
 
 module Unitwise
 
