@@ -1,7 +1,7 @@
-require 'unitwise/parser/extras'
-module Unitwise::Parser
-  class Item
-    include Unitwise::Parser::Extras
+require 'unitwise/standard/extras'
+module Unitwise::Standard
+  class Base
+    include Unitwise::Standard::Extras
 
     attr_accessor :attributes
 
@@ -14,7 +14,7 @@ module Unitwise::Parser
     end
 
     def self.read
-      Unitwise::Parser.hash[remote_key].inject([]){|a,h| a << self.new(h)}
+      Unitwise::Standard.hash[remote_key].inject([]){|a,h| a << self.new(h)}
     end
 
     def self.hash

@@ -1,5 +1,5 @@
-module Unitwise::Parser
-  class Prefix < Item
+module Unitwise::Standard
+  class Prefix < Base
 
     def self.remote_key
       "prefix"

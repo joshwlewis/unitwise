@@ -1,5 +1,5 @@
-module Unitwise::Parser
-  class BaseUnit < Item
+module Unitwise::Standard
+  class BaseUnit < Base
 
     def self.remote_key
       "base_unit"

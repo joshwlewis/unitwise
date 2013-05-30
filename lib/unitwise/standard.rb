@@ -1,14 +1,14 @@
 require 'net/http'
 require 'nori'
-require 'unitwise/parser/item'
-require 'unitwise/parser/prefix'
-require 'unitwise/parser/base_unit'
-require 'unitwise/parser/derived_unit'
-require 'unitwise/parser/scale'
-require 'unitwise/parser/function'
+require 'unitwise/standard/base'
+require 'unitwise/standard/prefix'
+require 'unitwise/standard/base_unit'
+require 'unitwise/standard/derived_unit'
+require 'unitwise/standard/scale'
+require 'unitwise/standard/function'
 
 module Unitwise
-  module Parser
+  module Standard
     HOST = "unitsofmeasure.org"
     PATH = "/ucum-essence.xml"
 

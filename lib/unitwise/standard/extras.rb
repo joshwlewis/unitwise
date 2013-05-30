@@ -1,4 +1,4 @@
-module Unitwise::Parser
+module Unitwise::Standard
   module Extras
     def hash_to_markup(hash)
       hash.map do |k,v|

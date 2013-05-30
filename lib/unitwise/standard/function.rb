@@ -1,4 +1,4 @@
-module Unitwise::Parser
+module Unitwise::Standard
   class Function
 
     attr_accessor :attributes

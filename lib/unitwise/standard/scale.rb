@@ -1,4 +1,4 @@
-module Unitwise::Parser
+module Unitwise::Standard
   class Scale
     attr_accessor :nori
 
