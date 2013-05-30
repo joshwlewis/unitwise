@@ -2,6 +2,7 @@ require 'yaml'
 
 module Unitwise
   class Base
+    attr_accessor :names, :symbol, :primary_code, :secondary_code
 
     def self.all
       @all ||= data.map do |d|
