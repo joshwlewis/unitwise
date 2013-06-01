@@ -10,4 +10,8 @@ describe Unitwise::BaseUnit do
     assert Unitwise::BaseUnit.all.all?{|du| du.is_a?(Unitwise::BaseUnit)}
   end
 
+  it "should find units" do
+    assert Unitwise::BaseUnit.find("m").is_a?(Unitwise::BaseUnit)
+  end
+
 end

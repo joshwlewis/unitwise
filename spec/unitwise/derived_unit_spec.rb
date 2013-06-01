@@ -10,4 +10,8 @@ describe Unitwise::DerivedUnit do
     assert Unitwise::DerivedUnit.all.all?{|du| du.is_a?(Unitwise::DerivedUnit)}
   end
 
+  it "should find units" do
+    assert Unitwise::DerivedUnit.find("V").is_a?(Unitwise::DerivedUnit)
+  end
+
 end

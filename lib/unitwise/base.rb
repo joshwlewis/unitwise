@@ -18,6 +18,12 @@ module Unitwise
       @data_file ||= Unitwise.data_file(key)
     end
 
+    def self.find(string)
+      [:primary_code, :secondary_code, :symbol].map do |m|
+        self.all.find { |u| u.send(m) == string}
+      end.first
+    end
+
     def initialize(attrs)
       attrs.each do |k, v|
         self.send :"#{k}=", v
