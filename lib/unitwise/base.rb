@@ -24,5 +24,9 @@ module Unitwise
       end
     end
 
+    def codes
+      [primary_code, secondary_code]
+    end
+
   end
 end

@@ -3,6 +3,7 @@ require "unitwise/base"
 require "unitwise/derived_unit"
 require "unitwise/base_unit"
 require "unitwise/prefix"
+require "unitwise/expression"
 
 module Unitwise
 
@@ -16,6 +17,14 @@ module Unitwise
 
   def self.data_file(key)
     File.join data_path, "#{key}.yaml"
+  end
+
+  def self.units
+    DerivedUnit.all + BaseUnit.all
+  end
+
+  def self.prefixes
+    Prefix.all
   end
 
 end

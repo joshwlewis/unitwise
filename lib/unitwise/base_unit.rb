@@ -5,5 +5,9 @@ module Unitwise
       "base_unit"
     end
 
+    def metric
+      true
+    end
+
   end
 end
