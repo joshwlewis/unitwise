@@ -12,7 +12,7 @@ module Unitwise::Unit
     end
 
     def metric
-      @metric.nil? ? true : false
+      @metric.nil? ? true : @metric
     end
 
   end
