@@ -7,19 +7,19 @@ module Unitwise::Standard
     end
 
     def value
-      nori.attributes["value"]
+      nori.attributes["value"].to_f
     end
 
-    def primary_unit
+    def primary_unit_code
       nori.attributes["Unit"]
     end
 
-    def secondary_unit
+    def secondary_unit_code
       nori.attributes["UNIT"]
     end
 
     def to_hash
-      {value: value, primary_unit: primary_unit, secondary_unit: secondary_unit}
+      {value: value, unit_code: primary_unit_code}
     end
   end
 end

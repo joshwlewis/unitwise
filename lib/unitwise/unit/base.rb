@@ -1,7 +1,7 @@
 require 'yaml'
 module Unitwise::Unit
   class Base
-    attr_accessor :names, :symbol, :primary_code, :secondary_code, :scale
+    attr_accessor :names, :symbol, :primary_code, :secondary_code
 
     def self.all
       @all ||= data.map do |d|
@@ -23,6 +23,10 @@ module Unitwise::Unit
 
     def codes
       [primary_code, secondary_code]
+    end
+
+    def scale
+      @scale ||= Scale.new
     end
 
   end

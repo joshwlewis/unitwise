@@ -4,9 +4,8 @@
   :primary_code: 10*
   :secondary_code: 10*
   :scale:
-    :value: '10'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 10.0
+    :unit_code: '1'
   :classification: dimless
   :property: number
   :metric: false
@@ -17,9 +16,8 @@
   :primary_code: 10^
   :secondary_code: 10^
   :scale:
-    :value: '10'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 10.0
+    :unit_code: '1'
   :classification: dimless
   :property: number
   :metric: false
@@ -30,9 +28,8 @@
   :primary_code: ! '[pi]'
   :secondary_code: ! '[PI]'
   :scale:
-    :value: '3.1415926535897932384626433832795028841971693993751058209749445923'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 3.141592653589793
+    :unit_code: '1'
   :classification: dimless
   :property: number
   :metric: false
@@ -43,9 +40,8 @@
   :primary_code: ! '%'
   :secondary_code: ! '%'
   :scale:
-    :value: '1'
-    :primary_unit: 10*-2
-    :secondary_unit: 10*-2
+    :value: 1.0
+    :unit_code: 10*-2
   :classification: dimless
   :property: fraction
   :metric: false
@@ -56,9 +52,8 @@
   :primary_code: ! '[ppth]'
   :secondary_code: ! '[PPTH]'
   :scale:
-    :value: '1'
-    :primary_unit: 10*-3
-    :secondary_unit: 10*-3
+    :value: 1.0
+    :unit_code: 10*-3
   :classification: dimless
   :property: fraction
   :metric: false
@@ -69,9 +64,8 @@
   :primary_code: ! '[ppm]'
   :secondary_code: ! '[PPM]'
   :scale:
-    :value: '1'
-    :primary_unit: 10*-6
-    :secondary_unit: 10*-6
+    :value: 1.0
+    :unit_code: 10*-6
   :classification: dimless
   :property: fraction
   :metric: false
@@ -82,9 +76,8 @@
   :primary_code: ! '[ppb]'
   :secondary_code: ! '[PPB]'
   :scale:
-    :value: '1'
-    :primary_unit: 10*-9
-    :secondary_unit: 10*-9
+    :value: 1.0
+    :unit_code: 10*-9
   :classification: dimless
   :property: fraction
   :metric: false
@@ -95,9 +88,8 @@
   :primary_code: ! '[pptr]'
   :secondary_code: ! '[PPTR]'
   :scale:
-    :value: '1'
-    :primary_unit: 10*-12
-    :secondary_unit: 10*-12
+    :value: 1.0
+    :unit_code: 10*-12
   :classification: dimless
   :property: fraction
   :metric: false
@@ -108,9 +100,8 @@
   :primary_code: mol
   :secondary_code: MOL
   :scale:
-    :value: '6.0221367'
-    :primary_unit: 10*23
-    :secondary_unit: 10*23
+    :value: 6.0221367
+    :unit_code: 10*23
   :classification: si
   :property: amount of substance
   :metric: true
@@ -121,9 +112,8 @@
   :primary_code: sr
   :secondary_code: SR
   :scale:
-    :value: '1'
-    :primary_unit: rad2
-    :secondary_unit: RAD2
+    :value: 1.0
+    :unit_code: rad2
   :classification: si
   :property: solid angle
   :metric: true
@@ -134,9 +124,8 @@
   :primary_code: Hz
   :secondary_code: HZ
   :scale:
-    :value: '1'
-    :primary_unit: s-1
-    :secondary_unit: S-1
+    :value: 1.0
+    :unit_code: s-1
   :classification: si
   :property: frequency
   :metric: true
@@ -147,9 +136,8 @@
   :primary_code: N
   :secondary_code: N
   :scale:
-    :value: '1'
-    :primary_unit: kg.m/s2
-    :secondary_unit: KG.M/S2
+    :value: 1.0
+    :unit_code: kg.m/s2
   :classification: si
   :property: force
   :metric: true
@@ -160,9 +148,8 @@
   :primary_code: Pa
   :secondary_code: PAL
   :scale:
-    :value: '1'
-    :primary_unit: N/m2
-    :secondary_unit: N/M2
+    :value: 1.0
+    :unit_code: N/m2
   :classification: si
   :property: pressure
   :metric: true
@@ -173,9 +160,8 @@
   :primary_code: J
   :secondary_code: J
   :scale:
-    :value: '1'
-    :primary_unit: N.m
-    :secondary_unit: N.M
+    :value: 1.0
+    :unit_code: N.m
   :classification: si
   :property: energy
   :metric: true
@@ -186,9 +172,8 @@
   :primary_code: W
   :secondary_code: W
   :scale:
-    :value: '1'
-    :primary_unit: J/s
-    :secondary_unit: J/S
+    :value: 1.0
+    :unit_code: J/s
   :classification: si
   :property: power
   :metric: true
@@ -199,9 +184,8 @@
   :primary_code: A
   :secondary_code: A
   :scale:
-    :value: '1'
-    :primary_unit: C/s
-    :secondary_unit: C/S
+    :value: 1.0
+    :unit_code: C/s
   :classification: si
   :property: electric current
   :metric: true
@@ -212,9 +196,8 @@
   :primary_code: V
   :secondary_code: V
   :scale:
-    :value: '1'
-    :primary_unit: J/C
-    :secondary_unit: J/C
+    :value: 1.0
+    :unit_code: J/C
   :classification: si
   :property: electric potential
   :metric: true
@@ -225,9 +208,8 @@
   :primary_code: F
   :secondary_code: F
   :scale:
-    :value: '1'
-    :primary_unit: C/V
-    :secondary_unit: C/V
+    :value: 1.0
+    :unit_code: C/V
   :classification: si
   :property: electric capacitance
   :metric: true
@@ -238,9 +220,8 @@
   :primary_code: Ohm
   :secondary_code: OHM
   :scale:
-    :value: '1'
-    :primary_unit: V/A
-    :secondary_unit: V/A
+    :value: 1.0
+    :unit_code: V/A
   :classification: si
   :property: electric resistance
   :metric: true
@@ -251,9 +232,8 @@
   :primary_code: S
   :secondary_code: SIE
   :scale:
-    :value: '1'
-    :primary_unit: Ohm-1
-    :secondary_unit: OHM-1
+    :value: 1.0
+    :unit_code: Ohm-1
   :classification: si
   :property: electric conductance
   :metric: true
@@ -264,9 +244,8 @@
   :primary_code: Wb
   :secondary_code: WB
   :scale:
-    :value: '1'
-    :primary_unit: V.s
-    :secondary_unit: V.S
+    :value: 1.0
+    :unit_code: V.s
   :classification: si
   :property: magentic flux
   :metric: true
@@ -292,9 +271,8 @@
   :primary_code: T
   :secondary_code: T
   :scale:
-    :value: '1'
-    :primary_unit: Wb/m2
-    :secondary_unit: WB/M2
+    :value: 1.0
+    :unit_code: Wb/m2
   :classification: si
   :property: magnetic flux density
   :metric: true
@@ -305,9 +283,8 @@
   :primary_code: H
   :secondary_code: H
   :scale:
-    :value: '1'
-    :primary_unit: Wb/A
-    :secondary_unit: WB/A
+    :value: 1.0
+    :unit_code: Wb/A
   :classification: si
   :property: inductance
   :metric: true
@@ -318,9 +295,8 @@
   :primary_code: lm
   :secondary_code: LM
   :scale:
-    :value: '1'
-    :primary_unit: cd.sr
-    :secondary_unit: CD.SR
+    :value: 1.0
+    :unit_code: cd.sr
   :classification: si
   :property: luminous flux
   :metric: true
@@ -331,9 +307,8 @@
   :primary_code: lx
   :secondary_code: LX
   :scale:
-    :value: '1'
-    :primary_unit: lm/m2
-    :secondary_unit: LM/M2
+    :value: 1.0
+    :unit_code: lm/m2
   :classification: si
   :property: illuminance
   :metric: true
@@ -344,9 +319,8 @@
   :primary_code: Bq
   :secondary_code: BQ
   :scale:
-    :value: '1'
-    :primary_unit: s-1
-    :secondary_unit: S-1
+    :value: 1.0
+    :unit_code: s-1
   :classification: si
   :property: radioactivity
   :metric: true
@@ -357,9 +331,8 @@
   :primary_code: Gy
   :secondary_code: GY
   :scale:
-    :value: '1'
-    :primary_unit: J/kg
-    :secondary_unit: J/KG
+    :value: 1.0
+    :unit_code: J/kg
   :classification: si
   :property: energy dose
   :metric: true
@@ -370,9 +343,8 @@
   :primary_code: Sv
   :secondary_code: SV
   :scale:
-    :value: '1'
-    :primary_unit: J/kg
-    :secondary_unit: J/KG
+    :value: 1.0
+    :unit_code: J/kg
   :classification: si
   :property: dose equivalent
   :metric: true
@@ -385,9 +357,8 @@
   :primary_code: gon
   :secondary_code: GON
   :scale:
-    :value: '0.9'
-    :primary_unit: deg
-    :secondary_unit: DEG
+    :value: 0.9
+    :unit_code: deg
   :classification: iso1000
   :property: plane angle
   :metric: false
@@ -398,9 +369,8 @@
   :primary_code: deg
   :secondary_code: DEG
   :scale:
-    :value: '2'
-    :primary_unit: ! '[pi].rad/360'
-    :secondary_unit: ! '[PI].RAD/360'
+    :value: 2.0
+    :unit_code: ! '[pi].rad/360'
   :classification: iso1000
   :property: plane angle
   :metric: false
@@ -411,9 +381,8 @@
   :primary_code: ! ''''
   :secondary_code: ! ''''
   :scale:
-    :value: '1'
-    :primary_unit: deg/60
-    :secondary_unit: DEG/60
+    :value: 1.0
+    :unit_code: deg/60
   :classification: iso1000
   :property: plane angle
   :metric: false
@@ -424,9 +393,8 @@
   :primary_code: ! ''''''
   :secondary_code: ! ''''''
   :scale:
-    :value: '1'
-    :primary_unit: ! '''/60'
-    :secondary_unit: ! '''/60'
+    :value: 1.0
+    :unit_code: ! '''/60'
   :classification: iso1000
   :property: plane angle
   :metric: false
@@ -437,9 +405,8 @@
   :primary_code: l
   :secondary_code: L
   :scale:
-    :value: '1'
-    :primary_unit: dm3
-    :secondary_unit: DM3
+    :value: 1.0
+    :unit_code: dm3
   :classification: iso1000
   :property: volume
   :metric: true
@@ -450,9 +417,8 @@
   :primary_code: L
   :secondary_code: 
   :scale:
-    :value: '1'
-    :primary_unit: l
-    :secondary_unit: 
+    :value: 1.0
+    :unit_code: l
   :classification: iso1000
   :property: volume
   :metric: true
@@ -463,9 +429,8 @@
   :primary_code: ar
   :secondary_code: AR
   :scale:
-    :value: '100'
-    :primary_unit: m2
-    :secondary_unit: M2
+    :value: 100.0
+    :unit_code: m2
   :classification: iso1000
   :property: area
   :metric: true
@@ -476,9 +441,8 @@
   :primary_code: min
   :secondary_code: MIN
   :scale:
-    :value: '60'
-    :primary_unit: s
-    :secondary_unit: S
+    :value: 60.0
+    :unit_code: s
   :classification: iso1000
   :property: time
   :metric: false
@@ -489,9 +453,8 @@
   :primary_code: h
   :secondary_code: HR
   :scale:
-    :value: '60'
-    :primary_unit: min
-    :secondary_unit: MIN
+    :value: 60.0
+    :unit_code: min
   :classification: iso1000
   :property: time
   :metric: false
@@ -502,9 +465,8 @@
   :primary_code: d
   :secondary_code: D
   :scale:
-    :value: '24'
-    :primary_unit: h
-    :secondary_unit: HR
+    :value: 24.0
+    :unit_code: h
   :classification: iso1000
   :property: time
   :metric: false
@@ -515,9 +477,8 @@
   :primary_code: a_t
   :secondary_code: ANN_T
   :scale:
-    :value: '365.24219'
-    :primary_unit: d
-    :secondary_unit: D
+    :value: 365.24219
+    :unit_code: d
   :classification: iso1000
   :property: time
   :metric: false
@@ -528,9 +489,8 @@
   :primary_code: a_j
   :secondary_code: ANN_J
   :scale:
-    :value: '365.25'
-    :primary_unit: d
-    :secondary_unit: D
+    :value: 365.25
+    :unit_code: d
   :classification: iso1000
   :property: time
   :metric: false
@@ -541,9 +501,8 @@
   :primary_code: a_g
   :secondary_code: ANN_G
   :scale:
-    :value: '365.2425'
-    :primary_unit: d
-    :secondary_unit: D
+    :value: 365.2425
+    :unit_code: d
   :classification: iso1000
   :property: time
   :metric: false
@@ -554,9 +513,8 @@
   :primary_code: a
   :secondary_code: ANN
   :scale:
-    :value: '1'
-    :primary_unit: a_j
-    :secondary_unit: ANN_J
+    :value: 1.0
+    :unit_code: a_j
   :classification: iso1000
   :property: time
   :metric: false
@@ -567,9 +525,8 @@
   :primary_code: wk
   :secondary_code: WK
   :scale:
-    :value: '7'
-    :primary_unit: d
-    :secondary_unit: D
+    :value: 7.0
+    :unit_code: d
   :classification: iso1000
   :property: time
   :metric: false
@@ -580,9 +537,8 @@
   :primary_code: mo_s
   :secondary_code: MO_S
   :scale:
-    :value: '29.53059'
-    :primary_unit: d
-    :secondary_unit: D
+    :value: 29.53059
+    :unit_code: d
   :classification: iso1000
   :property: time
   :metric: false
@@ -593,9 +549,8 @@
   :primary_code: mo_j
   :secondary_code: MO_J
   :scale:
-    :value: '1'
-    :primary_unit: a_j/12
-    :secondary_unit: ANN_J/12
+    :value: 1.0
+    :unit_code: a_j/12
   :classification: iso1000
   :property: time
   :metric: false
@@ -606,9 +561,8 @@
   :primary_code: mo_g
   :secondary_code: MO_G
   :scale:
-    :value: '1'
-    :primary_unit: a_g/12
-    :secondary_unit: ANN_G/12
+    :value: 1.0
+    :unit_code: a_g/12
   :classification: iso1000
   :property: time
   :metric: false
@@ -619,9 +573,8 @@
   :primary_code: mo
   :secondary_code: MO
   :scale:
-    :value: '1'
-    :primary_unit: mo_j
-    :secondary_unit: MO_J
+    :value: 1.0
+    :unit_code: mo_j
   :classification: iso1000
   :property: time
   :metric: false
@@ -632,9 +585,8 @@
   :primary_code: t
   :secondary_code: TNE
   :scale:
-    :value: 1e3
-    :primary_unit: kg
-    :secondary_unit: KG
+    :value: 1000.0
+    :unit_code: kg
   :classification: iso1000
   :property: mass
   :metric: true
@@ -645,9 +597,8 @@
   :primary_code: bar
   :secondary_code: BAR
   :scale:
-    :value: 1e5
-    :primary_unit: Pa
-    :secondary_unit: PAL
+    :value: 100000.0
+    :unit_code: Pa
   :classification: iso1000
   :property: pressure
   :metric: true
@@ -658,9 +609,8 @@
   :primary_code: u
   :secondary_code: AMU
   :scale:
-    :value: '1.6605402e-24'
-    :primary_unit: g
-    :secondary_unit: G
+    :value: 1.6605402e-24
+    :unit_code: g
   :classification: iso1000
   :property: mass
   :metric: true
@@ -671,9 +621,8 @@
   :primary_code: eV
   :secondary_code: EV
   :scale:
-    :value: '1'
-    :primary_unit: ! '[e].V'
-    :secondary_unit: ! '[E].V'
+    :value: 1.0
+    :unit_code: ! '[e].V'
   :classification: iso1000
   :property: energy
   :metric: true
@@ -684,9 +633,8 @@
   :primary_code: AU
   :secondary_code: ASU
   :scale:
-    :value: '149597.870'
-    :primary_unit: Mm
-    :secondary_unit: MAM
+    :value: 149597.87
+    :unit_code: Mm
   :classification: iso1000
   :property: length
   :metric: false
@@ -697,9 +645,8 @@
   :primary_code: pc
   :secondary_code: PRS
   :scale:
-    :value: 3.085678e16
-    :primary_unit: m
-    :secondary_unit: M
+    :value: 30856780000000000.0
+    :unit_code: m
   :classification: iso1000
   :property: length
   :metric: true
@@ -710,9 +657,8 @@
   :primary_code: ! '[c]'
   :secondary_code: ! '[C]'
   :scale:
-    :value: '299792458'
-    :primary_unit: m/s
-    :secondary_unit: M/S
+    :value: 299792458.0
+    :unit_code: m/s
   :classification: const
   :property: velocity
   :metric: true
@@ -723,9 +669,8 @@
   :primary_code: ! '[h]'
   :secondary_code: ! '[H]'
   :scale:
-    :value: '6.6260755e-24'
-    :primary_unit: J.s
-    :secondary_unit: J.S
+    :value: 6.6260755e-24
+    :unit_code: J.s
   :classification: const
   :property: action
   :metric: true
@@ -736,9 +681,8 @@
   :primary_code: ! '[k]'
   :secondary_code: ! '[K]'
   :scale:
-    :value: '1.380658e-23'
-    :primary_unit: J/K
-    :secondary_unit: J/K
+    :value: 1.380658e-23
+    :unit_code: J/K
   :classification: const
   :property: (unclassified)
   :metric: true
@@ -749,9 +693,8 @@
   :primary_code: ! '[eps_0]'
   :secondary_code: ! '[eps_0]'
   :scale:
-    :value: '8.854187817e-12'
-    :primary_unit: F/m
-    :secondary_unit: F/M
+    :value: 8.854187817e-12
+    :unit_code: F/m
   :classification: const
   :property: electric permittivity
   :metric: true
@@ -762,9 +705,8 @@
   :primary_code: ! '[mu_0]'
   :secondary_code: ! '[mu_0]'
   :scale:
-    :value: '1'
-    :primary_unit: 4.[pi].10*-7.N/A2
-    :secondary_unit: 4.[PI].10*-7.N/A2
+    :value: 1.0
+    :unit_code: 4.[pi].10*-7.N/A2
   :classification: const
   :property: magnetic permeability
   :metric: true
@@ -775,9 +717,8 @@
   :primary_code: ! '[e]'
   :secondary_code: ! '[E]'
   :scale:
-    :value: '1.60217733e-19'
-    :primary_unit: C
-    :secondary_unit: C
+    :value: 1.60217733e-19
+    :unit_code: C
   :classification: const
   :property: electric charge
   :metric: true
@@ -788,9 +729,8 @@
   :primary_code: ! '[m_e]'
   :secondary_code: ! '[M_E]'
   :scale:
-    :value: '9.1093897e-28'
-    :primary_unit: g
-    :secondary_unit: g
+    :value: 9.1093897e-28
+    :unit_code: g
   :classification: const
   :property: mass
   :metric: true
@@ -801,9 +741,8 @@
   :primary_code: ! '[m_p]'
   :secondary_code: ! '[M_P]'
   :scale:
-    :value: '1.6726231e-24'
-    :primary_unit: g
-    :secondary_unit: g
+    :value: 1.6726231e-24
+    :unit_code: g
   :classification: const
   :property: mass
   :metric: true
@@ -814,9 +753,8 @@
   :primary_code: ! '[G]'
   :secondary_code: ! '[GC]'
   :scale:
-    :value: '6.67259e-11'
-    :primary_unit: m3.kg-1.s-2
-    :secondary_unit: M3.KG-1.S-2
+    :value: 6.67259e-11
+    :unit_code: m3.kg-1.s-2
   :classification: const
   :property: (unclassified)
   :metric: true
@@ -827,9 +765,8 @@
   :primary_code: ! '[g]'
   :secondary_code: ! '[G]'
   :scale:
-    :value: '9.80665'
-    :primary_unit: m/s2
-    :secondary_unit: M/S
+    :value: 9.80665
+    :unit_code: m/s2
   :classification: const
   :property: acceleration
   :metric: true
@@ -840,9 +777,8 @@
   :primary_code: atm
   :secondary_code: ATM
   :scale:
-    :value: '101325'
-    :primary_unit: Pa
-    :secondary_unit: KPAL
+    :value: 101325.0
+    :unit_code: Pa
   :classification: const
   :property: pressure
   :metric: false
@@ -853,9 +789,8 @@
   :primary_code: ! '[ly]'
   :secondary_code: ! '[LY]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[c].a_j'
-    :secondary_unit: ! '[C].ANN_J'
+    :value: 1.0
+    :unit_code: ! '[c].a_j'
   :classification: const
   :property: length
   :metric: true
@@ -866,9 +801,8 @@
   :primary_code: gf
   :secondary_code: GF
   :scale:
-    :value: '1'
-    :primary_unit: g.[g]
-    :secondary_unit: G.[G]
+    :value: 1.0
+    :unit_code: g.[g]
   :classification: const
   :property: force
   :metric: true
@@ -879,9 +813,8 @@
   :primary_code: ! '[lbf_av]'
   :secondary_code: ! '[LBF_AV]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[lb_av].[g]'
-    :secondary_unit: ! '[LB_AV].[G]'
+    :value: 1.0
+    :unit_code: ! '[lb_av].[g]'
   :classification: const
   :property: force
   :metric: false
@@ -892,9 +825,8 @@
   :primary_code: Ky
   :secondary_code: KY
   :scale:
-    :value: '1'
-    :primary_unit: cm-1
-    :secondary_unit: CM-1
+    :value: 1.0
+    :unit_code: cm-1
   :classification: cgs
   :property: lineic number
   :metric: true
@@ -905,9 +837,8 @@
   :primary_code: Gal
   :secondary_code: GL
   :scale:
-    :value: '1'
-    :primary_unit: cm/s2
-    :secondary_unit: CM/S2
+    :value: 1.0
+    :unit_code: cm/s2
   :classification: cgs
   :property: acceleration
   :metric: true
@@ -918,9 +849,8 @@
   :primary_code: dyn
   :secondary_code: DYN
   :scale:
-    :value: '1'
-    :primary_unit: g.cm/s2
-    :secondary_unit: G.CM/S2
+    :value: 1.0
+    :unit_code: g.cm/s2
   :classification: cgs
   :property: force
   :metric: true
@@ -931,9 +861,8 @@
   :primary_code: erg
   :secondary_code: ERG
   :scale:
-    :value: '1'
-    :primary_unit: dyn.cm
-    :secondary_unit: DYN.CM
+    :value: 1.0
+    :unit_code: dyn.cm
   :classification: cgs
   :property: energy
   :metric: true
@@ -944,9 +873,8 @@
   :primary_code: P
   :secondary_code: P
   :scale:
-    :value: '1'
-    :primary_unit: dyn.s/cm2
-    :secondary_unit: DYN.S/CM2
+    :value: 1.0
+    :unit_code: dyn.s/cm2
   :classification: cgs
   :property: dynamic viscosity
   :metric: true
@@ -957,9 +885,8 @@
   :primary_code: Bi
   :secondary_code: BI
   :scale:
-    :value: '10'
-    :primary_unit: A
-    :secondary_unit: A
+    :value: 10.0
+    :unit_code: A
   :classification: cgs
   :property: electric current
   :metric: true
@@ -970,9 +897,8 @@
   :primary_code: St
   :secondary_code: ST
   :scale:
-    :value: '1'
-    :primary_unit: cm2/s
-    :secondary_unit: CM2/S
+    :value: 1.0
+    :unit_code: cm2/s
   :classification: cgs
   :property: kinematic viscosity
   :metric: true
@@ -983,9 +909,8 @@
   :primary_code: Mx
   :secondary_code: MX
   :scale:
-    :value: 1e-8
-    :primary_unit: Wb
-    :secondary_unit: WB
+    :value: 1.0e-08
+    :unit_code: Wb
   :classification: cgs
   :property: flux of magnetic induction
   :metric: true
@@ -996,9 +921,8 @@
   :primary_code: G
   :secondary_code: GS
   :scale:
-    :value: 1e-4
-    :primary_unit: T
-    :secondary_unit: T
+    :value: 0.0001
+    :unit_code: T
   :classification: cgs
   :property: magnetic flux density
   :metric: true
@@ -1009,9 +933,8 @@
   :primary_code: Oe
   :secondary_code: OE
   :scale:
-    :value: '250'
-    :primary_unit: /[pi].A/m
-    :secondary_unit: /[PI].A/M
+    :value: 250.0
+    :unit_code: /[pi].A/m
   :classification: cgs
   :property: magnetic field intensity
   :metric: true
@@ -1022,9 +945,8 @@
   :primary_code: Gb
   :secondary_code: GB
   :scale:
-    :value: '1'
-    :primary_unit: Oe.cm
-    :secondary_unit: OE.CM
+    :value: 1.0
+    :unit_code: Oe.cm
   :classification: cgs
   :property: magnetic tension
   :metric: true
@@ -1035,9 +957,8 @@
   :primary_code: sb
   :secondary_code: SB
   :scale:
-    :value: '1'
-    :primary_unit: cd/cm2
-    :secondary_unit: CD/CM2
+    :value: 1.0
+    :unit_code: cd/cm2
   :classification: cgs
   :property: lum. intensity density
   :metric: true
@@ -1048,9 +969,8 @@
   :primary_code: Lmb
   :secondary_code: LMB
   :scale:
-    :value: '1'
-    :primary_unit: cd/cm2/[pi]
-    :secondary_unit: CD/CM2/[PI]
+    :value: 1.0
+    :unit_code: cd/cm2/[pi]
   :classification: cgs
   :property: brightness
   :metric: true
@@ -1061,9 +981,8 @@
   :primary_code: ph
   :secondary_code: PHT
   :scale:
-    :value: 1e-4
-    :primary_unit: lx
-    :secondary_unit: LX
+    :value: 0.0001
+    :unit_code: lx
   :classification: cgs
   :property: illuminance
   :metric: true
@@ -1074,9 +993,8 @@
   :primary_code: Ci
   :secondary_code: CI
   :scale:
-    :value: 3.7e10
-    :primary_unit: Bq
-    :secondary_unit: BQ
+    :value: 37000000000.0
+    :unit_code: Bq
   :classification: cgs
   :property: radioactivity
   :metric: true
@@ -1087,9 +1005,8 @@
   :primary_code: R
   :secondary_code: ROE
   :scale:
-    :value: '2.58e-4'
-    :primary_unit: C/kg
-    :secondary_unit: C/KG
+    :value: 0.000258
+    :unit_code: C/kg
   :classification: cgs
   :property: ion dose
   :metric: true
@@ -1100,9 +1017,8 @@
   :primary_code: RAD
   :secondary_code: ! '[RAD]'
   :scale:
-    :value: '100'
-    :primary_unit: erg/g
-    :secondary_unit: ERG/G
+    :value: 100.0
+    :unit_code: erg/g
   :classification: cgs
   :property: energy dose
   :metric: true
@@ -1113,9 +1029,8 @@
   :primary_code: REM
   :secondary_code: ! '[REM]'
   :scale:
-    :value: '1'
-    :primary_unit: RAD
-    :secondary_unit: ! '[RAD]'
+    :value: 1.0
+    :unit_code: RAD
   :classification: cgs
   :property: dose equivalent
   :metric: true
@@ -1126,9 +1041,8 @@
   :primary_code: ! '[in_i]'
   :secondary_code: ! '[IN_I]'
   :scale:
-    :value: 254e-2
-    :primary_unit: cm
-    :secondary_unit: CM
+    :value: 2.54
+    :unit_code: cm
   :classification: intcust
   :property: length
   :metric: false
@@ -1139,9 +1053,8 @@
   :primary_code: ! '[ft_i]'
   :secondary_code: ! '[FT_I]'
   :scale:
-    :value: '12'
-    :primary_unit: ! '[in_i]'
-    :secondary_unit: ! '[IN_I]'
+    :value: 12.0
+    :unit_code: ! '[in_i]'
   :classification: intcust
   :property: length
   :metric: false
@@ -1152,9 +1065,8 @@
   :primary_code: ! '[yd_i]'
   :secondary_code: ! '[YD_I]'
   :scale:
-    :value: '3'
-    :primary_unit: ! '[ft_i]'
-    :secondary_unit: ! '[FT_I]'
+    :value: 3.0
+    :unit_code: ! '[ft_i]'
   :classification: intcust
   :property: length
   :metric: false
@@ -1165,9 +1077,8 @@
   :primary_code: ! '[mi_i]'
   :secondary_code: ! '[MI_I]'
   :scale:
-    :value: '5280'
-    :primary_unit: ! '[ft_i]'
-    :secondary_unit: ! '[FT_I]'
+    :value: 5280.0
+    :unit_code: ! '[ft_i]'
   :classification: intcust
   :property: length
   :metric: false
@@ -1178,9 +1089,8 @@
   :primary_code: ! '[fth_i]'
   :secondary_code: ! '[FTH_I]'
   :scale:
-    :value: '6'
-    :primary_unit: ! '[ft_i]'
-    :secondary_unit: ! '[FT_I]'
+    :value: 6.0
+    :unit_code: ! '[ft_i]'
   :classification: intcust
   :property: depth of water
   :metric: false
@@ -1191,9 +1101,8 @@
   :primary_code: ! '[nmi_i]'
   :secondary_code: ! '[NMI_I]'
   :scale:
-    :value: '1852'
-    :primary_unit: m
-    :secondary_unit: M
+    :value: 1852.0
+    :unit_code: m
   :classification: intcust
   :property: length
   :metric: false
@@ -1204,9 +1113,8 @@
   :primary_code: ! '[kn_i]'
   :secondary_code: ! '[KN_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[nmi_i]/h'
-    :secondary_unit: ! '[NMI_I]/H'
+    :value: 1.0
+    :unit_code: ! '[nmi_i]/h'
   :classification: intcust
   :property: velocity
   :metric: false
@@ -1217,9 +1125,8 @@
   :primary_code: ! '[sin_i]'
   :secondary_code: ! '[SIN_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[in_i]2'
-    :secondary_unit: ! '[IN_I]2'
+    :value: 1.0
+    :unit_code: ! '[in_i]2'
   :classification: intcust
   :property: area
   :metric: false
@@ -1230,9 +1137,8 @@
   :primary_code: ! '[sft_i]'
   :secondary_code: ! '[SFT_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[ft_i]2'
-    :secondary_unit: ! '[FT_I]2'
+    :value: 1.0
+    :unit_code: ! '[ft_i]2'
   :classification: intcust
   :property: area
   :metric: false
@@ -1243,9 +1149,8 @@
   :primary_code: ! '[syd_i]'
   :secondary_code: ! '[SYD_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[yd_i]2'
-    :secondary_unit: ! '[YD_I]2'
+    :value: 1.0
+    :unit_code: ! '[yd_i]2'
   :classification: intcust
   :property: area
   :metric: false
@@ -1256,9 +1161,8 @@
   :primary_code: ! '[cin_i]'
   :secondary_code: ! '[CIN_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[in_i]3'
-    :secondary_unit: ! '[IN_I]3'
+    :value: 1.0
+    :unit_code: ! '[in_i]3'
   :classification: intcust
   :property: volume
   :metric: false
@@ -1269,9 +1173,8 @@
   :primary_code: ! '[cft_i]'
   :secondary_code: ! '[CFT_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[ft_i]3'
-    :secondary_unit: ! '[FT_I]3'
+    :value: 1.0
+    :unit_code: ! '[ft_i]3'
   :classification: intcust
   :property: volume
   :metric: false
@@ -1282,9 +1185,8 @@
   :primary_code: ! '[cyd_i]'
   :secondary_code: ! '[CYD_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[yd_i]3'
-    :secondary_unit: ! '[YD_I]3'
+    :value: 1.0
+    :unit_code: ! '[yd_i]3'
   :classification: intcust
   :property: volume
   :metric: false
@@ -1295,9 +1197,8 @@
   :primary_code: ! '[bf_i]'
   :secondary_code: ! '[BF_I]'
   :scale:
-    :value: '144'
-    :primary_unit: ! '[in_i]3'
-    :secondary_unit: ! '[IN_I]3'
+    :value: 144.0
+    :unit_code: ! '[in_i]3'
   :classification: intcust
   :property: volume
   :metric: false
@@ -1308,9 +1209,8 @@
   :primary_code: ! '[cr_i]'
   :secondary_code: ! '[CR_I]'
   :scale:
-    :value: '128'
-    :primary_unit: ! '[ft_i]3'
-    :secondary_unit: ! '[FT_I]3'
+    :value: 128.0
+    :unit_code: ! '[ft_i]3'
   :classification: intcust
   :property: volume
   :metric: false
@@ -1321,9 +1221,8 @@
   :primary_code: ! '[mil_i]'
   :secondary_code: ! '[MIL_I]'
   :scale:
-    :value: 1e-3
-    :primary_unit: ! '[in_i]'
-    :secondary_unit: ! '[IN_I]'
+    :value: 0.001
+    :unit_code: ! '[in_i]'
   :classification: intcust
   :property: length
   :metric: false
@@ -1334,9 +1233,8 @@
   :primary_code: ! '[cml_i]'
   :secondary_code: ! '[CML_I]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[pi]/4.[mil_i]2'
-    :secondary_unit: ! '[PI]/4.[MIL_I]2'
+    :value: 1.0
+    :unit_code: ! '[pi]/4.[mil_i]2'
   :classification: intcust
   :property: area
   :metric: false
@@ -1347,9 +1245,8 @@
   :primary_code: ! '[hd_i]'
   :secondary_code: ! '[HD_I]'
   :scale:
-    :value: '4'
-    :primary_unit: ! '[in_i]'
-    :secondary_unit: ! '[IN_I]'
+    :value: 4.0
+    :unit_code: ! '[in_i]'
   :classification: intcust
   :property: height of horses
   :metric: false
@@ -1360,9 +1257,8 @@
   :primary_code: ! '[ft_us]'
   :secondary_code: ! '[FT_US]'
   :scale:
-    :value: '1200'
-    :primary_unit: m/3937
-    :secondary_unit: M/3937
+    :value: 1200.0
+    :unit_code: m/3937
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1373,9 +1269,8 @@
   :primary_code: ! '[yd_us]'
   :secondary_code: ! '[YD_US]'
   :scale:
-    :value: '3'
-    :primary_unit: ! '[ft_us]'
-    :secondary_unit: ! '[FT_US]'
+    :value: 3.0
+    :unit_code: ! '[ft_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1386,9 +1281,8 @@
   :primary_code: ! '[in_us]'
   :secondary_code: ! '[IN_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[ft_us]/12'
-    :secondary_unit: ! '[FT_US]/12'
+    :value: 1.0
+    :unit_code: ! '[ft_us]/12'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1399,9 +1293,8 @@
   :primary_code: ! '[rd_us]'
   :secondary_code: ! '[RD_US]'
   :scale:
-    :value: '16.5'
-    :primary_unit: ! '[ft_us]'
-    :secondary_unit: ! '[FT_US]'
+    :value: 16.5
+    :unit_code: ! '[ft_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1414,9 +1307,8 @@
   :primary_code: ! '[ch_us]'
   :secondary_code: ! '[CH_US]'
   :scale:
-    :value: '4'
-    :primary_unit: ! '[rd_us]'
-    :secondary_unit: ! '[RD_US]'
+    :value: 4.0
+    :unit_code: ! '[rd_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1427,9 +1319,8 @@
   :primary_code: ! '[lk_us]'
   :secondary_code: ! '[LK_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[ch_us]/100'
-    :secondary_unit: ! '[CH_US]/100'
+    :value: 1.0
+    :unit_code: ! '[ch_us]/100'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1442,9 +1333,8 @@
   :primary_code: ! '[rch_us]'
   :secondary_code: ! '[RCH_US]'
   :scale:
-    :value: '100'
-    :primary_unit: ! '[ft_us]'
-    :secondary_unit: ! '[FT_US]'
+    :value: 100.0
+    :unit_code: ! '[ft_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1455,9 +1345,8 @@
   :primary_code: ! '[rlk_us]'
   :secondary_code: ! '[RLK_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[rch_us]/100'
-    :secondary_unit: ! '[RCH_US]/100'
+    :value: 1.0
+    :unit_code: ! '[rch_us]/100'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1468,9 +1357,8 @@
   :primary_code: ! '[fth_us]'
   :secondary_code: ! '[FTH_US]'
   :scale:
-    :value: '6'
-    :primary_unit: ! '[ft_us]'
-    :secondary_unit: ! '[FT_US]'
+    :value: 6.0
+    :unit_code: ! '[ft_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1481,9 +1369,8 @@
   :primary_code: ! '[fur_us]'
   :secondary_code: ! '[FUR_US]'
   :scale:
-    :value: '40'
-    :primary_unit: ! '[rd_us]'
-    :secondary_unit: ! '[RD_US]'
+    :value: 40.0
+    :unit_code: ! '[rd_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1494,9 +1381,8 @@
   :primary_code: ! '[mi_us]'
   :secondary_code: ! '[MI_US]'
   :scale:
-    :value: '8'
-    :primary_unit: ! '[fur_us]'
-    :secondary_unit: ! '[FUR_US]'
+    :value: 8.0
+    :unit_code: ! '[fur_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1507,9 +1393,8 @@
   :primary_code: ! '[acr_us]'
   :secondary_code: ! '[ACR_US]'
   :scale:
-    :value: '160'
-    :primary_unit: ! '[rd_us]2'
-    :secondary_unit: ! '[RD_US]2'
+    :value: 160.0
+    :unit_code: ! '[rd_us]2'
   :classification: us-lengths
   :property: area
   :metric: false
@@ -1520,9 +1405,8 @@
   :primary_code: ! '[srd_us]'
   :secondary_code: ! '[SRD_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[rd_us]2'
-    :secondary_unit: ! '[RD_US]2'
+    :value: 1.0
+    :unit_code: ! '[rd_us]2'
   :classification: us-lengths
   :property: area
   :metric: false
@@ -1533,9 +1417,8 @@
   :primary_code: ! '[smi_us]'
   :secondary_code: ! '[SMI_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[mi_us]2'
-    :secondary_unit: ! '[MI_US]2'
+    :value: 1.0
+    :unit_code: ! '[mi_us]2'
   :classification: us-lengths
   :property: area
   :metric: false
@@ -1546,9 +1429,8 @@
   :primary_code: ! '[sct]'
   :secondary_code: ! '[SCT]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[mi_us]2'
-    :secondary_unit: ! '[MI_US]2'
+    :value: 1.0
+    :unit_code: ! '[mi_us]2'
   :classification: us-lengths
   :property: area
   :metric: false
@@ -1559,9 +1441,8 @@
   :primary_code: ! '[twp]'
   :secondary_code: ! '[TWP]'
   :scale:
-    :value: '36'
-    :primary_unit: ! '[sct]'
-    :secondary_unit: ! '[SCT]'
+    :value: 36.0
+    :unit_code: ! '[sct]'
   :classification: us-lengths
   :property: area
   :metric: false
@@ -1572,9 +1453,8 @@
   :primary_code: ! '[mil_us]'
   :secondary_code: ! '[MIL_US]'
   :scale:
-    :value: 1e-3
-    :primary_unit: ! '[in_us]'
-    :secondary_unit: ! '[IN_US]'
+    :value: 0.001
+    :unit_code: ! '[in_us]'
   :classification: us-lengths
   :property: length
   :metric: false
@@ -1585,9 +1465,8 @@
   :primary_code: ! '[in_br]'
   :secondary_code: ! '[IN_BR]'
   :scale:
-    :value: '2.539998'
-    :primary_unit: cm
-    :secondary_unit: CM
+    :value: 2.539998
+    :unit_code: cm
   :classification: brit-length
   :property: length
   :metric: false
@@ -1598,9 +1477,8 @@
   :primary_code: ! '[ft_br]'
   :secondary_code: ! '[FT_BR]'
   :scale:
-    :value: '12'
-    :primary_unit: ! '[in_br]'
-    :secondary_unit: ! '[IN_BR]'
+    :value: 12.0
+    :unit_code: ! '[in_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1611,9 +1489,8 @@
   :primary_code: ! '[rd_br]'
   :secondary_code: ! '[RD_BR]'
   :scale:
-    :value: '16.5'
-    :primary_unit: ! '[ft_br]'
-    :secondary_unit: ! '[FT_BR]'
+    :value: 16.5
+    :unit_code: ! '[ft_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1624,9 +1501,8 @@
   :primary_code: ! '[ch_br]'
   :secondary_code: ! '[CH_BR]'
   :scale:
-    :value: '4'
-    :primary_unit: ! '[rd_br]'
-    :secondary_unit: ! '[RD_BR]'
+    :value: 4.0
+    :unit_code: ! '[rd_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1637,9 +1513,8 @@
   :primary_code: ! '[lk_br]'
   :secondary_code: ! '[LK_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[ch_br]/100'
-    :secondary_unit: ! '[CH_BR]/100'
+    :value: 1.0
+    :unit_code: ! '[ch_br]/100'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1650,9 +1525,8 @@
   :primary_code: ! '[fth_br]'
   :secondary_code: ! '[FTH_BR]'
   :scale:
-    :value: '6'
-    :primary_unit: ! '[ft_br]'
-    :secondary_unit: ! '[FT_BR]'
+    :value: 6.0
+    :unit_code: ! '[ft_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1663,9 +1537,8 @@
   :primary_code: ! '[pc_br]'
   :secondary_code: ! '[PC_BR]'
   :scale:
-    :value: '2.5'
-    :primary_unit: ! '[ft_br]'
-    :secondary_unit: ! '[FT_BR]'
+    :value: 2.5
+    :unit_code: ! '[ft_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1676,9 +1549,8 @@
   :primary_code: ! '[yd_br]'
   :secondary_code: ! '[YD_BR]'
   :scale:
-    :value: '3'
-    :primary_unit: ! '[ft_br]'
-    :secondary_unit: ! '[FT_BR]'
+    :value: 3.0
+    :unit_code: ! '[ft_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1689,9 +1561,8 @@
   :primary_code: ! '[mi_br]'
   :secondary_code: ! '[MI_BR]'
   :scale:
-    :value: '5280'
-    :primary_unit: ! '[ft_br]'
-    :secondary_unit: ! '[FT_BR]'
+    :value: 5280.0
+    :unit_code: ! '[ft_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1702,9 +1573,8 @@
   :primary_code: ! '[nmi_br]'
   :secondary_code: ! '[NMI_BR]'
   :scale:
-    :value: '6080'
-    :primary_unit: ! '[ft_br]'
-    :secondary_unit: ! '[FT_BR]'
+    :value: 6080.0
+    :unit_code: ! '[ft_br]'
   :classification: brit-length
   :property: length
   :metric: false
@@ -1715,9 +1585,8 @@
   :primary_code: ! '[kn_br]'
   :secondary_code: ! '[KN_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[nmi_br]/h'
-    :secondary_unit: ! '[NMI_BR]/H'
+    :value: 1.0
+    :unit_code: ! '[nmi_br]/h'
   :classification: brit-length
   :property: velocity
   :metric: false
@@ -1728,9 +1597,8 @@
   :primary_code: ! '[acr_br]'
   :secondary_code: ! '[ACR_BR]'
   :scale:
-    :value: '4840'
-    :primary_unit: ! '[yd_br]2'
-    :secondary_unit: ! '[YD_BR]2'
+    :value: 4840.0
+    :unit_code: ! '[yd_br]2'
   :classification: brit-length
   :property: area
   :metric: false
@@ -1741,9 +1609,8 @@
   :primary_code: ! '[gal_us]'
   :secondary_code: ! '[GAL_US]'
   :scale:
-    :value: '231'
-    :primary_unit: ! '[in_i]3'
-    :secondary_unit: ! '[IN_I]3'
+    :value: 231.0
+    :unit_code: ! '[in_i]3'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1754,9 +1621,8 @@
   :primary_code: ! '[bbl_us]'
   :secondary_code: ! '[BBL_US]'
   :scale:
-    :value: '42'
-    :primary_unit: ! '[gal_us]'
-    :secondary_unit: ! '[GAL_US]'
+    :value: 42.0
+    :unit_code: ! '[gal_us]'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1767,9 +1633,8 @@
   :primary_code: ! '[qt_us]'
   :secondary_code: ! '[QT_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[gal_us]/4'
-    :secondary_unit: ! '[GAL_US]/4'
+    :value: 1.0
+    :unit_code: ! '[gal_us]/4'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1780,9 +1645,8 @@
   :primary_code: ! '[pt_us]'
   :secondary_code: ! '[PT_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[qt_us]/2'
-    :secondary_unit: ! '[QT_US]/2'
+    :value: 1.0
+    :unit_code: ! '[qt_us]/2'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1793,9 +1657,8 @@
   :primary_code: ! '[gil_us]'
   :secondary_code: ! '[GIL_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[pt_us]/4'
-    :secondary_unit: ! '[PT_US]/4'
+    :value: 1.0
+    :unit_code: ! '[pt_us]/4'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1806,9 +1669,8 @@
   :primary_code: ! '[foz_us]'
   :secondary_code: ! '[FOZ_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[gil_us]/4'
-    :secondary_unit: ! '[GIL_US]/4'
+    :value: 1.0
+    :unit_code: ! '[gil_us]/4'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1819,9 +1681,8 @@
   :primary_code: ! '[fdr_us]'
   :secondary_code: ! '[FDR_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[foz_us]/8'
-    :secondary_unit: ! '[FOZ_US]/8'
+    :value: 1.0
+    :unit_code: ! '[foz_us]/8'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1832,9 +1693,8 @@
   :primary_code: ! '[min_us]'
   :secondary_code: ! '[MIN_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[fdr_us]/60'
-    :secondary_unit: ! '[FDR_US]/60'
+    :value: 1.0
+    :unit_code: ! '[fdr_us]/60'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1845,9 +1705,8 @@
   :primary_code: ! '[crd_us]'
   :secondary_code: ! '[CRD_US]'
   :scale:
-    :value: '128'
-    :primary_unit: ! '[ft_i]3'
-    :secondary_unit: ! '[FT_I]3'
+    :value: 128.0
+    :unit_code: ! '[ft_i]3'
   :classification: us-volumes
   :property: fluid volume
   :metric: false
@@ -1858,9 +1717,8 @@
   :primary_code: ! '[bu_us]'
   :secondary_code: ! '[BU_US]'
   :scale:
-    :value: '2150.42'
-    :primary_unit: ! '[in_i]3'
-    :secondary_unit: ! '[IN_I]3'
+    :value: 2150.42
+    :unit_code: ! '[in_i]3'
   :classification: us-volumes
   :property: dry volume
   :metric: false
@@ -1871,9 +1729,8 @@
   :primary_code: ! '[gal_wi]'
   :secondary_code: ! '[GAL_WI]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[bu_us]/8'
-    :secondary_unit: ! '[BU_US]/8'
+    :value: 1.0
+    :unit_code: ! '[bu_us]/8'
   :classification: us-volumes
   :property: dry volume
   :metric: false
@@ -1884,9 +1741,8 @@
   :primary_code: ! '[pk_us]'
   :secondary_code: ! '[PK_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[bu_us]/4'
-    :secondary_unit: ! '[BU_US]/4'
+    :value: 1.0
+    :unit_code: ! '[bu_us]/4'
   :classification: us-volumes
   :property: dry volume
   :metric: false
@@ -1897,9 +1753,8 @@
   :primary_code: ! '[dqt_us]'
   :secondary_code: ! '[DQT_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[pk_us]/8'
-    :secondary_unit: ! '[PK_US]/8'
+    :value: 1.0
+    :unit_code: ! '[pk_us]/8'
   :classification: us-volumes
   :property: dry volume
   :metric: false
@@ -1910,9 +1765,8 @@
   :primary_code: ! '[dpt_us]'
   :secondary_code: ! '[DPT_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[dqt_us]/2'
-    :secondary_unit: ! '[DQT_US]/2'
+    :value: 1.0
+    :unit_code: ! '[dqt_us]/2'
   :classification: us-volumes
   :property: dry volume
   :metric: false
@@ -1923,9 +1777,8 @@
   :primary_code: ! '[tbs_us]'
   :secondary_code: ! '[TBS_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[foz_us]/2'
-    :secondary_unit: ! '[FOZ_US]/2'
+    :value: 1.0
+    :unit_code: ! '[foz_us]/2'
   :classification: us-volumes
   :property: volume
   :metric: false
@@ -1936,9 +1789,8 @@
   :primary_code: ! '[tsp_us]'
   :secondary_code: ! '[TSP_US]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[tbs_us]/3'
-    :secondary_unit: ! '[TBS_US]/3'
+    :value: 1.0
+    :unit_code: ! '[tbs_us]/3'
   :classification: us-volumes
   :property: volume
   :metric: false
@@ -1949,9 +1801,8 @@
   :primary_code: ! '[cup_us]'
   :secondary_code: ! '[CUP_US]'
   :scale:
-    :value: '16'
-    :primary_unit: ! '[tbs_us]'
-    :secondary_unit: ! '[TBS_US]'
+    :value: 16.0
+    :unit_code: ! '[tbs_us]'
   :classification: us-volumes
   :property: volume
   :metric: false
@@ -1962,9 +1813,8 @@
   :primary_code: ! '[gal_br]'
   :secondary_code: ! '[GAL_BR]'
   :scale:
-    :value: '4.54609'
-    :primary_unit: l
-    :secondary_unit: L
+    :value: 4.54609
+    :unit_code: l
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -1975,9 +1825,8 @@
   :primary_code: ! '[pk_br]'
   :secondary_code: ! '[PK_BR]'
   :scale:
-    :value: '2'
-    :primary_unit: ! '[gal_br]'
-    :secondary_unit: ! '[GAL_BR]'
+    :value: 2.0
+    :unit_code: ! '[gal_br]'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -1988,9 +1837,8 @@
   :primary_code: ! '[bu_br]'
   :secondary_code: ! '[BU_BR]'
   :scale:
-    :value: '4'
-    :primary_unit: ! '[pk_br]'
-    :secondary_unit: ! '[PK_BR]'
+    :value: 4.0
+    :unit_code: ! '[pk_br]'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -2001,9 +1849,8 @@
   :primary_code: ! '[qt_br]'
   :secondary_code: ! '[QT_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[gal_br]/4'
-    :secondary_unit: ! '[GAL_BR]/4'
+    :value: 1.0
+    :unit_code: ! '[gal_br]/4'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -2014,9 +1861,8 @@
   :primary_code: ! '[pt_br]'
   :secondary_code: ! '[PT_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[qt_br]/2'
-    :secondary_unit: ! '[QT_BR]/2'
+    :value: 1.0
+    :unit_code: ! '[qt_br]/2'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -2027,9 +1873,8 @@
   :primary_code: ! '[gil_br]'
   :secondary_code: ! '[GIL_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[pt_br]/4'
-    :secondary_unit: ! '[PT_BR]/4'
+    :value: 1.0
+    :unit_code: ! '[pt_br]/4'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -2040,9 +1885,8 @@
   :primary_code: ! '[foz_br]'
   :secondary_code: ! '[FOZ_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[gil_br]/5'
-    :secondary_unit: ! '[GIL_BR]/5'
+    :value: 1.0
+    :unit_code: ! '[gil_br]/5'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -2053,9 +1897,8 @@
   :primary_code: ! '[fdr_br]'
   :secondary_code: ! '[FDR_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[foz_br]/8'
-    :secondary_unit: ! '[FOZ_BR]/8'
+    :value: 1.0
+    :unit_code: ! '[foz_br]/8'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -2066,9 +1909,8 @@
   :primary_code: ! '[min_br]'
   :secondary_code: ! '[MIN_BR]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[fdr_br]/60'
-    :secondary_unit: ! '[FDR_BR]/60'
+    :value: 1.0
+    :unit_code: ! '[fdr_br]/60'
   :classification: brit-volumes
   :property: volume
   :metric: false
@@ -2079,9 +1921,8 @@
   :primary_code: ! '[gr]'
   :secondary_code: ! '[GR]'
   :scale:
-    :value: '64.79891'
-    :primary_unit: mg
-    :secondary_unit: MG
+    :value: 64.79891
+    :unit_code: mg
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2092,9 +1933,8 @@
   :primary_code: ! '[lb_av]'
   :secondary_code: ! '[LB_AV]'
   :scale:
-    :value: '7000'
-    :primary_unit: ! '[gr]'
-    :secondary_unit: ! '[GR]'
+    :value: 7000.0
+    :unit_code: ! '[gr]'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2105,9 +1945,8 @@
   :primary_code: ! '[oz_av]'
   :secondary_code: ! '[OZ_AV]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[lb_av]/16'
-    :secondary_unit: ! '[LB_AV]/16'
+    :value: 1.0
+    :unit_code: ! '[lb_av]/16'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2118,9 +1957,8 @@
   :primary_code: ! '[dr_av]'
   :secondary_code: ! '[DR_AV]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[oz_av]/16'
-    :secondary_unit: ! '[OZ_AV]/16'
+    :value: 1.0
+    :unit_code: ! '[oz_av]/16'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2133,9 +1971,8 @@
   :primary_code: ! '[scwt_av]'
   :secondary_code: ! '[SCWT_AV]'
   :scale:
-    :value: '100'
-    :primary_unit: ! '[lb_av]'
-    :secondary_unit: ! '[LB_AV]'
+    :value: 100.0
+    :unit_code: ! '[lb_av]'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2148,9 +1985,8 @@
   :primary_code: ! '[lcwt_av]'
   :secondary_code: ! '[LCWT_AV]'
   :scale:
-    :value: '112'
-    :primary_unit: ! '[lb_av]'
-    :secondary_unit: ! '[LB_AV]'
+    :value: 112.0
+    :unit_code: ! '[lb_av]'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2163,9 +1999,8 @@
   :primary_code: ! '[ston_av]'
   :secondary_code: ! '[STON_AV]'
   :scale:
-    :value: '20'
-    :primary_unit: ! '[scwt_av]'
-    :secondary_unit: ! '[SCWT_AV]'
+    :value: 20.0
+    :unit_code: ! '[scwt_av]'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2178,9 +2013,8 @@
   :primary_code: ! '[lton_av]'
   :secondary_code: ! '[LTON_AV]'
   :scale:
-    :value: '20'
-    :primary_unit: ! '[lcwt_av]'
-    :secondary_unit: ! '[LCWT_AV]'
+    :value: 20.0
+    :unit_code: ! '[lcwt_av]'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2193,9 +2027,8 @@
   :primary_code: ! '[stone_av]'
   :secondary_code: ! '[STONE_AV]'
   :scale:
-    :value: '14'
-    :primary_unit: ! '[lb_av]'
-    :secondary_unit: ! '[LB_AV]'
+    :value: 14.0
+    :unit_code: ! '[lb_av]'
   :classification: avoirdupois
   :property: mass
   :metric: false
@@ -2206,9 +2039,8 @@
   :primary_code: ! '[pwt_tr]'
   :secondary_code: ! '[PWT_TR]'
   :scale:
-    :value: '24'
-    :primary_unit: ! '[gr]'
-    :secondary_unit: ! '[GR]'
+    :value: 24.0
+    :unit_code: ! '[gr]'
   :classification: troy
   :property: mass
   :metric: false
@@ -2219,9 +2051,8 @@
   :primary_code: ! '[oz_tr]'
   :secondary_code: ! '[OZ_TR]'
   :scale:
-    :value: '20'
-    :primary_unit: ! '[pwt_tr]'
-    :secondary_unit: ! '[PWT_TR]'
+    :value: 20.0
+    :unit_code: ! '[pwt_tr]'
   :classification: troy
   :property: mass
   :metric: false
@@ -2232,9 +2063,8 @@
   :primary_code: ! '[lb_tr]'
   :secondary_code: ! '[LB_TR]'
   :scale:
-    :value: '12'
-    :primary_unit: ! '[oz_tr]'
-    :secondary_unit: ! '[OZ_TR]'
+    :value: 12.0
+    :unit_code: ! '[oz_tr]'
   :classification: troy
   :property: mass
   :metric: false
@@ -2245,9 +2075,8 @@
   :primary_code: ! '[sc_ap]'
   :secondary_code: ! '[SC_AP]'
   :scale:
-    :value: '20'
-    :primary_unit: ! '[gr]'
-    :secondary_unit: ! '[GR]'
+    :value: 20.0
+    :unit_code: ! '[gr]'
   :classification: apoth
   :property: mass
   :metric: false
@@ -2260,9 +2089,8 @@
   :primary_code: ! '[dr_ap]'
   :secondary_code: ! '[DR_AP]'
   :scale:
-    :value: '3'
-    :primary_unit: ! '[sc_ap]'
-    :secondary_unit: ! '[SC_AP]'
+    :value: 3.0
+    :unit_code: ! '[sc_ap]'
   :classification: apoth
   :property: mass
   :metric: false
@@ -2273,9 +2101,8 @@
   :primary_code: ! '[oz_ap]'
   :secondary_code: ! '[OZ_AP]'
   :scale:
-    :value: '8'
-    :primary_unit: ! '[dr_ap]'
-    :secondary_unit: ! '[DR_AP]'
+    :value: 8.0
+    :unit_code: ! '[dr_ap]'
   :classification: apoth
   :property: mass
   :metric: false
@@ -2286,9 +2113,8 @@
   :primary_code: ! '[lb_ap]'
   :secondary_code: ! '[LB_AP]'
   :scale:
-    :value: '12'
-    :primary_unit: ! '[oz_ap]'
-    :secondary_unit: ! '[OZ_AP]'
+    :value: 12.0
+    :unit_code: ! '[oz_ap]'
   :classification: apoth
   :property: mass
   :metric: false
@@ -2299,9 +2125,8 @@
   :primary_code: ! '[lne]'
   :secondary_code: ! '[LNE]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[in_i]/12'
-    :secondary_unit: ! '[IN_I]/12'
+    :value: 1.0
+    :unit_code: ! '[in_i]/12'
   :classification: typeset
   :property: length
   :metric: false
@@ -2312,9 +2137,8 @@
   :primary_code: ! '[pnt]'
   :secondary_code: ! '[PNT]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[lne]/6'
-    :secondary_unit: ! '[LNE]/6'
+    :value: 1.0
+    :unit_code: ! '[lne]/6'
   :classification: typeset
   :property: length
   :metric: false
@@ -2325,9 +2149,8 @@
   :primary_code: ! '[pca]'
   :secondary_code: ! '[PCA]'
   :scale:
-    :value: '12'
-    :primary_unit: ! '[pnt]'
-    :secondary_unit: ! '[PNT]'
+    :value: 12.0
+    :unit_code: ! '[pnt]'
   :classification: typeset
   :property: length
   :metric: false
@@ -2338,9 +2161,8 @@
   :primary_code: ! '[pnt_pr]'
   :secondary_code: ! '[PNT_PR]'
   :scale:
-    :value: '0.013837'
-    :primary_unit: ! '[in_i]'
-    :secondary_unit: ! '[IN_I]'
+    :value: 0.013837
+    :unit_code: ! '[in_i]'
   :classification: typeset
   :property: length
   :metric: false
@@ -2351,9 +2173,8 @@
   :primary_code: ! '[pca_pr]'
   :secondary_code: ! '[PCA_PR]'
   :scale:
-    :value: '12'
-    :primary_unit: ! '[pnt_pr]'
-    :secondary_unit: ! '[PNT_PR]'
+    :value: 12.0
+    :unit_code: ! '[pnt_pr]'
   :classification: typeset
   :property: length
   :metric: false
@@ -2366,9 +2187,8 @@
   :primary_code: ! '[pied]'
   :secondary_code: ! '[PIED]'
   :scale:
-    :value: '32.48'
-    :primary_unit: cm
-    :secondary_unit: CM
+    :value: 32.48
+    :unit_code: cm
   :classification: typeset
   :property: length
   :metric: false
@@ -2381,9 +2201,8 @@
   :primary_code: ! '[pouce]'
   :secondary_code: ! '[POUCE]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[pied]/12'
-    :secondary_unit: ! '[PIED]/12'
+    :value: 1.0
+    :unit_code: ! '[pied]/12'
   :classification: typeset
   :property: length
   :metric: false
@@ -2396,9 +2215,8 @@
   :primary_code: ! '[ligne]'
   :secondary_code: ! '[LIGNE]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[pouce]/12'
-    :secondary_unit: ! '[POUCE]/12'
+    :value: 1.0
+    :unit_code: ! '[pouce]/12'
   :classification: typeset
   :property: length
   :metric: false
@@ -2411,9 +2229,8 @@
   :primary_code: ! '[didot]'
   :secondary_code: ! '[DIDOT]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[ligne]/6'
-    :secondary_unit: ! '[LIGNE]/6'
+    :value: 1.0
+    :unit_code: ! '[ligne]/6'
   :classification: typeset
   :property: length
   :metric: false
@@ -2426,9 +2243,8 @@
   :primary_code: ! '[cicero]'
   :secondary_code: ! '[CICERO]'
   :scale:
-    :value: '12'
-    :primary_unit: ! '[didot]'
-    :secondary_unit: ! '[DIDOT]'
+    :value: 12.0
+    :unit_code: ! '[didot]'
   :classification: typeset
   :property: length
   :metric: false
@@ -2454,9 +2270,8 @@
   :primary_code: cal_[15]
   :secondary_code: CAL_[15]
   :scale:
-    :value: '4.18580'
-    :primary_unit: J
-    :secondary_unit: J
+    :value: 4.1858
+    :unit_code: J
   :classification: heat
   :property: energy
   :metric: true
@@ -2467,9 +2282,8 @@
   :primary_code: cal_[20]
   :secondary_code: CAL_[20]
   :scale:
-    :value: '4.18190'
-    :primary_unit: J
-    :secondary_unit: J
+    :value: 4.1819
+    :unit_code: J
   :classification: heat
   :property: energy
   :metric: true
@@ -2480,9 +2294,8 @@
   :primary_code: cal_m
   :secondary_code: CAL_M
   :scale:
-    :value: '4.19002'
-    :primary_unit: J
-    :secondary_unit: J
+    :value: 4.19002
+    :unit_code: J
   :classification: heat
   :property: energy
   :metric: true
@@ -2493,9 +2306,8 @@
   :primary_code: cal_IT
   :secondary_code: CAL_IT
   :scale:
-    :value: '4.1868'
-    :primary_unit: J
-    :secondary_unit: J
+    :value: 4.1868
+    :unit_code: J
   :classification: heat
   :property: energy
   :metric: true
@@ -2506,9 +2318,8 @@
   :primary_code: cal_th
   :secondary_code: CAL_TH
   :scale:
-    :value: '4.184'
-    :primary_unit: J
-    :secondary_unit: J
+    :value: 4.184
+    :unit_code: J
   :classification: heat
   :property: energy
   :metric: true
@@ -2519,9 +2330,8 @@
   :primary_code: cal
   :secondary_code: CAL
   :scale:
-    :value: '1'
-    :primary_unit: cal_th
-    :secondary_unit: CAL_TH
+    :value: 1.0
+    :unit_code: cal_th
   :classification: heat
   :property: energy
   :metric: true
@@ -2532,9 +2342,8 @@
   :primary_code: ! '[Cal]'
   :secondary_code: ! '[CAL]'
   :scale:
-    :value: '1'
-    :primary_unit: kcal_th
-    :secondary_unit: KCAL_TH
+    :value: 1.0
+    :unit_code: kcal_th
   :classification: heat
   :property: energy
   :metric: false
@@ -2545,9 +2354,8 @@
   :primary_code: ! '[Btu_39]'
   :secondary_code: ! '[BTU_39]'
   :scale:
-    :value: '1.05967'
-    :primary_unit: kJ
-    :secondary_unit: kJ
+    :value: 1.05967
+    :unit_code: kJ
   :classification: heat
   :property: energy
   :metric: false
@@ -2558,9 +2366,8 @@
   :primary_code: ! '[Btu_59]'
   :secondary_code: ! '[BTU_59]'
   :scale:
-    :value: '1.05480'
-    :primary_unit: kJ
-    :secondary_unit: kJ
+    :value: 1.0548
+    :unit_code: kJ
   :classification: heat
   :property: energy
   :metric: false
@@ -2571,9 +2378,8 @@
   :primary_code: ! '[Btu_60]'
   :secondary_code: ! '[BTU_60]'
   :scale:
-    :value: '1.05468'
-    :primary_unit: kJ
-    :secondary_unit: kJ
+    :value: 1.05468
+    :unit_code: kJ
   :classification: heat
   :property: energy
   :metric: false
@@ -2584,9 +2390,8 @@
   :primary_code: ! '[Btu_m]'
   :secondary_code: ! '[BTU_M]'
   :scale:
-    :value: '1.05587'
-    :primary_unit: kJ
-    :secondary_unit: kJ
+    :value: 1.05587
+    :unit_code: kJ
   :classification: heat
   :property: energy
   :metric: false
@@ -2597,9 +2402,8 @@
   :primary_code: ! '[Btu_IT]'
   :secondary_code: ! '[BTU_IT]'
   :scale:
-    :value: '1.05505585262'
-    :primary_unit: kJ
-    :secondary_unit: kJ
+    :value: 1.05505585262
+    :unit_code: kJ
   :classification: heat
   :property: energy
   :metric: false
@@ -2610,9 +2414,8 @@
   :primary_code: ! '[Btu_th]'
   :secondary_code: ! '[BTU_TH]'
   :scale:
-    :value: '1.054350'
-    :primary_unit: kJ
-    :secondary_unit: kJ
+    :value: 1.05435
+    :unit_code: kJ
   :classification: heat
   :property: energy
   :metric: false
@@ -2623,9 +2426,8 @@
   :primary_code: ! '[Btu]'
   :secondary_code: ! '[BTU]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[Btu_th]'
-    :secondary_unit: ! '[BTU_TH]'
+    :value: 1.0
+    :unit_code: ! '[Btu_th]'
   :classification: heat
   :property: energy
   :metric: false
@@ -2636,9 +2438,8 @@
   :primary_code: ! '[HP]'
   :secondary_code: ! '[HP]'
   :scale:
-    :value: '550'
-    :primary_unit: ! '[ft_i].[lbf_av]/s'
-    :secondary_unit: ! '[FT_I].[LBF_AV]/S'
+    :value: 550.0
+    :unit_code: ! '[ft_i].[lbf_av]/s'
   :classification: heat
   :property: power
   :metric: false
@@ -2649,9 +2450,8 @@
   :primary_code: m[H2O]
   :secondary_code: M[H2O]
   :scale:
-    :value: '9.80665'
-    :primary_unit: kPa
-    :secondary_unit: KPAL
+    :value: 9.80665
+    :unit_code: kPa
   :classification: clinical
   :property: pressure
   :metric: true
@@ -2662,9 +2462,8 @@
   :primary_code: m[Hg]
   :secondary_code: M[HG]
   :scale:
-    :value: '133.3220'
-    :primary_unit: kPa
-    :secondary_unit: KPAL
+    :value: 133.322
+    :unit_code: kPa
   :classification: clinical
   :property: pressure
   :metric: true
@@ -2675,9 +2474,8 @@
   :primary_code: ! '[in_i''H2O]'
   :secondary_code: ! '[IN_I''H2O]'
   :scale:
-    :value: '1'
-    :primary_unit: m[H2O].[in_i]/m
-    :secondary_unit: M[H2O].[IN_I]/M
+    :value: 1.0
+    :unit_code: m[H2O].[in_i]/m
   :classification: clinical
   :property: pressure
   :metric: false
@@ -2688,9 +2486,8 @@
   :primary_code: ! '[in_i''Hg]'
   :secondary_code: ! '[IN_i''HG]'
   :scale:
-    :value: '1'
-    :primary_unit: m[Hg].[in_i]/m
-    :secondary_unit: M[HG].[IN_I]/M
+    :value: 1.0
+    :unit_code: m[Hg].[in_i]/m
   :classification: clinical
   :property: pressure
   :metric: false
@@ -2701,9 +2498,8 @@
   :primary_code: ! '[PRU]'
   :secondary_code: ! '[PRU]'
   :scale:
-    :value: '1'
-    :primary_unit: mm[Hg].s/ml
-    :secondary_unit: MM[HG].S/ML
+    :value: 1.0
+    :unit_code: mm[Hg].s/ml
   :classification: clinical
   :property: fluid resistance
   :metric: false
@@ -2714,9 +2510,8 @@
   :primary_code: ! '[wood''U]'
   :secondary_code: ! '[WOOD''U]'
   :scale:
-    :value: '1'
-    :primary_unit: mm[Hg].min/L
-    :secondary_unit: MM[HG].MIN/L
+    :value: 1.0
+    :unit_code: mm[Hg].min/L
   :classification: clinical
   :property: fluid resistance
   :metric: false
@@ -2727,9 +2522,8 @@
   :primary_code: ! '[diop]'
   :secondary_code: ! '[DIOP]'
   :scale:
-    :value: '1'
-    :primary_unit: /m
-    :secondary_unit: /M
+    :value: 1.0
+    :unit_code: /m
   :classification: clinical
   :property: refraction of a lens
   :metric: false
@@ -2770,9 +2564,8 @@
   :primary_code: ! '[mesh_i]'
   :secondary_code: ! '[MESH_I]'
   :scale:
-    :value: '1'
-    :primary_unit: /[in_i]
-    :secondary_unit: /[IN_I]
+    :value: 1.0
+    :unit_code: /[in_i]
   :classification: clinical
   :property: lineic number
   :metric: false
@@ -2785,9 +2578,8 @@
   :primary_code: ! '[Ch]'
   :secondary_code: ! '[CH]'
   :scale:
-    :value: '1'
-    :primary_unit: mm/[pi]
-    :secondary_unit: MM/[PI]
+    :value: 1.0
+    :unit_code: mm/[pi]
   :classification: clinical
   :property: gauge of catheters
   :metric: false
@@ -2798,9 +2590,8 @@
   :primary_code: ! '[drp]'
   :secondary_code: ! '[DRP]'
   :scale:
-    :value: '1'
-    :primary_unit: ml/12
-    :secondary_unit: ML/12
+    :value: 1.0
+    :unit_code: ml/12
   :classification: clinical
   :property: volume
   :metric: false
@@ -2811,9 +2602,8 @@
   :primary_code: ! '[hnsf''U]'
   :secondary_code: ! '[HNSF''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: x-ray attenuation
   :metric: false
@@ -2824,9 +2614,8 @@
   :primary_code: ! '[MET]'
   :secondary_code: ! '[MET]'
   :scale:
-    :value: '3.5'
-    :primary_unit: mL/min/kg
-    :secondary_unit: ML/MIN/KG
+    :value: 3.5
+    :unit_code: mL/min/kg
   :classification: clinical
   :property: metabolic cost of physical activity
   :metric: false
@@ -2897,9 +2686,8 @@
   :primary_code: ! '[hp_X]'
   :secondary_code: ! '[HP_X]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Hahnemann)
   :metric: false
@@ -2910,9 +2698,8 @@
   :primary_code: ! '[hp_C]'
   :secondary_code: ! '[HP_C]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Hahnemann)
   :metric: false
@@ -2923,9 +2710,8 @@
   :primary_code: ! '[hp_M]'
   :secondary_code: ! '[HP_M]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Hahnemann)
   :metric: false
@@ -2936,9 +2722,8 @@
   :primary_code: ! '[hp_Q]'
   :secondary_code: ! '[HP_Q]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Hahnemann)
   :metric: false
@@ -2949,9 +2734,8 @@
   :primary_code: ! '[kp_X]'
   :secondary_code: ! '[KP_X]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Korsakov)
   :metric: false
@@ -2962,9 +2746,8 @@
   :primary_code: ! '[kp_C]'
   :secondary_code: ! '[KP_C]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Korsakov)
   :metric: false
@@ -2975,9 +2758,8 @@
   :primary_code: ! '[kp_M]'
   :secondary_code: ! '[KP_M]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Korsakov)
   :metric: false
@@ -2988,9 +2770,8 @@
   :primary_code: ! '[kp_Q]'
   :secondary_code: ! '[KP_Q]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (Korsakov)
   :metric: false
@@ -3001,9 +2782,8 @@
   :primary_code: eq
   :secondary_code: EQ
   :scale:
-    :value: '1'
-    :primary_unit: mol
-    :secondary_unit: MOL
+    :value: 1.0
+    :unit_code: mol
   :classification: chemical
   :property: amount of substance
   :metric: true
@@ -3014,9 +2794,8 @@
   :primary_code: osm
   :secondary_code: OSM
   :scale:
-    :value: '1'
-    :primary_unit: mol
-    :secondary_unit: MOL
+    :value: 1.0
+    :unit_code: mol
   :classification: chemical
   :property: amount of substance (dissolved particles)
   :metric: true
@@ -3042,9 +2821,8 @@
   :primary_code: g%
   :secondary_code: G%
   :scale:
-    :value: '1'
-    :primary_unit: g/dl
-    :secondary_unit: G/DL
+    :value: 1.0
+    :unit_code: g/dl
   :classification: chemical
   :property: mass concentration
   :metric: true
@@ -3055,9 +2833,8 @@
   :primary_code: ! '[S]'
   :secondary_code: ! '[S]'
   :scale:
-    :value: '1'
-    :primary_unit: 10*-13.s
-    :secondary_unit: 10*-13.S
+    :value: 1.0
+    :unit_code: 10*-13.s
   :classification: chemical
   :property: sedimentation coefficient
   :metric: false
@@ -3068,9 +2845,8 @@
   :primary_code: ! '[HPF]'
   :secondary_code: ! '[HPF]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: view area in microscope
   :metric: false
@@ -3081,9 +2857,8 @@
   :primary_code: ! '[LPF]'
   :secondary_code: ! '[LPF]'
   :scale:
-    :value: '100'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 100.0
+    :unit_code: '1'
   :classification: chemical
   :property: view area in microscope
   :metric: false
@@ -3094,9 +2869,8 @@
   :primary_code: kat
   :secondary_code: KAT
   :scale:
-    :value: '1'
-    :primary_unit: mol/s
-    :secondary_unit: MOL/S
+    :value: 1.0
+    :unit_code: mol/s
   :classification: chemical
   :property: catalytic activity
   :metric: true
@@ -3107,9 +2881,8 @@
   :primary_code: U
   :secondary_code: U
   :scale:
-    :value: '1'
-    :primary_unit: umol/min
-    :secondary_unit: UMOL/MIN
+    :value: 1.0
+    :unit_code: umol/min
   :classification: chemical
   :property: catalytic activity
   :metric: true
@@ -3120,9 +2893,8 @@
   :primary_code: ! '[iU]'
   :secondary_code: ! '[IU]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: arbitrary
   :metric: true
@@ -3133,9 +2905,8 @@
   :primary_code: ! '[IU]'
   :secondary_code: ! '[IU]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[iU]'
-    :secondary_unit: ! '[IU]'
+    :value: 1.0
+    :unit_code: ! '[iU]'
   :classification: chemical
   :property: arbitrary
   :metric: true
@@ -3146,9 +2917,8 @@
   :primary_code: ! '[arb''U]'
   :secondary_code: ! '[ARB''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: arbitrary
   :metric: false
@@ -3159,9 +2929,8 @@
   :primary_code: ! '[USP''U]'
   :secondary_code: ! '[USP''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: arbitrary
   :metric: false
@@ -3172,9 +2941,8 @@
   :primary_code: ! '[GPL''U]'
   :secondary_code: ! '[GPL''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of anticardiolipin IgG
   :metric: false
@@ -3185,9 +2953,8 @@
   :primary_code: ! '[MPL''U]'
   :secondary_code: ! '[MPL''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of anticardiolipin IgM
   :metric: false
@@ -3198,9 +2965,8 @@
   :primary_code: ! '[APL''U]'
   :secondary_code: ! '[APL''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of anticardiolipin IgA
   :metric: false
@@ -3211,9 +2977,8 @@
   :primary_code: ! '[beth''U]'
   :secondary_code: ! '[BETH''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of factor VIII inhibitor
   :metric: false
@@ -3224,9 +2989,8 @@
   :primary_code: ! '[todd''U]'
   :secondary_code: ! '[TODD''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity antistreptolysin O
   :metric: false
@@ -3237,9 +3001,8 @@
   :primary_code: ! '[dye''U]'
   :secondary_code: ! '[DYE''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of amylase
   :metric: false
@@ -3250,9 +3013,8 @@
   :primary_code: ! '[smgy''U]'
   :secondary_code: ! '[SMGY''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of amylase
   :metric: false
@@ -3263,9 +3025,8 @@
   :primary_code: ! '[bdsk''U]'
   :secondary_code: ! '[BDSK''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of phosphatase
   :metric: false
@@ -3276,9 +3037,8 @@
   :primary_code: ! '[ka''U]'
   :secondary_code: ! '[KA''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of phosphatase
   :metric: false
@@ -3289,9 +3049,8 @@
   :primary_code: ! '[knk''U]'
   :secondary_code: ! '[KNK''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: arbitrary biologic activity
   :metric: false
@@ -3302,9 +3061,8 @@
   :primary_code: ! '[mclg''U]'
   :secondary_code: ! '[MCLG''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: arbitrary biologic activity
   :metric: false
@@ -3315,9 +3073,8 @@
   :primary_code: ! '[tb''U]'
   :secondary_code: ! '[TB''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity of tuberculin
   :metric: false
@@ -3328,9 +3085,8 @@
   :primary_code: ! '[CCID_50]'
   :secondary_code: ! '[CCID_50]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity (infectivity) of an infectious agent preparation
   :metric: false
@@ -3341,9 +3097,8 @@
   :primary_code: ! '[TCID_50]'
   :secondary_code: ! '[TCID_50]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: biologic activity (infectivity) of an infectious agent preparation
   :metric: false
@@ -3354,9 +3109,8 @@
   :primary_code: ! '[PFU]'
   :secondary_code: ! '[PFU]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: amount of an infectious agent
   :metric: false
@@ -3367,9 +3121,8 @@
   :primary_code: ! '[FFU]'
   :secondary_code: ! '[FFU]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: amount of an infectious agent
   :metric: false
@@ -3380,9 +3133,8 @@
   :primary_code: ! '[CFU]'
   :secondary_code: ! '[CFU]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: amount of a proliferating organism
   :metric: false
@@ -3393,9 +3145,8 @@
   :primary_code: ! '[BAU]'
   :secondary_code: ! '[BAU]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: amount of an allergen callibrated through in-vivo testing based on the
     ID50EAL method of (intradermal dilution for 50mm sum of erythema diameters
@@ -3407,9 +3158,8 @@
   :primary_code: ! '[AU]'
   :secondary_code: ! '[AU]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: procedure defined amount of an allergen using some reference standard
   :metric: false
@@ -3420,9 +3170,8 @@
   :primary_code: ! '[Amb''a''1''U]'
   :secondary_code: ! '[AMB''A''1''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: procedure defined amount of the major allergen of ragweed.
   :metric: false
@@ -3433,9 +3182,8 @@
   :primary_code: ! '[PNU]'
   :secondary_code: ! '[PNU]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: procedure defined amount of a protein substance
   :metric: false
@@ -3446,9 +3194,8 @@
   :primary_code: ! '[Lf]'
   :secondary_code: ! '[LF]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: procedure defined amount of an antigen substance
   :metric: false
@@ -3459,9 +3206,8 @@
   :primary_code: ! '[D''ag''U]'
   :secondary_code: ! '[D''AG''U]'
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: chemical
   :property: procedure defined amount of an antigen substance
   :metric: false
@@ -3607,9 +3353,8 @@
   :primary_code: st
   :secondary_code: STR
   :scale:
-    :value: '1'
-    :primary_unit: m3
-    :secondary_unit: M3
+    :value: 1.0
+    :unit_code: m3
   :classification: misc
   :property: volume
   :metric: true
@@ -3620,9 +3365,8 @@
   :primary_code: Ao
   :secondary_code: AO
   :scale:
-    :value: '0.1'
-    :primary_unit: nm
-    :secondary_unit: NM
+    :value: 0.1
+    :unit_code: nm
   :classification: misc
   :property: length
   :metric: false
@@ -3633,9 +3377,8 @@
   :primary_code: b
   :secondary_code: BRN
   :scale:
-    :value: '100'
-    :primary_unit: fm2
-    :secondary_unit: FM2
+    :value: 100.0
+    :unit_code: fm2
   :classification: misc
   :property: action area
   :metric: false
@@ -3646,9 +3389,8 @@
   :primary_code: att
   :secondary_code: ATT
   :scale:
-    :value: '1'
-    :primary_unit: kgf/cm2
-    :secondary_unit: KGF/CM2
+    :value: 1.0
+    :unit_code: kgf/cm2
   :classification: misc
   :property: pressure
   :metric: false
@@ -3659,9 +3401,8 @@
   :primary_code: mho
   :secondary_code: MHO
   :scale:
-    :value: '1'
-    :primary_unit: S
-    :secondary_unit: S
+    :value: 1.0
+    :unit_code: S
   :classification: misc
   :property: electric conductance
   :metric: true
@@ -3672,9 +3413,8 @@
   :primary_code: ! '[psi]'
   :secondary_code: ! '[PSI]'
   :scale:
-    :value: '1'
-    :primary_unit: ! '[lbf_av]/[in_i]2'
-    :secondary_unit: ! '[LBF_AV]/[IN_I]2'
+    :value: 1.0
+    :unit_code: ! '[lbf_av]/[in_i]2'
   :classification: misc
   :property: pressure
   :metric: false
@@ -3685,9 +3425,8 @@
   :primary_code: circ
   :secondary_code: CIRC
   :scale:
-    :value: '2'
-    :primary_unit: ! '[pi].rad'
-    :secondary_unit: ! '[PI].RAD'
+    :value: 2.0
+    :unit_code: ! '[pi].rad'
   :classification: misc
   :property: plane angle
   :metric: false
@@ -3698,9 +3437,8 @@
   :primary_code: sph
   :secondary_code: SPH
   :scale:
-    :value: '4'
-    :primary_unit: ! '[pi].sr'
-    :secondary_unit: ! '[PI].SR'
+    :value: 4.0
+    :unit_code: ! '[pi].sr'
   :classification: misc
   :property: solid angle
   :metric: false
@@ -3711,9 +3449,8 @@
   :primary_code: ! '[car_m]'
   :secondary_code: ! '[CAR_M]'
   :scale:
-    :value: '0.2'
-    :primary_unit: g
-    :secondary_unit: G
+    :value: 0.2
+    :unit_code: g
   :classification: misc
   :property: mass
   :metric: false
@@ -3724,9 +3461,8 @@
   :primary_code: ! '[car_Au]'
   :secondary_code: ! '[CAR_AU]'
   :scale:
-    :value: '1'
-    :primary_unit: /24
-    :secondary_unit: /24
+    :value: 1.0
+    :unit_code: /24
   :classification: misc
   :property: mass fraction
   :metric: false
@@ -3737,9 +3473,8 @@
   :primary_code: ! '[smoot]'
   :secondary_code: ! '[SMOOT]'
   :scale:
-    :value: '67'
-    :primary_unit: ! '[in_i]'
-    :secondary_unit: ! '[IN_I]'
+    :value: 67.0
+    :unit_code: ! '[in_i]'
   :classification: misc
   :property: length
   :metric: false
@@ -3765,9 +3500,8 @@
   :primary_code: bit
   :secondary_code: BIT
   :scale:
-    :value: '1'
-    :primary_unit: '1'
-    :secondary_unit: '1'
+    :value: 1.0
+    :unit_code: '1'
   :classification: infotech
   :property: amount of information
   :metric: true
@@ -3778,9 +3512,8 @@
   :primary_code: By
   :secondary_code: BY
   :scale:
-    :value: '8'
-    :primary_unit: bit
-    :secondary_unit: bit
+    :value: 8.0
+    :unit_code: bit
   :classification: infotech
   :property: amount of information
   :metric: true
@@ -3791,9 +3524,8 @@
   :primary_code: Bd
   :secondary_code: Bd
   :scale:
-    :value: '1'
-    :primary_unit: /s
-    :secondary_unit: /s
+    :value: 1.0
+    :unit_code: /s
   :classification: infotech
   :property: signal transmission rate
   :metric: true

@@ -9,5 +9,9 @@ module Unitwise::Unit
       Unitwise.data_file 'prefix'
     end
 
+    def scale=(value)
+      scale.value = value
+    end
+
   end
 end
