@@ -1,21 +1,12 @@
 require 'yaml'
-
-module Unitwise
+module Unitwise::Unit
   class Base
-    attr_accessor :names, :symbol, :primary_code, :secondary_code
+    attr_accessor :names, :symbol, :primary_code, :secondary_code, :scale
 
     def self.all
       @all ||= data.map do |d|
         self.new d
       end
-    end
-
-    def self.data
-      @data ||= YAML::load File.open(data_file)
-    end
-
-    def self.data_file
-      @data_file ||= Unitwise.data_file(key)
     end
 
     def self.find(string)

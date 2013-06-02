@@ -22,7 +22,7 @@ module Unitwise::Standard
     end
 
     def self.path
-      File.join Unitwise.data_path, "#{self.local_key}.yaml"
+      Unitwise.data_file(local_key)
     end
 
     def self.write

@@ -1,4 +1,4 @@
-module Unitwise
+module Unitwise::Unit
   class Expression
     attr_reader :string
     class << self
@@ -20,7 +20,7 @@ module Unitwise
       end
 
       def prefixes
-        Unitwise.prefixes.map(&:codes).flatten
+        Prefix.all.map(&:codes).flatten
       end
 
       def prefix
@@ -28,11 +28,11 @@ module Unitwise
       end
 
       def atoms
-        Unitwise.units.map(&:codes).flatten.compact
+        Atom.all.map(&:codes).flatten.compact
       end
 
       def prefixable_atoms
-        Unitwise.units.select(&:metric).map(&:codes).flatten.compact
+        Atom.all.select(&:metric).map(&:codes).flatten.compact
       end
 
       def atom

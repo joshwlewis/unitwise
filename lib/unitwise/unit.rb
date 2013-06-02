@@ -1,8 +1,11 @@
+require 'unitwise/unit/base'
+require 'unitwise/unit/atom'
+require 'unitwise/unit/prefix'
+require 'unitwise/unit/element'
+require 'unitwise/unit/compound'
+require 'unitwise/unit/expression'
 module Unitwise
-  class Unit
-    def initialize(expression)
-      @expression = expression
-    end
+  module Unit
 
   end
 end
