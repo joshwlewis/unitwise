@@ -3,8 +3,8 @@ require 'unitwise/base'
 require 'unitwise/scale'
 require 'unitwise/atom'
 require 'unitwise/prefix'
-require 'unitwise/element'
-require 'unitwise/compound'
+require 'unitwise/term'
+require 'unitwise/unit'
 require 'unitwise/expression'
 
 module Unitwise
