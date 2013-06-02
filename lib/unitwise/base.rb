@@ -1,5 +1,5 @@
 require 'yaml'
-module Unitwise::Unit
+module Unitwise
   class Base
     attr_accessor :names, :symbol, :primary_code, :secondary_code
 

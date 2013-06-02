@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Unitwise::Unit::Atom do
+describe Unitwise::Atom do
   describe "class" do
-    subject {Unitwise::Unit::Atom}
+    subject {Unitwise::Atom}
     describe :data do
       it "should have data" do
         subject.data.must_be_instance_of Array
@@ -25,10 +25,10 @@ describe Unitwise::Unit::Atom do
   end
 
   describe "instance" do
-    subject {Unitwise::Unit::Atom.all.sample}
+    subject {Unitwise::Atom.all.sample}
     describe :scale do
       it "should be a scale object" do
-        subject.scale.must_be_instance_of Unitwise::Unit::Scale
+        subject.scale.must_be_instance_of Unitwise::Scale
       end
       it "should have a value" do
         subject.scale.value.must_be_kind_of Numeric

@@ -1,4 +1,4 @@
-module Unitwise::Unit
+module Unitwise
   class Expression
     attr_reader :string
     class << self
@@ -47,8 +47,8 @@ module Unitwise::Unit
         "(?<simple_unit>#{prefix}#{prefixable_atom}|#{atom})"
       end
 
-      def power
-        "(?<power>#{simple_unit}#{exponent}?)"
+      def annotatable
+        "(?<annotatable>#{simple_unit}#{exponent}?)"
       end
 
       def annotation
@@ -64,7 +64,7 @@ module Unitwise::Unit
       end
 
       def term
-        "(?<term>#{power}#{annotation}?|#{annotation}|#{factor}|\\(#{expression}\\))"
+        "(?<term>#{annotatable}#{annotation}?|#{annotation}|#{factor}|\\(#{expression}\\))"
       end
 
       def matcher

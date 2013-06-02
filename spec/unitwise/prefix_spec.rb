@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Unitwise::Unit::Prefix do
-  subject { Unitwise::Unit::Prefix }
+describe Unitwise::Prefix do
+  subject { Unitwise::Prefix }
   describe "::data" do
     it "should be an Array" do
       subject.data.must_be_instance_of Array

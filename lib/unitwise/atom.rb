@@ -1,4 +1,4 @@
-module Unitwise::Unit
+module Unitwise
   class Atom < Base
     attr_accessor :classification, :property, :metric, :special
     attr_accessor :arbitrary, :function, :dim

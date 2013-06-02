@@ -1,4 +1,4 @@
-module Unitwise::Unit
+module Unitwise
   class Prefix < Base
 
     def self.data

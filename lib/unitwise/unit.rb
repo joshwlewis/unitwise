@@ -1,12 +1,6 @@
-require 'unitwise/unit/base'
-require 'unitwise/unit/scale'
-require 'unitwise/unit/atom'
-require 'unitwise/unit/prefix'
-require 'unitwise/unit/element'
-require 'unitwise/unit/compound'
-require 'unitwise/unit/expression'
 module Unitwise
-  module Unit
+  class Unit
+    attr_accessor :terms
 
   end
 end

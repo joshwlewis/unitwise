@@ -1,5 +1,11 @@
 require "unitwise/version"
-require "unitwise/unit"
+require 'unitwise/base'
+require 'unitwise/scale'
+require 'unitwise/atom'
+require 'unitwise/prefix'
+require 'unitwise/element'
+require 'unitwise/compound'
+require 'unitwise/expression'
 
 module Unitwise
   def self.path
