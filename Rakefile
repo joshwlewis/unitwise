@@ -11,7 +11,7 @@ task default: :test
 
 namespace :unitwise do
   desc "Update Ucum Data"
-  task :update_ucum do
+  task :update_standard do
     require 'unitwise'
     require 'unitwise/standard'
     Unitwise::Standard::BaseUnit.write
