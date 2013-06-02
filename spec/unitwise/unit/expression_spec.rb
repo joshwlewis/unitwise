@@ -26,10 +26,10 @@ describe Unitwise::Unit::Expression do
   end
 
   it "should handle multiple terms" do
-    es = Unitwise::Unit::Expression.new("N/cm2").expressions
+    es = Unitwise::Unit::Expression.new("kN/cm2").expressions
     es.map(&:operator).must_equal ['/',nil]
     es.map(&:atom).must_equal ['N','m']
-    es.map(&:prefix).must_equal [nil,'c']
+    es.map(&:prefix).must_equal ['k','c']
     es.map(&:exponent).must_equal [nil,'2']
   end
 end
