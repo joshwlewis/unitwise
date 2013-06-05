@@ -10,7 +10,9 @@ module Unitwise
     end
 
     def scale=(value)
-      scale.value = value
+      @scale = Scale.new.tap do |s|
+        s.value = value
+      end
     end
 
   end

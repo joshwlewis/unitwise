@@ -32,7 +32,7 @@ module Unitwise
       end
 
       def prefixable_atoms
-        Atom.all.select(&:metric).map(&:codes).flatten.compact
+        Atom.all.select(&:metric?).map(&:codes).flatten.compact
       end
 
       def atom

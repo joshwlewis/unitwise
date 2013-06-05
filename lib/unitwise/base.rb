@@ -2,11 +2,10 @@ require 'yaml'
 module Unitwise
   class Base
     attr_accessor :names, :symbol, :primary_code, :secondary_code
+    attr_reader :scale
 
     def self.all
-      @all ||= data.map do |d|
-        self.new d
-      end
+      @all ||= data.map{|d| self.new d }
     end
 
     def self.find(string)
@@ -23,10 +22,6 @@ module Unitwise
 
     def codes
       [primary_code, secondary_code]
-    end
-
-    def scale
-      @scale ||= Scale.new
     end
 
   end

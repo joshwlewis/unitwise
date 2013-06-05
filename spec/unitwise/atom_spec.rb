@@ -25,15 +25,37 @@ describe Unitwise::Atom do
   end
 
   describe "instance" do
-    subject {Unitwise::Atom.all.sample}
-    describe :scale do
-      it "should be a scale object" do
-        subject.scale.must_be_instance_of Unitwise::Scale
+
+    describe "base" do
+      subject {Unitwise::Atom.all.find(&:base?)}
+      describe :scale do
+        it "should be nil" do
+          subject.scale.must_equal nil
+        end
       end
-      it "should have a value" do
-        subject.scale.value.must_be_kind_of Numeric
+
+      describe :metric? do
+        it "should be true" do
+          subject.metric?.must_equal true
+        end
       end
     end
+
+    describe "derived" do
+      subject {Unitwise::Atom.all.find(&:derived?)}
+      describe :scale do
+        it "should be a scale object" do
+          subject.scale.must_be_instance_of Unitwise::Scale
+        end
+        it "should have a value" do
+          subject.scale.value.must_be_kind_of Numeric
+        end
+        it "should have a unit" do
+          subject.scale.unit.must_be_instance_of Unitwise::Unit
+        end
+      end
+    end
+
   end
 
 end

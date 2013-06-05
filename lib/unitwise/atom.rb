@@ -3,25 +3,43 @@ module Unitwise
     attr_accessor :classification, :property, :metric, :special
     attr_accessor :arbitrary, :function, :dim
 
-    def self.data
-      @data ||= data_files.reduce([]){|m,f| m += YAML::load File.open(f)}
+    class << self
+      def data
+        @data ||= data_files.reduce([]){|m,f| m += YAML::load File.open(f)}
+      end
+
+      def data_files
+        %w(base_unit derived_unit).map{|type| Unitwise.data_file type}
+      end
     end
 
-    def self.data_files
-      %w(base_unit derived_unit).map{ |type| Unitwise.data_file type }
+    def base?
+      scale.nil?
     end
 
-    def base
-      @scale.nil?
+    def derived?
+      !base?
     end
 
-    def metric
-      base ? true : @metric
+    def metric?
+      base? ? true : !!metric
     end
 
-    def scale=(hash)
-      hash.each do |k,v|
-        scale.send :"#{k}=", v
+    def special?
+      !!special
+    end
+
+    def arbitrary?
+      !!arbitrary
+    end
+
+    def scale=(attributes)
+      if attributes
+        @scale = Scale.new.tap do |s|
+          attributes.each do |k,v|
+            s.send :"#{k}=", v
+          end
+        end
       end
     end
 
