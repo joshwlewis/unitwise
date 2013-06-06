@@ -93,10 +93,6 @@ module Unitwise
       end
     end
 
-    def exponent
-      (match[:exponent] || 1).to_i
-    end
-
     def method_missing(method, *args, &block)
       if match.names.include?(method.to_s)
         match[method]

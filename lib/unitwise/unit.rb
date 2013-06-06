@@ -1,6 +1,5 @@
 module Unitwise
   class Unit
-    attr_accessor :terms
 
     def initialize(expression)
       @expression = Expression.new(expression.to_s)
@@ -12,7 +11,7 @@ module Unitwise
 
     def terms
       @terms ||= expressions.map do |e|
-        Term.new(atom: e.atom, prefix: e.prefix, exponent: e.exponent)
+        Term.new(atom_code: e.atom, prefix_code: e.prefix, exponent: e.exponent)
       end
     end
   end
