@@ -14,7 +14,7 @@ module Unitwise
     end
 
     def base?
-      scale.nil?
+      scale.nil? && dim
     end
 
     def derived?
@@ -33,6 +33,10 @@ module Unitwise
       !!arbitrary
     end
 
+    def terminal?
+      base? || classification == 'dimless'
+    end
+
     def scale=(attributes)
       if attributes
         @scale = Scale.new.tap do |s|
@@ -41,6 +45,10 @@ module Unitwise
           end
         end
       end
+    end
+
+    def composition
+      scale.composition unless terminal?
     end
 
   end

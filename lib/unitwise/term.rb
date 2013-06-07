@@ -17,11 +17,16 @@ module Unitwise
     end
 
     def exponent=(number)
+      number ||= 1
       @exponent = number.is_a?(Numeric) ? number : number.to_i
     end
 
     def exponent
       @exponent ||= 1
+    end
+
+    def composition
+      atom.composition || [self]
     end
 
   end

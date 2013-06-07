@@ -14,5 +14,10 @@ module Unitwise
         Term.new(atom_code: e.atom, prefix_code: e.prefix, exponent: e.exponent)
       end
     end
+
+    def composition
+      terms.flat_map(&:composition)
+    end
+
   end
 end

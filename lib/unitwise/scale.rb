@@ -6,5 +6,9 @@ module Unitwise
       @unit ||= Unit.new unit_code
     end
 
+    def composition
+      unit.composition
+    end
+
   end
 end
