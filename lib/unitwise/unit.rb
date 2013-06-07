@@ -15,8 +15,8 @@ module Unitwise
       end
     end
 
-    def composition
-      terms.flat_map(&:composition)
+    def root_terms
+      terms.flat_map(&:root_terms)
     end
 
   end

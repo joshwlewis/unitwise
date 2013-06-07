@@ -33,8 +33,12 @@ module Unitwise
       !!arbitrary
     end
 
-    def terminal?
-      base? || classification == 'dimless'
+    def dimless?
+      classification == 'dimless'
+    end
+
+    def root?
+      base? || dimless?
     end
 
     def scale=(attributes)
@@ -47,8 +51,8 @@ module Unitwise
       end
     end
 
-    def composition
-      scale.composition unless terminal?
+    def root_terms
+      scale.root_terms unless root?
     end
 
   end

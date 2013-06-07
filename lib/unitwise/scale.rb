@@ -6,8 +6,8 @@ module Unitwise
       @unit ||= Unit.new unit_code
     end
 
-    def composition
-      unit.composition
+    def root_terms
+      unit.root_terms
     end
 
   end

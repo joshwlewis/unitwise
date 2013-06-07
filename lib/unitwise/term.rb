@@ -25,8 +25,8 @@ module Unitwise
       @exponent ||= 1
     end
 
-    def composition
-      atom.composition || [self]
+    def root_terms
+      atom.root_terms || [self]
     end
 
   end
