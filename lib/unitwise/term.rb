@@ -19,9 +19,12 @@ module Unitwise
       @atom ||= Atom.find atom_code
     end
 
+    def scale
+      (prefix.scale * atom.scale) ^ exponent
+    end
+
     def exponent=(number)
-      number ||= 1
-      @exponent = number.is_a?(Numeric) ? number : number.to_i
+      @exponent = number.is_a?(Numeric) ? number : (number || 1).to_i
     end
 
     def exponent

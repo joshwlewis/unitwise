@@ -1,6 +1,5 @@
 module Unitwise
   class Unit
-
     include Unitwise::Composable
 
     def initialize(expression)

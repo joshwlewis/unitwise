@@ -1,5 +1,6 @@
 module Unitwise
   class Prefix < Base
+    attr_reader :scale
 
     def self.data
       @data ||= YAML::load File.open(data_file)
@@ -10,10 +11,7 @@ module Unitwise
     end
 
     def scale=(value)
-      @scale = Scale.new.tap do |s|
-        s.value = value
-      end
+      @scale = value.to_f
     end
-
   end
 end

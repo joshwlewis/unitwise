@@ -47,13 +47,12 @@ module Unitwise
       base? ? dim : property
     end
 
-    def scale=(attributes)
-      if attributes
-        @scale = scale_class.new.tap do |s|
-          attributes.each do |k,v|
-            s.send :"#{k}=", v
-          end
-        end
+    def scale=(*args)
+      if args.first.is_a?(Hash)
+        hash = args.first
+        @scale = Scale.new(hash[:value], hash[:unit_code])
+      else
+        @scale = Scale.new(*args)
       end
     end
 

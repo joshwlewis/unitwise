@@ -60,20 +60,29 @@ module Unitwise
       end
 
       def operator
-        "(?<operator>[\\/\\.\\*])"
+        "(?<operator>[\\/\\.])"
       end
 
       def term
         "(?<term>#{annotatable}#{annotation}?|#{annotation}|#{factor}|\\(#{expression}\\))"
       end
 
+      def term_operator
+        "(?<term_operator>#{operator})"
+      end
+
+      def expression_operator
+        "(?<expression_operator>#{operator})"
+      end
+
       def matcher
-        "/#{term}|#{term}#{operator}#{expression}|#{term}"
+        "#{term_operator}#{term}|#{term}#{expression_operator}#{expression}|#{term}"
       end
     end
 
-    def initialize(string)
+    def initialize(string, sign=1)
       @string = string
+      @expression_sign = sign
     end
 
     def match
@@ -81,7 +90,27 @@ module Unitwise
     end
 
     def other_expression
-      self.class.new(match[:expression]) if match[:expression]
+      self.class.new(match[:expression], other_sign) if match[:expression]
+    end
+
+    def expression_sign
+      @expression_sign ||= 1
+    end
+
+    def term_sign
+      expression_sign * (self.term_operator == '/' ? -1 : 1)
+    end
+
+    def other_sign
+      expression_sign * (self.expression_operator == '/' ? -1 : 1)
+    end
+
+    def exponent
+      if exponent = match[:exponent]
+        term_sign * exponent.to_i
+      else
+        sign
+      end
     end
 
     def expressions

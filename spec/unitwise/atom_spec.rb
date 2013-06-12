@@ -16,7 +16,7 @@ describe Unitwise::Atom do
     end
   end
 
-  describe "find" do
+  describe "::find" do
     it "must find atoms" do
       subject.find("m").must_be_instance_of Unitwise::Atom
       subject.find("V").must_be_instance_of Unitwise::Atom

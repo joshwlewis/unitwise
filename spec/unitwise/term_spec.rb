@@ -33,6 +33,5 @@ describe Unitwise::Term do
         subject.composition.must_be_instance_of SignedMultiset
       end
     end
-
   end
 end
