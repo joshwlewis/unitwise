@@ -1,6 +1,8 @@
 module Unitwise
   class Unit
 
+    include Unitwise::Composable
+
     def initialize(expression)
       @expression = Expression.new(expression.to_s)
     end

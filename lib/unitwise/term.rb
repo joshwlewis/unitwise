@@ -1,6 +1,9 @@
+require 'signed_multiset'
 module Unitwise
   class Term
     attr_accessor :prefix_code, :atom_code
+
+    include Unitwise::Composable
 
     def initialize(attributes)
       attributes.each do |k,v|

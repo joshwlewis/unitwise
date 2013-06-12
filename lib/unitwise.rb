@@ -1,5 +1,6 @@
 require "unitwise/version"
 require 'unitwise/base'
+require 'unitwise/composable'
 require 'unitwise/scale'
 require 'unitwise/atom'
 require 'unitwise/prefix'

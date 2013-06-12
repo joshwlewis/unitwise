@@ -3,6 +3,8 @@ module Unitwise
     attr_accessor :classification, :property, :metric, :special
     attr_accessor :arbitrary, :function, :dim
 
+    include Unitwise::Composable
+
     class << self
       def data
         @data ||= data_files.reduce([]){|m,f| m += YAML::load File.open(f)}
@@ -14,7 +16,7 @@ module Unitwise
     end
 
     def base?
-      scale.nil? && dim
+      scale.nil? && !dim.nil?
     end
 
     def derived?
@@ -41,14 +43,22 @@ module Unitwise
       base? || dimless?
     end
 
+    def key
+      base? ? dim : property
+    end
+
     def scale=(attributes)
       if attributes
-        @scale = Scale.new.tap do |s|
+        @scale = scale_class.new.tap do |s|
           attributes.each do |k,v|
             s.send :"#{k}=", v
           end
         end
       end
+    end
+
+    def scale_class
+      Scale
     end
 
     def root_terms
