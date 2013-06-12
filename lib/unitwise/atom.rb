@@ -16,7 +16,7 @@ module Unitwise
     end
 
     def base?
-      scale.nil? && !dim.nil?
+      measurement.nil? && !dim.nil?
     end
 
     def derived?
@@ -47,21 +47,21 @@ module Unitwise
       base? ? dim : property
     end
 
-    def scale=(*args)
+    def measurement=(*args)
       if args.first.is_a?(Hash)
         hash = args.first
-        @scale = Scale.new(hash[:value], hash[:unit_code])
+        @measurement = Measurement.new(hash[:value], hash[:unit_code])
       else
-        @scale = Scale.new(*args)
+        @measurement = Measurement.new(*args)
       end
     end
 
-    def scale_class
-      Scale
+    def measurement_class
+      Measurement
     end
 
     def root_terms
-      scale.root_terms unless root?
+      measurement.root_terms unless root?
     end
 
   end

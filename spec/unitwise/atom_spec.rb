@@ -28,12 +28,12 @@ describe Unitwise::Atom do
   let(:pi) { Unitwise::Atom.find("[pi]")}
   let(:celsius) { Unitwise::Atom.find("Cel")}
   let(:pfu) { Unitwise::Atom.find("[PFU]")}
-  describe "#scale" do
+  describe "#measurement" do
     it "must be nil for base atoms" do
-      second.scale.must_equal nil
+      second.measurement.must_equal nil
     end
-    it "sould be a scale object for derived atoms" do
-      yard.scale.must_be_instance_of Unitwise::Scale
+    it "sould be a measurement object for derived atoms" do
+      yard.measurement.must_be_instance_of Unitwise::Measurement
     end
   end
 
@@ -114,8 +114,8 @@ describe Unitwise::Atom do
     end
   end
 
-  describe "#scale=" do
-    it "must create a new scale object and set attributes" do
+  describe "#measurement=" do
+    it "must create a new measurement object and set attributes" do
       skip("need to figure out mocking and stubbing with minitest")
     end
   end

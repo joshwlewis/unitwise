@@ -2,7 +2,7 @@ require 'yaml'
 module Unitwise
   class Base
     attr_accessor :names, :symbol, :primary_code, :secondary_code
-    attr_reader :scale
+    attr_reader :measurement
 
     def self.all
       @all ||= data.map{|d| self.new d }

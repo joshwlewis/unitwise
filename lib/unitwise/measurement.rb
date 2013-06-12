@@ -1,5 +1,5 @@
 module Unitwise
-  class Scale
+  class Measurement
     attr_accessor :value, :unit_code
 
     include Unitwise::Composable

@@ -39,7 +39,7 @@ module Unitwise::Standard
 
     def to_hash
       hash = super()
-      hash[:scale] = scale.to_hash if scale
+      hash[:measurement] = scale.to_hash if scale
       hash[:function] = function.to_hash if function
       hash.merge({classification: classification,
                   property: property, metric: metric?,
