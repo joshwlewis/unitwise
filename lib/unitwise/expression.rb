@@ -20,38 +20,31 @@ module Unitwise
       end
 
       def prefixes
-        Prefix.all.map(&:codes).flatten
+        @prefixes ||= CodeList.create(Prefix.all)
       end
 
       def prefix
         "(?<prefix>#{prefixes.map {|c| Regexp.escape c}.join("|")})"
       end
 
-      def atoms
-        @atoms ||= Atom.all.map(&:extended_codes).flatten.sort do |x, y|
-          y.length <=> x.length
-        end
+      def nonmetric_atoms
+        @atoms ||= CodeList.create(Atom.all.select{|a| !a.metric})
       end
 
-      def prefixable_atoms
-        @prefixable_atoms ||=
-        begin
-          Atom.all.select(&:metric?).map(&:extended_codes).flatten.sort do |x, y|
-            y.length <=> x.length
-          end
-        end
+      def metric_atoms
+        @prefixable_atoms ||= CodeList.create(Atom.all.select{|a| a.metric?})
       end
 
-      def atom
-        "(?<atom>#{atoms.map { |c| Regexp.escape c}.join("|")})"
+      def nonmetric_atom
+        "(?<atom>#{nonmetric_atoms.map { |c| Regexp.escape c}.join("|")})"
       end
 
-      def prefixable_atom
-        "(?<atom>#{prefixable_atoms.map{ |c| Regexp.escape c}.join("|")})"
+      def metric_atom
+        "(?<atom>#{metric_atoms.map{ |c| Regexp.escape c}.join("|")})"
       end
 
       def simple_unit
-        "(?<simple_unit>#{prefix}#{prefixable_atom}|#{atom})"
+        "(?<simple_unit>#{nonmetric_atom}|#{prefix}?#{metric_atom})"
       end
 
       def annotatable
@@ -83,7 +76,7 @@ module Unitwise
       end
 
       def matcher
-        "#{term_operator}#{term}|#{term}#{expression_operator}#{expression}|#{term}"
+        "^#{term_operator}#{term}|#{term}#{expression_operator}#{expression}|#{term}$"
       end
     end
 

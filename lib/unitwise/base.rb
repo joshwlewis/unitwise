@@ -9,9 +9,11 @@ module Unitwise
     end
 
     def self.find(string)
-      [:primary_code, :secondary_code, :symbol].map do |m|
-        self.all.find { |u| u.send(m) == string}
-      end.first
+      self.all.find do |i|
+        [:primary_code, :secondary_code].any? do |m|
+          i.send(m) == string
+        end
+      end
     end
 
     def initialize(attrs)
