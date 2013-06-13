@@ -6,7 +6,7 @@ module Unitwise
       end
     end
 
-    def compares?(other)
+    def compares_with?(other)
       self.class == other.class && self.composition == other.composition
     end
 

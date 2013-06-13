@@ -28,19 +28,26 @@ module Unitwise
       end
 
       def atoms
-        Atom.all.map(&:codes).flatten.compact
+        @atoms ||= Atom.all.map(&:extended_codes).flatten.sort do |x, y|
+          y.length <=> x.length
+        end
       end
 
       def prefixable_atoms
-        Atom.all.select(&:metric?).map(&:codes).flatten.compact
+        @prefixable_atoms ||=
+        begin
+          Atom.all.select(&:metric?).map(&:extended_codes).flatten.sort do |x, y|
+            y.length <=> x.length
+          end
+        end
       end
 
       def atom
-        "(?<atom>#{atoms.map {|c| Regexp.escape c}.join("|")})"
+        "(?<atom>#{atoms.map { |c| Regexp.escape c}.join("|")})"
       end
 
       def prefixable_atom
-        "(?<atom>#{prefixable_atoms.map{|c| Regexp.escape c}.join("|")})"
+        "(?<atom>#{prefixable_atoms.map{ |c| Regexp.escape c}.join("|")})"
       end
 
       def simple_unit
@@ -80,9 +87,9 @@ module Unitwise
       end
     end
 
-    def initialize(string, sign=1)
+    def initialize(string, expression_sign=1)
       @string = string
-      @expression_sign = sign
+      @expression_sign = expression_sign
     end
 
     def match
@@ -109,7 +116,7 @@ module Unitwise
       if exponent = match[:exponent]
         term_sign * exponent.to_i
       else
-        sign
+        term_sign
       end
     end
 

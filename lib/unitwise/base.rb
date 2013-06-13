@@ -1,8 +1,8 @@
 require 'yaml'
 module Unitwise
   class Base
-    attr_accessor :names, :symbol, :primary_code, :secondary_code
-    attr_reader :measurement
+    attr_accessor :symbol, :primary_code, :secondary_code
+    attr_reader :names, :measurement
 
     def self.all
       @all ||= data.map{|d| self.new d }
@@ -20,8 +20,12 @@ module Unitwise
       end
     end
 
+    def names=(names)
+      @names = Array(names)
+    end
+
     def codes
-      [primary_code, secondary_code]
+      @codes ||= [primary_code, secondary_code].compact
     end
 
   end

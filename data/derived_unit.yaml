@@ -415,7 +415,7 @@
 - :names: liter
   :symbol: L
   :primary_code: L
-  :secondary_code: 
+  :secondary_code:
   :measurement:
     :value: 1.0
     :unit_code: l

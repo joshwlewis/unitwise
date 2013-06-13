@@ -13,6 +13,26 @@ module Unitwise
       def data_files
         %w(base_unit derived_unit).map{|type| Unitwise.data_file type}
       end
+
+      def codes
+        @codes ||= all.map(&:codes).flatten.sort{ |x, y| y.length <=> x.length }
+      end
+
+      def extended_codes
+        @extended_codes ||= all.map(&:extended_codes).flatten.sort do |x, y|
+          y.length <=> x.length
+        end
+      end
+    end
+
+    def additional_codes
+      @additional_codes ||= (names << symbol).uniq.reject do |c|
+        c.nil? || c.empty? || self.class.codes.include?(c)
+      end
+    end
+
+    def extended_codes
+      @extended_codes ||= codes + additional_codes
     end
 
     def base?
@@ -54,10 +74,6 @@ module Unitwise
       else
         @measurement = Measurement.new(*args)
       end
-    end
-
-    def measurement_class
-      Measurement
     end
 
     def root_terms

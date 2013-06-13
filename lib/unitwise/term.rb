@@ -32,7 +32,13 @@ module Unitwise
     end
 
     def root_terms
-      atom.root_terms || [self]
+      if !atom.root?
+        atom.measurement.root_terms.map do |t|
+          Term.new(atom_code: t.atom_code, exponent: t.exponent * exponent)
+        end
+      else
+        [self]
+      end
     end
 
   end
