@@ -11,11 +11,8 @@ module Unitwise
     end
 
     def terms
-      @terms ||= expressions.reduce([]) do |t, e|
-        if e.atom
-          t << Term.new(atom_code: e.atom, prefix_code: e.prefix, exponent: e.exponent)
-        end
-        t
+      @terms ||= expressions.map do |e|
+        Term.new(atom_code: e.atom, prefix_code: e.prefix, exponent: e.exponent)
       end
     end
 

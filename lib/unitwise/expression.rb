@@ -139,9 +139,11 @@ module Unitwise
       expressions.map(&:prefix)
     end
 
-    def method_missing(method, *args, &block)
-      if match.names.include?(method.to_s)
+    def method_missing(method, *params, &block)
+      if match.names.include?(method.to_s) && params.empty?
         match[method]
+      else
+        super(method, args, &block)
       end
     end
 

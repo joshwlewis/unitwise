@@ -6,7 +6,6 @@ describe Unitwise::Expression do
     e.atom.must_equal '[ft_i]'
     e.prefix.must_be_nil
     e.exponent.must_equal 1
-    e.other_expression.must_be_nil
   end
 
   it "should handle prefixed units" do
@@ -14,7 +13,6 @@ describe Unitwise::Expression do
     e.atom.must_equal "m"
     e.prefix.must_equal "m"
     e.exponent.must_equal 1
-    e.other_expression.must_be_nil
   end
 
   it "should handle units with exponents" do
