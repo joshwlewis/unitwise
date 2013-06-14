@@ -155,5 +155,9 @@ module Unitwise
       end
     end
 
+    def to_s
+      string
+    end
+
   end
 end

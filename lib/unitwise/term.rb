@@ -54,5 +54,13 @@ module Unitwise
       end
     end
 
+    def to_s
+      [factor, prefix_code, atom_code, exponent].join(' ')
+    end
+
+    def inspect
+      "<#{self.class} #{to_s}>"
+    end
+
   end
 end

@@ -61,7 +61,15 @@ module Unitwise
     end
 
     def root_terms
-      measurement.root_terms unless terminal?
+      base? ? [Term.new(atom_code: primary_code)] : measurement.root_terms
+    end
+
+    def to_s
+      "#{codes.join('|')}:#{names.join('|')}"
+    end
+
+    def inspect
+      "<#{self.class} #{to_s}>"
     end
 
   end

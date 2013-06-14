@@ -44,5 +44,13 @@ module Unitwise
       end
     end
 
+    def to_s
+      "#{value} #{unit.to_s}"
+    end
+
+    def inspect
+      "<#{self.class} #{to_s}>"
+    end
+
   end
 end
