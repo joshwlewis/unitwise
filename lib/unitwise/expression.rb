@@ -55,8 +55,12 @@ module Unitwise
         "(?<annotation>{.*})"
       end
 
-      def expression
-        "(?<expression>.+)"
+      def remnant
+        "(?<remnant>.+)"
+      end
+
+      def nestor
+        "\\((?<nestor>[^)]+[^(]*)\\)"
       end
 
       def operator
@@ -64,45 +68,49 @@ module Unitwise
       end
 
       def term
-        "(?<term>#{annotatable}#{annotation}?|#{annotation}|#{factor}|\\(#{expression}\\))"
+        "(?<term>#{annotatable}#{annotation}?|#{annotation}|#{factor}|#{nestor})"
       end
 
       def term_operator
         "(?<term_operator>#{operator})"
       end
 
-      def expression_operator
-        "(?<expression_operator>#{operator})"
+      def remnant_operator
+        "(?<remnant_operator>#{operator})"
       end
 
       def matcher
-        "^#{term_operator}#{term}|#{term}#{expression_operator}#{expression}|#{term}$"
+        "^#{term_operator}#{term}|#{term}#{remnant_operator}#{remnant}|#{term}$"
       end
     end
 
-    def initialize(string, expression_sign=1)
+    def initialize(string, sign=nil)
       @string = string
-      @expression_sign = expression_sign
+      @sign = sign
     end
 
     def match
       @match ||= Regexp.new(self.class.matcher).match(string)
     end
 
-    def other_expression
-      self.class.new(match[:expression], other_sign) if match[:expression]
+    def remnant
+      self.class.new(match[:remnant], remnant_sign) if match[:remnant]
     end
 
-    def expression_sign
-      @expression_sign ||= 1
+    def nestor
+      self.class.new(match[:nestor], term_sign) if match[:nestor]
+    end
+
+    def sign
+      @sign ||= 1
     end
 
     def term_sign
-      expression_sign * (self.term_operator == '/' ? -1 : 1)
+      sign * (self.term_operator == '/' ? -1 : 1)
     end
 
-    def other_sign
-      expression_sign * (self.expression_operator == '/' ? -1 : 1)
+    def remnant_sign
+      sign * (self.remnant_operator == '/' ? -1 : 1)
     end
 
     def exponent
@@ -114,12 +122,21 @@ module Unitwise
     end
 
     def expressions
-      expressions = [self]
-      if other_expression
-        expressions += other_expression.expressions
-      else
-        expressions
-      end
+      expressions = nestor ? nestor.expressions : [self]
+      expressions += remnant.expressions if remnant
+      expressions
+    end
+
+    def atoms
+      expressions.map(&:atom)
+    end
+
+    def exponents
+      expressions.map(&:exponent)
+    end
+
+    def prefixes
+      expressions.map(&:prefix)
     end
 
     def method_missing(method, *args, &block)
