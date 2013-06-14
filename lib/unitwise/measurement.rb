@@ -43,9 +43,11 @@ module Unitwise
         self.class.new(value * other, unit_code)
       elsif similar_to?(other)
         converted = other.to(unit_code)
-        self.class.new(value * converted.value, "(#{unit_code})2")
+        expression = Simplifier.new("(#{unit_code}).(#{unit_code})").expression
+        self.class.new(value * converted.value, expression)
       else
-        self.class.new(value * other.value, "(#{unit_code}).(#{other.unit_code})")
+        expression = Simplifier.new("(#{unit_code}).(#{other.unit_code})").expression
+        self.class.new(value * other.value, expression)
       end
     end
 

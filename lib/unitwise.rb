@@ -2,6 +2,7 @@ require "unitwise/version"
 require 'unitwise/base'
 require 'unitwise/code_list'
 require 'unitwise/composable'
+require 'unitwise/simplifier'
 require 'unitwise/measurement'
 require 'unitwise/atom'
 require 'unitwise/prefix'

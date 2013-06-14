@@ -53,12 +53,12 @@ describe Unitwise::Measurement do
     it "must multiply similar units" do
       mult = mph * kmh
       mult.value.must_equal 3728.227153424004
-      mult.unit_code.must_equal "([mi_i]/h)2"
+      mult.unit.must_equal Unitwise::Unit.new("([mi_i]/h).([mi_i]/h)")
     end
     it "must multiply unsimilar units" do
       mult = mph * mile
       mult.value.must_equal 180
-      mult.unit_code.must_equal "([mi_i]/h).([mi_i])"
+      mult.unit.must_equal Unitwise::Unit.new("([mi_i]/h).([mi_i])")
     end
   end
 
