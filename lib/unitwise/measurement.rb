@@ -29,6 +29,26 @@ module Unitwise
       value * unit.scale
     end
 
+    def to(other_unit_code)
+      other_unit = Unit.new(other_unit_code)
+      if similar_to?(other_unit)
+        self.class.new(scale / other_unit.scale, other_unit_code)
+      else
+        raise ArgumentError, "Units are not similar"
+      end
+    end
+
+    def *(other)
+      if other.is_a?(Numeric)
+        self.class.new(value * other, unit_code)
+      elsif similar_to?(other)
+        converted = other.to(unit_code)
+        self.class.new(value * converted.value, "(#{unit_code})2")
+      else
+        self.class.new(value * other.value, "(#{unit_code}).(#{other.unit_code})")
+      end
+    end
+
     def to_s
       "#{value} #{unit.to_s}"
     end
