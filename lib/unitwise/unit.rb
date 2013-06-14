@@ -16,6 +16,14 @@ module Unitwise
       end
     end
 
+    def depth
+      terms.map(&:depth).max + 1
+    end
+
+    def terminal?
+      depth <= 5
+    end
+
     def root_terms
       terms.flat_map(&:root_terms)
     end

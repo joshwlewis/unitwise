@@ -19,8 +19,16 @@ module Unitwise
       @atom ||= Atom.find atom_code
     end
 
-    def measurement
-      (prefix.measurement * atom.measurement) ^ exponent
+    def scale
+      prefix.scale * (atom.scale ^ exponent)
+    end
+
+    def depth
+      atom ? atom.depth + 1 : 0
+    end
+
+    def terminal?
+      depth <= 4
     end
 
     def exponent=(number)
@@ -32,12 +40,12 @@ module Unitwise
     end
 
     def root_terms
-      if !atom.root?
+      if terminal?
+        [self]
+      else
         atom.measurement.root_terms.map do |t|
           Term.new(atom_code: t.atom_code, exponent: t.exponent * exponent)
         end
-      else
-        [self]
       end
     end
 

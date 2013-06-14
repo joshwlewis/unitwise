@@ -93,24 +93,13 @@ describe Unitwise::Atom do
     end
   end
 
-  describe "#dimless?" do
-    it "must be true for dimless atoms" do
-      pi.dimless?.must_equal true
+  describe "#terminal?" do
+    it "must be true for atoms without a valid measurement atom" do
+      second.terminal?.must_equal true
+      pi.terminal?.must_equal true
     end
-    it "must be false for dimension atoms" do
-      second.dimless?.must_equal false
-      yard.dimless?.must_equal false
-    end
-  end
-
-  describe "#root?" do
-    it "must be true for root atoms" do
-      second.root?.must_equal true
-      pi.root?.must_equal true
-    end
-    it "must be false for non-root atoms" do
-      yard.root?.must_equal false
-      celsius.root?.must_equal false
+    it "must be false for child atoms" do
+      yard.terminal?.must_equal false
     end
   end
 

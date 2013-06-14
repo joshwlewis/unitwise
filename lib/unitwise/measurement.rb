@@ -17,26 +17,28 @@ module Unitwise
       unit.root_terms
     end
 
+    def depth
+      unit.depth + 1
+    end
+
+    def terminal?
+      depth <= 6
+    end
+
     def *(other)
       if other.is_a?(Numeric)
         self.class.new(value * other, unit_code)
-      elsif compares_with?(other)
-        self.class.new(value * other.value, "#{unit_code}.#{other.unit_code}")
+      elsif [:value, :unit, :to].all?{|m| other.respond_to?(m)}
+        if similar_to?(other)
+          converted = other.to(unit_code)
+          self.class.new(value * converted.vale, unit * other.unit)
+        else
+          self.class.new(value * other.value, unit * other.unit)
+        end
       else
         raise ArgumentError
       end
     end
-
-    def /(other)
-      if number.is_a?(Numeric)
-        self.new(value / number, unit_code)
-      elsif compares_with?(other)
-        self.new(value / number, "#{unit}/#{other.unit}")
-      else
-        raise ArgumentError
-      end
-    end
-
 
   end
 end

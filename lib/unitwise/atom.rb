@@ -35,12 +35,12 @@ module Unitwise
       !!arbitrary
     end
 
-    def dimless?
-      classification == 'dimless'
+    def depth
+      base? ? 0 : measurement.depth + 1
     end
 
-    def root?
-      base? || dimless?
+    def terminal?
+      depth <= 3
     end
 
     def key
@@ -56,8 +56,18 @@ module Unitwise
       end
     end
 
+    def scale
+      if base?
+        1
+      elsif terminal?
+        measurement.value
+      else
+        measurement.scale
+      end
+    end
+
     def root_terms
-      measurement.root_terms unless root?
+      measurement.root_terms unless terminal?
     end
 
   end

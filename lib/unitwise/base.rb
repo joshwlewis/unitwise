@@ -9,11 +9,7 @@ module Unitwise
     end
 
     def self.find(string)
-      self.all.find do |i|
-        [:primary_code, :secondary_code].any? do |m|
-          i.send(m) == string
-        end
-      end
+      self.all.find { |i| i.codes.include?(string) }
     end
 
     def initialize(attrs)
