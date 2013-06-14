@@ -1,16 +1,20 @@
 module Unitwise
   class Measurement
-    attr_reader :value, :unit_code
+    attr_reader :value
 
     include Unitwise::Composable
 
-    def initialize(value, unit_code)
+    def initialize(value, unit)
       @value = value
-      @unit_code = unit_code
+      if unit.is_a?(String)
+        @unit_code = unit
+      else
+        @unit = unit
+      end
     end
 
     def unit
-      @unit ||= Unit.new unit_code
+      @unit ||= Unit.new @unit_code
     end
 
     def root_terms
@@ -32,7 +36,7 @@ module Unitwise
     def to(other_unit_code)
       other_unit = Unit.new(other_unit_code)
       if similar_to?(other_unit)
-        self.class.new(scale / other_unit.scale, other_unit_code)
+        self.class.new(scale / other_unit.scale, other_unit)
       else
         raise ArgumentError, "Units are not similar"
       end
@@ -40,14 +44,12 @@ module Unitwise
 
     def *(other)
       if other.is_a?(Numeric)
-        self.class.new(value * other, unit_code)
+        self.class.new(value * other, unit)
       elsif similar_to?(other)
-        converted = other.to(unit_code)
-        expression = Simplifier.new("(#{unit_code}).(#{unit_code})").expression
-        self.class.new(value * converted.value, expression)
+        converted = other.to(unit)
+        self.class.new(value * converted.value, unit * converted.unit)
       else
-        expression = Simplifier.new("(#{unit_code}).(#{other.unit_code})").expression
-        self.class.new(value * other.value, expression)
+        self.class.new(value * other.value, unit * other.unit)
       end
     end
 

@@ -1,13 +1,13 @@
 module Unitwise
   class Unit
     include Unitwise::Composable
-
+    attr_reader :expression
     def initialize(expression)
       @expression = Expression.new(expression.to_s)
     end
 
     def expressions
-      @expression.expressions
+      expression.expressions
     end
 
     def terms
@@ -36,8 +36,16 @@ module Unitwise
       end
     end
 
+    def *(other)
+      if other.respond_to?(:expression)
+        self.class.new(Simplifier.new("(#{expression}).(#{other.expression})").expression)
+      else
+        raise ArgumentError, "Can't coerce #{other.class} into #{self.class}"
+      end
+    end
+
     def to_s
-      @expression.to_s
+      expression.to_s
     end
 
     def inspect

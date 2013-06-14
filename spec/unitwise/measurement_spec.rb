@@ -5,7 +5,7 @@ describe Unitwise::Measurement do
   describe "#new" do
     it "should set attributes" do
       subject.value.must_equal(1)
-      subject.unit_code.must_equal('m/s')
+      subject.unit.to_s.must_equal('m/s')
     end
   end
 
@@ -48,7 +48,7 @@ describe Unitwise::Measurement do
     it "must multiply by scalars" do
       mult = mph * 4
       mult.value.must_equal 240
-      mult.unit_code.must_equal "[mi_i]/h"
+      mult.unit.must_equal Unitwise::Unit.new("[mi_i]/h")
     end
     it "must multiply similar units" do
       mult = mph * kmh
