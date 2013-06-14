@@ -21,11 +21,19 @@ module Unitwise
     end
 
     def terminal?
-      depth <= 5
+      depth <= 3
     end
 
     def root_terms
       terms.flat_map(&:root_terms)
+    end
+
+    def scale
+      if terms.empty?
+        1
+      else
+        terms.map(&:scale).inject(&:*)
+      end
     end
 
   end

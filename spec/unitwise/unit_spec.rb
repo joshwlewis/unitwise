@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Unitwise::Unit do
 
   subject { Unitwise::Unit.new("m/s2") }
+  let(:other) { Unitwise::Unit.new("[psi]")}
 
 
   describe "#terms" do
@@ -27,7 +28,12 @@ describe Unitwise::Unit do
     end
   end
 
-
+  describe "#scale" do
+    it "must return value relative to terminal atoms" do
+      subject.scale.must_equal 1
+      other.scale.must_equal 6894757.293168359
+    end
+  end
   describe "#composition" do
     it "must be a multiset" do
       subject.must_respond_to :terms

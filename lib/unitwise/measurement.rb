@@ -22,7 +22,11 @@ module Unitwise
     end
 
     def terminal?
-      depth <= 6
+      depth <= 3
+    end
+
+    def scale
+      value * unit.scale
     end
 
     def *(other)

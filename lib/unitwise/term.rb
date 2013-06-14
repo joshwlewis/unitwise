@@ -28,7 +28,7 @@ module Unitwise
     end
 
     def terminal?
-      depth <= 4
+      depth <= 3
     end
 
     def exponent=(number)
@@ -37,6 +37,10 @@ module Unitwise
 
     def exponent
       @exponent ||= 1
+    end
+
+    def scale
+      (prefix ? prefix.scale : 1) * ((atom ? atom.scale : 1) ** exponent)
     end
 
     def root_terms

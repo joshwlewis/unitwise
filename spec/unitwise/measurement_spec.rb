@@ -26,6 +26,13 @@ describe Unitwise::Measurement do
 
   let(:other) { Unitwise::Measurement.new(4, '[mi_i]/h') }
 
+  describe "#scale" do
+    it "must return value relative to terminal atoms" do
+      subject.scale.must_equal 1
+      other.scale.must_equal 1.78816
+    end
+  end
+
   describe "#*" do
     it "must return a new measurement" do
       result = subject * other

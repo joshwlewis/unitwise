@@ -103,6 +103,14 @@ describe Unitwise::Atom do
     end
   end
 
+  describe "#scale" do
+    it "must return scale relative to terminal atom" do
+      second.scale.must_equal 1
+      yard.scale.must_equal 0.9144000000000001
+      pi.scale.must_equal 3.141592653589793
+    end
+  end
+
   describe "#key" do
     it "must return the dim or the property" do
       second.key.must_equal "T"

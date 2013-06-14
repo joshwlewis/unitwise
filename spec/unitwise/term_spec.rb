@@ -33,5 +33,12 @@ describe Unitwise::Term do
         subject.composition.must_be_instance_of SignedMultiset
       end
     end
+
+    describe "#scale" do
+      it "should return value relative to terminal atoms" do
+        subject.scale.must_equal 1000000.0
+      end
+    end
+
   end
 end

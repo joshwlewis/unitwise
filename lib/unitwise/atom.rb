@@ -52,18 +52,12 @@ module Unitwise
         hash = args.first
         @measurement = Measurement.new(hash[:value], hash[:unit_code])
       else
-        @measurement = Measurement.new(*args)
+        @measurement = Measurement.new(*args, self)
       end
     end
 
     def scale
-      if base?
-        1
-      elsif terminal?
-        measurement.value
-      else
-        measurement.scale
-      end
+      base? ? 1 : measurement.scale
     end
 
     def root_terms
