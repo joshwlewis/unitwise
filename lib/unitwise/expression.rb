@@ -121,6 +121,10 @@ module Unitwise
       end
     end
 
+    def factor
+      match[:factor] ? match[:factor].to_i : 1
+    end
+
     def expressions
       expressions = nestor ? nestor.expressions : [self]
       expressions += remnant.expressions if remnant
@@ -137,6 +141,10 @@ module Unitwise
 
     def prefixes
       expressions.map(&:prefix)
+    end
+
+    def factors
+      expressions.map(&:factor)
     end
 
     def method_missing(method, *params, &block)

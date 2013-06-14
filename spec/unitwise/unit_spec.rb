@@ -3,7 +3,8 @@ require 'spec_helper'
 describe Unitwise::Unit do
 
   subject { Unitwise::Unit.new("m/s2") }
-  let(:other) { Unitwise::Unit.new("[psi]")}
+  let(:psi) { Unitwise::Unit.new("[psi]")}
+  let(:deg) { Unitwise::Unit.new("deg")}
 
 
   describe "#terms" do
@@ -30,8 +31,10 @@ describe Unitwise::Unit do
 
   describe "#scale" do
     it "must return value relative to terminal atoms" do
+      subject.must_respond_to :scale
       subject.scale.must_equal 1
-      other.scale.must_equal 6894757.293168359
+      psi.scale.must_equal 6894757.293168359
+      deg.scale.must_equal 0.017453292519943295
     end
   end
   describe "#composition" do

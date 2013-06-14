@@ -2,6 +2,7 @@ require 'signed_multiset'
 module Unitwise
   class Term
     attr_accessor :prefix_code, :atom_code
+    attr_writer :factor, :exponent
 
     include Unitwise::Composable
 
@@ -31,8 +32,8 @@ module Unitwise
       depth <= 3
     end
 
-    def exponent=(number)
-      @exponent = number.is_a?(Numeric) ? number : (number || 1).to_i
+    def factor
+      @factor ||= 1
     end
 
     def exponent
@@ -40,7 +41,7 @@ module Unitwise
     end
 
     def scale
-      (prefix ? prefix.scale : 1) * ((atom ? atom.scale : 1) ** exponent)
+      (factor * (prefix ? prefix.scale : 1) * (atom ? atom.scale : 1)) ** exponent
     end
 
     def root_terms

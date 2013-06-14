@@ -42,6 +42,22 @@ describe Unitwise::Expression do
     e.exponents.must_equal [1, -2]
   end
 
+  it "should handle expressions with divided factors" do
+    e = Unitwise::Expression.new("[pi].rad/360")
+    e.atoms.must_equal ["[pi]", "rad", nil]
+    e.prefixes.must_equal [nil, nil, nil]
+    e.exponents.must_equal [1, 1, -1]
+    e.factors.must_equal [1, 1, 360]
+  end
+
+  it "should handle expression with multiplied factors" do
+    e = Unitwise::Expression.new("2.[pi]")
+    e.atoms.must_equal [nil, '[pi]']
+    e.prefixes.must_equal [nil, nil]
+    e.exponents.must_equal [1, 1]
+    e.factors.must_equal [2, 1]
+  end
+
   it "should handle terms in parentheses" do
     es = Unitwise::Expression.new("(kJ)").expressions
     es.map(&:atom).must_equal(['J'])
