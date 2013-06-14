@@ -33,13 +33,4 @@ describe Unitwise::Measurement do
     end
   end
 
-  describe "#*" do
-    it "must return a new measurement" do
-      result = subject * other
-      result.must_be_instance_of Unitwise::Measurement
-      result.value.must_equal 4
-      result.unit_code.must_equal "m/s.[mi_i]/h"
-    end
-  end
-
 end

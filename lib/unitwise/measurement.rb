@@ -29,21 +29,6 @@ module Unitwise
       value * unit.scale
     end
 
-    def *(other)
-      if other.is_a?(Numeric)
-        self.class.new(value * other, unit_code)
-      elsif [:value, :unit, :to].all?{|m| other.respond_to?(m)}
-        if similar_to?(other)
-          converted = other.to(unit_code)
-          self.class.new(value * converted.vale, unit * other.unit)
-        else
-          self.class.new(value * other.value, unit * other.unit)
-        end
-      else
-        raise ArgumentError
-      end
-    end
-
     def to_s
       "#{value} #{unit.to_s}"
     end
