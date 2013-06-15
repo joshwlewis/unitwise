@@ -33,12 +33,12 @@ module Unitwise
       value * unit.scale
     end
 
-    def to(other_unit_code)
-      other_unit = Unit.new(other_unit_code)
+    def to(unit_code)
+      other_unit = Unit.new(unit_code)
       if similar_to?(other_unit)
         self.class.new(scale / other_unit.scale, other_unit)
       else
-        raise ArgumentError, "Units are not similar"
+        raise ArgumentError, "Can't coerce #{other_unit} to #{self}."
       end
     end
 

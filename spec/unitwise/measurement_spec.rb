@@ -27,6 +27,7 @@ describe Unitwise::Measurement do
   let(:mph) { Unitwise::Measurement.new(60, '[mi_i]/h') }
   let(:kmh) { Unitwise::Measurement.new(100, 'km/h')}
   let(:mile) { Unitwise::Measurement.new(3, '[mi_i]')}
+  let(:hpm) { Unitwise::Measurement.new(6, 'h/[mi_i]')}
 
   describe "#scale" do
     it "must return value relative to terminal atoms" do
@@ -59,6 +60,11 @@ describe Unitwise::Measurement do
       mult = mph * mile
       mult.value.must_equal 180
       mult.unit.must_equal Unitwise::Unit.new("([mi_i]/h).([mi_i])")
+    end
+    it "must multiply canceling units" do
+      mult = mph * hpm
+      mult.value.must_equal 360
+      mult.unit.to_s.must_equal "1"
     end
   end
 

@@ -52,7 +52,7 @@ module Unitwise
         hash = args.first
         @measurement = Measurement.new(hash[:value], hash[:unit_code])
       else
-        @measurement = Measurement.new(*args, self)
+        @measurement = Measurement.new(*args)
       end
     end
 
