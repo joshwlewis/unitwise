@@ -24,6 +24,16 @@ describe Unitwise::Measurement do
     end
   end
 
+  describe "#dup" do
+    it "must return a new instance" do
+      subject.must_respond_to(:dup)
+      subject.dup.must_be_instance_of(Unitwise::Measurement)
+      subject.dup.value.must_equal subject.value
+      subject.dup.unit.to_s.must_equal subject.unit.to_s
+      subject.dup.object_id.wont_equal subject.dup.object_id
+    end
+  end
+
   let(:mph) { Unitwise::Measurement.new(60, '[mi_i]/h') }
   let(:kmh) { Unitwise::Measurement.new(100, 'km/h')}
   let(:mile) { Unitwise::Measurement.new(3, '[mi_i]')}
@@ -61,10 +71,22 @@ describe Unitwise::Measurement do
       mult.value.must_equal 180
       mult.unit.must_equal Unitwise::Unit.new("([mi_i]/h).([mi_i])")
     end
+
     it "must multiply canceling units" do
       mult = mph * hpm
       mult.value.must_equal 360
       mult.unit.to_s.must_equal "1"
+    end
+  end
+
+  describe "#+" do
+    it "should add values when units are similar" do
+      added = mph + kmh
+      added.value.must_equal 122.13711922373341
+      added.unit.must_equal mph.unit
+    end
+    it "should raise an error when units are not similar" do
+      assert_raises(ArgumentError) { mph + hpm}
     end
   end
 
