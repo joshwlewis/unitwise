@@ -9,8 +9,12 @@ module Unitwise
       if unit.is_a?(String)
         @unit_code = unit
       else
-        @unit = unit
+        @unit = unit.dup
       end
+    end
+
+    def dup
+      self.class.new(value, unit)
     end
 
     def unit
@@ -33,23 +37,36 @@ module Unitwise
       value * unit.scale
     end
 
-    def to(unit_code)
-      other_unit = Unit.new(unit_code)
+    def to(unit)
+      other_unit = Unit.new(unit)
       if similar_to?(other_unit)
         self.class.new(scale / other_unit.scale, other_unit)
       else
-        raise ArgumentError, "Can't coerce #{other_unit} to #{self}."
+        raise ArgumentError, "Can't coerce #{other_unit} to #{unit}."
       end
     end
 
     def *(other)
       if other.is_a?(Numeric)
         self.class.new(value * other, unit)
-      elsif similar_to?(other)
-        converted = other.to(unit)
-        self.class.new(value * converted.value, unit * converted.unit)
+      elsif other.respond_to?(:composition)
+        if similar_to?(other)
+          converted = other.to(unit)
+          self.class.new(value * converted.value, unit * converted.unit)
+        else
+          self.class.new(value * other.value, unit * other.unit)
+        end
       else
-        self.class.new(value * other.value, unit * other.unit)
+        raise ArgumentError, "Can't coerce #{other} to #{self}."
+      end
+    end
+
+    def +(other)
+      if similar_to?(other)
+        converted = other.to(unit)
+        self.class.new(value + converted.value, unit)
+      else
+        raise ArgumentError, "Can't coerce #{other} to #{unit}."
       end
     end
 

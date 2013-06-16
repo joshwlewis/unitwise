@@ -6,6 +6,10 @@ module Unitwise
       @expression = Expression.new(expression.to_s)
     end
 
+    def dup
+      self.class.new(expression)
+    end
+
     def expressions
       expression.expressions
     end

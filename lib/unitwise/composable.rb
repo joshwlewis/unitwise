@@ -7,8 +7,7 @@ module Unitwise
 
     def composition
       root_terms.reduce(SignedMultiset.new) do |s, t|
-        s.increment(t.atom.key, t.exponent) if t.atom
-        s
+        s.increment(t.atom.key, t.exponent) if t.atom; s
       end
     end
 
