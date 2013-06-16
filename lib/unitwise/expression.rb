@@ -89,6 +89,10 @@ module Unitwise
       @sign = sign
     end
 
+    def dup
+      self.class.new(string, sign)
+    end
+
     def match
       @match ||= Regexp.new(self.class.matcher).match(string)
     end

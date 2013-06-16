@@ -6,10 +6,10 @@ module Unitwise
 
     def initialize(value, unit)
       @value = value
-      if unit.is_a?(String)
-        @unit_code = unit
-      else
+      if unit.is_a?(Unit)
         @unit = unit.dup
+      else
+        @unit = Unit.new(unit.to_s)
       end
     end
 

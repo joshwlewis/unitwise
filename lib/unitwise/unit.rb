@@ -3,7 +3,11 @@ module Unitwise
     include Unitwise::Composable
     attr_reader :expression
     def initialize(expression)
-      @expression = Expression.new(expression.to_s)
+      if expression.is_a?(Expression)
+        @expression = expression.dup
+      else
+        @expression = Expression.new(expression.to_s)
+      end
     end
 
     def dup

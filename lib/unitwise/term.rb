@@ -55,7 +55,8 @@ module Unitwise
     end
 
     def to_s
-      [factor, prefix_code, atom_code, exponent].join(' ')
+      [(factor if factor != 1), prefix_code,
+        atom_code, (exponent if exponent != 1)].compact.join('')
     end
 
     def inspect
