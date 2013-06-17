@@ -42,7 +42,7 @@ module Unitwise
       if similar_to?(other_unit)
         self.class.new(scale / other_unit.scale, other_unit)
       else
-        raise ArgumentError, "Can't coerce #{other_unit} to #{unit}."
+        raise ArgumentError, "Can't coerce #{unit} to #{other_unit}."
       end
     end
 
@@ -57,7 +57,22 @@ module Unitwise
           self.class.new(value * other.value, unit * other.unit)
         end
       else
-        raise ArgumentError, "Can't coerce #{other} to #{self}."
+        raise ArgumentError, "Can't multiply #{inspect} by #{other}."
+      end
+    end
+
+    def /(other)
+      if other.is_a?(Numeric)
+        self.class.new(value / other, unit)
+      elsif other.respond_to?(:composition)
+        if similar_to?(other)
+          converted = other.to(unit)
+          self.class.new(value / converted.value, unit / converted.unit)
+        else
+          self.class.new(value / other.value, unit / other.unit)
+        end
+      else
+        raise ArgumentError, "Can't divide #{inspect} by #{other}"
       end
     end
 
@@ -66,12 +81,29 @@ module Unitwise
         converted = other.to(unit)
         self.class.new(value + converted.value, unit)
       else
-        raise ArgumentError, "Can't coerce #{other} to #{unit}."
+        raise ArgumentError, "Can't add #{other} to #{inspect}."
+      end
+    end
+
+    def -(other)
+      if similar_to?(other)
+        converted = other.to(unit)
+        self.class.new(value - converted.value, unit)
+      else
+        raise ArgumentError, "Can't subtract #{other} from #{inspect}."
+      end
+    end
+
+    def **(int)
+      if int.is_a?(Integer)
+        self.class.new( value ** int, unit ** int )
+      else
+        raise TypeError, "Integer expected"
       end
     end
 
     def to_s
-      "#{value} #{unit.to_s}"
+      "#{value} #{unit}"
     end
 
     def inspect

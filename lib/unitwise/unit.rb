@@ -48,7 +48,26 @@ module Unitwise
       if other.respond_to?(:expression)
         self.class.new(Simplifier.new("(#{expression}).(#{other.expression})").expression)
       else
-        raise ArgumentError, "Can't coerce #{other.class} into #{self.class}"
+        raise ArgumentError, "Can't multiply #{inspect} by #{other}."
+      end
+    end
+
+    def /(other)
+      if other.respond_to?(:expression)
+        self.class.new(Simplifier.new("(#{expression})/(#{other.expression})").expression)
+      else
+        raise ArgumentError, "Can't divide #{inspect} by #{other}."
+      end
+    end
+
+    def **(int)
+      if int.is_a?(Integer)
+        exps = Array.new.fill("(#{expression})", 0, int.abs - 1).join('.')
+        if int < 0
+          self.class.new(Simplifier.new("(#{expression})/(#{exps})").expression)
+        else
+          self.class.new(Simplifier.new("(#{expression}).#{exps}").expression)
+        end
       end
     end
 

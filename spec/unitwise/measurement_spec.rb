@@ -38,6 +38,7 @@ describe Unitwise::Measurement do
   let(:kmh) { Unitwise::Measurement.new(100, 'km/h')}
   let(:mile) { Unitwise::Measurement.new(3, '[mi_i]')}
   let(:hpm) { Unitwise::Measurement.new(6, 'h/[mi_i]')}
+  let(:cui) { Unitwise::Measurement.new(12, "[in_i]3")}
 
   describe "#scale" do
     it "must return value relative to terminal atoms" do
@@ -79,6 +80,24 @@ describe Unitwise::Measurement do
     end
   end
 
+  describe "#/" do
+    it "should divide by scalars" do
+      div = kmh / 4
+      div.value.must_equal 25
+      div.unit.must_equal kmh.unit
+    end
+    it "should divide by the value of similar units" do
+      div = kmh / mph
+      div.value.must_equal 1.03561865372889
+      div.unit.to_s.must_equal '1'
+    end
+    it "should divide dissimilar units" do
+      div = mph / hpm
+      div.value.must_equal 10
+      div.unit.to_s.must_equal "[mi_i]2/h2"
+    end
+  end
+
   describe "#+" do
     it "should add values when units are similar" do
       added = mph + kmh
@@ -87,6 +106,30 @@ describe Unitwise::Measurement do
     end
     it "should raise an error when units are not similar" do
       assert_raises(ArgumentError) { mph + hpm}
+    end
+  end
+
+  describe "#-" do
+    it "should add values when units are similar" do
+      added = mph - kmh
+      added.value.must_equal -2.1371192237334
+      added.unit.must_equal mph.unit
+    end
+    it "should raise an error when units are not similar" do
+      assert_raises(ArgumentError) { mph - hpm}
+    end
+  end
+
+  describe "#**" do
+    it "should raise to a power" do
+      exp = mile ** 3
+      exp.value.must_equal 27
+      exp.unit.to_s.must_equal "[mi_i]3"
+    end
+    it "should raise to a negative power" do
+      exp = cui ** -3
+      exp.value.must_equal 0.0005787037037037037
+      exp.unit.to_s.must_equal "[in_i]"
     end
   end
 
