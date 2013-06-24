@@ -1,0 +1,97 @@
+grammar Unitwise::Expression
+
+  rule expression
+    (this other?) {
+      if other
+        Array(this.value) + other.value
+      else
+        Array(this.value)
+      end
+    }
+  end
+
+  rule this
+    group | term
+  end
+
+  rule other
+    (operator expression) {
+      operator == '/' ? expression.value.map{ |ev| ev ** -1 } : expression.value
+    }
+  end
+
+  rule atom
+    (/#{Unitwise::CodeList.create(Unitwise::Atom.all)}/) {
+      Unitwise::Atom.find(self)
+    }
+  end
+
+  rule metric_atom
+    (/#{Unitwise::CodeList.create(Unitwise::Atom.all.select{|a| a.metric?})}/) {
+      Unitwise::Atom.find(self)
+    }
+  end
+
+  rule prefix
+    (/#{Unitwise::CodeList.create(Unitwise::Prefix.all)}/) {
+      Unitwise::Prefix.find(self)
+    }
+  end
+
+  rule annotation
+    (/\{.*\}/) { scan(/\{(.*)\}/).flatten.first }
+  end
+
+  rule term
+    ((((prefix atom:metric_atom) | atom | factor) exponent?) annotation?) {
+      values = [:prefix, :atom, :exponent, :factor, :annotation].inject(Hash.new) do |h, a|
+        if m = self.send(a)
+          h[a] = m.value
+        end
+        h
+      end
+      Unitwise::Term.new(values)
+    }
+  end
+
+  rule exponent
+    number
+  end
+
+  rule operator
+    '.' | '/'
+  end
+
+  rule group
+    ( '(' expression ')' exponent? ) {
+      if exponent
+        expression.value.map do |v|
+          v ** exponent.value
+        end
+      else
+        expression.value
+      end
+    }
+  end
+
+  rule factor
+    number
+  end
+
+  rule number
+    float | integer
+  end
+
+  rule float
+    ( '-'? digits '.' digits ) { to_f }
+  end
+
+  rule integer
+    ( '-'? digits ) { to_i }
+  end
+
+  rule digits
+    [0-9]+ ('_' [0-9]+)*
+  end
+
+end

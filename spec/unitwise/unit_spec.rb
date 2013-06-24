@@ -16,12 +16,6 @@ describe Unitwise::Unit do
     end
   end
 
-  it "must have expressions" do
-    ms2.must_respond_to :expressions
-    ms2.expressions.must_be_kind_of Enumerable
-    ms2.expressions.sample.must_be_instance_of Unitwise::Expression
-  end
-
   describe "#root_terms" do
     it "must be an array of Terms" do
       ms2.must_respond_to :terms

@@ -1,8 +1,9 @@
 require 'signed_multiset'
 module Unitwise
   class Term
-    attr_accessor :prefix_code, :atom_code
+    attr_writer :atom_code, :prefix_code, :atom, :prefix
     attr_writer :factor, :exponent
+    attr_accessor :annotation
 
     include Unitwise::Composable
 
@@ -12,16 +13,20 @@ module Unitwise
       end
     end
 
+    def prefix_code
+      @prefix_code ||= @prefix ? @prefix.primary_code : nil
+    end
+
     def prefix
-      @prefix ||= Prefix.find prefix_code
+      @prefix ||= @prefix_code ? Prefix.find(@prefix_code) : nil
+    end
+
+    def atom_code
+      @atom_code ||= @atom ? @atom.primary_code : nil
     end
 
     def atom
-      @atom ||= Atom.find atom_code
-    end
-
-    def scale
-      prefix.scale * (atom.scale ^ exponent)
+      @atom ||= @atom_code ? Atom.find(@atom_code) : nil
     end
 
     def depth
@@ -49,9 +54,19 @@ module Unitwise
         [self]
       else
         atom.measurement.root_terms.map do |t|
-          Term.new(atom_code: t.atom_code, exponent: t.exponent * exponent)
+          Term.new(atom: t.atom, exponent: t.exponent * exponent)
         end
       end
+    end
+
+    def to_hash
+      [:prefix, :atom, :exponent, :factor, :annotation].inject({}) do |h, a|
+        h[a] = send a; h
+      end
+    end
+
+    def **(integer)
+      Term.new(to_hash.merge(exponent: exponent * integer))
     end
 
     def to_s

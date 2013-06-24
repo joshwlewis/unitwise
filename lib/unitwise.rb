@@ -8,7 +8,7 @@ require 'unitwise/atom'
 require 'unitwise/prefix'
 require 'unitwise/term'
 require 'unitwise/unit'
-require 'unitwise/expression'
+require 'citrus'
 
 module Unitwise
   def self.path
@@ -19,3 +19,5 @@ module Unitwise
     File.join path, "data", "#{key}.yaml"
   end
 end
+
+Citrus.load(File.join(Unitwise.path, 'lib', 'unitwise', 'expression'))

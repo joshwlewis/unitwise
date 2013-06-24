@@ -127,9 +127,9 @@ describe Unitwise::Measurement do
       exp.unit.to_s.must_equal "[mi_i]3"
     end
     it "should raise to a negative power" do
-      exp = cui ** -3
-      exp.value.must_equal 0.0005787037037037037
-      exp.unit.to_s.must_equal "[in_i]"
+      exp = mile ** -3
+      exp.value.must_equal 0.037037037037037035
+      exp.unit.to_s.must_equal "1/[mi_i]3"
     end
   end
 

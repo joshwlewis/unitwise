@@ -61,7 +61,7 @@ module Unitwise
     end
 
     def root_terms
-      base? ? [Term.new(atom_code: primary_code)] : measurement.root_terms
+      base? ? [Term.new(atom: self)] : measurement.root_terms
     end
 
     def to_s

@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "signed_multiset"
+  gem.add_dependency "citrus"
 
   gem.add_development_dependency "minitest"
   gem.add_development_dependency "rake"

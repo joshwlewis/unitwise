@@ -1,9 +1,11 @@
 module Unitwise
   module CodeList
     def self.create(collection)
-      collection.map(&:codes).flatten.sort do |x, y|
+      collection.inject([]) do |a,i|
+        i.codes.each { |c| a << Regexp.escape(c) if c }; a
+      end.sort do |x, y|
         y.length <=> x.length
-      end
+      end.join('|')
     end
   end
 end

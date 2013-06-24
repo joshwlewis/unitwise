@@ -94,11 +94,11 @@ module Unitwise
       end
     end
 
-    def **(int)
-      if int.is_a?(Integer)
-        self.class.new( value ** int, unit ** int )
+    def **(number)
+      if number.is_a?(Numeric)
+        self.class.new( value ** number, unit ** number )
       else
-        raise TypeError, "Integer expected"
+        raise TypeError, "Numeric expected"
       end
     end
 
