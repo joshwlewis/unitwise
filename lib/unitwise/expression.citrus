@@ -1,5 +1,4 @@
 grammar Unitwise::Expression
-
   rule expression
     (this other?) {
       if other

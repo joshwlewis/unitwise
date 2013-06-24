@@ -9,24 +9,24 @@ module Unitwise
 
     def initialize(attributes)
       attributes.each do |k,v|
-        self.send :"#{k}=", v
+        public_send :"#{k}=", v
       end
     end
 
     def prefix_code
-      @prefix_code ||= @prefix ? @prefix.primary_code : nil
+      @prefix_code ||= (@prefix.primary_code if @prefix)
     end
 
     def prefix
-      @prefix ||= @prefix_code ? Prefix.find(@prefix_code) : nil
+      @prefix ||= (Prefix.find(@prefix_code) if @prefix_code)
     end
 
     def atom_code
-      @atom_code ||= @atom ? @atom.primary_code : nil
+      @atom_code ||= (@atom.primary_code if @atom)
     end
 
     def atom
-      @atom ||= @atom_code ? Atom.find(@atom_code) : nil
+      @atom ||= (Atom.find(@atom_code) if @atom_code)
     end
 
     def depth

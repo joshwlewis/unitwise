@@ -18,7 +18,7 @@ module Unitwise
     end
 
     def unit
-      @unit ||= Unit.new @unit_code
+      @unit ||= Unit.new(@unit_code)
     end
 
     def root_terms

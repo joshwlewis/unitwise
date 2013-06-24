@@ -14,7 +14,7 @@ module Unitwise
 
     def initialize(attrs)
       attrs.each do |k, v|
-        self.send :"#{k}=", v
+        public_send :"#{k}=", v
       end
     end
 

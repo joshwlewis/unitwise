@@ -2,12 +2,12 @@ module Unitwise
   class Simplifier
     attr_reader :terms
     def initialize(input)
-      if input.is_a?(String)
-        @terms = Unit.new(input).terms
-      elsif input.respond_to?(:terms)
+      if input.respond_to?(:terms)
         @terms = input.terms
-      else
+      elsif input.respond_to?(:each)
         @terms = input
+      else
+        @terms = Unit.new(input.to_s).terms
       end
     end
 

@@ -1,13 +1,24 @@
 module Unitwise
   class Unit
     include Unitwise::Composable
-    attr_reader :expression
-    def initialize(expression)
-      @expression = expression.to_s
+    attr_writer :terms, :expression
+
+    def initialize(input)
+      if input.respond_to?(:expression)
+        @expression = input.expression
+      elsif input.respond_to?(:each)
+        @terms = input
+      else
+        @expression = input.to_s
+      end
+    end
+
+    def expression
+      @expression ||= (Simplifier.new(@terms).expression if @terms)
     end
 
     def terms
-      @terms ||= Expression.parse(expression).value
+      @terms ||= (Expression.parse(@expression).value if @expression)
     end
 
     def dup
@@ -35,23 +46,23 @@ module Unitwise
     end
 
     def *(other)
-      if other.respond_to?(:expression)
-        self.class.new(Simplifier.new("(#{expression}).(#{other.expression})").expression)
+      if other.respond_to?(:terms)
+        self.class.new(terms + other.terms)
       else
         raise ArgumentError, "Can't multiply #{inspect} by #{other}."
       end
     end
 
     def /(other)
-      if other.respond_to?(:expression)
-        self.class.new(Simplifier.new("(#{expression})/(#{other.expression})").expression)
+      if other.respond_to?(:terms)
+        self.class.new(terms + other.terms.map{ |t| t ** -1})
       else
         raise ArgumentError, "Can't divide #{inspect} by #{other}."
       end
     end
 
     def **(number)
-      self.class.new(Simplifier.new("(#{expression})#{number}").expression)
+      self.class.new(terms.map{ |t| t ** number })
     end
 
     def to_s
