@@ -20,21 +20,15 @@ grammar Unitwise::Expression
   end
 
   rule atom
-    (/#{Unitwise::CodeList.create(Unitwise::Atom.all)}/) {
-      Unitwise::Atom.find(self)
-    }
+    (/#{Unitwise::MatchList.atom_codes}/) { Unitwise::Atom.find(self) }
   end
 
   rule metric_atom
-    (/#{Unitwise::CodeList.create(Unitwise::Atom.all.select{|a| a.metric?})}/) {
-      Unitwise::Atom.find(self)
-    }
+    (/#{Unitwise::MatchList.metric_atom_codes}/) { Unitwise::Atom.find(self) }
   end
 
   rule prefix
-    (/#{Unitwise::CodeList.create(Unitwise::Prefix.all)}/) {
-      Unitwise::Prefix.find(self)
-    }
+    (/#{Unitwise::MatchList.prefix_codes}/) { Unitwise::Prefix.find(self) }
   end
 
   rule annotation

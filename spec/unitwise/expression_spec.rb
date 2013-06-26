@@ -93,20 +93,18 @@ describe Unitwise::Expression do
       match.value.first.exponent.must_equal 2
     end
     it "must match nested groups" do
-      match = subject.parse('(((kg)))')
+      match = subject.parse('(((kg)))', root: :group)
       match.value.must_be_instance_of Array
       match.value.first.atom.primary_code.must_equal 'g'
       match.value.first.prefix.primary_code.must_equal 'k'
     end
     it "must pass exponents down" do
-      match = subject.parse('([in_i])3')
+      match = subject.parse('([in_i])3', root: :group)
       match.value.must_be_instance_of Array
       match.value.first.atom.primary_code.must_equal '[in_i]'
       match.value.first.exponent.must_equal 3
     end
   end
-
-
 
 
 end
