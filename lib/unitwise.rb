@@ -7,6 +7,7 @@ require 'unitwise/atom'
 require 'unitwise/prefix'
 require 'unitwise/term'
 require 'unitwise/unit'
+require 'unitwise/ext'
 
 module Unitwise
   def self.path
