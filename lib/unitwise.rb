@@ -1,14 +1,12 @@
 require "unitwise/version"
 require 'unitwise/base'
-require 'unitwise/match_list'
+require 'unitwise/expression'
 require 'unitwise/composable'
-require 'unitwise/simplifier'
 require 'unitwise/measurement'
 require 'unitwise/atom'
 require 'unitwise/prefix'
 require 'unitwise/term'
 require 'unitwise/unit'
-require 'citrus'
 
 module Unitwise
   def self.path
@@ -20,4 +18,3 @@ module Unitwise
   end
 end
 
-Citrus.load(File.join(Unitwise.path, 'lib', 'unitwise', 'expression'))

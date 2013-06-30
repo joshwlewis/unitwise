@@ -14,11 +14,11 @@ module Unitwise
     end
 
     def expression
-      @expression ||= (Simplifier.new(@terms).expression if @terms)
+      @expression ||= (Expression.compose(@terms) if @terms)
     end
 
     def terms
-      @terms ||= (Expression.parse(@expression).value if @expression)
+      @terms ||= (Expression.decompose(@expression) if @expression)
     end
 
     def dup

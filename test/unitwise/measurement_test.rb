@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'test_helper'
 
 describe Unitwise::Measurement do
   subject { Unitwise::Measurement.new(1, 'm/s') }
@@ -70,7 +70,7 @@ describe Unitwise::Measurement do
     it "must multiply unsimilar units" do
       mult = mph * mile
       mult.value.must_equal 180
-      mult.unit.must_equal Unitwise::Unit.new("([mi_i]/h).([mi_i])")
+      mult.unit.must_equal Unitwise::Unit.new("[mi_i]2/h")
     end
 
     it "must multiply canceling units" do

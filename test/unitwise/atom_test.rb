@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'test_helper'
 
 describe Unitwise::Atom do
   subject { Unitwise::Atom }

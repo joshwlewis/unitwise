@@ -54,7 +54,7 @@ module Unitwise
         [self]
       else
         atom.measurement.root_terms.map do |t|
-          Term.new(atom: t.atom, exponent: t.exponent * exponent)
+          self.class.new(atom: t.atom, exponent: t.exponent * exponent)
         end
       end
     end
@@ -65,8 +65,24 @@ module Unitwise
       end
     end
 
+    def *(other)
+      if other.respond_to?(:terms)
+        Unit.new(other.terms << self)
+      else
+        Unit.new([self, other])
+      end
+    end
+
+    def /(other)
+      if other.respond_to?(:terms)
+        Unit.new(other.terms.map{|t| t ** -1} << self)
+      else
+        Unit.new([self, other ** -1])
+      end
+    end
+
     def **(integer)
-      Term.new(to_hash.merge(exponent: exponent * integer))
+      self.class.new(to_hash.merge(exponent: exponent * integer))
     end
 
     def to_s
