@@ -11,7 +11,7 @@ module Unitwise
         end
 
         def prefix(method)
-          @prefix_codes ||= new(Prefix.all, method).alternative
+          new(Prefix.all, method).alternative
         end
       end
 
