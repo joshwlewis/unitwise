@@ -1,11 +1,15 @@
 module Unitwise
   module Expression
     class Parser < Parslet::Parser
+      attr_reader :key
+      def initialize(key=:codes)
+        @key = key
+      end
       root :expression
 
-      rule (:metric_atom) { Matcher.metric_atom_codes.as(:atom_code) }
-      rule (:atom) { Matcher.atom_codes.as(:atom_code) }
-      rule (:prefix) { Matcher.prefix_codes.as(:prefix_code) }
+      rule (:atom) { Matcher.atom(key).as(:atom_code) }
+      rule (:metric_atom) { Matcher.metric_atom(key).as(:atom_code) }
+      rule (:prefix) { Matcher.prefix(key).as(:prefix_code) }
 
       rule (:simpleton) do
         (prefix.as(:prefix) >> metric_atom.as(:atom) | atom.as(:atom))

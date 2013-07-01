@@ -2,16 +2,16 @@ module Unitwise
   module Expression
     class Matcher
       class << self
-        def atom_codes
-          @atom_codes ||= new(Atom.all).alternative
+        def atom(method)
+          new(Atom.all, method).alternative
         end
 
-        def metric_atom_codes
-          @metric_atom_codes ||= new(Atom.all.select(&:metric?)).alternative
+        def metric_atom(method)
+          new(Atom.all.select(&:metric?), method).alternative
         end
 
-        def prefix_codes
-          @prefix_codes ||= new(Prefix.all).alternative
+        def prefix(method)
+          @prefix_codes ||= new(Prefix.all, method).alternative
         end
       end
 
