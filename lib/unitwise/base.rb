@@ -1,7 +1,7 @@
 require 'yaml'
 module Unitwise
   class Base
-    attr_accessor :symbol, :primary_code, :secondary_code
+    attr_accessor :primary_code, :secondary_code, :symbol
     attr_reader :names, :measurement
 
     def self.all
@@ -25,6 +25,7 @@ module Unitwise
     def codes
       @codes ||= [primary_code, secondary_code].compact
     end
+
 
   end
 end

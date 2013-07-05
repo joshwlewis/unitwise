@@ -5,6 +5,7 @@ module Unitwise
       def initialize(key=:codes)
         @key = key
       end
+
       root :expression
 
       rule (:atom) { Matcher.atom(key).as(:atom_code) }

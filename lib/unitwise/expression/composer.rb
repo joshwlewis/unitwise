@@ -19,14 +19,14 @@ module Unitwise
       end
 
       def numerator
-        @numerator ||= set.select{|k,v| v >= 1}.map do |k,v|
-          "#{k[:f] if k[:f] != 1}#{k[:p]}#{k[:a]}#{v if v > 1}"
+        @numerator ||= set.select{|k,v| v > 0}.map do |k,v|
+          "#{k[:f] if k[:f] != 1}#{k[:p]}#{k[:a]}#{v if v != 1}"
         end.select{|t| !t.empty?}.join('.')
       end
 
       def denominator
-        @denominator ||= set.select{|k,v| v <= -1}.map do |k,v|
-          "#{k[:f] if k[:f] != 1}#{k[:p]}#{k[:a]}#{-v if v < -1}"
+        @denominator ||= set.select{|k,v| v < 0}.map do |k,v|
+          "#{k[:f] if k[:f] != 1}#{k[:p]}#{k[:a]}#{-v if v != -1}"
         end.select{|t| !t.empty?}.join('.')
       end
 
