@@ -9,7 +9,22 @@ module Unitwise
     end
 
     def self.find(string)
-      self.all.find { |i| i.codes.include?(string) }
+      [:primary_code, :secondary_code, :names, :slugs, :symbol].reduce(nil) do |m, method|
+        if found = find_by(method, string)
+          return found
+        end
+      end
+    end
+
+    def self.find_by(method, string)
+      self.all.find do |i|
+        key = i.send(method)
+        if key.respond_to?(:each)
+          key.include?(string)
+        else
+          key == string
+        end
+      end
     end
 
     def initialize(attrs)
@@ -22,10 +37,9 @@ module Unitwise
       @names = Array(names)
     end
 
-    def codes
-      @codes ||= [primary_code, secondary_code].compact
+    def slugs
+      names.map(&:to_slug)
     end
-
 
   end
 end

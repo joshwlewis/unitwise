@@ -17,31 +17,9 @@ module Unitwise
 
       attr_reader :collection, :method
 
-      def initialize(collection, method=:codes)
+      def initialize(collection, method=:primary_code)
         @collection = collection
         @method = method
-      end
-
-      def strx(string)
-        if string =~ /[A-Z]|\W/
-          string.split(//).map do |c|
-            if c =~ /\s/
-              str(c) | str('_')
-            elsif c =~ /\W/
-              (str(c) | str('_')).maybe
-            elsif c =~ /[A-Z]/
-              str(c) | str(c.downcase)
-            else
-              str(c)
-            end
-          end.reduce(:>>)
-        else
-          str(string)
-        end
-      end
-
-      def str(string)
-        Parslet::Atoms::Str.new(string)
       end
 
       def strings
@@ -51,9 +29,7 @@ module Unitwise
       end
 
       def matchers
-        @matchers ||= strings.map do |s|
-          method == :names ? strx(s) : str(s)
-        end
+        @matchers ||= strings.map {|s| Parslet::Atoms::Str.new(s) }
       end
 
       def alternative

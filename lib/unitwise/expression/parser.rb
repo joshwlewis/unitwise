@@ -2,7 +2,7 @@ module Unitwise
   module Expression
     class Parser < Parslet::Parser
       attr_reader :key
-      def initialize(key=:codes)
+      def initialize(key=:primary_code)
         @key = key
       end
 

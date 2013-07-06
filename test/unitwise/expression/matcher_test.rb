@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Unitwise::Expression::Matcher do
   describe "::atom(:codes)" do
-    subject { Unitwise::Expression::Matcher.atom(:codes)}
+    subject { Unitwise::Expression::Matcher.atom(:primary_code)}
     it "must be an Alternative list" do
       subject.must_be_instance_of Parslet::Atoms::Alternative
     end
@@ -16,11 +16,20 @@ describe Unitwise::Expression::Matcher do
       subject.must_be_instance_of Parslet::Atoms::Alternative
     end
     it "must parse 'Joule'" do
-      ['joule', 'Joule'].each do |n|
-        subject.parse(n).must_equal(n)
-      end
+      subject.parse('Joule').must_equal('Joule')
     end
   end
+
+  describe "::atom(:slugs)" do
+    subject { Unitwise::Expression::Matcher.atom(:slugs)}
+    it "must be an Alternative list of slugs" do
+      subject.must_be_instance_of Parslet::Atoms::Alternative
+    end
+    it "must match 'georgian_year'" do
+      subject.parse("mean_gregorian_year").must_equal("mean_gregorian_year")
+    end
+  end
+
   describe "::prefix(:symbol)" do
     subject { Unitwise::Expression::Matcher.prefix(:symbol)}
     it "must be an Alternative list of symbols" do

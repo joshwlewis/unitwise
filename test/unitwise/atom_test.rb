@@ -37,14 +37,6 @@ describe Unitwise::Atom do
     end
   end
 
-  describe "#codes" do
-    it "must be a list of strings" do
-      second.must_respond_to :codes
-      second.codes.must_be_kind_of Enumerable
-      second.codes.sample.must_be_kind_of String
-    end
-  end
-
   describe "#base?" do
     it "must be true for base atoms" do
       second.base?.must_equal true

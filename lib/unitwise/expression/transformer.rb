@@ -1,11 +1,6 @@
 module Unitwise
   module Expression
     class Transformer < Parslet::Transform
-      attr_reader :key
-      def initialize(key=:codes)
-        @key = key
-        super()
-      end
       rule(integer: simple(:i)) { i.to_i }
       rule(fixnum: simple(:f)) { f.to_f }
 

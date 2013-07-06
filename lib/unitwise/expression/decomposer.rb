@@ -2,29 +2,28 @@ module Unitwise
   module Expression
     class Decomposer
 
-      PARSERS = [:codes, :names, :symbol].map{ |t| Parser.new(t) }
+      PARSERS = [:primary_code, :secondary_code, :names, :slugs, :symbol].map do |t|
+        Parser.new(t)
+      end
+
+      TRANSFORMER = Transformer.new
 
       attr_reader :expression
-      attr_accessor :key, :parsed
 
       def initialize(expression)
         @expression = expression
-        self.parse
       end
 
       def parse
-        PARSERS.each do |p|
+        PARSERS.reduce(nil) do |m, p|
           if prs = p.parse(expression) rescue next
-            self.parsed = prs
-            self.key = p.key
-            break
+            return prs
           end
         end
-        parsed
       end
 
       def transform
-        @transform ||= Transformer.new(key).apply(parsed)
+        @transform ||= TRANSFORMER.apply(parse)
       end
 
       def terms
