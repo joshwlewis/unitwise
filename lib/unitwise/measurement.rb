@@ -37,7 +37,7 @@ module Unitwise
       value * unit.scale
     end
 
-    def to(unit)
+    def convert(unit)
       other_unit = Unit.new(unit)
       if similar_to?(other_unit)
         self.class.new(scale / other_unit.scale, other_unit)
@@ -51,7 +51,7 @@ module Unitwise
         self.class.new(value * other, unit)
       elsif other.respond_to?(:composition)
         if similar_to?(other)
-          converted = other.to(unit)
+          converted = other.convert(unit)
           self.class.new(value * converted.value, unit * converted.unit)
         else
           self.class.new(value * other.value, unit * other.unit)
@@ -66,7 +66,7 @@ module Unitwise
         self.class.new(value / other, unit)
       elsif other.respond_to?(:composition)
         if similar_to?(other)
-          converted = other.to(unit)
+          converted = other.convert(unit)
           self.class.new(value / converted.value, unit / converted.unit)
         else
           self.class.new(value / other.value, unit / other.unit)
@@ -78,7 +78,7 @@ module Unitwise
 
     def +(other)
       if similar_to?(other)
-        converted = other.to(unit)
+        converted = other.convert(unit)
         self.class.new(value + converted.value, unit)
       else
         raise ArgumentError, "Can't add #{other} to #{inspect}."
@@ -87,7 +87,7 @@ module Unitwise
 
     def -(other)
       if similar_to?(other)
-        converted = other.to(unit)
+        converted = other.convert(unit)
         self.class.new(value - converted.value, unit)
       else
         raise ArgumentError, "Can't subtract #{other} from #{inspect}."
@@ -99,6 +99,14 @@ module Unitwise
         self.class.new( value ** number, unit ** number )
       else
         raise TypeError, "Numeric expected"
+      end
+    end
+
+    def method_missing(meth, *args, &block)
+      if Unitwise::Expression.decompose(meth)
+        self.convert(meth)
+      else
+        super(meth, *args, &block)
       end
     end
 

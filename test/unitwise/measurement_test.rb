@@ -3,7 +3,7 @@ require 'test_helper'
 describe Unitwise::Measurement do
   subject { Unitwise::Measurement.new(1, 'm/s') }
   describe "#new" do
-    it "should set attributes" do
+    it "must set attributes" do
       subject.value.must_equal(1)
       subject.unit.to_s.must_equal('m/s')
     end
@@ -47,12 +47,12 @@ describe Unitwise::Measurement do
     end
   end
 
-  describe "#to" do
-    it "should convert to a similar unit code" do
-      mph.to('km/h').value.must_equal 96.56063999999999
+  describe "#convert" do
+    it "must convert to a similar unit code" do
+      mph.convert('km/h').value.must_equal 96.56063999999999
     end
-    it "should raise an error if the units aren't similar" do
-      assert_raises(ArgumentError) { mph.to('N') }
+    it "must raise an error if the units aren't similar" do
+      ->{ mph.convert('N') }.must_raise ArgumentError
     end
   end
 
@@ -81,17 +81,17 @@ describe Unitwise::Measurement do
   end
 
   describe "#/" do
-    it "should divide by scalars" do
+    it "must divide by scalars" do
       div = kmh / 4
       div.value.must_equal 25
       div.unit.must_equal kmh.unit
     end
-    it "should divide by the value of similar units" do
+    it "must divide by the value of similar units" do
       div = kmh / mph
       div.value.must_equal 1.03561865372889
       div.unit.to_s.must_equal '1'
     end
-    it "should divide dissimilar units" do
+    it "must divide dissimilar units" do
       div = mph / hpm
       div.value.must_equal 10
       div.unit.to_s.must_equal "[mi_i]2/h2"
@@ -99,38 +99,58 @@ describe Unitwise::Measurement do
   end
 
   describe "#+" do
-    it "should add values when units are similar" do
+    it "must add values when units are similar" do
       added = mph + kmh
       added.value.must_equal 122.13711922373341
       added.unit.must_equal mph.unit
     end
-    it "should raise an error when units are not similar" do
+    it "must raise an error when units are not similar" do
       assert_raises(ArgumentError) { mph + hpm}
     end
   end
 
   describe "#-" do
-    it "should add values when units are similar" do
+    it "must add values when units are similar" do
       added = mph - kmh
       added.value.must_equal -2.1371192237334
       added.unit.must_equal mph.unit
     end
-    it "should raise an error when units are not similar" do
+    it "must raise an error when units are not similar" do
       assert_raises(ArgumentError) { mph - hpm}
     end
   end
 
   describe "#**" do
-    it "should raise to a power" do
+    it "must raise to a power" do
       exp = mile ** 3
       exp.value.must_equal 27
       exp.unit.to_s.must_equal "[mi_i]3"
     end
-    it "should raise to a negative power" do
+    it "must raise to a negative power" do
       exp = mile ** -3
       exp.value.must_equal 0.037037037037037035
       exp.unit.to_s.must_equal "1/[mi_i]3"
     end
+  end
+
+  describe "#method_missing" do
+    let(:meter) { Unitwise::Measurement.new(1, 'm')}
+    it "must convert 'mm'" do
+      convert = meter.mm
+      convert.must_be_instance_of Unitwise::Measurement
+      convert.value.must_equal 1000
+    end
+
+    it "must convert 'foot'" do
+      convert = meter.foot
+      convert.must_be_instance_of Unitwise::Measurement
+      convert.value.must_equal 3.280839895013123
+    end
+
+    it "must not convert 'foo'" do
+      ->{ meter.foo }.must_raise NoMethodError
+    end
+
   end
 
 end
