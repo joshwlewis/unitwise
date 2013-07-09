@@ -42,7 +42,7 @@ module Unitwise
       if similar_to?(other_unit)
         self.class.new(scale / other_unit.scale, other_unit)
       else
-        raise ArgumentError, "Can't coerce #{unit} to #{other_unit}."
+        raise ArgumentError, "Can't coerce #{inspect} to #{other_unit}."
       end
     end
 

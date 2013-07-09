@@ -14,7 +14,11 @@ module Unitwise
       end
 
       def decompose(expression)
-        Decomposer.new(expression).terms
+        begin
+          Decomposer.new(expression).terms
+        rescue ExpressionError
+          nil
+        end
       end
     end
   end

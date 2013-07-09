@@ -8,6 +8,7 @@ require 'unitwise/prefix'
 require 'unitwise/term'
 require 'unitwise/unit'
 require 'unitwise/ext'
+require 'unitwise/errors'
 
 module Unitwise
   def self.path

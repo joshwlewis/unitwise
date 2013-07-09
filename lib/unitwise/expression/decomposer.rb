@@ -11,7 +11,10 @@ module Unitwise
       attr_reader :expression
 
       def initialize(expression)
-        @expression = expression
+        @expression = expression.to_s
+        if terms.nil? || terms.empty?
+          raise ExpressionError, "Could not evaluate '#{@expression}'."
+        end
       end
 
       def parse

@@ -44,10 +44,11 @@ module Unitwise::Standard
     end
 
     def symbol
-      if attributes["printSymbol"].is_a?(Hash)
-        hash_to_markup(attributes["printSymbol"])
-      else
-        attributes["printSymbol"].to_s
+      sym = attributes["printSymbol"]
+      if sym.is_a?(Hash)
+        hash_to_markup(sym)
+      elsif sym
+        sym.to_s
       end
     end
 
@@ -60,8 +61,12 @@ module Unitwise::Standard
     end
 
     def to_hash
-      { names: names, symbol: symbol,
-        primary_code: primary_code, secondary_code: secondary_code}
+      [:names, :symbol, :primary_code, :secondary_code].inject({}) do |h,a|
+        if v = self.send(a)
+          h[a] = v
+        end
+        h
+      end
     end
 
   end
