@@ -49,7 +49,7 @@ module Unitwise
       if other.respond_to?(:terms)
         self.class.new(terms + other.terms)
       else
-        raise ArgumentError, "Can't multiply #{inspect} by #{other}."
+        raise TypeError, "Can't multiply #{inspect} by #{other}."
       end
     end
 
@@ -57,7 +57,7 @@ module Unitwise
       if other.respond_to?(:terms)
         self.class.new(terms + other.terms.map{ |t| t ** -1})
       else
-        raise ArgumentError, "Can't divide #{inspect} by #{other}."
+        raise TypeError, "Can't divide #{inspect} by #{other}."
       end
     end
 

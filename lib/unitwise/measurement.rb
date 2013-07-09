@@ -42,7 +42,7 @@ module Unitwise
       if similar_to?(other_unit)
         self.class.new(scale / other_unit.scale, other_unit)
       else
-        raise ArgumentError, "Can't coerce #{inspect} to #{other_unit}."
+        raise ConversionError, "Can't convert #{inspect} to #{other_unit}."
       end
     end
 
@@ -57,7 +57,7 @@ module Unitwise
           self.class.new(value * other.value, unit * other.unit)
         end
       else
-        raise ArgumentError, "Can't multiply #{inspect} by #{other}."
+        raise TypeError, "Can't multiply #{inspect} by #{other}."
       end
     end
 
@@ -72,7 +72,7 @@ module Unitwise
           self.class.new(value / other.value, unit / other.unit)
         end
       else
-        raise ArgumentError, "Can't divide #{inspect} by #{other}"
+        raise TypeError, "Can't divide #{inspect} by #{other}"
       end
     end
 
@@ -81,7 +81,7 @@ module Unitwise
         converted = other.convert(unit)
         self.class.new(value + converted.value, unit)
       else
-        raise ArgumentError, "Can't add #{other} to #{inspect}."
+        raise TypeError, "Can't add #{other} to #{inspect}."
       end
     end
 
@@ -90,7 +90,7 @@ module Unitwise
         converted = other.convert(unit)
         self.class.new(value - converted.value, unit)
       else
-        raise ArgumentError, "Can't subtract #{other} from #{inspect}."
+        raise TypeError, "Can't subtract #{other} from #{inspect}."
       end
     end
 
@@ -98,7 +98,7 @@ module Unitwise
       if number.is_a?(Numeric)
         self.class.new( value ** number, unit ** number )
       else
-        raise TypeError, "Numeric expected"
+        raise TypeError, "Can't raise #{inspect} to #{number} power."
       end
     end
 

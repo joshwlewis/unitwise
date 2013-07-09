@@ -52,7 +52,7 @@ describe Unitwise::Measurement do
       mph.convert('km/h').value.must_equal 96.56063999999999
     end
     it "must raise an error if the units aren't similar" do
-      ->{ mph.convert('N') }.must_raise ArgumentError
+      ->{ mph.convert('N') }.must_raise Unitwise::ConversionError
     end
   end
 
@@ -105,7 +105,7 @@ describe Unitwise::Measurement do
       added.unit.must_equal mph.unit
     end
     it "must raise an error when units are not similar" do
-      assert_raises(ArgumentError) { mph + hpm}
+      assert_raises(TypeError) { mph + hpm}
     end
   end
 
@@ -116,7 +116,7 @@ describe Unitwise::Measurement do
       added.unit.must_equal mph.unit
     end
     it "must raise an error when units are not similar" do
-      assert_raises(ArgumentError) { mph - hpm}
+      assert_raises(TypeError) { mph - hpm}
     end
   end
 
