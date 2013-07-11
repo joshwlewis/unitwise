@@ -8,14 +8,13 @@ Gem::Specification.new do |gem|
   gem.version       = Unitwise::VERSION
   gem.authors       = ["Josh Lewis"]
   gem.email         = ["josh.w.lewis@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Ruby implementation of the Unified Code for Units of Measure (UCUM)}
+  gem.summary       = %q{Unitwise is a library for performing mathematical operations and conversions on all units defined by the Unified Code for Units of Measure(UCUM).}
+  gem.homepage      = "http://github.com/joshwlewis/unitwise"
   gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.test_files    = gem.files.grep(%r{^test/})
   gem.require_paths = ["lib"]
 
   gem.add_dependency "signed_multiset"
