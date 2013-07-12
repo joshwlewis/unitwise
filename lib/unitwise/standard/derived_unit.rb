@@ -39,8 +39,7 @@ module Unitwise::Standard
 
     def to_hash
       hash = super()
-      hash[:measurement] = scale.to_hash if scale
-      hash[:function] = function.to_hash if function
+      hash[:scale] = (special? ? function.to_hash : scale.to_hash)
       hash.merge({classification: classification,
                   property: property, metric: metric?,
                   special: special?, arbitrary: arbitrary?})

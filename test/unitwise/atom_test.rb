@@ -28,12 +28,15 @@ describe Unitwise::Atom do
   let(:pi) { Unitwise::Atom.find("[pi]")}
   let(:celsius) { Unitwise::Atom.find("Cel")}
   let(:pfu) { Unitwise::Atom.find("[PFU]")}
-  describe "#measurement" do
+  describe "#scale" do
     it "must be nil for base atoms" do
-      second.measurement.must_equal nil
+      second.scale.must_equal nil
     end
-    it "sould be a measurement object for derived atoms" do
-      yard.measurement.must_be_instance_of Unitwise::Measurement
+    it "sould be a LinearScale object for derived atoms" do
+      yard.scale.must_be_instance_of Unitwise::LinearScale
+    end
+    it "must be a FunctionalScale object for special atoms" do
+      celsius.scale.must_be_instance_of Unitwise::FunctionalScale
     end
   end
 
@@ -68,7 +71,7 @@ describe Unitwise::Atom do
 
   describe "#special?" do
     it "must be true for special atoms" do
-      celsius.special.must_equal true
+      celsius.special?.must_equal true
     end
     it "must be false for non-special atoms" do
       second.special?.must_equal false
@@ -95,11 +98,11 @@ describe Unitwise::Atom do
     end
   end
 
-  describe "#scale" do
-    it "must return scale relative to terminal atom" do
-      second.scale.must_equal 1
-      yard.scale.must_equal 0.9144000000000001
-      pi.scale.must_equal 3.141592653589793
+  describe "#scalar" do
+    it "must return scalar relative to terminal atom" do
+      second.scalar.must_equal 1
+      yard.scalar.must_equal 0.9144000000000001
+      pi.scalar.must_equal 3.141592653589793
     end
   end
 

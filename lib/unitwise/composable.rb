@@ -17,7 +17,7 @@ module Unitwise
 
     def <=>(other)
       if other.respond_to?(:composition) && similar_to?(other)
-        scale <=> other.scale
+        scalar <=> other.scalar
       end
     end
 

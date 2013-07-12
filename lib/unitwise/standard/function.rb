@@ -12,7 +12,7 @@ module Unitwise::Standard
     end
 
     def value
-      attributes["function"]["@value"]
+      attributes["function"]["@value"].to_f
     end
 
     def unit
@@ -28,7 +28,7 @@ module Unitwise::Standard
     end
 
     def to_hash
-      {name: name, value: value, unit: unit, primary: primary, secondary: secondary}
+      {function_code: primary, value: value, unit_code: unit}
     end
 
   end

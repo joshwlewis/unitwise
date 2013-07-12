@@ -40,10 +40,10 @@ describe Unitwise::Measurement do
   let(:hpm) { Unitwise::Measurement.new(6, 'h/[mi_i]')}
   let(:cui) { Unitwise::Measurement.new(12, "[in_i]3")}
 
-  describe "#scale" do
+  describe "#scalar" do
     it "must return value relative to terminal atoms" do
-      subject.scale.must_equal 1
-      mph.scale.must_equal 26.8224
+      subject.scalar.must_equal 1
+      mph.scalar.must_equal 26.8224
     end
   end
 

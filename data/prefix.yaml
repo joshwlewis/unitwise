@@ -3,119 +3,119 @@
   :symbol: Y
   :primary_code: Y
   :secondary_code: YA
-  :scale: 1e24
+  :scalar: 1e24
 - :names: zetta
   :symbol: Z
   :primary_code: Z
   :secondary_code: ZA
-  :scale: 1e21
+  :scalar: 1e21
 - :names: exa
   :symbol: E
   :primary_code: E
   :secondary_code: EX
-  :scale: 1e18
+  :scalar: 1e18
 - :names: peta
   :symbol: P
   :primary_code: P
   :secondary_code: PT
-  :scale: 1e15
+  :scalar: 1e15
 - :names: tera
   :symbol: T
   :primary_code: T
   :secondary_code: TR
-  :scale: 1e12
+  :scalar: 1e12
 - :names: giga
   :symbol: G
   :primary_code: G
   :secondary_code: GA
-  :scale: 1e9
+  :scalar: 1e9
 - :names: mega
   :symbol: M
   :primary_code: M
   :secondary_code: MA
-  :scale: 1e6
+  :scalar: 1e6
 - :names: kilo
   :symbol: k
   :primary_code: k
   :secondary_code: K
-  :scale: 1e3
+  :scalar: 1e3
 - :names: hecto
   :symbol: h
   :primary_code: h
   :secondary_code: H
-  :scale: 1e2
+  :scalar: 1e2
 - :names: deka
   :symbol: da
   :primary_code: da
   :secondary_code: DA
-  :scale: 1e1
+  :scalar: 1e1
 - :names: deci
   :symbol: d
   :primary_code: d
   :secondary_code: D
-  :scale: 1e-1
+  :scalar: 1e-1
 - :names: centi
   :symbol: c
   :primary_code: c
   :secondary_code: C
-  :scale: 1e-2
+  :scalar: 1e-2
 - :names: milli
   :symbol: m
   :primary_code: m
   :secondary_code: M
-  :scale: 1e-3
+  :scalar: 1e-3
 - :names: micro
   :symbol: μ
   :primary_code: u
   :secondary_code: U
-  :scale: 1e-6
+  :scalar: 1e-6
 - :names: nano
   :symbol: n
   :primary_code: n
   :secondary_code: N
-  :scale: 1e-9
+  :scalar: 1e-9
 - :names: pico
   :symbol: p
   :primary_code: p
   :secondary_code: P
-  :scale: 1e-12
+  :scalar: 1e-12
 - :names: femto
   :symbol: f
   :primary_code: f
   :secondary_code: F
-  :scale: 1e-15
+  :scalar: 1e-15
 - :names: atto
   :symbol: a
   :primary_code: a
   :secondary_code: A
-  :scale: 1e-18
+  :scalar: 1e-18
 - :names: zepto
   :symbol: z
   :primary_code: z
   :secondary_code: ZO
-  :scale: 1e-21
+  :scalar: 1e-21
 - :names: yocto
   :symbol: y
   :primary_code: y
   :secondary_code: YO
-  :scale: 1e-24
+  :scalar: 1e-24
 - :names: kibi
   :symbol: Ki
   :primary_code: Ki
   :secondary_code: KIB
-  :scale: '1024'
+  :scalar: '1024'
 - :names: mebi
   :symbol: Mi
   :primary_code: Mi
   :secondary_code: MIB
-  :scale: '1048576'
+  :scalar: '1048576'
 - :names: gibi
   :symbol: Gi
   :primary_code: Gi
   :secondary_code: GIB
-  :scale: '1073741824'
+  :scalar: '1073741824'
 - :names: tebi
   :symbol: Ti
   :primary_code: Ti
   :secondary_code: TIB
-  :scale: '1099511627776'
+  :scalar: '1099511627776'

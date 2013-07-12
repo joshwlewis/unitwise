@@ -24,12 +24,12 @@ describe Unitwise::Unit do
     end
   end
 
-  describe "#scale" do
+  describe "#scalar" do
     it "must return value relative to terminal atoms" do
-      ms2.must_respond_to :scale
-      ms2.scale.must_equal 1
-      psi.scale.must_equal 6894757.293168359
-      deg.scale.must_equal 0.017453292519943295
+      ms2.must_respond_to :scalar
+      ms2.scalar.must_equal 1
+      psi.scalar.must_equal 6894757.293168359
+      deg.scalar.must_equal 0.017453292519943295
     end
   end
 

@@ -45,15 +45,15 @@ module Unitwise
       @exponent ||= 1
     end
 
-    def scale
-      (factor * (prefix ? prefix.scale : 1) * (atom ? atom.scale : 1)) ** exponent
+    def scalar
+      (factor * (prefix ? prefix.scalar : 1) * (atom ? atom.scalar : 1)) ** exponent
     end
 
     def root_terms
       if terminal?
         [self]
       else
-        atom.measurement.root_terms.map do |t|
+        atom.scale.root_terms.map do |t|
           self.class.new(atom: t.atom, exponent: t.exponent * exponent)
         end
       end

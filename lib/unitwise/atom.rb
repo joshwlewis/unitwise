@@ -1,7 +1,7 @@
 module Unitwise
   class Atom < Base
     attr_accessor :classification, :property, :metric, :special
-    attr_accessor :arbitrary, :function, :dim
+    attr_accessor :arbitrary, :dim
 
     include Unitwise::Composable
 
@@ -16,7 +16,7 @@ module Unitwise
     end
 
     def base?
-      measurement.nil? && !dim.nil?
+      scale.nil? && !dim.nil?
     end
 
     def derived?
@@ -40,7 +40,7 @@ module Unitwise
     end
 
     def depth
-      base? ? 0 : measurement.depth + 1
+      base? ? 0 : scale.depth + 1
     end
 
     def terminal?
@@ -51,21 +51,20 @@ module Unitwise
       base? ? dim : property
     end
 
-    def measurement=(*args)
-      if args.first.is_a?(Hash)
-        hash = args.first
-        @measurement = Measurement.new(hash[:value], hash[:unit_code])
+    def scale=(attrs)
+      if attrs[:function_code]
+        @scale = FunctionalScale.new(attrs[:function_code], attrs[:value], attrs[:unit_code])
       else
-        @measurement = Measurement.new(*args)
+        @scale = LinearScale.new(attrs[:value], attrs[:unit_code])
       end
     end
 
-    def scale
-      base? ? 1 : measurement.scale
+    def scalar
+      base? ? 1 : scale.scalar
     end
 
     def root_terms
-      base? ? [Term.new(atom: self)] : measurement.root_terms
+      base? ? [Term.new(atom: self)] : scale.root_terms
     end
 
     def to_s

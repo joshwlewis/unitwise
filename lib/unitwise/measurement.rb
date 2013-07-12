@@ -1,46 +1,10 @@
 module Unitwise
-  class Measurement
-    attr_reader :value
-
-    include Unitwise::Composable
-
-    def initialize(value, unit)
-      @value = value
-      if unit.is_a?(Unit)
-        @unit = unit.dup
-      else
-        @unit = Unit.new(unit.to_s)
-      end
-    end
-
-    def dup
-      self.class.new(value, unit)
-    end
-
-    def unit
-      @unit ||= Unit.new(@unit_code)
-    end
-
-    def root_terms
-      unit.root_terms
-    end
-
-    def depth
-      unit.depth + 1
-    end
-
-    def terminal?
-      depth <= 3
-    end
-
-    def scale
-      value * unit.scale
-    end
+  class Measurement < LinearScale
 
     def convert(unit)
       other_unit = Unit.new(unit)
       if similar_to?(other_unit)
-        self.class.new(scale / other_unit.scale, other_unit)
+        self.class.new(scalar / other_unit.scalar, other_unit)
       else
         raise ConversionError, "Can't convert #{inspect} to #{other_unit}."
       end
@@ -108,14 +72,6 @@ module Unitwise
       else
         super(meth, *args, &block)
       end
-    end
-
-    def to_s
-      "#{value} #{unit}"
-    end
-
-    def inspect
-      "<#{self.class} #{to_s}>"
     end
 
   end

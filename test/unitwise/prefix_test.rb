@@ -16,9 +16,9 @@ describe Unitwise::Prefix do
     end
   end
 
-  describe "#scale" do
+  describe "#scalar" do
     it "should be a number" do
-      m.scale.must_equal 0.001
+      m.scalar.must_equal 0.001
     end
   end
 

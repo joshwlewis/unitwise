@@ -1,6 +1,6 @@
 module Unitwise
   class Prefix < Base
-    attr_reader :scale
+    attr_reader :scalar
 
     def self.data
       @data ||= YAML::load File.open(data_file)
@@ -10,8 +10,8 @@ module Unitwise
       Unitwise.data_file 'prefix'
     end
 
-    def scale=(value)
-      @scale = value.to_f
+    def scalar=(value)
+      @scalar = value.to_f
     end
   end
 end

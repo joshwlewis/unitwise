@@ -3,7 +3,7 @@
   :symbol: '10'
   :primary_code: 10*
   :secondary_code: 10*
-  :measurement:
+  :scale:
     :value: 10.0
     :unit_code: '1'
   :classification: dimless
@@ -15,7 +15,7 @@
   :symbol: '10'
   :primary_code: 10^
   :secondary_code: 10^
-  :measurement:
+  :scale:
     :value: 10.0
     :unit_code: '1'
   :classification: dimless
@@ -27,7 +27,7 @@
   :symbol: π
   :primary_code: '[pi]'
   :secondary_code: '[PI]'
-  :measurement:
+  :scale:
     :value: 3.141592653589793
     :unit_code: '1'
   :classification: dimless
@@ -39,7 +39,7 @@
   :symbol: '%'
   :primary_code: '%'
   :secondary_code: '%'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: 10*-2
   :classification: dimless
@@ -51,7 +51,7 @@
   :symbol: ppth
   :primary_code: '[ppth]'
   :secondary_code: '[PPTH]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: 10*-3
   :classification: dimless
@@ -63,7 +63,7 @@
   :symbol: ppm
   :primary_code: '[ppm]'
   :secondary_code: '[PPM]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: 10*-6
   :classification: dimless
@@ -75,7 +75,7 @@
   :symbol: ppb
   :primary_code: '[ppb]'
   :secondary_code: '[PPB]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: 10*-9
   :classification: dimless
@@ -87,7 +87,7 @@
   :symbol: pptr
   :primary_code: '[pptr]'
   :secondary_code: '[PPTR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: 10*-12
   :classification: dimless
@@ -99,7 +99,7 @@
   :symbol: mol
   :primary_code: mol
   :secondary_code: MOL
-  :measurement:
+  :scale:
     :value: 6.0221367
     :unit_code: 10*23
   :classification: si
@@ -111,7 +111,7 @@
   :symbol: sr
   :primary_code: sr
   :secondary_code: SR
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: rad2
   :classification: si
@@ -123,7 +123,7 @@
   :symbol: Hz
   :primary_code: Hz
   :secondary_code: HZ
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: s-1
   :classification: si
@@ -135,7 +135,7 @@
   :symbol: N
   :primary_code: N
   :secondary_code: N
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: kg.m/s2
   :classification: si
@@ -147,7 +147,7 @@
   :symbol: Pa
   :primary_code: Pa
   :secondary_code: PAL
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: N/m2
   :classification: si
@@ -159,7 +159,7 @@
   :symbol: J
   :primary_code: J
   :secondary_code: J
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: N.m
   :classification: si
@@ -171,7 +171,7 @@
   :symbol: W
   :primary_code: W
   :secondary_code: W
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: J/s
   :classification: si
@@ -183,7 +183,7 @@
   :symbol: A
   :primary_code: A
   :secondary_code: A
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: C/s
   :classification: si
@@ -195,7 +195,7 @@
   :symbol: V
   :primary_code: V
   :secondary_code: V
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: J/C
   :classification: si
@@ -207,7 +207,7 @@
   :symbol: F
   :primary_code: F
   :secondary_code: F
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: C/V
   :classification: si
@@ -219,7 +219,7 @@
   :symbol: Ω
   :primary_code: Ohm
   :secondary_code: OHM
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: V/A
   :classification: si
@@ -231,7 +231,7 @@
   :symbol: S
   :primary_code: S
   :secondary_code: SIE
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: Ohm-1
   :classification: si
@@ -243,7 +243,7 @@
   :symbol: Wb
   :primary_code: Wb
   :secondary_code: WB
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: V.s
   :classification: si
@@ -255,12 +255,10 @@
   :symbol: °C
   :primary_code: Cel
   :secondary_code: CEL
-  :function:
-    :name: Cel
-    :value: '1'
-    :unit: K
-    :primary: cel(1 K)
-    :secondary: CEL(1 K)
+  :scale:
+    :function_code: cel(1 K)
+    :value: 1.0
+    :unit_code: K
   :classification: si
   :property: temperature
   :metric: true
@@ -270,7 +268,7 @@
   :symbol: T
   :primary_code: T
   :secondary_code: T
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: Wb/m2
   :classification: si
@@ -282,7 +280,7 @@
   :symbol: H
   :primary_code: H
   :secondary_code: H
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: Wb/A
   :classification: si
@@ -294,7 +292,7 @@
   :symbol: lm
   :primary_code: lm
   :secondary_code: LM
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: cd.sr
   :classification: si
@@ -306,7 +304,7 @@
   :symbol: lx
   :primary_code: lx
   :secondary_code: LX
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: lm/m2
   :classification: si
@@ -318,7 +316,7 @@
   :symbol: Bq
   :primary_code: Bq
   :secondary_code: BQ
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: s-1
   :classification: si
@@ -330,7 +328,7 @@
   :symbol: Gy
   :primary_code: Gy
   :secondary_code: GY
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: J/kg
   :classification: si
@@ -342,7 +340,7 @@
   :symbol: Sv
   :primary_code: Sv
   :secondary_code: SV
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: J/kg
   :classification: si
@@ -356,7 +354,7 @@
   :symbol: □<sup>g</sup>
   :primary_code: gon
   :secondary_code: GON
-  :measurement:
+  :scale:
     :value: 0.9
     :unit_code: deg
   :classification: iso1000
@@ -368,7 +366,7 @@
   :symbol: °
   :primary_code: deg
   :secondary_code: DEG
-  :measurement:
+  :scale:
     :value: 2.0
     :unit_code: '[pi].rad/360'
   :classification: iso1000
@@ -380,7 +378,7 @@
   :symbol: ''''
   :primary_code: ''''
   :secondary_code: ''''
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: deg/60
   :classification: iso1000
@@ -392,7 +390,7 @@
   :symbol: ''''''
   :primary_code: ''''''
   :secondary_code: ''''''
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '''/60'
   :classification: iso1000
@@ -404,7 +402,7 @@
   :symbol: l
   :primary_code: l
   :secondary_code: L
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: dm3
   :classification: iso1000
@@ -415,7 +413,7 @@
 - :names: liter
   :symbol: L
   :primary_code: L
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: l
   :classification: iso1000
@@ -427,7 +425,7 @@
   :symbol: a
   :primary_code: ar
   :secondary_code: AR
-  :measurement:
+  :scale:
     :value: 100.0
     :unit_code: m2
   :classification: iso1000
@@ -439,7 +437,7 @@
   :symbol: min
   :primary_code: min
   :secondary_code: MIN
-  :measurement:
+  :scale:
     :value: 60.0
     :unit_code: s
   :classification: iso1000
@@ -451,7 +449,7 @@
   :symbol: h
   :primary_code: h
   :secondary_code: HR
-  :measurement:
+  :scale:
     :value: 60.0
     :unit_code: min
   :classification: iso1000
@@ -463,7 +461,7 @@
   :symbol: d
   :primary_code: d
   :secondary_code: D
-  :measurement:
+  :scale:
     :value: 24.0
     :unit_code: h
   :classification: iso1000
@@ -475,7 +473,7 @@
   :symbol: a<sub>t</sub>
   :primary_code: a_t
   :secondary_code: ANN_T
-  :measurement:
+  :scale:
     :value: 365.24219
     :unit_code: d
   :classification: iso1000
@@ -487,7 +485,7 @@
   :symbol: a<sub>j</sub>
   :primary_code: a_j
   :secondary_code: ANN_J
-  :measurement:
+  :scale:
     :value: 365.25
     :unit_code: d
   :classification: iso1000
@@ -499,7 +497,7 @@
   :symbol: a<sub>g</sub>
   :primary_code: a_g
   :secondary_code: ANN_G
-  :measurement:
+  :scale:
     :value: 365.2425
     :unit_code: d
   :classification: iso1000
@@ -511,7 +509,7 @@
   :symbol: a
   :primary_code: a
   :secondary_code: ANN
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: a_j
   :classification: iso1000
@@ -523,7 +521,7 @@
   :symbol: wk
   :primary_code: wk
   :secondary_code: WK
-  :measurement:
+  :scale:
     :value: 7.0
     :unit_code: d
   :classification: iso1000
@@ -535,7 +533,7 @@
   :symbol: mo<sub>s</sub>
   :primary_code: mo_s
   :secondary_code: MO_S
-  :measurement:
+  :scale:
     :value: 29.53059
     :unit_code: d
   :classification: iso1000
@@ -547,7 +545,7 @@
   :symbol: mo<sub>j</sub>
   :primary_code: mo_j
   :secondary_code: MO_J
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: a_j/12
   :classification: iso1000
@@ -559,7 +557,7 @@
   :symbol: mo<sub>g</sub>
   :primary_code: mo_g
   :secondary_code: MO_G
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: a_g/12
   :classification: iso1000
@@ -571,7 +569,7 @@
   :symbol: mo
   :primary_code: mo
   :secondary_code: MO
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: mo_j
   :classification: iso1000
@@ -583,7 +581,7 @@
   :symbol: t
   :primary_code: t
   :secondary_code: TNE
-  :measurement:
+  :scale:
     :value: 1000.0
     :unit_code: kg
   :classification: iso1000
@@ -595,7 +593,7 @@
   :symbol: bar
   :primary_code: bar
   :secondary_code: BAR
-  :measurement:
+  :scale:
     :value: 100000.0
     :unit_code: Pa
   :classification: iso1000
@@ -607,7 +605,7 @@
   :symbol: u
   :primary_code: u
   :secondary_code: AMU
-  :measurement:
+  :scale:
     :value: 1.6605402e-24
     :unit_code: g
   :classification: iso1000
@@ -619,7 +617,7 @@
   :symbol: eV
   :primary_code: eV
   :secondary_code: EV
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[e].V'
   :classification: iso1000
@@ -631,7 +629,7 @@
   :symbol: AU
   :primary_code: AU
   :secondary_code: ASU
-  :measurement:
+  :scale:
     :value: 149597.87
     :unit_code: Mm
   :classification: iso1000
@@ -643,7 +641,7 @@
   :symbol: pc
   :primary_code: pc
   :secondary_code: PRS
-  :measurement:
+  :scale:
     :value: 3.085678e+16
     :unit_code: m
   :classification: iso1000
@@ -655,7 +653,7 @@
   :symbol: <i>c</i>
   :primary_code: '[c]'
   :secondary_code: '[C]'
-  :measurement:
+  :scale:
     :value: 299792458.0
     :unit_code: m/s
   :classification: const
@@ -667,7 +665,7 @@
   :symbol: <i>h</i>
   :primary_code: '[h]'
   :secondary_code: '[H]'
-  :measurement:
+  :scale:
     :value: 6.6260755e-24
     :unit_code: J.s
   :classification: const
@@ -679,7 +677,7 @@
   :symbol: <i>k</i>
   :primary_code: '[k]'
   :secondary_code: '[K]'
-  :measurement:
+  :scale:
     :value: 1.380658e-23
     :unit_code: J/K
   :classification: const
@@ -691,7 +689,7 @@
   :symbol: <i>ε<sub><r>0</r></sub></i>
   :primary_code: '[eps_0]'
   :secondary_code: '[eps_0]'
-  :measurement:
+  :scale:
     :value: 8.854187817e-12
     :unit_code: F/m
   :classification: const
@@ -703,7 +701,7 @@
   :symbol: <i>μ<sub><r>0</r></sub></i>
   :primary_code: '[mu_0]'
   :secondary_code: '[mu_0]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: 4.[pi].10*-7.N/A2
   :classification: const
@@ -715,7 +713,7 @@
   :symbol: <i>e</i>
   :primary_code: '[e]'
   :secondary_code: '[E]'
-  :measurement:
+  :scale:
     :value: 1.60217733e-19
     :unit_code: C
   :classification: const
@@ -727,7 +725,7 @@
   :symbol: <i>m<sub><r>e</r></sub></i>
   :primary_code: '[m_e]'
   :secondary_code: '[M_E]'
-  :measurement:
+  :scale:
     :value: 9.1093897e-28
     :unit_code: g
   :classification: const
@@ -739,7 +737,7 @@
   :symbol: <i>m<sub><r>p</r></sub></i>
   :primary_code: '[m_p]'
   :secondary_code: '[M_P]'
-  :measurement:
+  :scale:
     :value: 1.6726231e-24
     :unit_code: g
   :classification: const
@@ -751,7 +749,7 @@
   :symbol: <i>G</i>
   :primary_code: '[G]'
   :secondary_code: '[GC]'
-  :measurement:
+  :scale:
     :value: 6.67259e-11
     :unit_code: m3.kg-1.s-2
   :classification: const
@@ -763,7 +761,7 @@
   :symbol: <i>g<sub>n</sub></i>
   :primary_code: '[g]'
   :secondary_code: '[G]'
-  :measurement:
+  :scale:
     :value: 9.80665
     :unit_code: m/s2
   :classification: const
@@ -775,7 +773,7 @@
   :symbol: atm
   :primary_code: atm
   :secondary_code: ATM
-  :measurement:
+  :scale:
     :value: 101325.0
     :unit_code: Pa
   :classification: const
@@ -787,7 +785,7 @@
   :symbol: l.y.
   :primary_code: '[ly]'
   :secondary_code: '[LY]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[c].a_j'
   :classification: const
@@ -799,7 +797,7 @@
   :symbol: gf
   :primary_code: gf
   :secondary_code: GF
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: g.[g]
   :classification: const
@@ -811,7 +809,7 @@
   :symbol: lbf
   :primary_code: '[lbf_av]'
   :secondary_code: '[LBF_AV]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[lb_av].[g]'
   :classification: const
@@ -823,7 +821,7 @@
   :symbol: K
   :primary_code: Ky
   :secondary_code: KY
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: cm-1
   :classification: cgs
@@ -835,7 +833,7 @@
   :symbol: Gal
   :primary_code: Gal
   :secondary_code: GL
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: cm/s2
   :classification: cgs
@@ -847,7 +845,7 @@
   :symbol: dyn
   :primary_code: dyn
   :secondary_code: DYN
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: g.cm/s2
   :classification: cgs
@@ -859,7 +857,7 @@
   :symbol: erg
   :primary_code: erg
   :secondary_code: ERG
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: dyn.cm
   :classification: cgs
@@ -871,7 +869,7 @@
   :symbol: P
   :primary_code: P
   :secondary_code: P
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: dyn.s/cm2
   :classification: cgs
@@ -883,7 +881,7 @@
   :symbol: Bi
   :primary_code: Bi
   :secondary_code: BI
-  :measurement:
+  :scale:
     :value: 10.0
     :unit_code: A
   :classification: cgs
@@ -895,7 +893,7 @@
   :symbol: St
   :primary_code: St
   :secondary_code: ST
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: cm2/s
   :classification: cgs
@@ -907,7 +905,7 @@
   :symbol: Mx
   :primary_code: Mx
   :secondary_code: MX
-  :measurement:
+  :scale:
     :value: 1.0e-08
     :unit_code: Wb
   :classification: cgs
@@ -919,7 +917,7 @@
   :symbol: Gs
   :primary_code: G
   :secondary_code: GS
-  :measurement:
+  :scale:
     :value: 0.0001
     :unit_code: T
   :classification: cgs
@@ -931,7 +929,7 @@
   :symbol: Oe
   :primary_code: Oe
   :secondary_code: OE
-  :measurement:
+  :scale:
     :value: 250.0
     :unit_code: /[pi].A/m
   :classification: cgs
@@ -943,7 +941,7 @@
   :symbol: Gb
   :primary_code: Gb
   :secondary_code: GB
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: Oe.cm
   :classification: cgs
@@ -955,7 +953,7 @@
   :symbol: sb
   :primary_code: sb
   :secondary_code: SB
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: cd/cm2
   :classification: cgs
@@ -967,7 +965,7 @@
   :symbol: L
   :primary_code: Lmb
   :secondary_code: LMB
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: cd/cm2/[pi]
   :classification: cgs
@@ -979,7 +977,7 @@
   :symbol: ph
   :primary_code: ph
   :secondary_code: PHT
-  :measurement:
+  :scale:
     :value: 0.0001
     :unit_code: lx
   :classification: cgs
@@ -991,7 +989,7 @@
   :symbol: Ci
   :primary_code: Ci
   :secondary_code: CI
-  :measurement:
+  :scale:
     :value: 37000000000.0
     :unit_code: Bq
   :classification: cgs
@@ -1003,7 +1001,7 @@
   :symbol: R
   :primary_code: R
   :secondary_code: ROE
-  :measurement:
+  :scale:
     :value: 0.000258
     :unit_code: C/kg
   :classification: cgs
@@ -1015,7 +1013,7 @@
   :symbol: RAD
   :primary_code: RAD
   :secondary_code: '[RAD]'
-  :measurement:
+  :scale:
     :value: 100.0
     :unit_code: erg/g
   :classification: cgs
@@ -1027,7 +1025,7 @@
   :symbol: REM
   :primary_code: REM
   :secondary_code: '[REM]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: RAD
   :classification: cgs
@@ -1039,7 +1037,7 @@
   :symbol: in
   :primary_code: '[in_i]'
   :secondary_code: '[IN_I]'
-  :measurement:
+  :scale:
     :value: 2.54
     :unit_code: cm
   :classification: intcust
@@ -1051,7 +1049,7 @@
   :symbol: ft
   :primary_code: '[ft_i]'
   :secondary_code: '[FT_I]'
-  :measurement:
+  :scale:
     :value: 12.0
     :unit_code: '[in_i]'
   :classification: intcust
@@ -1063,7 +1061,7 @@
   :symbol: yd
   :primary_code: '[yd_i]'
   :secondary_code: '[YD_I]'
-  :measurement:
+  :scale:
     :value: 3.0
     :unit_code: '[ft_i]'
   :classification: intcust
@@ -1075,7 +1073,7 @@
   :symbol: mi
   :primary_code: '[mi_i]'
   :secondary_code: '[MI_I]'
-  :measurement:
+  :scale:
     :value: 5280.0
     :unit_code: '[ft_i]'
   :classification: intcust
@@ -1087,7 +1085,7 @@
   :symbol: fth
   :primary_code: '[fth_i]'
   :secondary_code: '[FTH_I]'
-  :measurement:
+  :scale:
     :value: 6.0
     :unit_code: '[ft_i]'
   :classification: intcust
@@ -1099,7 +1097,7 @@
   :symbol: n.mi
   :primary_code: '[nmi_i]'
   :secondary_code: '[NMI_I]'
-  :measurement:
+  :scale:
     :value: 1852.0
     :unit_code: m
   :classification: intcust
@@ -1111,7 +1109,7 @@
   :symbol: knot
   :primary_code: '[kn_i]'
   :secondary_code: '[KN_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[nmi_i]/h'
   :classification: intcust
@@ -1122,7 +1120,7 @@
 - :names: square inch
   :primary_code: '[sin_i]'
   :secondary_code: '[SIN_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[in_i]2'
   :classification: intcust
@@ -1133,7 +1131,7 @@
 - :names: square foot
   :primary_code: '[sft_i]'
   :secondary_code: '[SFT_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[ft_i]2'
   :classification: intcust
@@ -1144,7 +1142,7 @@
 - :names: square yard
   :primary_code: '[syd_i]'
   :secondary_code: '[SYD_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[yd_i]2'
   :classification: intcust
@@ -1155,7 +1153,7 @@
 - :names: cubic inch
   :primary_code: '[cin_i]'
   :secondary_code: '[CIN_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[in_i]3'
   :classification: intcust
@@ -1166,7 +1164,7 @@
 - :names: cubic foot
   :primary_code: '[cft_i]'
   :secondary_code: '[CFT_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[ft_i]3'
   :classification: intcust
@@ -1178,7 +1176,7 @@
   :symbol: cu.yd
   :primary_code: '[cyd_i]'
   :secondary_code: '[CYD_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[yd_i]3'
   :classification: intcust
@@ -1189,7 +1187,7 @@
 - :names: board foot
   :primary_code: '[bf_i]'
   :secondary_code: '[BF_I]'
-  :measurement:
+  :scale:
     :value: 144.0
     :unit_code: '[in_i]3'
   :classification: intcust
@@ -1200,7 +1198,7 @@
 - :names: cord
   :primary_code: '[cr_i]'
   :secondary_code: '[CR_I]'
-  :measurement:
+  :scale:
     :value: 128.0
     :unit_code: '[ft_i]3'
   :classification: intcust
@@ -1212,7 +1210,7 @@
   :symbol: mil
   :primary_code: '[mil_i]'
   :secondary_code: '[MIL_I]'
-  :measurement:
+  :scale:
     :value: 0.001
     :unit_code: '[in_i]'
   :classification: intcust
@@ -1224,7 +1222,7 @@
   :symbol: circ.mil
   :primary_code: '[cml_i]'
   :secondary_code: '[CML_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[pi]/4.[mil_i]2'
   :classification: intcust
@@ -1236,7 +1234,7 @@
   :symbol: hd
   :primary_code: '[hd_i]'
   :secondary_code: '[HD_I]'
-  :measurement:
+  :scale:
     :value: 4.0
     :unit_code: '[in_i]'
   :classification: intcust
@@ -1248,7 +1246,7 @@
   :symbol: ft<sub>us</sub>
   :primary_code: '[ft_us]'
   :secondary_code: '[FT_US]'
-  :measurement:
+  :scale:
     :value: 1200.0
     :unit_code: m/3937
   :classification: us-lengths
@@ -1259,7 +1257,7 @@
 - :names: yard
   :primary_code: '[yd_us]'
   :secondary_code: '[YD_US]'
-  :measurement:
+  :scale:
     :value: 3.0
     :unit_code: '[ft_us]'
   :classification: us-lengths
@@ -1270,7 +1268,7 @@
 - :names: inch
   :primary_code: '[in_us]'
   :secondary_code: '[IN_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[ft_us]/12'
   :classification: us-lengths
@@ -1281,7 +1279,7 @@
 - :names: rod
   :primary_code: '[rd_us]'
   :secondary_code: '[RD_US]'
-  :measurement:
+  :scale:
     :value: 16.5
     :unit_code: '[ft_us]'
   :classification: us-lengths
@@ -1294,7 +1292,7 @@
   - Surveyor's chain
   :primary_code: '[ch_us]'
   :secondary_code: '[CH_US]'
-  :measurement:
+  :scale:
     :value: 4.0
     :unit_code: '[rd_us]'
   :classification: us-lengths
@@ -1305,7 +1303,7 @@
 - :names: link for Gunter's chain
   :primary_code: '[lk_us]'
   :secondary_code: '[LK_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[ch_us]/100'
   :classification: us-lengths
@@ -1318,7 +1316,7 @@
   - Engineer's chain
   :primary_code: '[rch_us]'
   :secondary_code: '[RCH_US]'
-  :measurement:
+  :scale:
     :value: 100.0
     :unit_code: '[ft_us]'
   :classification: us-lengths
@@ -1329,7 +1327,7 @@
 - :names: link for Ramden's chain
   :primary_code: '[rlk_us]'
   :secondary_code: '[RLK_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[rch_us]/100'
   :classification: us-lengths
@@ -1340,7 +1338,7 @@
 - :names: fathom
   :primary_code: '[fth_us]'
   :secondary_code: '[FTH_US]'
-  :measurement:
+  :scale:
     :value: 6.0
     :unit_code: '[ft_us]'
   :classification: us-lengths
@@ -1351,7 +1349,7 @@
 - :names: furlong
   :primary_code: '[fur_us]'
   :secondary_code: '[FUR_US]'
-  :measurement:
+  :scale:
     :value: 40.0
     :unit_code: '[rd_us]'
   :classification: us-lengths
@@ -1362,7 +1360,7 @@
 - :names: mile
   :primary_code: '[mi_us]'
   :secondary_code: '[MI_US]'
-  :measurement:
+  :scale:
     :value: 8.0
     :unit_code: '[fur_us]'
   :classification: us-lengths
@@ -1373,7 +1371,7 @@
 - :names: acre
   :primary_code: '[acr_us]'
   :secondary_code: '[ACR_US]'
-  :measurement:
+  :scale:
     :value: 160.0
     :unit_code: '[rd_us]2'
   :classification: us-lengths
@@ -1384,7 +1382,7 @@
 - :names: square rod
   :primary_code: '[srd_us]'
   :secondary_code: '[SRD_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[rd_us]2'
   :classification: us-lengths
@@ -1395,7 +1393,7 @@
 - :names: square mile
   :primary_code: '[smi_us]'
   :secondary_code: '[SMI_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[mi_us]2'
   :classification: us-lengths
@@ -1406,7 +1404,7 @@
 - :names: section
   :primary_code: '[sct]'
   :secondary_code: '[SCT]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[mi_us]2'
   :classification: us-lengths
@@ -1417,7 +1415,7 @@
 - :names: township
   :primary_code: '[twp]'
   :secondary_code: '[TWP]'
-  :measurement:
+  :scale:
     :value: 36.0
     :unit_code: '[sct]'
   :classification: us-lengths
@@ -1428,7 +1426,7 @@
 - :names: mil
   :primary_code: '[mil_us]'
   :secondary_code: '[MIL_US]'
-  :measurement:
+  :scale:
     :value: 0.001
     :unit_code: '[in_us]'
   :classification: us-lengths
@@ -1439,7 +1437,7 @@
 - :names: inch
   :primary_code: '[in_br]'
   :secondary_code: '[IN_BR]'
-  :measurement:
+  :scale:
     :value: 2.539998
     :unit_code: cm
   :classification: brit-length
@@ -1450,7 +1448,7 @@
 - :names: foot
   :primary_code: '[ft_br]'
   :secondary_code: '[FT_BR]'
-  :measurement:
+  :scale:
     :value: 12.0
     :unit_code: '[in_br]'
   :classification: brit-length
@@ -1461,7 +1459,7 @@
 - :names: rod
   :primary_code: '[rd_br]'
   :secondary_code: '[RD_BR]'
-  :measurement:
+  :scale:
     :value: 16.5
     :unit_code: '[ft_br]'
   :classification: brit-length
@@ -1472,7 +1470,7 @@
 - :names: Gunter's chain
   :primary_code: '[ch_br]'
   :secondary_code: '[CH_BR]'
-  :measurement:
+  :scale:
     :value: 4.0
     :unit_code: '[rd_br]'
   :classification: brit-length
@@ -1483,7 +1481,7 @@
 - :names: link for Gunter's chain
   :primary_code: '[lk_br]'
   :secondary_code: '[LK_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[ch_br]/100'
   :classification: brit-length
@@ -1494,7 +1492,7 @@
 - :names: fathom
   :primary_code: '[fth_br]'
   :secondary_code: '[FTH_BR]'
-  :measurement:
+  :scale:
     :value: 6.0
     :unit_code: '[ft_br]'
   :classification: brit-length
@@ -1505,7 +1503,7 @@
 - :names: pace
   :primary_code: '[pc_br]'
   :secondary_code: '[PC_BR]'
-  :measurement:
+  :scale:
     :value: 2.5
     :unit_code: '[ft_br]'
   :classification: brit-length
@@ -1516,7 +1514,7 @@
 - :names: yard
   :primary_code: '[yd_br]'
   :secondary_code: '[YD_BR]'
-  :measurement:
+  :scale:
     :value: 3.0
     :unit_code: '[ft_br]'
   :classification: brit-length
@@ -1527,7 +1525,7 @@
 - :names: mile
   :primary_code: '[mi_br]'
   :secondary_code: '[MI_BR]'
-  :measurement:
+  :scale:
     :value: 5280.0
     :unit_code: '[ft_br]'
   :classification: brit-length
@@ -1538,7 +1536,7 @@
 - :names: nautical mile
   :primary_code: '[nmi_br]'
   :secondary_code: '[NMI_BR]'
-  :measurement:
+  :scale:
     :value: 6080.0
     :unit_code: '[ft_br]'
   :classification: brit-length
@@ -1549,7 +1547,7 @@
 - :names: knot
   :primary_code: '[kn_br]'
   :secondary_code: '[KN_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[nmi_br]/h'
   :classification: brit-length
@@ -1560,7 +1558,7 @@
 - :names: acre
   :primary_code: '[acr_br]'
   :secondary_code: '[ACR_BR]'
-  :measurement:
+  :scale:
     :value: 4840.0
     :unit_code: '[yd_br]2'
   :classification: brit-length
@@ -1571,7 +1569,7 @@
 - :names: Queen Anne's wine gallon
   :primary_code: '[gal_us]'
   :secondary_code: '[GAL_US]'
-  :measurement:
+  :scale:
     :value: 231.0
     :unit_code: '[in_i]3'
   :classification: us-volumes
@@ -1582,7 +1580,7 @@
 - :names: barrel
   :primary_code: '[bbl_us]'
   :secondary_code: '[BBL_US]'
-  :measurement:
+  :scale:
     :value: 42.0
     :unit_code: '[gal_us]'
   :classification: us-volumes
@@ -1593,7 +1591,7 @@
 - :names: quart
   :primary_code: '[qt_us]'
   :secondary_code: '[QT_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[gal_us]/4'
   :classification: us-volumes
@@ -1604,7 +1602,7 @@
 - :names: pint
   :primary_code: '[pt_us]'
   :secondary_code: '[PT_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[qt_us]/2'
   :classification: us-volumes
@@ -1615,7 +1613,7 @@
 - :names: gill
   :primary_code: '[gil_us]'
   :secondary_code: '[GIL_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[pt_us]/4'
   :classification: us-volumes
@@ -1627,7 +1625,7 @@
   :symbol: oz fl
   :primary_code: '[foz_us]'
   :secondary_code: '[FOZ_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[gil_us]/4'
   :classification: us-volumes
@@ -1638,7 +1636,7 @@
 - :names: fluid dram
   :primary_code: '[fdr_us]'
   :secondary_code: '[FDR_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[foz_us]/8'
   :classification: us-volumes
@@ -1649,7 +1647,7 @@
 - :names: minim
   :primary_code: '[min_us]'
   :secondary_code: '[MIN_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[fdr_us]/60'
   :classification: us-volumes
@@ -1660,7 +1658,7 @@
 - :names: cord
   :primary_code: '[crd_us]'
   :secondary_code: '[CRD_US]'
-  :measurement:
+  :scale:
     :value: 128.0
     :unit_code: '[ft_i]3'
   :classification: us-volumes
@@ -1671,7 +1669,7 @@
 - :names: bushel
   :primary_code: '[bu_us]'
   :secondary_code: '[BU_US]'
-  :measurement:
+  :scale:
     :value: 2150.42
     :unit_code: '[in_i]3'
   :classification: us-volumes
@@ -1682,7 +1680,7 @@
 - :names: historical winchester gallon
   :primary_code: '[gal_wi]'
   :secondary_code: '[GAL_WI]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[bu_us]/8'
   :classification: us-volumes
@@ -1693,7 +1691,7 @@
 - :names: peck
   :primary_code: '[pk_us]'
   :secondary_code: '[PK_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[bu_us]/4'
   :classification: us-volumes
@@ -1704,7 +1702,7 @@
 - :names: dry quart
   :primary_code: '[dqt_us]'
   :secondary_code: '[DQT_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[pk_us]/8'
   :classification: us-volumes
@@ -1715,7 +1713,7 @@
 - :names: dry pint
   :primary_code: '[dpt_us]'
   :secondary_code: '[DPT_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[dqt_us]/2'
   :classification: us-volumes
@@ -1726,7 +1724,7 @@
 - :names: tablespoon
   :primary_code: '[tbs_us]'
   :secondary_code: '[TBS_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[foz_us]/2'
   :classification: us-volumes
@@ -1737,7 +1735,7 @@
 - :names: teaspoon
   :primary_code: '[tsp_us]'
   :secondary_code: '[TSP_US]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[tbs_us]/3'
   :classification: us-volumes
@@ -1748,7 +1746,7 @@
 - :names: cup
   :primary_code: '[cup_us]'
   :secondary_code: '[CUP_US]'
-  :measurement:
+  :scale:
     :value: 16.0
     :unit_code: '[tbs_us]'
   :classification: us-volumes
@@ -1759,7 +1757,7 @@
 - :names: gallon
   :primary_code: '[gal_br]'
   :secondary_code: '[GAL_BR]'
-  :measurement:
+  :scale:
     :value: 4.54609
     :unit_code: l
   :classification: brit-volumes
@@ -1770,7 +1768,7 @@
 - :names: peck
   :primary_code: '[pk_br]'
   :secondary_code: '[PK_BR]'
-  :measurement:
+  :scale:
     :value: 2.0
     :unit_code: '[gal_br]'
   :classification: brit-volumes
@@ -1781,7 +1779,7 @@
 - :names: bushel
   :primary_code: '[bu_br]'
   :secondary_code: '[BU_BR]'
-  :measurement:
+  :scale:
     :value: 4.0
     :unit_code: '[pk_br]'
   :classification: brit-volumes
@@ -1792,7 +1790,7 @@
 - :names: quart
   :primary_code: '[qt_br]'
   :secondary_code: '[QT_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[gal_br]/4'
   :classification: brit-volumes
@@ -1803,7 +1801,7 @@
 - :names: pint
   :primary_code: '[pt_br]'
   :secondary_code: '[PT_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[qt_br]/2'
   :classification: brit-volumes
@@ -1814,7 +1812,7 @@
 - :names: gill
   :primary_code: '[gil_br]'
   :secondary_code: '[GIL_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[pt_br]/4'
   :classification: brit-volumes
@@ -1825,7 +1823,7 @@
 - :names: fluid ounce
   :primary_code: '[foz_br]'
   :secondary_code: '[FOZ_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[gil_br]/5'
   :classification: brit-volumes
@@ -1836,7 +1834,7 @@
 - :names: fluid dram
   :primary_code: '[fdr_br]'
   :secondary_code: '[FDR_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[foz_br]/8'
   :classification: brit-volumes
@@ -1847,7 +1845,7 @@
 - :names: minim
   :primary_code: '[min_br]'
   :secondary_code: '[MIN_BR]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[fdr_br]/60'
   :classification: brit-volumes
@@ -1858,7 +1856,7 @@
 - :names: grain
   :primary_code: '[gr]'
   :secondary_code: '[GR]'
-  :measurement:
+  :scale:
     :value: 64.79891
     :unit_code: mg
   :classification: avoirdupois
@@ -1870,7 +1868,7 @@
   :symbol: lb
   :primary_code: '[lb_av]'
   :secondary_code: '[LB_AV]'
-  :measurement:
+  :scale:
     :value: 7000.0
     :unit_code: '[gr]'
   :classification: avoirdupois
@@ -1882,7 +1880,7 @@
   :symbol: oz
   :primary_code: '[oz_av]'
   :secondary_code: '[OZ_AV]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[lb_av]/16'
   :classification: avoirdupois
@@ -1893,7 +1891,7 @@
 - :names: dram
   :primary_code: '[dr_av]'
   :secondary_code: '[DR_AV]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[oz_av]/16'
   :classification: avoirdupois
@@ -1906,7 +1904,7 @@
   - U.S. hundredweight
   :primary_code: '[scwt_av]'
   :secondary_code: '[SCWT_AV]'
-  :measurement:
+  :scale:
     :value: 100.0
     :unit_code: '[lb_av]'
   :classification: avoirdupois
@@ -1919,7 +1917,7 @@
   - British hundredweight
   :primary_code: '[lcwt_av]'
   :secondary_code: '[LCWT_AV]'
-  :measurement:
+  :scale:
     :value: 112.0
     :unit_code: '[lb_av]'
   :classification: avoirdupois
@@ -1932,7 +1930,7 @@
   - U.S. ton
   :primary_code: '[ston_av]'
   :secondary_code: '[STON_AV]'
-  :measurement:
+  :scale:
     :value: 20.0
     :unit_code: '[scwt_av]'
   :classification: avoirdupois
@@ -1945,7 +1943,7 @@
   - British ton
   :primary_code: '[lton_av]'
   :secondary_code: '[LTON_AV]'
-  :measurement:
+  :scale:
     :value: 20.0
     :unit_code: '[lcwt_av]'
   :classification: avoirdupois
@@ -1958,7 +1956,7 @@
   - British stone
   :primary_code: '[stone_av]'
   :secondary_code: '[STONE_AV]'
-  :measurement:
+  :scale:
     :value: 14.0
     :unit_code: '[lb_av]'
   :classification: avoirdupois
@@ -1969,7 +1967,7 @@
 - :names: pennyweight
   :primary_code: '[pwt_tr]'
   :secondary_code: '[PWT_TR]'
-  :measurement:
+  :scale:
     :value: 24.0
     :unit_code: '[gr]'
   :classification: troy
@@ -1980,7 +1978,7 @@
 - :names: ounce
   :primary_code: '[oz_tr]'
   :secondary_code: '[OZ_TR]'
-  :measurement:
+  :scale:
     :value: 20.0
     :unit_code: '[pwt_tr]'
   :classification: troy
@@ -1991,7 +1989,7 @@
 - :names: pound
   :primary_code: '[lb_tr]'
   :secondary_code: '[LB_TR]'
-  :measurement:
+  :scale:
     :value: 12.0
     :unit_code: '[oz_tr]'
   :classification: troy
@@ -2002,7 +2000,7 @@
 - :names: scruple
   :primary_code: '[sc_ap]'
   :secondary_code: '[SC_AP]'
-  :measurement:
+  :scale:
     :value: 20.0
     :unit_code: '[gr]'
   :classification: apoth
@@ -2015,7 +2013,7 @@
   - drachm
   :primary_code: '[dr_ap]'
   :secondary_code: '[DR_AP]'
-  :measurement:
+  :scale:
     :value: 3.0
     :unit_code: '[sc_ap]'
   :classification: apoth
@@ -2026,7 +2024,7 @@
 - :names: ounce
   :primary_code: '[oz_ap]'
   :secondary_code: '[OZ_AP]'
-  :measurement:
+  :scale:
     :value: 8.0
     :unit_code: '[dr_ap]'
   :classification: apoth
@@ -2037,7 +2035,7 @@
 - :names: pound
   :primary_code: '[lb_ap]'
   :secondary_code: '[LB_AP]'
-  :measurement:
+  :scale:
     :value: 12.0
     :unit_code: '[oz_ap]'
   :classification: apoth
@@ -2048,7 +2046,7 @@
 - :names: line
   :primary_code: '[lne]'
   :secondary_code: '[LNE]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[in_i]/12'
   :classification: typeset
@@ -2059,7 +2057,7 @@
 - :names: point
   :primary_code: '[pnt]'
   :secondary_code: '[PNT]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[lne]/6'
   :classification: typeset
@@ -2070,7 +2068,7 @@
 - :names: pica
   :primary_code: '[pca]'
   :secondary_code: '[PCA]'
-  :measurement:
+  :scale:
     :value: 12.0
     :unit_code: '[pnt]'
   :classification: typeset
@@ -2081,7 +2079,7 @@
 - :names: Printer's point
   :primary_code: '[pnt_pr]'
   :secondary_code: '[PNT_PR]'
-  :measurement:
+  :scale:
     :value: 0.013837
     :unit_code: '[in_i]'
   :classification: typeset
@@ -2092,7 +2090,7 @@
 - :names: Printer's pica
   :primary_code: '[pca_pr]'
   :secondary_code: '[PCA_PR]'
-  :measurement:
+  :scale:
     :value: 12.0
     :unit_code: '[pnt_pr]'
   :classification: typeset
@@ -2105,7 +2103,7 @@
   - French foot
   :primary_code: '[pied]'
   :secondary_code: '[PIED]'
-  :measurement:
+  :scale:
     :value: 32.48
     :unit_code: cm
   :classification: typeset
@@ -2118,7 +2116,7 @@
   - French inch
   :primary_code: '[pouce]'
   :secondary_code: '[POUCE]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[pied]/12'
   :classification: typeset
@@ -2131,7 +2129,7 @@
   - French line
   :primary_code: '[ligne]'
   :secondary_code: '[LIGNE]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[pouce]/12'
   :classification: typeset
@@ -2144,7 +2142,7 @@
   - Didot's point
   :primary_code: '[didot]'
   :secondary_code: '[DIDOT]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[ligne]/6'
   :classification: typeset
@@ -2157,7 +2155,7 @@
   - Didot's pica
   :primary_code: '[cicero]'
   :secondary_code: '[CICERO]'
-  :measurement:
+  :scale:
     :value: 12.0
     :unit_code: '[didot]'
   :classification: typeset
@@ -2169,12 +2167,10 @@
   :symbol: °F
   :primary_code: '[degF]'
   :secondary_code: '[DEGF]'
-  :function:
-    :name: degF
-    :value: '5'
-    :unit: K/9
-    :primary: degf(5 K/9)
-    :secondary: DEGF(5 K/9)
+  :scale:
+    :function_code: degf(5 K/9)
+    :value: 5.0
+    :unit_code: K/9
   :classification: heat
   :property: temperature
   :metric: false
@@ -2184,7 +2180,7 @@
   :symbol: cal<sub>15°C</sub>
   :primary_code: cal_[15]
   :secondary_code: CAL_[15]
-  :measurement:
+  :scale:
     :value: 4.1858
     :unit_code: J
   :classification: heat
@@ -2196,7 +2192,7 @@
   :symbol: cal<sub>20°C</sub>
   :primary_code: cal_[20]
   :secondary_code: CAL_[20]
-  :measurement:
+  :scale:
     :value: 4.1819
     :unit_code: J
   :classification: heat
@@ -2208,7 +2204,7 @@
   :symbol: cal<sub>m</sub>
   :primary_code: cal_m
   :secondary_code: CAL_M
-  :measurement:
+  :scale:
     :value: 4.19002
     :unit_code: J
   :classification: heat
@@ -2220,7 +2216,7 @@
   :symbol: cal<sub>IT</sub>
   :primary_code: cal_IT
   :secondary_code: CAL_IT
-  :measurement:
+  :scale:
     :value: 4.1868
     :unit_code: J
   :classification: heat
@@ -2232,7 +2228,7 @@
   :symbol: cal<sub>th</sub>
   :primary_code: cal_th
   :secondary_code: CAL_TH
-  :measurement:
+  :scale:
     :value: 4.184
     :unit_code: J
   :classification: heat
@@ -2244,7 +2240,7 @@
   :symbol: cal
   :primary_code: cal
   :secondary_code: CAL
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: cal_th
   :classification: heat
@@ -2256,7 +2252,7 @@
   :symbol: Cal
   :primary_code: '[Cal]'
   :secondary_code: '[CAL]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: kcal_th
   :classification: heat
@@ -2268,7 +2264,7 @@
   :symbol: Btu<sub>39°F</sub>
   :primary_code: '[Btu_39]'
   :secondary_code: '[BTU_39]'
-  :measurement:
+  :scale:
     :value: 1.05967
     :unit_code: kJ
   :classification: heat
@@ -2280,7 +2276,7 @@
   :symbol: Btu<sub>59°F</sub>
   :primary_code: '[Btu_59]'
   :secondary_code: '[BTU_59]'
-  :measurement:
+  :scale:
     :value: 1.0548
     :unit_code: kJ
   :classification: heat
@@ -2292,7 +2288,7 @@
   :symbol: Btu<sub>60°F</sub>
   :primary_code: '[Btu_60]'
   :secondary_code: '[BTU_60]'
-  :measurement:
+  :scale:
     :value: 1.05468
     :unit_code: kJ
   :classification: heat
@@ -2304,7 +2300,7 @@
   :symbol: Btu<sub>m</sub>
   :primary_code: '[Btu_m]'
   :secondary_code: '[BTU_M]'
-  :measurement:
+  :scale:
     :value: 1.05587
     :unit_code: kJ
   :classification: heat
@@ -2316,7 +2312,7 @@
   :symbol: Btu<sub>IT</sub>
   :primary_code: '[Btu_IT]'
   :secondary_code: '[BTU_IT]'
-  :measurement:
+  :scale:
     :value: 1.05505585262
     :unit_code: kJ
   :classification: heat
@@ -2328,7 +2324,7 @@
   :symbol: Btu<sub>th</sub>
   :primary_code: '[Btu_th]'
   :secondary_code: '[BTU_TH]'
-  :measurement:
+  :scale:
     :value: 1.05435
     :unit_code: kJ
   :classification: heat
@@ -2340,7 +2336,7 @@
   :symbol: btu
   :primary_code: '[Btu]'
   :secondary_code: '[BTU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[Btu_th]'
   :classification: heat
@@ -2351,7 +2347,7 @@
 - :names: horsepower
   :primary_code: '[HP]'
   :secondary_code: '[HP]'
-  :measurement:
+  :scale:
     :value: 550.0
     :unit_code: '[ft_i].[lbf_av]/s'
   :classification: heat
@@ -2363,7 +2359,7 @@
   :symbol: m H<sub><r>2</r></sub>O
   :primary_code: m[H2O]
   :secondary_code: M[H2O]
-  :measurement:
+  :scale:
     :value: 9.80665
     :unit_code: kPa
   :classification: clinical
@@ -2375,7 +2371,7 @@
   :symbol: m Hg
   :primary_code: m[Hg]
   :secondary_code: M[HG]
-  :measurement:
+  :scale:
     :value: 133.322
     :unit_code: kPa
   :classification: clinical
@@ -2387,7 +2383,7 @@
   :symbol: in H<sub><r>2</r></sub>O
   :primary_code: '[in_i''H2O]'
   :secondary_code: '[IN_I''H2O]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: m[H2O].[in_i]/m
   :classification: clinical
@@ -2399,7 +2395,7 @@
   :symbol: in Hg
   :primary_code: '[in_i''Hg]'
   :secondary_code: '[IN_i''HG]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: m[Hg].[in_i]/m
   :classification: clinical
@@ -2411,7 +2407,7 @@
   :symbol: P.R.U.
   :primary_code: '[PRU]'
   :secondary_code: '[PRU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: mm[Hg].s/ml
   :classification: clinical
@@ -2423,7 +2419,7 @@
   :symbol: Wood U.
   :primary_code: '[wood''U]'
   :secondary_code: '[WOOD''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: mm[Hg].min/L
   :classification: clinical
@@ -2435,7 +2431,7 @@
   :symbol: dpt
   :primary_code: '[diop]'
   :secondary_code: '[DIOP]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: /m
   :classification: clinical
@@ -2447,12 +2443,10 @@
   :symbol: PD
   :primary_code: '[p''diop]'
   :secondary_code: '[P''DIOP]'
-  :function:
-    :name: tanTimes100
-    :value: '1'
-    :unit: deg
-    :primary: 100tan(1 rad)
-    :secondary: 100TAN(1 RAD)
+  :scale:
+    :function_code: 100tan(1 rad)
+    :value: 1.0
+    :unit_code: deg
   :classification: clinical
   :property: refraction of a prism
   :metric: false
@@ -2462,12 +2456,10 @@
   :symbol: '%'
   :primary_code: '%[slope]'
   :secondary_code: '%[SLOPE]'
-  :function:
-    :name: 100tan
-    :value: '1'
-    :unit: deg
-    :primary: 100tan(1 rad)
-    :secondary: 100TAN(1 RAD)
+  :scale:
+    :function_code: 100tan(1 rad)
+    :value: 1.0
+    :unit_code: deg
   :classification: clinical
   :property: slope
   :metric: false
@@ -2476,7 +2468,7 @@
 - :names: mesh
   :primary_code: '[mesh_i]'
   :secondary_code: '[MESH_I]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: /[in_i]
   :classification: clinical
@@ -2490,7 +2482,7 @@
   :symbol: Ch
   :primary_code: '[Ch]'
   :secondary_code: '[CH]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: mm/[pi]
   :classification: clinical
@@ -2502,7 +2494,7 @@
   :symbol: drp
   :primary_code: '[drp]'
   :secondary_code: '[DRP]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: ml/12
   :classification: clinical
@@ -2514,7 +2506,7 @@
   :symbol: HF
   :primary_code: '[hnsf''U]'
   :secondary_code: '[HNSF''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2526,7 +2518,7 @@
   :symbol: MET
   :primary_code: '[MET]'
   :secondary_code: '[MET]'
-  :measurement:
+  :scale:
     :value: 3.5
     :unit_code: mL/min/kg
   :classification: clinical
@@ -2538,12 +2530,10 @@
   :symbol: X
   :primary_code: '[hp''_X]'
   :secondary_code: '[HP''_X]'
-  :function:
-    :name: hpX
-    :value: '1'
-    :unit: '1'
-    :primary: hpX(1 1)
-    :secondary: HPX(1 1)
+  :scale:
+    :function_code: hpX(1 1)
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (retired)
   :metric: false
@@ -2553,12 +2543,10 @@
   :symbol: C
   :primary_code: '[hp''_C]'
   :secondary_code: '[HP''_C]'
-  :function:
-    :name: hpC
-    :value: '1'
-    :unit: '1'
-    :primary: hpC(1 1)
-    :secondary: HPC(1 1)
+  :scale:
+    :function_code: hpC(1 1)
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (retired)
   :metric: false
@@ -2568,12 +2556,10 @@
   :symbol: M
   :primary_code: '[hp''_M]'
   :secondary_code: '[HP''_M]'
-  :function:
-    :name: hpM
-    :value: '1'
-    :unit: '1'
-    :primary: hpM(1 1)
-    :secondary: HPM(1 1)
+  :scale:
+    :function_code: hpM(1 1)
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (retired)
   :metric: false
@@ -2583,12 +2569,10 @@
   :symbol: Q
   :primary_code: '[hp''_Q]'
   :secondary_code: '[HP''_Q]'
-  :function:
-    :name: hpQ
-    :value: '1'
-    :unit: '1'
-    :primary: hpQ(1 1)
-    :secondary: HPQ(1 1)
+  :scale:
+    :function_code: hpQ(1 1)
+    :value: 1.0
+    :unit_code: '1'
   :classification: clinical
   :property: homeopathic potency (retired)
   :metric: false
@@ -2598,7 +2582,7 @@
   :symbol: X
   :primary_code: '[hp_X]'
   :secondary_code: '[HP_X]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2610,7 +2594,7 @@
   :symbol: C
   :primary_code: '[hp_C]'
   :secondary_code: '[HP_C]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2622,7 +2606,7 @@
   :symbol: M
   :primary_code: '[hp_M]'
   :secondary_code: '[HP_M]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2634,7 +2618,7 @@
   :symbol: Q
   :primary_code: '[hp_Q]'
   :secondary_code: '[HP_Q]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2646,7 +2630,7 @@
   :symbol: X
   :primary_code: '[kp_X]'
   :secondary_code: '[KP_X]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2658,7 +2642,7 @@
   :symbol: C
   :primary_code: '[kp_C]'
   :secondary_code: '[KP_C]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2670,7 +2654,7 @@
   :symbol: M
   :primary_code: '[kp_M]'
   :secondary_code: '[KP_M]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2682,7 +2666,7 @@
   :symbol: Q
   :primary_code: '[kp_Q]'
   :secondary_code: '[KP_Q]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2694,7 +2678,7 @@
   :symbol: eq
   :primary_code: eq
   :secondary_code: EQ
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: mol
   :classification: chemical
@@ -2706,7 +2690,7 @@
   :symbol: osm
   :primary_code: osm
   :secondary_code: OSM
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: mol
   :classification: chemical
@@ -2718,12 +2702,10 @@
   :symbol: pH
   :primary_code: '[pH]'
   :secondary_code: '[PH]'
-  :function:
-    :name: pH
-    :value: '1'
-    :unit: mol/l
-    :primary: pH(1 mol/l)
-    :secondary: PH(1 MOL/L)
+  :scale:
+    :function_code: pH(1 mol/l)
+    :value: 1.0
+    :unit_code: mol/l
   :classification: chemical
   :property: acidity
   :metric: false
@@ -2733,7 +2715,7 @@
   :symbol: g%
   :primary_code: g%
   :secondary_code: G%
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: g/dl
   :classification: chemical
@@ -2745,7 +2727,7 @@
   :symbol: S
   :primary_code: '[S]'
   :secondary_code: '[S]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: 10*-13.s
   :classification: chemical
@@ -2757,7 +2739,7 @@
   :symbol: HPF
   :primary_code: '[HPF]'
   :secondary_code: '[HPF]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2769,7 +2751,7 @@
   :symbol: LPF
   :primary_code: '[LPF]'
   :secondary_code: '[LPF]'
-  :measurement:
+  :scale:
     :value: 100.0
     :unit_code: '1'
   :classification: chemical
@@ -2781,7 +2763,7 @@
   :symbol: kat
   :primary_code: kat
   :secondary_code: KAT
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: mol/s
   :classification: chemical
@@ -2793,7 +2775,7 @@
   :symbol: U
   :primary_code: U
   :secondary_code: U
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: umol/min
   :classification: chemical
@@ -2805,7 +2787,7 @@
   :symbol: IU
   :primary_code: '[iU]'
   :secondary_code: '[IU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2817,7 +2799,7 @@
   :symbol: i.U.
   :primary_code: '[IU]'
   :secondary_code: '[IU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[iU]'
   :classification: chemical
@@ -2829,7 +2811,7 @@
   :symbol: arb. U
   :primary_code: '[arb''U]'
   :secondary_code: '[ARB''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2841,7 +2823,7 @@
   :symbol: U.S.P.
   :primary_code: '[USP''U]'
   :secondary_code: '[USP''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2852,7 +2834,7 @@
 - :names: GPL unit
   :primary_code: '[GPL''U]'
   :secondary_code: '[GPL''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2863,7 +2845,7 @@
 - :names: MPL unit
   :primary_code: '[MPL''U]'
   :secondary_code: '[MPL''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2874,7 +2856,7 @@
 - :names: APL unit
   :primary_code: '[APL''U]'
   :secondary_code: '[APL''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2885,7 +2867,7 @@
 - :names: Bethesda unit
   :primary_code: '[beth''U]'
   :secondary_code: '[BETH''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2896,7 +2878,7 @@
 - :names: Todd unit
   :primary_code: '[todd''U]'
   :secondary_code: '[TODD''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2907,7 +2889,7 @@
 - :names: Dye unit
   :primary_code: '[dye''U]'
   :secondary_code: '[DYE''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2918,7 +2900,7 @@
 - :names: Somogyi unit
   :primary_code: '[smgy''U]'
   :secondary_code: '[SMGY''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2929,7 +2911,7 @@
 - :names: Bodansky unit
   :primary_code: '[bdsk''U]'
   :secondary_code: '[BDSK''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2940,7 +2922,7 @@
 - :names: King-Armstrong unit
   :primary_code: '[ka''U]'
   :secondary_code: '[KA''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2951,7 +2933,7 @@
 - :names: Kunkel unit
   :primary_code: '[knk''U]'
   :secondary_code: '[KNK''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2962,7 +2944,7 @@
 - :names: Mac Lagan unit
   :primary_code: '[mclg''U]'
   :secondary_code: '[MCLG''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2973,7 +2955,7 @@
 - :names: tuberculin unit
   :primary_code: '[tb''U]'
   :secondary_code: '[TB''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2985,7 +2967,7 @@
   :symbol: CCID<sub>50</sub>
   :primary_code: '[CCID_50]'
   :secondary_code: '[CCID_50]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -2997,7 +2979,7 @@
   :symbol: TCID<sub>50</sub>
   :primary_code: '[TCID_50]'
   :secondary_code: '[TCID_50]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3009,7 +2991,7 @@
   :symbol: PFU
   :primary_code: '[PFU]'
   :secondary_code: '[PFU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3021,7 +3003,7 @@
   :symbol: FFU
   :primary_code: '[FFU]'
   :secondary_code: '[FFU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3033,7 +3015,7 @@
   :symbol: CFU
   :primary_code: '[CFU]'
   :secondary_code: '[CFU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3045,7 +3027,7 @@
   :symbol: BAU
   :primary_code: '[BAU]'
   :secondary_code: '[BAU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3058,7 +3040,7 @@
   :symbol: AU
   :primary_code: '[AU]'
   :secondary_code: '[AU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3070,7 +3052,7 @@
   :symbol: Amb a 1 U
   :primary_code: '[Amb''a''1''U]'
   :secondary_code: '[AMB''A''1''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3082,7 +3064,7 @@
   :symbol: PNU
   :primary_code: '[PNU]'
   :secondary_code: '[PNU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3094,7 +3076,7 @@
   :symbol: Lf
   :primary_code: '[Lf]'
   :secondary_code: '[LF]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3105,7 +3087,7 @@
 - :names: D-antigen unit
   :primary_code: '[D''ag''U]'
   :secondary_code: '[D''AG''U]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
@@ -3117,12 +3099,10 @@
   :symbol: Np
   :primary_code: Np
   :secondary_code: NEP
-  :function:
-    :name: ln
-    :value: '1'
-    :unit: '1'
-    :primary: ln(1 1)
-    :secondary: LN(1 1)
+  :scale:
+    :function_code: ln(1 1)
+    :value: 1.0
+    :unit_code: '1'
   :classification: levels
   :property: level
   :metric: true
@@ -3132,12 +3112,10 @@
   :symbol: B
   :primary_code: B
   :secondary_code: B
-  :function:
-    :name: lg
-    :value: '1'
-    :unit: '1'
-    :primary: lg(1 1)
-    :secondary: LG(1 1)
+  :scale:
+    :function_code: lg(1 1)
+    :value: 1.0
+    :unit_code: '1'
   :classification: levels
   :property: level
   :metric: true
@@ -3147,12 +3125,10 @@
   :symbol: B(SPL)
   :primary_code: B[SPL]
   :secondary_code: B[SPL]
-  :function:
-    :name: lgTimes2
-    :value: '2'
-    :unit: 10*-5.Pa
-    :primary: 2lg(2 10*-5.Pa)
-    :secondary: 2LG(2 10*-5.PAL)
+  :scale:
+    :function_code: 2lg(2 10*-5.Pa)
+    :value: 2.0
+    :unit_code: 10*-5.Pa
   :classification: levels
   :property: pressure level
   :metric: true
@@ -3162,12 +3138,10 @@
   :symbol: B(V)
   :primary_code: B[V]
   :secondary_code: B[V]
-  :function:
-    :name: lgTimes2
-    :value: '1'
-    :unit: V
-    :primary: 2lg(1 V)
-    :secondary: 2LG(1 V)
+  :scale:
+    :function_code: 2lg(1 V)
+    :value: 1.0
+    :unit_code: V
   :classification: levels
   :property: electric potential level
   :metric: true
@@ -3177,12 +3151,10 @@
   :symbol: B(mV)
   :primary_code: B[mV]
   :secondary_code: B[MV]
-  :function:
-    :name: lgTimes2
-    :value: '1'
-    :unit: mV
-    :primary: 2lg(1 mV)
-    :secondary: 2LG(1 MV)
+  :scale:
+    :function_code: 2lg(1 mV)
+    :value: 1.0
+    :unit_code: mV
   :classification: levels
   :property: electric potential level
   :metric: true
@@ -3192,12 +3164,10 @@
   :symbol: B(μV)
   :primary_code: B[uV]
   :secondary_code: B[UV]
-  :function:
-    :name: lgTimes2
-    :value: '1'
-    :unit: uV
-    :primary: 2lg(1 uV)
-    :secondary: 2LG(1 UV)
+  :scale:
+    :function_code: 2lg(1 uV)
+    :value: 1.0
+    :unit_code: uV
   :classification: levels
   :property: electric potential level
   :metric: true
@@ -3207,12 +3177,10 @@
   :symbol: B(10 nV)
   :primary_code: B[10.nV]
   :secondary_code: B[10.NV]
-  :function:
-    :name: lgTimes2
-    :value: '10'
-    :unit: nV
-    :primary: 2lg(10 nV)
-    :secondary: 2LG(10 NV)
+  :scale:
+    :function_code: 2lg(10 nV)
+    :value: 10.0
+    :unit_code: nV
   :classification: levels
   :property: electric potential level
   :metric: true
@@ -3222,12 +3190,10 @@
   :symbol: B(W)
   :primary_code: B[W]
   :secondary_code: B[W]
-  :function:
-    :name: lg
-    :value: '1'
-    :unit: W
-    :primary: lg(1 W)
-    :secondary: LG(1 W)
+  :scale:
+    :function_code: lg(1 W)
+    :value: 1.0
+    :unit_code: W
   :classification: levels
   :property: power level
   :metric: true
@@ -3237,12 +3203,10 @@
   :symbol: B(kW)
   :primary_code: B[kW]
   :secondary_code: B[KW]
-  :function:
-    :name: lg
-    :value: '1'
-    :unit: kW
-    :primary: lg(1 kW)
-    :secondary: LG(1 KW)
+  :scale:
+    :function_code: lg(1 kW)
+    :value: 1.0
+    :unit_code: kW
   :classification: levels
   :property: power level
   :metric: true
@@ -3252,7 +3216,7 @@
   :symbol: st
   :primary_code: st
   :secondary_code: STR
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: m3
   :classification: misc
@@ -3264,7 +3228,7 @@
   :symbol: Å
   :primary_code: Ao
   :secondary_code: AO
-  :measurement:
+  :scale:
     :value: 0.1
     :unit_code: nm
   :classification: misc
@@ -3276,7 +3240,7 @@
   :symbol: b
   :primary_code: b
   :secondary_code: BRN
-  :measurement:
+  :scale:
     :value: 100.0
     :unit_code: fm2
   :classification: misc
@@ -3288,7 +3252,7 @@
   :symbol: at
   :primary_code: att
   :secondary_code: ATT
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: kgf/cm2
   :classification: misc
@@ -3300,7 +3264,7 @@
   :symbol: mho
   :primary_code: mho
   :secondary_code: MHO
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: S
   :classification: misc
@@ -3312,7 +3276,7 @@
   :symbol: psi
   :primary_code: '[psi]'
   :secondary_code: '[PSI]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '[lbf_av]/[in_i]2'
   :classification: misc
@@ -3324,7 +3288,7 @@
   :symbol: circ
   :primary_code: circ
   :secondary_code: CIRC
-  :measurement:
+  :scale:
     :value: 2.0
     :unit_code: '[pi].rad'
   :classification: misc
@@ -3336,7 +3300,7 @@
   :symbol: sph
   :primary_code: sph
   :secondary_code: SPH
-  :measurement:
+  :scale:
     :value: 4.0
     :unit_code: '[pi].sr'
   :classification: misc
@@ -3348,7 +3312,7 @@
   :symbol: ct<sub>m</sub>
   :primary_code: '[car_m]'
   :secondary_code: '[CAR_M]'
-  :measurement:
+  :scale:
     :value: 0.2
     :unit_code: g
   :classification: misc
@@ -3360,7 +3324,7 @@
   :symbol: ct<sub><r>Au</r></sub>
   :primary_code: '[car_Au]'
   :secondary_code: '[CAR_AU]'
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: /24
   :classification: misc
@@ -3371,7 +3335,7 @@
 - :names: Smoot
   :primary_code: '[smoot]'
   :secondary_code: '[SMOOT]'
-  :measurement:
+  :scale:
     :value: 67.0
     :unit_code: '[in_i]'
   :classification: misc
@@ -3383,12 +3347,10 @@
   :symbol: bit<sub>s</sub>
   :primary_code: bit_s
   :secondary_code: BIT_S
-  :function:
-    :name: ld
-    :value: '1'
-    :unit: '1'
-    :primary: ld(1 1)
-    :secondary: ld(1 1)
+  :scale:
+    :function_code: ld(1 1)
+    :value: 1.0
+    :unit_code: '1'
   :classification: infotech
   :property: amount of information
   :metric: false
@@ -3398,7 +3360,7 @@
   :symbol: bit
   :primary_code: bit
   :secondary_code: BIT
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: '1'
   :classification: infotech
@@ -3410,7 +3372,7 @@
   :symbol: B
   :primary_code: By
   :secondary_code: BY
-  :measurement:
+  :scale:
     :value: 8.0
     :unit_code: bit
   :classification: infotech
@@ -3422,7 +3384,7 @@
   :symbol: Bd
   :primary_code: Bd
   :secondary_code: Bd
-  :measurement:
+  :scale:
     :value: 1.0
     :unit_code: /s
   :classification: infotech

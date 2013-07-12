@@ -37,11 +37,11 @@ module Unitwise
       terms.flat_map(&:root_terms)
     end
 
-    def scale
+    def scalar
       if terms.empty?
         1
       else
-        terms.map(&:scale).inject(&:*)
+        terms.map(&:scalar).inject(&:*)
       end
     end
 
