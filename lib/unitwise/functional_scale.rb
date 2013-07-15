@@ -1,15 +1,19 @@
 module Unitwise
   class FunctionalScale < Scale
 
-    attr_reader :function_pair
+    attr_reader :function
 
     def initialize(function_name, value, unit)
       super(value, unit)
-      @function_pair = FunctionPair.find(function_name)
+      @function = Function.find(function_name)
     end
 
-    def forward_scale(x)
-      function_pair.forward.call(x) * value * unit.scale
+    def direct_scalar(x)
+      function.direct_scalar(x) * value * unit.scalar
+    end
+
+    def inverse_scalar(x)
+      function.inverse_scalar(x) * value * unit.scalar
     end
 
   end

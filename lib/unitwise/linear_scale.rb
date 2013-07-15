@@ -9,5 +9,13 @@ module Unitwise
       value * unit.scalar
     end
 
+    def direct_scalar(x)
+      scalar
+    end
+
+    def inverse_scalar(x)
+      scalar
+    end
+
   end
 end

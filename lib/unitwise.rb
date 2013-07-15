@@ -10,7 +10,7 @@ require 'unitwise/atom'
 require 'unitwise/prefix'
 require 'unitwise/term'
 require 'unitwise/unit'
-require 'unitwise/function_pair'
+require 'unitwise/function'
 require 'unitwise/errors'
 require 'unitwise/ext'
 

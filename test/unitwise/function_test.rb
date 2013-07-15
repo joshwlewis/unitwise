@@ -1,7 +1,7 @@
 require 'test_helper'
 
-describe Unitwise::FunctionPair do
-  subject { Unitwise::FunctionPair }
+describe Unitwise::Function do
+  subject { Unitwise::Function }
 
   it '::all must be an Array' do
     subject.all.must_be_instance_of Array
@@ -17,19 +17,26 @@ describe Unitwise::FunctionPair do
     subject.find("foo").must_equal(defined)
   end
 
-  let (:fp) { Unitwise::FunctionPair.new('foo(1 4J)', ->(x){ x + 1}, ->(x){ x - 1 }) }
+  let (:fp) { Unitwise::Function.new('foo(1 4J)', ->(x){ x + 1}, ->(x){ x - 1 }) }
 
   it 'must have a #name' do
     fp.name.must_equal('foo(1 4J)')
   end
 
-  it 'must have a forward lambda' do
-    fp.forward.call(1).must_equal 2
+  it 'must have a direct lambda' do
+    fp.direct.call(1).must_equal 2
   end
 
-  it 'must have a reverse lambda' do
-    fp.reverse.call(1).must_equal 0
+  it 'must have a inverse lambda' do
+    fp.inverse.call(1).must_equal 0
   end
 
+  it 'must have a direct_scalar' do
+    fp.direct_scalar(1).must_equal 2
+  end
+
+  it 'must have an inverse scalar' do
+    fp.inverse_scalar(1).must_equal 0
+  end
 
 end

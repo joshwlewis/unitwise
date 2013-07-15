@@ -52,10 +52,10 @@ module Unitwise
     end
 
     def scale=(attrs)
-      if attrs[:function_code]
-        @scale = FunctionalScale.new(attrs[:function_code], attrs[:value], attrs[:unit_code])
+      @scale = if attrs[:function_code]
+        FunctionalScale.new(attrs[:function_code], attrs[:value], attrs[:unit_code])
       else
-        @scale = LinearScale.new(attrs[:value], attrs[:unit_code])
+        LinearScale.new(attrs[:value], attrs[:unit_code])
       end
     end
 
