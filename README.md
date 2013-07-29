@@ -1,5 +1,7 @@
 # Unitwise
 
+[![Build Status](https://travis-ci.org/joshwlewis/unitwise.png)](https://travis-ci.org/joshwlewis/unitwise)
+
 Unitwise is a library for performing mathematical operations and conversions on all units defined by the [Unified Code for Units of Measure(UCUM)](http://unitsofmeasure.org/).
 
 Unitwise supports a vast number of units. At the time of writing, it supports 95 metric units, 199 non-metric units, and 24 unit prefixes. That's approximately 2,500 basic units, but these can also be combined through multiplication and/or division to create an infinite number of possibilities.
