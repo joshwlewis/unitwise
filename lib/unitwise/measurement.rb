@@ -1,74 +1,34 @@
 module Unitwise
   class Measurement < Scale
 
-    def convert(unit)
-      other_unit = Unit.new(unit)
+    def convert(other_unit)
+      other_unit = Unit.new(other_unit)
       if similar_to?(other_unit)
-        if self.unit.special? && other_unit.special?
-          self.class.new(other_unit.functional(functional(value, -1), 1), other_unit)
-        elsif special?
-          self.class.new(functional(value, -1), other_unit)
-        elsif other_unit.special?
-          self.class.new(other_unit.functional(value), other_unit)
-        else
-          self.class.new(scalar / other_unit.scalar, other_unit)
-        end
+        new(converted_value(other_unit), other_unit)
       else
         raise ConversionError, "Can't convert #{inspect} to #{other_unit}."
       end
     end
 
     def *(other)
-      if other.is_a?(Numeric)
-        self.class.new(value * other, unit)
-      elsif other.respond_to?(:composition)
-        if similar_to?(other)
-          converted = other.convert(unit)
-          self.class.new(value * converted.value, unit * converted.unit)
-        else
-          self.class.new(value * other.value, unit * other.unit)
-        end
-      else
-        raise TypeError, "Can't multiply #{inspect} by #{other}."
-      end
+      operate(:*, other) || raise(TypeError, "Can't multiply #{inspect} by #{other}.")
     end
 
     def /(other)
-      if other.is_a?(Numeric)
-        self.class.new(value / other, unit)
-      elsif other.respond_to?(:composition)
-        if similar_to?(other)
-          converted = other.convert(unit)
-          self.class.new(value / converted.value, unit / converted.unit)
-        else
-          self.class.new(value / other.value, unit / other.unit)
-        end
-      else
-        raise TypeError, "Can't divide #{inspect} by #{other}"
-      end
+      operate(:/, other) || raise(TypeError, "Can't divide #{inspect} by #{other}")
     end
 
     def +(other)
-      if similar_to?(other)
-        converted = other.convert(unit)
-        self.class.new(value + converted.value, unit)
-      else
-        raise TypeError, "Can't add #{other} to #{inspect}."
-      end
+      combine(:+, other) || raise(TypeError, "Can't add #{other} to #{inspect}.")
     end
 
     def -(other)
-      if similar_to?(other)
-        converted = other.convert(unit)
-        self.class.new(value - converted.value, unit)
-      else
-        raise TypeError, "Can't subtract #{other} from #{inspect}."
-      end
+      combine(:-, other) || raise(TypeError, "Can't subtract #{other} from #{inspect}.")
     end
 
     def **(number)
       if number.is_a?(Numeric)
-        self.class.new( value ** number, unit ** number )
+        new( value ** number, unit ** number )
       else
         raise TypeError, "Can't raise #{inspect} to #{number} power."
       end
@@ -79,6 +39,49 @@ module Unitwise
         self.convert(meth)
       else
         super(meth, *args, &block)
+      end
+    end
+
+    private
+
+    def new(*args)
+      self.class.new(*args)
+    end
+
+    def converted_value(other_unit)
+      if unit.special?
+        if other_unit.special?
+          other_unit.functional functional(value, -1)
+        else
+          functional(value, -1)
+        end
+      else
+        if other_unit.special?
+          other_unit.functional(value)
+        else
+          scalar / other_unit.scalar
+        end
+      end
+    end
+
+    # add or subtract other unit
+    def combine(operator, other)
+      if similar_to?(other)
+        new(value.send(operator, other.convert(unit).value), unit)
+      end
+    end
+
+    # multiply or divide other unit
+    def operate(operator, other)
+      if other.is_a?(Numeric)
+        new(value.send(operator, other), unit)
+      elsif other.respond_to?(:composition)
+        if similar_to?(other)
+          converted = other.convert(unit)
+          new(value.send(operator, converted.value), unit.send(operator, converted.unit))
+        else
+          new(value.send(operator, other.value), unit.send(operator, other.unit))
+        end
       end
     end
 
