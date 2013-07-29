@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/joshwlewis/unitwise.png)](https://travis-ci.org/joshwlewis/unitwise)
 [![Dependency Status](https://gemnasium.com/joshwlewis/unitwise.png)](https://gemnasium.com/joshwlewis/unitwise)
-[![Coverage Status](https://coveralls.io/repos/joshwlewis/signed_multiset/badge.png)](https://coveralls.io/r/joshwlewis/signed_multiset)
+[![Coverage Status](https://coveralls.io/repos/joshwlewis/unitwise/badge.png)](https://coveralls.io/r/joshwlewis/unitwise)
 [![Code Climate](https://codeclimate.com/github/joshwlewis/unitwise.png)](https://codeclimate.com/github/joshwlewis/unitwise)
 
 
