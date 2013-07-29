@@ -1,6 +1,6 @@
 # Unitwise
 
-[![Build Status](https://travis-ci.org/joshwlewis/unitwise.png)](https://travis-ci.org/joshwlewis/unitwise)
+[![Build Status](https://travis-ci.org/joshwlewis/unitwise.png)](https://travis-ci.org/joshwlewis/unitwise)[![Code Climate](https://codeclimate.com/github/joshwlewis/unitwise.png)](https://codeclimate.com/github/joshwlewis/unitwise)[![Dependency Status](https://gemnasium.com/joshwlewis/unitwise.png)](https://gemnasium.com/joshwlewis/unitwise)
 
 Unitwise is a library for performing mathematical operations and conversions on all units defined by the [Unified Code for Units of Measure(UCUM)](http://unitsofmeasure.org/).
 
