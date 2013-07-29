@@ -256,7 +256,7 @@
   :primary_code: Cel
   :secondary_code: CEL
   :scale:
-    :function_code: cel(1 K)
+    :function_code: cel
     :value: 1.0
     :unit_code: K
   :classification: si
@@ -2168,7 +2168,7 @@
   :primary_code: '[degF]'
   :secondary_code: '[DEGF]'
   :scale:
-    :function_code: degf(5 K/9)
+    :function_code: degf
     :value: 5.0
     :unit_code: K/9
   :classification: heat
@@ -2444,7 +2444,7 @@
   :primary_code: '[p''diop]'
   :secondary_code: '[P''DIOP]'
   :scale:
-    :function_code: 100tan(1 rad)
+    :function_code: 100tan
     :value: 1.0
     :unit_code: deg
   :classification: clinical
@@ -2457,7 +2457,7 @@
   :primary_code: '%[slope]'
   :secondary_code: '%[SLOPE]'
   :scale:
-    :function_code: 100tan(1 rad)
+    :function_code: 100tan
     :value: 1.0
     :unit_code: deg
   :classification: clinical
@@ -2531,7 +2531,7 @@
   :primary_code: '[hp''_X]'
   :secondary_code: '[HP''_X]'
   :scale:
-    :function_code: hpX(1 1)
+    :function_code: hpX
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2544,7 +2544,7 @@
   :primary_code: '[hp''_C]'
   :secondary_code: '[HP''_C]'
   :scale:
-    :function_code: hpC(1 1)
+    :function_code: hpC
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2557,7 +2557,7 @@
   :primary_code: '[hp''_M]'
   :secondary_code: '[HP''_M]'
   :scale:
-    :function_code: hpM(1 1)
+    :function_code: hpM
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2570,7 +2570,7 @@
   :primary_code: '[hp''_Q]'
   :secondary_code: '[HP''_Q]'
   :scale:
-    :function_code: hpQ(1 1)
+    :function_code: hpQ
     :value: 1.0
     :unit_code: '1'
   :classification: clinical
@@ -2703,7 +2703,7 @@
   :primary_code: '[pH]'
   :secondary_code: '[PH]'
   :scale:
-    :function_code: pH(1 mol/l)
+    :function_code: pH
     :value: 1.0
     :unit_code: mol/l
   :classification: chemical
@@ -3100,7 +3100,7 @@
   :primary_code: Np
   :secondary_code: NEP
   :scale:
-    :function_code: ln(1 1)
+    :function_code: ln
     :value: 1.0
     :unit_code: '1'
   :classification: levels
@@ -3113,7 +3113,7 @@
   :primary_code: B
   :secondary_code: B
   :scale:
-    :function_code: lg(1 1)
+    :function_code: lg
     :value: 1.0
     :unit_code: '1'
   :classification: levels
@@ -3126,7 +3126,7 @@
   :primary_code: B[SPL]
   :secondary_code: B[SPL]
   :scale:
-    :function_code: 2lg(2 10*-5.Pa)
+    :function_code: 2lg
     :value: 2.0
     :unit_code: 10*-5.Pa
   :classification: levels
@@ -3139,7 +3139,7 @@
   :primary_code: B[V]
   :secondary_code: B[V]
   :scale:
-    :function_code: 2lg(1 V)
+    :function_code: 2lg
     :value: 1.0
     :unit_code: V
   :classification: levels
@@ -3152,7 +3152,7 @@
   :primary_code: B[mV]
   :secondary_code: B[MV]
   :scale:
-    :function_code: 2lg(1 mV)
+    :function_code: 2lg
     :value: 1.0
     :unit_code: mV
   :classification: levels
@@ -3165,7 +3165,7 @@
   :primary_code: B[uV]
   :secondary_code: B[UV]
   :scale:
-    :function_code: 2lg(1 uV)
+    :function_code: 2lg
     :value: 1.0
     :unit_code: uV
   :classification: levels
@@ -3178,7 +3178,7 @@
   :primary_code: B[10.nV]
   :secondary_code: B[10.NV]
   :scale:
-    :function_code: 2lg(10 nV)
+    :function_code: 2lg
     :value: 10.0
     :unit_code: nV
   :classification: levels
@@ -3191,7 +3191,7 @@
   :primary_code: B[W]
   :secondary_code: B[W]
   :scale:
-    :function_code: lg(1 W)
+    :function_code: lg
     :value: 1.0
     :unit_code: W
   :classification: levels
@@ -3204,7 +3204,7 @@
   :primary_code: B[kW]
   :secondary_code: B[KW]
   :scale:
-    :function_code: lg(1 kW)
+    :function_code: lg
     :value: 1.0
     :unit_code: kW
   :classification: levels
@@ -3348,7 +3348,7 @@
   :primary_code: bit_s
   :secondary_code: BIT_S
   :scale:
-    :function_code: ld(1 1)
+    :function_code: ld
     :value: 1.0
     :unit_code: '1'
   :classification: infotech

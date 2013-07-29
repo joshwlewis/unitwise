@@ -53,15 +53,20 @@ module Unitwise
 
     def scale=(attrs)
       @scale = if attrs[:function_code]
-        FunctionalScale.new(attrs[:function_code], attrs[:value], attrs[:unit_code])
+        Functional.new(attrs[:value], attrs[:unit_code], attrs[:function_code])
       else
-        LinearScale.new(attrs[:value], attrs[:unit_code])
+        Scale.new(attrs[:value], attrs[:unit_code])
       end
     end
 
     def scalar
       base? ? 1 : scale.scalar
     end
+
+    def functional(x, direction=1)
+      scale.functional(x, direction)
+    end
+
 
     def root_terms
       base? ? [Term.new(atom: self)] : scale.root_terms

@@ -13,6 +13,26 @@ module Unitwise
       end
     end
 
+    def dup
+      self.class.new(value, unit)
+    end
+
+    def atoms
+      unit.atoms
+    end
+
+    def special?
+      unit.special?
+    end
+
+    def functional(value, direction=1)
+      unit.functional(value, direction)
+    end
+
+    def scalar
+      value * unit.scalar
+    end
+
     def unit
       @unit ||= Unit.new(@unit_code)
     end

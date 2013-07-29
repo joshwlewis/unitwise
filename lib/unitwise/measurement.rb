@@ -1,10 +1,18 @@
 module Unitwise
-  class Measurement < LinearScale
+  class Measurement < Scale
 
     def convert(unit)
       other_unit = Unit.new(unit)
       if similar_to?(other_unit)
-        self.class.new(scalar / other_unit.scalar, other_unit)
+        if self.unit.special? && other_unit.special?
+          self.class.new(other_unit.functional(functional(value, -1), 1), other_unit)
+        elsif special?
+          self.class.new(functional(value, -1), other_unit)
+        elsif other_unit.special?
+          self.class.new(other_unit.functional(value), other_unit)
+        else
+          self.class.new(scalar / other_unit.scalar, other_unit)
+        end
       else
         raise ConversionError, "Can't convert #{inspect} to #{other_unit}."
       end

@@ -31,12 +31,12 @@ describe Unitwise::Function do
     fp.inverse.call(1).must_equal 0
   end
 
-  it 'must have a direct_scalar' do
-    fp.direct_scalar(1).must_equal 2
+  it 'must have a direct scalar' do
+    fp.functional(1, 1).must_equal 2
   end
 
   it 'must have an inverse scalar' do
-    fp.inverse_scalar(1).must_equal 0
+    fp.functional(1, -1).must_equal 0
   end
 
 end

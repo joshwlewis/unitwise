@@ -20,7 +20,7 @@ module Unitwise::Standard
     end
 
     def primary
-      attributes["@Unit"]
+      attributes["@Unit"].gsub(/\(.*\)/, '')
     end
 
     def secondary

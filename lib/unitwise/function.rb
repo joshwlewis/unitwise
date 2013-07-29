@@ -8,7 +8,7 @@ module Unitwise
 
       def defaults
         [ ["cel",   ->(x){ x - 273.15},           ->(x){ x + 273.15}          ],
-          ["degf",  ->(x){ 9.0 * x / 5 - 459.67 },->(x){ 5.0 * x / 9 + 459.67}],
+          ["degf",  ->(x){9.0 * x / 5.0 - 459.67},->(x){ 5.0/9 * (x + 459.67)}],
           ["hpX",   ->(x){ -log10(x) },           ->(x){ 10 ** -x }           ],
           ["hpC",   ->(x){ -log(x) / log(100) },  ->(x){ 100 ** -x }          ],
           ["tan100",->(x){ 100 * tan(x) },        ->(x){ atan(x / 100) }      ],
@@ -39,12 +39,12 @@ module Unitwise
       @inverse = inverse
     end
 
-    def direct_scalar(x)
-      direct.call(x)
-    end
-
-    def inverse_scalar(x)
-      inverse.call(x)
+    def functional(x, direction=1)
+      if direction == 1
+        direct.call(x)
+      elsif direction == -1
+        inverse.call(x)
+      end
     end
 
   end

@@ -32,11 +32,11 @@ describe Unitwise::Atom do
     it "must be nil for base atoms" do
       second.scale.must_equal nil
     end
-    it "sould be a LinearScale object for derived atoms" do
-      yard.scale.must_be_instance_of Unitwise::LinearScale
+    it "sould be a Scale object for derived atoms" do
+      yard.scale.must_be_instance_of Unitwise::Scale
     end
     it "must be a FunctionalScale object for special atoms" do
-      celsius.scale.must_be_instance_of Unitwise::FunctionalScale
+      celsius.scale.must_be_instance_of Unitwise::Functional
     end
   end
 

@@ -21,6 +21,18 @@ module Unitwise
       @terms ||= (Expression.decompose(@expression) if @expression)
     end
 
+    def atoms
+      terms.map(&:atom)
+    end
+
+    def special?
+      terms.count == 1 && terms.all?(&:special?)
+    end
+
+    def functional(value, direction=1)
+      terms.first.functional(value, direction)
+    end
+
     def dup
       self.class.new(expression)
     end

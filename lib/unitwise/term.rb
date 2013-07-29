@@ -29,6 +29,10 @@ module Unitwise
       @atom ||= (Atom.find(@atom_code) if @atom_code)
     end
 
+    def special?
+      atom.special rescue false
+    end
+
     def depth
       atom ? atom.depth + 1 : 0
     end
@@ -47,6 +51,10 @@ module Unitwise
 
     def scalar
       (factor * (prefix ? prefix.scalar : 1) * (atom ? atom.scalar : 1)) ** exponent
+    end
+
+    def functional(value, direction=1)
+      (factor * (prefix ? prefix.scalar : 1)) * (atom ? atom.functional(value, direction) : 1) ** exponent
     end
 
     def root_terms

@@ -35,10 +35,13 @@ describe Unitwise::Measurement do
   end
 
   let(:mph) { Unitwise::Measurement.new(60, '[mi_i]/h') }
-  let(:kmh) { Unitwise::Measurement.new(100, 'km/h')}
-  let(:mile) { Unitwise::Measurement.new(3, '[mi_i]')}
-  let(:hpm) { Unitwise::Measurement.new(6, 'h/[mi_i]')}
-  let(:cui) { Unitwise::Measurement.new(12, "[in_i]3")}
+  let(:kmh) { Unitwise::Measurement.new(100, 'km/h') }
+  let(:mile) { Unitwise::Measurement.new(3, '[mi_i]') }
+  let(:hpm) { Unitwise::Measurement.new(6, 'h/[mi_i]') }
+  let(:cui) { Unitwise::Measurement.new(12, "[in_i]3") }
+  let(:cel) { Unitwise::Measurement.new(22, 'Cel') }
+  let(:k) {Unitwise::Measurement.new(373.15, 'K') }
+  let(:f) {Unitwise::Measurement.new(98.6, '[degF]')}
 
   describe "#scalar" do
     it "must return value relative to terminal atoms" do
@@ -53,6 +56,15 @@ describe Unitwise::Measurement do
     end
     it "must raise an error if the units aren't similar" do
       ->{ mph.convert('N') }.must_raise Unitwise::ConversionError
+    end
+    it "must convert special units to their base units" do
+      cel.convert('K').value.must_equal 295.15
+    end
+    it "must convert base units to special units" do
+      k.convert('Cel').value.must_equal 100
+    end
+    it "must convert special units to special units" do
+      f.convert('Cel').value.must_equal 37
     end
   end
 
