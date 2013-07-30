@@ -1,5 +1,6 @@
 # Unitwise
 
+[![Gem Version](https://badge.fury.io/rb/unitwise.png)](http://badge.fury.io/rb/unitwise)
 [![Build Status](https://travis-ci.org/joshwlewis/unitwise.png)](https://travis-ci.org/joshwlewis/unitwise)
 [![Dependency Status](https://gemnasium.com/joshwlewis/unitwise.png)](https://gemnasium.com/joshwlewis/unitwise)
 [![Coverage Status](https://coveralls.io/repos/joshwlewis/unitwise/badge.png)](https://coveralls.io/r/joshwlewis/unitwise)
