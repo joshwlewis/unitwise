@@ -42,6 +42,7 @@ describe Unitwise::Measurement do
   let(:cel) { Unitwise::Measurement.new(22, 'Cel') }
   let(:k) {Unitwise::Measurement.new(373.15, 'K') }
   let(:f) {Unitwise::Measurement.new(98.6, '[degF]')}
+  let(:r) { Unitwise::Measurement.new(491.67, '[degR]') }
 
   describe "#scalar" do
     it "must return value relative to terminal atoms" do
@@ -65,6 +66,12 @@ describe Unitwise::Measurement do
     end
     it "must convert special units to special units" do
       f.convert('Cel').value.must_equal 37
+    end
+    it "must convert special units to non-special units" do
+      cel.convert("[degR]").value.must_equal 531.27
+    end
+    it "must convert derived units to special units" do
+      r.convert("Cel").value.round.must_equal 0
     end
   end
 

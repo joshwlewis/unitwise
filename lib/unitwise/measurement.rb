@@ -53,11 +53,11 @@ module Unitwise
         if other_unit.special?
           other_unit.functional functional(value, -1)
         else
-          functional(value, -1)
+          functional(value, -1) / other_unit.scalar
         end
       else
         if other_unit.special?
-          other_unit.functional(value)
+          other_unit.functional(scalar)
         else
           scalar / other_unit.scalar
         end

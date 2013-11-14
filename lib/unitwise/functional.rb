@@ -9,11 +9,11 @@ module Unitwise
     end
 
     def scalar
-      puts "Warning: Mathematical operations with special units should be used with caution."
+      puts "Warning: Mathematical operations with special units not reccomended by UCUM."
       super()
     end
 
-    def functional(x, direction=1)
+    def functional(x=scalar, direction=1)
       function.functional(x, direction)
     end
 

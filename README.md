@@ -11,8 +11,6 @@ Unitwise is a library for performing mathematical operations and conversions on 
 
 Unitwise supports a vast number of units. At the time of writing, it supports 95 metric units, 199 non-metric units, and 24 unit prefixes. That's approximately 2,500 basic units, but these can also be combined through multiplication and/or division to create an infinite number of possibilities.
 
-Please note that while Unitwise is functional, it is still under development.
-
 ## Usage
 
 ### Initialization:

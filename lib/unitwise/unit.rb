@@ -29,8 +29,8 @@ module Unitwise
       terms.count == 1 && terms.all?(&:special?)
     end
 
-    def functional(value, direction=1)
-      terms.first.functional(value, direction)
+    def functional(x=scalar, direction=1)
+      terms.first.functional(x, direction)
     end
 
     def dup

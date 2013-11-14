@@ -63,7 +63,7 @@ module Unitwise
       base? ? 1 : scale.scalar
     end
 
-    def functional(x, direction=1)
+    def functional(x=scalar, direction=1)
       scale.functional(x, direction)
     end
 

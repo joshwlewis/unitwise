@@ -25,8 +25,8 @@ module Unitwise
       unit.special?
     end
 
-    def functional(value, direction=1)
-      unit.functional(value, direction)
+    def functional(x=value, direction=1)
+      unit.functional(x, direction)
     end
 
     def scalar
