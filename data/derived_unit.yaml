@@ -630,7 +630,7 @@
   :primary_code: AU
   :secondary_code: ASU
   :scale:
-    :value: 149597.87
+    :value: 149597.870691
     :unit_code: Mm
   :classification: iso1000
   :property: length
@@ -688,7 +688,7 @@
 - :names: permittivity of vacuum
   :symbol: <i>ε<sub><r>0</r></sub></i>
   :primary_code: '[eps_0]'
-  :secondary_code: '[eps_0]'
+  :secondary_code: '[EPS_0]'
   :scale:
     :value: 8.854187817e-12
     :unit_code: F/m
@@ -700,7 +700,7 @@
 - :names: permeability of vacuum
   :symbol: <i>μ<sub><r>0</r></sub></i>
   :primary_code: '[mu_0]'
-  :secondary_code: '[mu_0]'
+  :secondary_code: '[MU_0]'
   :scale:
     :value: 1.0
     :unit_code: 4.[pi].10*-7.N/A2
@@ -1754,6 +1754,51 @@
   :metric: false
   :special: false
   :arbitrary: false
+- :names: metric fluid ounce
+  :symbol: oz fl
+  :primary_code: '[foz_m]'
+  :secondary_code: '[FOZ_M]'
+  :scale:
+    :value: 30.0
+    :unit_code: mL
+  :classification: us-volumes
+  :property: fluid volume
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: metric cup
+  :primary_code: '[cup_m]'
+  :secondary_code: '[CUP_M]'
+  :scale:
+    :value: 240.0
+    :unit_code: mL
+  :classification: us-volumes
+  :property: volume
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: metric teaspoon
+  :primary_code: '[tsp_m]'
+  :secondary_code: '[TSP_M]'
+  :scale:
+    :value: 5.0
+    :unit_code: mL
+  :classification: us-volumes
+  :property: volume
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: metric tablespoon
+  :primary_code: '[tbs_m]'
+  :secondary_code: '[TBS_M]'
+  :scale:
+    :value: 15.0
+    :unit_code: mL
+  :classification: us-volumes
+  :property: volume
+  :metric: false
+  :special: false
+  :arbitrary: false
 - :names: gallon
   :primary_code: '[gal_br]'
   :secondary_code: '[GAL_BR]'
@@ -2043,6 +2088,17 @@
   :metric: false
   :special: false
   :arbitrary: false
+- :names: metric ounce
+  :primary_code: '[oz_m]'
+  :secondary_code: '[OZ_M]'
+  :scale:
+    :value: 28.0
+    :unit_code: g
+  :classification: apoth
+  :property: mass
+  :metric: false
+  :special: false
+  :arbitrary: false
 - :names: line
   :primary_code: '[lne]'
   :secondary_code: '[LNE]'
@@ -2175,6 +2231,18 @@
   :property: temperature
   :metric: false
   :special: true
+  :arbitrary: false
+- :names: degree Rankine
+  :symbol: °R
+  :primary_code: '[degR]'
+  :secondary_code: '[degR]'
+  :scale:
+    :value: 5.0
+    :unit_code: K/9
+  :classification: heat
+  :property: temperature
+  :metric: false
+  :special: false
   :arbitrary: false
 - :names: calorie at 15 °C
   :symbol: cal<sub>15°C</sub>
@@ -2355,6 +2423,30 @@
   :metric: false
   :special: false
   :arbitrary: false
+- :names: tex
+  :symbol: tex
+  :primary_code: tex
+  :secondary_code: TEX
+  :scale:
+    :value: 1.0
+    :unit_code: g/km
+  :classification: heat
+  :property: linear mass density (of textile thread)
+  :metric: true
+  :special: false
+  :arbitrary: false
+- :names: Denier
+  :symbol: den
+  :primary_code: '[den]'
+  :secondary_code: '[DEN]'
+  :scale:
+    :value: 1.0
+    :unit_code: g/9/km
+  :classification: heat
+  :property: linear mass density (of textile thread)
+  :metric: false
+  :special: false
+  :arbitrary: false
 - :names: meter of water column
   :symbol: m H<sub><r>2</r></sub>O
   :primary_code: m[H2O]
@@ -2394,7 +2486,7 @@
 - :names: inch of mercury column
   :symbol: in Hg
   :primary_code: '[in_i''Hg]'
-  :secondary_code: '[IN_i''HG]'
+  :secondary_code: '[IN_I''HG]'
   :scale:
     :value: 1.0
     :unit_code: m[Hg].[in_i]/m
@@ -2484,7 +2576,7 @@
   :secondary_code: '[CH]'
   :scale:
     :value: 1.0
-    :unit_code: mm/[pi]
+    :unit_code: mm/3
   :classification: clinical
   :property: gauge of catheters
   :metric: false
@@ -2496,7 +2588,7 @@
   :secondary_code: '[DRP]'
   :scale:
     :value: 1.0
-    :unit_code: ml/12
+    :unit_code: ml/20
   :classification: clinical
   :property: volume
   :metric: false
@@ -2875,6 +2967,17 @@
   :metric: false
   :special: false
   :arbitrary: true
+- :names: anti factor Xa unit
+  :primary_code: '[anti''Xa''U]'
+  :secondary_code: '[ANTI''XA''U]'
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: chemical
+  :property: biologic activity of factor Xa inhibitor (heparin)
+  :metric: false
+  :special: false
+  :arbitrary: true
 - :names: Todd unit
   :primary_code: '[todd''U]'
   :secondary_code: '[TODD''U]'
@@ -2987,6 +3090,18 @@
   :metric: false
   :special: false
   :arbitrary: true
+- :names: 50% embryo infectious dose
+  :symbol: EID<sub>50</sub>
+  :primary_code: '[EID_50]'
+  :secondary_code: '[EID_50]'
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: chemical
+  :property: biologic activity (infectivity) of an infectious agent preparation
+  :metric: false
+  :special: false
+  :arbitrary: true
 - :names: plaque forming units
   :symbol: PFU
   :primary_code: '[PFU]'
@@ -3091,7 +3206,40 @@
     :value: 1.0
     :unit_code: '1'
   :classification: chemical
-  :property: procedure defined amount of an antigen substance
+  :property: procedure defined amount of a poliomyelitis d-antigen substance
+  :metric: false
+  :special: false
+  :arbitrary: true
+- :names: fibrinogen equivalent unit
+  :primary_code: '[FEU]'
+  :secondary_code: '[FEU]'
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: chemical
+  :property: amount of fibrinogen broken down into the measured d-dimers
+  :metric: false
+  :special: false
+  :arbitrary: true
+- :names: ELISA unit
+  :primary_code: '[ELU]'
+  :secondary_code: '[ELU]'
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: chemical
+  :property: arbitrary ELISA unit
+  :metric: false
+  :special: false
+  :arbitrary: true
+- :names: Ehrlich unit
+  :primary_code: '[EU]'
+  :secondary_code: '[EU]'
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: chemical
+  :property: Ehrlich unit
   :metric: false
   :special: false
   :arbitrary: true
@@ -3383,7 +3531,7 @@
 - :names: baud
   :symbol: Bd
   :primary_code: Bd
-  :secondary_code: Bd
+  :secondary_code: BD
   :scale:
     :value: 1.0
     :unit_code: /s
