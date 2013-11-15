@@ -1,7 +1,6 @@
 module Unitwise
   class Unit
     include Unitwise::Composable
-    attr_writer :terms, :expression
 
     def initialize(input)
       if input.respond_to?(:expression)

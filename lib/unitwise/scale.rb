@@ -21,6 +21,10 @@ module Unitwise
       unit.atoms
     end
 
+    def terms
+      unit.terms
+    end
+
     def special?
       unit.special?
     end

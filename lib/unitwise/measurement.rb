@@ -1,6 +1,13 @@
 module Unitwise
   class Measurement < Scale
 
+    def initialize(value, unit)
+      super(value, unit)
+      if terms.nil?
+        raise ExpressionError, "Could not evaluate `#{unit}`."
+      end
+    end
+
     def convert(other_unit)
       other_unit = Unit.new(other_unit)
       if similar_to?(other_unit)

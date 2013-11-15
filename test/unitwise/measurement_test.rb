@@ -7,6 +7,9 @@ describe Unitwise::Measurement do
       subject.value.must_equal(1)
       subject.unit.to_s.must_equal('m/s')
     end
+    it "should raise an error for unknown units" do
+      ->{ Unitwise::Measurement.new(1,"funkitron") }.must_raise(Unitwise::ExpressionError)
+    end
   end
 
   describe "#unit" do
