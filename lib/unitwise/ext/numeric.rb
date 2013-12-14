@@ -4,10 +4,8 @@ class Numeric
   end
 
   def method_missing(meth, *args, &block)
-    if Unitwise::Expression.decompose(meth)
-      self.convert(meth)
-    else
-      super(meth, *args, &block)
-    end
+    convert(meth)
+  rescue Unitwise::ExpressionError
+    super(meth, *args)
   end
 end

@@ -14,10 +14,16 @@ module Unitwise
       end
 
       def decompose(expression)
-        begin
-          Decomposer.new(expression).terms
-        rescue ExpressionError
-          nil
+        expression = expression.to_s
+        @decompose ||= {}
+        if @decompose.has_key?(expression)
+          @decompose[expression]
+        else
+          @decompose[expression] = begin
+            Decomposer.new(expression).terms
+          rescue ExpressionError
+            nil
+          end
         end
       end
     end
