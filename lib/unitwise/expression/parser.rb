@@ -45,7 +45,7 @@ module Unitwise
       end
 
       rule (:expression) do
-        (group | term).as(:left) >> (operator >> expression.as(:right)).maybe
+        ((group | term).as(:left)).maybe >> (operator >> expression.as(:right)).maybe
       end
 
     end

@@ -87,5 +87,23 @@ describe Unitwise::Expression::Parser do
     end
   end
 
+  describe "#expression" do
+    it "must match left only" do
+      match = subject.expression.parse('m')
+      match[:left][:term][:atom][:atom_code].must_equal("m")
+    end
+    it "must match left + right + operator" do
+      match = subject.expression.parse('m.s')
+      match[:left][:term][:atom][:atom_code].must_equal("m")
+      match[:operator].must_equal('.')
+      match[:right][:left][:term][:atom][:atom_code].must_equal('s')
+    end
+    it "must match operator + right" do
+      match = subject.expression.parse("/s")
+      match[:operator].must_equal('/')
+      match[:right][:left][:term][:atom][:atom_code].must_equal('s')
+    end
+  end
+
 
 end
