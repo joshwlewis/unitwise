@@ -23,11 +23,12 @@ describe Unitwise::Atom do
     end
   end
 
-  let(:second) { Unitwise::Atom.find("s") }
-  let(:yard) { Unitwise::Atom.find("[yd_i]")}
-  let(:pi) { Unitwise::Atom.find("[pi]")}
+  let(:second)  { Unitwise::Atom.find("s") }
+  let(:yard)    { Unitwise::Atom.find("[yd_i]")}
+  let(:pi)      { Unitwise::Atom.find("[pi]")}
   let(:celsius) { Unitwise::Atom.find("Cel")}
-  let(:pfu) { Unitwise::Atom.find("[PFU]")}
+  let(:pfu)     { Unitwise::Atom.find("[PFU]")}
+  let(:joule)   { Unitwise::Atom.find("J")}
   describe "#scale" do
     it "must be nil for base atoms" do
       second.scale.must_equal nil
@@ -106,11 +107,11 @@ describe Unitwise::Atom do
     end
   end
 
-  describe "#key" do
-    it "must return the dim or the property" do
-      second.key.must_equal "T"
-      pi.key.must_equal "number"
-      celsius.key.must_equal "temperature"
+  describe "#dim" do
+    it "must return the dim" do
+      second.dim.must_equal 'T'
+      yard.dim.must_equal 'L'
+      joule.dim.must_equal 'L2.M.T-2'
     end
   end
 

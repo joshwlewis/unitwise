@@ -1,7 +1,7 @@
 module Unitwise
   class Atom < Base
-    attr_accessor :classification, :property, :metric, :special
-    attr_accessor :arbitrary, :dim
+    attr_accessor :classification, :property, :metric, :special, :arbitrary
+    attr_writer :dim
 
     include Unitwise::Composable
 
@@ -16,7 +16,7 @@ module Unitwise
     end
 
     def base?
-      scale.nil? && !dim.nil?
+      scale.nil? && !@dim.nil?
     end
 
     def derived?
@@ -47,8 +47,8 @@ module Unitwise
       depth <= 3
     end
 
-    def key
-      base? ? dim : property
+    def dim
+      terminal? ? @dim || property : composition_string
     end
 
     def scale=(attrs)
@@ -66,7 +66,6 @@ module Unitwise
     def functional(x=scalar, direction=1)
       scale.functional(x, direction)
     end
-
 
     def root_terms
       base? ? [Term.new(atom: self)] : scale.root_terms

@@ -3,7 +3,7 @@ require 'test_helper'
 describe Unitwise::Unit do
 
   let(:ms2) { Unitwise::Unit.new("m/s2") }
-  let(:kg) { Unitwise::Unit.new("kg") }
+  let(:kg)  { Unitwise::Unit.new("kg") }
   let(:psi) { Unitwise::Unit.new("[psi]")}
   let(:deg) { Unitwise::Unit.new("deg")}
 
@@ -37,6 +37,13 @@ describe Unitwise::Unit do
     it "must be a multiset" do
       ms2.must_respond_to :terms
       ms2.composition.must_be_instance_of SignedMultiset
+    end
+  end
+
+  describe "#dim" do
+    it "must be a string representing it's dimensional makeup" do
+      ms2.dim.must_equal 'L.T-2'
+      psi.dim.must_equal 'L-1.M.T-2'
     end
   end
 

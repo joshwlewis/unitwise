@@ -7,8 +7,18 @@ module Unitwise
 
     def composition
       root_terms.reduce(SignedMultiset.new) do |s, t|
-        s.increment(t.atom.key, t.exponent) if t.atom; s
+        s.increment(t.atom.dim, t.exponent) if t.atom; s
       end
+    end
+
+    def dim
+      composition_string
+    end
+
+    def composition_string
+      composition.sort.map do |k,v|
+        v == 1 ? k.to_s : "#{k}#{v}"
+      end.join('.')
     end
 
     def similar_to?(other)
