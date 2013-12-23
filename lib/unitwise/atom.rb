@@ -72,7 +72,7 @@ module Unitwise
     end
 
     def to_s
-      "#{names.first} (#{primary_code})"
+      "#{primary_code} (#{names.join('|')})"
     end
 
     def inspect
