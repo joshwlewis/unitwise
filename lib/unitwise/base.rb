@@ -38,7 +38,9 @@ module Unitwise
     end
 
     def slugs
-      names.map(&:to_slug)
+      names.map do |n|
+        n.downcase.strip.gsub(/\s/, '_').gsub(/\W/, '')
+      end
     end
 
   end
