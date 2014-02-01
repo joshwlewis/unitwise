@@ -15,24 +15,18 @@ Unitwise supports a vast number of units. At the time of writing, it supports 95
 
 ### Initialization:
 
-Instantiate measurements with Unitwise()
+Instantiate measurements with `Unitwise()`
 
 ```ruby
-
 require 'unitwise'
 
 Unitwise(2.3, 'kilogram') # => <Unitwise::Measurement 2.3 kilogram>
 Unitwise('pound')         # => <Unitwise::Measurement 1 pound>
-
-2.3.kilogram # => <Unitwise::Measurement 2.3 kilogram>
-4.convert('pound') # => <Unitwise::Measurement 4 pound>
-
 ```
 
 or require the core extensions for some syntactic sugar.
 
 ```ruby
-
 require 'unitwise/ext'
 
 1.convert(liter)
@@ -40,7 +34,6 @@ require 'unitwise/ext'
 
 4.teaspoon
 # => <Unitwise::Measurement 4 teaspoon>
-
 ```
 
 ### Conversion
@@ -72,11 +65,9 @@ distance.kilometer
 It also has the ability to compare measurements with the same or different units.
 
 ```ruby
-
 12.inch == 1.foot # => true
 
 1.meter > 1.yard # => true
-
 ```
 
 Again, you have to compare compatible units. Dissimilar units will fail. 
@@ -97,13 +88,11 @@ Units can be combined to make more complex ones. There is nothing special about
 them -- they can still be converted, compared, or operated on.
 
 ```ruby
-
 speed = Unitwise(60, 'mile/hour')
 # => <Unitwise::Measurement 60 mile/hour>
 
 speed.convert('m/s')
 # => <Unitwise::Measurement 26.822453644907288 m/s>
-
 ```
 
 Exponents and parenthesis are supported as well.
@@ -118,25 +107,21 @@ Unitwise(1000, 'kg.s-1.(m/s)2').watt
 You can add or subtract compatible measurements.
 
 ```ruby
-
-2.meter + 3.inches - 1.yard
+2.meter + 3.inch - 1.yard
 # => <Unitwise::Measurement 1.1618 meter>
-
 ```
 
 You can multiply or divide measurements and numbers.
 
 ```ruby
-
 110.volt * 2
 => <Unitwise::Measurement 220 volt>
-
 ```
 
 You can multiply or divide measurements with measurements. Here is a fun example
 from Physics 101
 
-```
+```ruby
 m = 20.kg # => <Unitwise::Measurement 20 kg>
 
 a = 10.m / 1.s2 # => <Unitwise::Measurement 10 m/s2>
@@ -144,7 +129,6 @@ a = 10.m / 1.s2 # => <Unitwise::Measurement 10 m/s2>
 f = m * a # => <Unitwise::Measurement 50 kg.m/s2>
 
 f.newton # => <Unitwise::Measurement 50 newton>
-
 ```
 
 ### Unit Compatibility
@@ -152,8 +136,8 @@ f.newton # => <Unitwise::Measurement 50 newton>
 Unitwise is fairly intelligent about unit compatibility. It boils each unit down
 to it's basic composition to determine if they are compatible. For instance,
 energy (say a Joule, which can be expressed as kg*m2/s2) would have the 
-components mass<super>1</super>, length<super>2</super>, and 
-time<super>-2</super>. Any unit that could be reduced to this same composition 
+components mass<sup>1</sup>, length<sup>2</sup>, and 
+time<sup>-2</sup>. Any unit that could be reduced to this same composition 
 would be considered compatible. 
 
 I've extracted this datatype into it's own gem ([SignedMultiset](//github.com/joshwlewis/signed_multiset)) if you find this construct interesting.
@@ -173,12 +157,20 @@ Just as an example, you can see here that there are actually a few versions of i
 and foot:
 
 ```ruby
-
 1.convert('[ft_i]') == 1.convert('[ft_us]') # => false
 
 3.convert('[in_br]') == 3.convert('[in_i]') # => false
-
 ```
+
+### List of available units
+
+- You can get the official list from the UCUM website in XML format.
+  [unitsofmeasure.org/ucum-essence.xml](http://unitsofmeasure.org/ucum-essence.xml)
+
+- Unitwise occasionally converts the above XML into YAML for use by this
+  library.
+  [github.com/joshwlewis/unitwise/tree/master/data](//github.com/joshwlewis/unitwise/tree/master/data)
+
 
 ## Installation
 
