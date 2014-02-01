@@ -15,27 +15,61 @@ Unitwise supports a vast number of units. At the time of writing, it supports 95
 
 ### Initialization:
 
+Instantiate measurements with Unitwise()
+
 ```ruby
 
 require 'unitwise'
 
-2.3.kilogram # => <Unitwise::Measurement 2.3 kilogram>
+Unitwise(2.3, 'kilogram') # => <Unitwise::Measurement 2.3 kilogram>
+Unitwise('pound')         # => <Unitwise::Measurement 1 pound>
 
+2.3.kilogram # => <Unitwise::Measurement 2.3 kilogram>
 4.convert('pound') # => <Unitwise::Measurement 4 pound>
+
+```
+
+or require the core extensions for some syntactic sugar.
+
+```ruby
+
+require 'unitwise/ext'
+
+1.convert(liter)
+# => <Unitwise::Measurement 1 liter>
+
+4.teaspoon
+# => <Unitwise::Measurement 4 teaspoon>
 
 ```
 
 ### Conversion
 
+Obviously, Unitwise handles simple unit conversion. You can convert to any
+compatible unit (Unitwise won't let you convert say inches to pounds) with the 
+`convert(unit)` method.
+
 ```ruby
+distance = Unitwise(5, 'kilometer') 
+# => <Unitwise::Measurement 5 kilometer>
 
-26.2.mile.kilometer # => <Unitwise::Measurement 42.164897129794255 kilometer>
+distance.convert('mile')
+# => <Unitwise::Measurement 3.106849747474748 mile>
+```
 
-5.kilometer.convert('mile') # => <Unitwise::Measurement 3.106849747474748 mile>
+The prettier version of `convert(unit)` is just calling the unit name method:
 
+```ruby
+distance = 26.2.mile
+# => <Unitwise::Measurement 26.2 mile>
+
+distance.kilometer
+# => <Unitwise::Measurement 42.164897129794255 kilometer>
 ```
 
 ### Comparison
+
+It also has the ability to compare measurements with the same or different units.
 
 ```ruby
 
@@ -45,12 +79,64 @@ require 'unitwise'
 
 ```
 
-### Math
+Again, you have to compare compatible units. Dissimilar units will fail. 
+For example, comparing two temperatures will work, comparing a mass to a length would fail.
 
-Note that you can also use SI abbreviations for units instead of names (i.e. ms for millisecond).
+### SI abbreviations
+
+You can use shorthand for SI units.
+
+```ruby
+1.m  # => <Unitwise::Measurement 1 meter>
+1.ml #=> <Unitwise::Measurement 1 milliliter>
+```
+
+### Complex Units
+
+Units can be combined to make more complex ones. There is nothing special about
+them -- they can still be converted, compared, or operated on.
 
 ```ruby
 
+speed = Unitwise(60, 'mile/hour')
+# => <Unitwise::Measurement 60 mile/hour>
+
+speed.convert('m/s')
+# => <Unitwise::Measurement 26.822453644907288 m/s>
+
+```
+
+Exponents and parenthesis are supported as well.
+
+```ruby
+Unitwise(1000, 'kg.s-1.(m/s)2').watt
+# => <Unitwise::Measurement 1000 watt>
+```
+
+### Math
+
+You can add or subtract compatible measurements.
+
+```ruby
+
+2.meter + 3.inches - 1.yard
+# => <Unitwise::Measurement 1.1618 meter>
+
+```
+
+You can multiply or divide measurements and numbers.
+
+```ruby
+
+110.volt * 2
+=> <Unitwise::Measurement 220 volt>
+
+```
+
+You can multiply or divide measurements with measurements. Here is a fun example
+from Physics 101
+
+```
 m = 20.kg # => <Unitwise::Measurement 20 kg>
 
 a = 10.m / 1.s2 # => <Unitwise::Measurement 10 m/s2>
@@ -61,27 +147,36 @@ f.newton # => <Unitwise::Measurement 50 newton>
 
 ```
 
-## UCUM Atom Codes
+### Unit Compatibility
 
-There are several units that share names in the UCUM specification. There are a few versions of inch and foot, for example. So, specifying `1.foot` may not always be appropriate. You may have to use a UCUM Atom code instead of the unit name:
+Unitwise is fairly intelligent about unit compatibility. It boils each unit down
+to it's basic composition to determine if they are compatible. For instance,
+energy (say a Joule, which can be expressed as kg*m2/s2) would have the 
+components mass<super>1</super>, length<super>2</super>, and 
+time<super>-2</super>. Any unit that could be reduced to this same composition 
+would be considered compatible. 
+
+I've extracted this datatype into it's own gem ([SignedMultiset](//github.com/joshwlewis/signed_multiset)) if you find this construct interesting.
+
+### Unit Names and Atom Codes
+
+This library is based around the units in the UCUM specification, which is
+extensive and well thought out. However, not all of our unit systems throughout
+the world and history are consistent or logical. UCUM has devised a system where
+each unit has a unique atom code to try and solve this. The previous code examples
+don't show this, because for the most part you won't need it. Unitwise can
+figure out most of the units by their name or symbol. If you find you need to
+(or just want to be explicit) you use the UCUM atom codes without any
+modification.
+
+Just as an example, you can see here that there are actually a few versions of inch
+and foot:
 
 ```ruby
 
 1.convert('[ft_i]') == 1.convert('[ft_us]') # => false
 
 3.convert('[in_br]') == 3.convert('[in_i]') # => false
-
-```
-
-## Compound Units
-
-You can create compound units by multiplying or dividing measurements, or by using a compound string.
-
-```ruby
-
-20.mile / 1.hour == 20.convert("mile/hour") # => true
-
-4.convert("kg.(m/s)2") == 4.joule # => true
 
 ```
 

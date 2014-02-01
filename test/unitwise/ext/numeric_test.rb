@@ -1,5 +1,5 @@
 require 'test_helper'
-
+require 'unitwise/ext'
 describe Numeric do
 
   describe "#convert" do

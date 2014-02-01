@@ -11,7 +11,6 @@ require 'unitwise/term'
 require 'unitwise/unit'
 require 'unitwise/function'
 require 'unitwise/errors'
-require 'unitwise/ext'
 
 module Unitwise
   def self.path
@@ -20,6 +19,14 @@ module Unitwise
 
   def self.data_file(key)
     File.join path, "data", "#{key}.yaml"
+  end
+end
+
+def Unitwise(first_arg, last_arg=nil)
+  if last_arg
+    Unitwise::Measurement.new(first_arg, last_arg)
+  else
+    Unitwise::Measurement.new(1, first_arg)
   end
 end
 
