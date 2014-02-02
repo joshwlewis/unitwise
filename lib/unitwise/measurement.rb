@@ -41,6 +41,15 @@ module Unitwise
       end
     end
 
+    def coerce(other)
+      case other
+      when Numeric
+        return self.class.new(other, '1'), self
+      else
+        raise TypeError, "#{self.class} can't be coerced into #{other.class}"
+      end
+    end
+
     def method_missing(meth, *args, &block)
       if Unitwise::Expression.decompose(meth)
         self.convert(meth)

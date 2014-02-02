@@ -155,6 +155,13 @@ describe Unitwise::Measurement do
     end
   end
 
+  describe "#coerce" do
+    let(:meter) { Unitwise::Measurement.new(1, 'm') }
+    it "must coerce numerics" do
+      meter.coerce(5).must_equal [ Unitwise::Measurement.new(5, '1'), meter ]
+    end
+  end
+
   describe "#method_missing" do
     let(:meter) { Unitwise::Measurement.new(1, 'm')}
     it "must convert 'mm'" do
