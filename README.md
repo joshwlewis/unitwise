@@ -38,9 +38,8 @@ require 'unitwise/ext'
 
 ### Conversion
 
-Obviously, Unitwise handles simple unit conversion. You can convert to any
-compatible unit (Unitwise won't let you convert say inches to pounds) with the 
-`convert(unit)` method.
+Unitwise is able to convert any unit within the UCUM spec to any other
+compatible unit.
 
 ```ruby
 distance = Unitwise(5, 'kilometer') 
@@ -50,7 +49,8 @@ distance.convert('mile')
 # => <Unitwise::Measurement 3.106849747474748 mile>
 ```
 
-The prettier version of `convert(unit)` is just calling the unit name method:
+The prettier version of `convert(unit)` is just calling the unit as a method
+name:
 
 ```ruby
 distance = 26.2.mile
@@ -70,8 +70,8 @@ It also has the ability to compare measurements with the same or different units
 1.meter > 1.yard # => true
 ```
 
-Again, you have to compare compatible units. Dissimilar units will fail. 
-For example, comparing two temperatures will work, comparing a mass to a length would fail.
+Again, you have to compare compatible units. For example, comparing two 
+temperatures will work, comparing a mass to a length would fail.
 
 ### SI abbreviations
 
@@ -115,7 +115,7 @@ You can multiply or divide measurements and numbers.
 
 ```ruby
 110.volt * 2
-=> <Unitwise::Measurement 220 volt>
+# => <Unitwise::Measurement 220 volt>
 ```
 
 You can multiply or divide measurements with measurements. Here is a fun example
@@ -162,14 +162,23 @@ and foot:
 3.convert('[in_br]') == 3.convert('[in_i]') # => false
 ```
 
-### List of available units
+### Available Units
 
-- You can get the official list from the UCUM website in XML format.
-  [unitsofmeasure.org/ucum-essence.xml](http://unitsofmeasure.org/ucum-essence.xml)
+If you are looking for a particular unit (or 'atom' in the UCUM spec), chances 
+are that it is in here. There is a rudimentary search function for both
+`Unitwise::Atom` and `Unitwise::Prefix`.
 
-- Unitwise occasionally converts the above XML into YAML for use by this
-  library.
-  [github.com/joshwlewis/unitwise/tree/master/data](//github.com/joshwlewis/unitwise/tree/master/data)
+```ruby
+Unitwise::Atom.search('fathom')
+# => [ ... ]
+Unitwise::Prefix.search('milli')
+# => [ ... ]
+```
+
+You can also get the official list from the UCUM website in XML format at 
+[unitsofmeasure.org/ucum-essence.xml](http://unitsofmeasure.org/ucum-essence.xml) 
+or a YAML version within this repo 
+[github.com/joshwlewis/unitwise/tree/master/data](//github.com/joshwlewis/unitwise/tree/master/data).
 
 
 ## Installation

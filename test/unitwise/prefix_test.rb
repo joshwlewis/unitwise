@@ -22,4 +22,12 @@ describe Unitwise::Prefix do
     end
   end
 
+  describe "#search" do
+    it "should search for a prefix" do
+      result = subject.search("mi")
+      result.count.must_equal 3
+      result.must_include subject.find("milli")
+    end
+  end
+
 end

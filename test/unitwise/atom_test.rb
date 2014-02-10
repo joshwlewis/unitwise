@@ -23,6 +23,14 @@ describe Unitwise::Atom do
     end
   end
 
+  describe "::search" do
+    it "must search for atoms" do
+      result = subject.search("inch")
+      result.count.must_equal 10
+      result.must_include subject.find("inch")
+    end
+  end
+
   let(:second)  { Unitwise::Atom.find("s") }
   let(:yard)    { Unitwise::Atom.find("[yd_i]")}
   let(:pi)      { Unitwise::Atom.find("[pi]")}
