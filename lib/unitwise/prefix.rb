@@ -1,6 +1,6 @@
 module Unitwise
   class Prefix < Base
-    attr_reader :scalar
+    liner :scalar
 
     def self.data
       @data ||= YAML::load File.open(data_file)

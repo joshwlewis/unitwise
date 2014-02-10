@@ -1,3 +1,5 @@
+require 'liner'
+
 require "unitwise/version"
 require 'unitwise/base'
 require 'unitwise/expression'

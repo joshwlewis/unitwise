@@ -1,7 +1,6 @@
 module Unitwise
   class Atom < Base
-    attr_accessor :classification, :property, :metric, :special, :arbitrary
-    attr_writer :dim
+    liner :classification, :property, :metric, :special, :arbitrary, :dim
 
     include Unitwise::Composable
 
@@ -69,14 +68,6 @@ module Unitwise
 
     def root_terms
       base? ? [Term.new(atom: self)] : scale.root_terms
-    end
-
-    def to_s
-      "#{primary_code} (#{names.join('|')})"
-    end
-
-    def inspect
-      "<#{self.class} #{to_s}>"
     end
 
   end

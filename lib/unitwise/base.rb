@@ -1,8 +1,7 @@
 require 'yaml'
 module Unitwise
   class Base
-    attr_accessor :primary_code, :secondary_code, :symbol
-    attr_reader :names, :scale
+    liner :primary_code, :secondary_code, :symbol, :names, :scale
 
     def self.all
       @all ||= data.map{|d| self.new d }
@@ -24,12 +23,6 @@ module Unitwise
         else
           key == string
         end
-      end
-    end
-
-    def initialize(attrs)
-      attrs.each do |k, v|
-        public_send :"#{k}=", v
       end
     end
 

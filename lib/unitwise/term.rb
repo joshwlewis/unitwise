@@ -1,17 +1,9 @@
 require 'signed_multiset'
 module Unitwise
   class Term
-    attr_writer :atom_code, :prefix_code, :atom, :prefix
-    attr_writer :factor, :exponent
-    attr_accessor :annotation
+    liner :atom_code, :prefix_code, :atom, :prefix, :factor, :exponent, :annotation
 
     include Unitwise::Composable
-
-    def initialize(attributes)
-      attributes.each do |k,v|
-        public_send :"#{k}=", v
-      end
-    end
 
     def prefix_code
       @prefix_code ||= (@prefix.primary_code if @prefix)
