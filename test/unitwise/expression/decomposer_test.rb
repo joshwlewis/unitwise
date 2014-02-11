@@ -3,13 +3,6 @@ require 'test_helper'
 describe Unitwise::Expression::Decomposer do
   subject { Unitwise::Expression::Decomposer }
 
-  describe "PARSERS" do
-    it "should return multiple parsers" do
-      subject::PARSERS.must_be_instance_of Array
-      subject::PARSERS.sample.must_be_instance_of Unitwise::Expression::Parser
-    end
-  end
-
   describe "#terms" do
     it "should accept codes" do
       fts = subject.new("[ft_i]/s").terms

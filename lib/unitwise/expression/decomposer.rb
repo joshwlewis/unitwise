@@ -2,8 +2,10 @@ module Unitwise
   module Expression
     class Decomposer
 
-      PARSERS = [:primary_code, :secondary_code, :names, :slugs, :symbol].map do |t|
-        Parser.new(t)
+      METHODS = [:primary_code, :secondary_code, :names, :slugs, :symbol]
+
+      PARSERS = METHODS.reduce({}) do |hash, method|
+        hash[method] = Parser.new(method); hash
       end
 
       TRANSFORMER = Transformer.new
@@ -17,23 +19,22 @@ module Unitwise
         end
       end
 
-      def parse
-        PARSERS.reduce(nil) do |m, p|
-          if prs = p.parse(expression) rescue next
-            return prs
+      def transform
+        PARSERS.reduce(nil) do |foo, (method, parser)|
+          if parsed = parser.parse(expression) rescue next
+            return TRANSFORMER.apply(parsed, key: method)
           end
         end
       end
 
-      def transform
-        @transform ||= TRANSFORMER.apply(parse)
-      end
-
       def terms
-        if transform.respond_to?(:terms)
-          transform.terms
-        else
-          Array(transform)
+        @terms ||= begin
+          transformation = transform
+          if transformation.respond_to?(:terms)
+            transformation.terms
+          else
+            Array(transformation)
+          end
         end
       end
 
