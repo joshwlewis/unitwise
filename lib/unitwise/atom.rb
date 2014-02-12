@@ -26,10 +26,6 @@ module Unitwise
       base? ? true : !!metric
     end
 
-    def nonmetric?
-      !metric?
-    end
-
     def special?
       !!special
     end

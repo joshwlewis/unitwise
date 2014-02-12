@@ -37,15 +37,15 @@ describe Unitwise::Measurement do
     end
   end
 
-  let(:mph) { Unitwise::Measurement.new(60, '[mi_i]/h') }
-  let(:kmh) { Unitwise::Measurement.new(100, 'km/h') }
+  let(:mph)  { Unitwise::Measurement.new(60, '[mi_i]/h') }
+  let(:kmh)  { Unitwise::Measurement.new(100, 'km/h') }
   let(:mile) { Unitwise::Measurement.new(3, '[mi_i]') }
-  let(:hpm) { Unitwise::Measurement.new(6, 'h/[mi_i]') }
-  let(:cui) { Unitwise::Measurement.new(12, "[in_i]3") }
-  let(:cel) { Unitwise::Measurement.new(22, 'Cel') }
-  let(:k) {Unitwise::Measurement.new(373.15, 'K') }
-  let(:f) {Unitwise::Measurement.new(98.6, '[degF]')}
-  let(:r) { Unitwise::Measurement.new(491.67, '[degR]') }
+  let(:hpm)  { Unitwise::Measurement.new(6, 'h/[mi_i]') }
+  let(:cui)  { Unitwise::Measurement.new(12, "[in_i]3") }
+  let(:cel)  { Unitwise::Measurement.new(22, 'Cel') }
+  let(:k)    { Unitwise::Measurement.new(373.15, 'K') }
+  let(:f)    { Unitwise::Measurement.new(98.6, '[degF]')}
+  let(:r)    { Unitwise::Measurement.new(491.67, '[degR]') }
 
   describe "#scalar" do
     it "must return value relative to terminal atoms" do
@@ -153,12 +153,18 @@ describe Unitwise::Measurement do
       exp.value.must_equal 0.037037037037037035
       exp.unit.to_s.must_equal "1/[mi_i]3"
     end
+    it "must not raise to a weird power" do
+      -> { mile ** 'weird' }.must_raise TypeError
+    end
   end
 
   describe "#coerce" do
     let(:meter) { Unitwise::Measurement.new(1, 'm') }
     it "must coerce numerics" do
       meter.coerce(5).must_equal [ Unitwise::Measurement.new(5, '1'), meter ]
+    end
+    it "should raise an error for other crap" do
+      -> { meter.coerce("foo") }.must_raise TypeError
     end
   end
 

@@ -13,4 +13,5 @@ describe Unitwise::Functional do
       end
     end
   end
+
 end

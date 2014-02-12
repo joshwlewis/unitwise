@@ -49,11 +49,6 @@ module Unitwise
       @function_name = function_name
     end
 
-    def scalar
-      puts "Warning: Mathematical operations with special units not reccomended by UCUM."
-      super()
-    end
-
     def functional(x=scalar, forward = true)
       self.class.send(:"_#{function_name}", x, forward)
     end
