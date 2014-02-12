@@ -67,9 +67,9 @@ module Unitwise
     def converted_value(other_unit)
       if unit.special?
         if other_unit.special?
-          other_unit.functional functional(value, -1)
+          other_unit.functional functional(value, false)
         else
-          functional(value, -1) / other_unit.scalar
+          functional(value, false) / other_unit.scalar
         end
       else
         if other_unit.special?

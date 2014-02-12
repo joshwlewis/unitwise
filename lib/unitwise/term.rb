@@ -45,8 +45,8 @@ module Unitwise
       (factor * (prefix ? prefix.scalar : 1) * (atom ? atom.scalar : 1)) ** exponent
     end
 
-    def functional(x=scalar, direction=1)
-      (factor * (prefix ? prefix.scalar : 1)) * (atom ? atom.functional(x, direction) : 1) ** exponent
+    def functional(x=scalar, forward=true)
+      (factor * (prefix ? prefix.scalar : 1)) * (atom ? atom.functional(x, forward) : 1) ** exponent
     end
 
     def root_terms

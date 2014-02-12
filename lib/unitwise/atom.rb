@@ -62,8 +62,8 @@ module Unitwise
       base? ? 1 : scale.scalar
     end
 
-    def functional(x=scalar, direction=1)
-      scale.functional(x, direction)
+    def functional(x=scalar, forward=true)
+      scale.functional(x, forward)
     end
 
     def root_terms
