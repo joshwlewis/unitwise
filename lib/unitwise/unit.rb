@@ -59,6 +59,10 @@ module Unitwise
     def *(other)
       if other.respond_to?(:terms)
         self.class.new(terms + other.terms)
+      elsif other.respond_to?(:atom)
+        self.class.new(terms << other)
+      elsif other.is_a?(Numeric)
+        self.class.new(terms.map{ |t| t * other })
       else
         raise TypeError, "Can't multiply #{inspect} by #{other}."
       end
@@ -67,6 +71,8 @@ module Unitwise
     def /(other)
       if other.respond_to?(:terms)
         self.class.new(terms + other.terms.map{ |t| t ** -1})
+      elsif other.respond_to?(:atom)
+        self.class.new(terms << other ** -1)
       else
         raise TypeError, "Can't divide #{inspect} by #{other}."
       end

@@ -2,14 +2,8 @@ module Unitwise
   module Expression
     class Composer
       attr_reader :terms
-      def initialize(input)
-        if input.respond_to?(:terms)
-          @terms = input.terms
-        elsif input.respond_to?(:each)
-          @terms = input
-        else
-          @terms = Expression.decompose(input.to_s)
-        end
+      def initialize(terms)
+        @terms = terms
       end
 
       def set

@@ -25,12 +25,20 @@ describe Unitwise::Expression::Decomposer do
       saff.count.must_equal 1
     end
     it "should accept complex units" do
-      force = subject.new("mg.mm-1.(km/s)2").terms
-      force.count.must_equal 4
+      complex = subject.new("(mg.(km/s)3/J)2.Pa").terms
+      complex.count.must_equal 5
+    end
+    it "should accept more complex units" do
+      complex = subject.new("4.1(mm/2s3)4.7.3J-2").terms
+      complex.count.must_equal 3
     end
     it "should accept weird units" do
       frequency = subject.new("/s").terms
       frequency.count.must_equal 1
+    end
+    it "should accept units with a factor and unit" do
+      oddity = subject.new("2ms2").terms
+      oddity.count.must_equal 1
     end
   end
 

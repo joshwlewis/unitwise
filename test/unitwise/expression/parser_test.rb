@@ -36,11 +36,11 @@ describe Unitwise::Expression::Parser do
   end
 
   describe "#exponent" do
-    it "must match positives and integers" do
+    it "must match positives integers" do
       subject.exponent.parse('4')[:exponent].must_equal(integer: '4')
     end
-    it "must match negatives and fixnums" do
-      subject.exponent.parse('-5.4')[:exponent].must_equal(fixnum: '-5.4')
+    it "must match negative integers" do
+      subject.exponent.parse('-5')[:exponent].must_equal(integer: '-5')
     end
   end
 

@@ -30,18 +30,18 @@ module Unitwise
 
       rule (:number) { fixnum | integer }
 
-      rule (:exponent) { number.as(:exponent) }
+      rule (:exponent) { integer.as(:exponent) }
 
       rule (:factor) { number.as(:factor) }
 
       rule (:operator) { (str('.') | str('/')).as(:operator) }
 
       rule (:term) do
-        ((simpleton | factor) >> exponent.maybe >> annotation.maybe).as(:term)
+        ((factor >> simpleton | simpleton | factor) >> exponent.maybe >> annotation.maybe).as(:term)
       end
 
       rule (:group) do
-        (str('(') >> expression.as(:nested) >> str(')') >> exponent.maybe).as(:group)
+        (factor.maybe >> str('(') >> expression.as(:nested) >> str(')') >> exponent.maybe).as(:group)
       end
 
       rule (:expression) do

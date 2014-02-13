@@ -68,16 +68,20 @@ module Unitwise
     def *(other)
       if other.respond_to?(:terms)
         Unit.new(other.terms << self)
-      else
+      elsif other.respond_to?(:atom)
         Unit.new([self, other])
+      elsif other.is_a?(Numeric)
+        self.class.new(to_hash.merge(factor: factor * other))
       end
     end
 
     def /(other)
       if other.respond_to?(:terms)
         Unit.new(other.terms.map{|t| t ** -1} << self)
-      else
+      elsif other.respond_to?(:atom)
         Unit.new([self, other ** -1])
+      elsif other.is_a?(Numeric)
+        self.class.new(to_hash.merge(factor: factor / other))
       end
     end
 
