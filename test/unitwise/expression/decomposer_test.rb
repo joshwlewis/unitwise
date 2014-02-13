@@ -24,6 +24,14 @@ describe Unitwise::Expression::Decomposer do
       saff = subject.new("<i>g<sub>n</sub></i>").terms
       saff.count.must_equal 1
     end
+    it "should accept complex units" do
+      force = subject.new("mg.mm-1.(km/s)2").terms
+      force.count.must_equal 4
+    end
+    it "should accept weird units" do
+      frequency = subject.new("/s").terms
+      frequency.count.must_equal 1
+    end
   end
 
 end
