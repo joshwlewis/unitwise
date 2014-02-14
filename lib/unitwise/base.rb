@@ -7,12 +7,8 @@ module Unitwise
       @all ||= data.map{|d| self.new d }
     end
 
-    def self.find(string)
-      [:primary_code, :secondary_code, :names, :slugs, :symbol].reduce(nil) do |m, method|
-        if found = find_by(method, string)
-          return found
-        end
-      end
+    def self.find(term)
+      all.find { |i| i.search_strings.any? { |string| string == term } }
     end
 
     def self.find_by(method, string)
