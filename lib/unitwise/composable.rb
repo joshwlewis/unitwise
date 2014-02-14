@@ -4,6 +4,7 @@ module Unitwise
   # or measurements.
   module Composable
 
+    # @api private
     def self.included(base)
       base.send :include, Comparable
     end
