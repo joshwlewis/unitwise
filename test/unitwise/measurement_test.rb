@@ -188,4 +188,22 @@ describe Unitwise::Measurement do
 
   end
 
+  describe "#to_f" do
+    it "must convert to a float" do
+      f.to_f.must_be_kind_of(Float)
+    end
+  end
+
+  describe "#to_i" do
+    it "must convert to an integer" do
+      k.to_i.must_be_kind_of(Integer)
+    end
+  end
+
+  describe "#to_r" do
+    it "must convert to a rational" do
+      cel.to_r.must_be_kind_of(Rational)
+    end
+  end
+
 end

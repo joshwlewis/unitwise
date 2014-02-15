@@ -1,6 +1,17 @@
 module Unitwise
+  # A Measurement is a combination of a numeric value and a unit. You can think
+  # of this as a type of vector where the direction is the unit designation and
+  # the value is the magnitued. This is the primary class that outside code
+  # will interact with. Comes with conversion, comparison, and math methods.
   class Measurement < Scale
 
+    # Create a new Measurement
+    # @param value [Numeric] The scalar value for the measurement
+    # @param unit  [String, Measurement::Unit] Either a string expression, or a
+    # Measurement::Unit
+    # @example
+    #   Unitwise::Measurement.new(20, 'm/s') # => #<Unitwise::Measurement 20 m/s>
+    # @api public
     def initialize(value, unit)
       super(value, unit)
       if terms.nil?
@@ -8,6 +19,13 @@ module Unitwise
       end
     end
 
+    # Convert this measurement to a compatible unit.
+    # @param other_unit [String, Measurement::Unit] Either a string expression
+    # or a Measurement::Unit
+    # @example
+    #   measurement1.convert('foot')
+    #   measurement2.convert('kilogram')
+    # @api public
     def convert(other_unit)
       other_unit = Unit.new(other_unit)
       if similar_to?(other_unit)
@@ -17,22 +35,49 @@ module Unitwise
       end
     end
 
+    # Multiply this measurement by a number or another measurement
+    # @param other [Numeric, Unitwise::Measurement]
+    # @example
+    #   measurent * 5
+    #   measurement * some_other_measurement
+    # @api public
     def *(other)
       operate(:*, other) || raise(TypeError, "Can't multiply #{inspect} by #{other}.")
     end
 
+    # Divide this measurement by a number or another measurement
+    # @param (see #*)
+    # @example
+    #   measurement / 2
+    #   measurement / some_other_measurement
+    # @api public
     def /(other)
       operate(:/, other) || raise(TypeError, "Can't divide #{inspect} by #{other}")
     end
 
+    # Add another measurement to this unit. Units must be compatible.
+    # @param other [Unitwise::Measurement]
+    # @example
+    #   measurement + some_other_measurement
+    # @api public
     def +(other)
       combine(:+, other) || raise(TypeError, "Can't add #{other} to #{inspect}.")
     end
 
+    # Subtract another measurement from this unit. Units must be compatible.
+    # @param (see #+)
+    # @example
+    #   measurement - some_other_measurement
+    # @api public
     def -(other)
       combine(:-, other) || raise(TypeError, "Can't subtract #{other} from #{inspect}.")
     end
 
+    # Raise a measurement to a numeric power.
+    # @param number [Numeric]
+    # @example
+    #   measurement ** 2
+    # @api public
     def **(number)
       if number.is_a?(Numeric)
         new( value ** number, unit ** number )
@@ -41,6 +86,12 @@ module Unitwise
       end
     end
 
+    # Coerce a numeric to a a measurement for mathematical operations
+    # @param other [Numeric]
+    # @example
+    #   2.5 * measurement
+    #   4 / measurement
+    # @api public
     def coerce(other)
       case other
       when Numeric
@@ -50,6 +101,35 @@ module Unitwise
       end
     end
 
+    # Convert a measurement to an Integer.
+    # @example
+    #   measurement.to_i # => 4
+    # @api public
+    def to_i
+      Integer(value)
+    end
+    alias :to_int :to_i
+
+    # Convert a measurement to a Float.
+    # @example
+    #   measurement.to_f # => 4.25
+    # @api public
+    def to_f
+      Float(value)
+    end
+
+    # Convert a measurement to a Rational.
+    # @example
+    #   measurement.to_r # => (17/4)
+    # @api public
+    def to_r
+      Rational(value)
+    end
+
+    # Will attempt to convert to a unit by the method name.
+    # @example
+    #   measurement.foot # => <Unitwise::Measurement 4 foot>
+    # @api semipublic
     def method_missing(meth, *args, &block)
       if Unitwise::Expression.decompose(meth)
         self.convert(meth)
@@ -60,10 +140,14 @@ module Unitwise
 
     private
 
+    # Helper method to create a new instance from this instance
+    # @api private
     def new(*args)
       self.class.new(*args)
     end
 
+    # Determine value of the unit after conversion to another unit
+    # @api private
     def converted_value(other_unit)
       if unit.special?
         if other_unit.special?
@@ -80,14 +164,16 @@ module Unitwise
       end
     end
 
-    # add or subtract other unit
+    # Add or subtract other unit
+    # @api private
     def combine(operator, other)
       if similar_to?(other)
         new(value.send(operator, other.convert(unit).value), unit)
       end
     end
 
-    # multiply or divide other unit
+    # Multiply or divide other unit
+    # @api private
     def operate(operator, other)
       if other.is_a?(Numeric)
         new(value.send(operator, other), unit)
