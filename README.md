@@ -29,7 +29,7 @@ or require the core extensions for some syntactic sugar.
 ```ruby
 require 'unitwise/ext'
 
-1.convert(liter)
+1.convert('liter')
 # => <Unitwise::Measurement 1 liter>
 
 4.teaspoon
