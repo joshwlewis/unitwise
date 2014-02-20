@@ -1,56 +1,13 @@
 require 'test_helper'
+require 'support/scale_tests'
 
 describe Unitwise::Measurement do
-  subject { Unitwise::Measurement.new(1, 'm/s') }
+  let(:described_class) { Unitwise::Measurement }
+  include ScaleTests
+
   describe "#new" do
-    it "must set attributes" do
-      subject.value.must_equal(1)
-      subject.unit.to_s.must_equal('m/s')
-    end
     it "should raise an error for unknown units" do
       ->{ Unitwise::Measurement.new(1,"funkitron") }.must_raise(Unitwise::ExpressionError)
-    end
-  end
-
-  describe "#unit" do
-    it "must be a unit" do
-      subject.must_respond_to(:unit)
-      subject.unit.must_be_instance_of(Unitwise::Unit)
-    end
-  end
-
-  describe "#root_terms" do
-    it "must be a collection of terms" do
-      subject.must_respond_to(:root_terms)
-      subject.root_terms.must_be_kind_of Enumerable
-      subject.root_terms.sample.must_be_instance_of(Unitwise::Term)
-    end
-  end
-
-  describe "#dup" do
-    it "must return a new instance" do
-      subject.must_respond_to(:dup)
-      subject.dup.must_be_instance_of(Unitwise::Measurement)
-      subject.dup.value.must_equal subject.value
-      subject.dup.unit.to_s.must_equal subject.unit.to_s
-      subject.dup.object_id.wont_equal subject.dup.object_id
-    end
-  end
-
-  let(:mph)  { Unitwise::Measurement.new(60, '[mi_i]/h') }
-  let(:kmh)  { Unitwise::Measurement.new(100, 'km/h') }
-  let(:mile) { Unitwise::Measurement.new(3, '[mi_i]') }
-  let(:hpm)  { Unitwise::Measurement.new(6, 'h/[mi_i]') }
-  let(:cui)  { Unitwise::Measurement.new(12, "[in_i]3") }
-  let(:cel)  { Unitwise::Measurement.new(22, 'Cel') }
-  let(:k)    { Unitwise::Measurement.new(373.15, 'K') }
-  let(:f)    { Unitwise::Measurement.new(98.6, '[degF]')}
-  let(:r)    { Unitwise::Measurement.new(491.67, '[degR]') }
-
-  describe "#scalar" do
-    it "must return value relative to terminal atoms" do
-      subject.scalar.must_equal 1
-      mph.scalar.must_equal 26.8224
     end
   end
 
