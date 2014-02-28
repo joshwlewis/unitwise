@@ -12,8 +12,8 @@ module Unitwise
     # @example
     #   Unitwise::Measurement.new(20, 'm/s') # => #<Unitwise::Measurement 20 m/s>
     # @api public
-    def initialize(value, unit)
-      super(value, unit)
+    def initialize(*args)
+      super(*args)
       if terms.nil?
         raise ExpressionError, "Could not evaluate `#{unit}`."
       end

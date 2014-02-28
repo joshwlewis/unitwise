@@ -2,23 +2,14 @@ module Unitwise
   # A Unitwise::Scale represents a value and a unit, sort of like a vector, it 
   # has two components. In this case, it's a value and unit rather than a
   # magnitude and direction. This class should be considered mostly privateish.
-  class Scale
-    attr_reader :value
-
+  class Scale < Liner.new(:value, :unit)
     include Unitwise::Composable
 
-    # Instantiate a new Scale
-    # @param value [Numeric]
-    # @param unit [Unitwise::Unit, String] A Unitwise::Unit class, or a string
-    # expression.
+    # The unit associated with this scale.
+    # @return [Unitwise::Unit]
     # @api public
-    def initialize(value, unit)
-      @value = value
-      if unit.is_a?(Unit)
-        @unit = unit.dup
-      else
-        @unit = Unit.new(unit.to_s)
-      end
+    def unit
+      @unit.is_a?(Unit) ? @unit : Unit.new(@unit)
     end
 
     # Duplicate this instance
@@ -67,13 +58,6 @@ module Unitwise
       value * unit.scalar
     end
 
-    # The unit associated with this scale.
-    # @return [Unitwise::Unit]
-    # @api public
-    def unit
-      @unit ||= Unit.new(@unit_code)
-    end
-
     # The base units this scale's unit is derived from
     # @return [Array] An array of Unitwise::Term
     # @api public
@@ -99,11 +83,6 @@ module Unitwise
     # @api public
     def to_s
       "#{value} #{unit}"
-    end
-
-    # @api public
-    def inspect
-      "<#{self.class} #{to_s}>"
     end
 
   end
