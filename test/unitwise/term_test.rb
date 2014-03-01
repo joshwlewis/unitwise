@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Unitwise::Term do
   describe "instance" do
-    subject { Unitwise::Term.new(atom_code: 'J', prefix_code: 'k')}
+    subject { Unitwise::Term.new(atom: 'J', prefix: 'k')}
     describe "#atom" do
       it "should be an atom" do
         subject.atom.must_be_instance_of Unitwise::Atom

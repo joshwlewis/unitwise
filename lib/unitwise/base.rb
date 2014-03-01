@@ -42,5 +42,9 @@ module Unitwise
       [primary_code, secondary_code, names, slugs, symbol].flatten.compact
     end
 
+    def to_s
+      primary_code
+    end
+
   end
 end

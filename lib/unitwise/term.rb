@@ -1,24 +1,15 @@
 require 'signed_multiset'
 module Unitwise
-  class Term
-    liner :atom_code, :prefix_code, :atom, :prefix, :factor, :exponent, :annotation
+  class Term < Liner.new(:atom, :prefix, :factor, :exponent, :annotation)
 
     include Unitwise::Composable
 
-    def prefix_code
-      @prefix_code ||= (@prefix.primary_code if @prefix)
+    def atom=(value)
+      value.is_a?(Atom) ? super(value) : super(Atom.find(value.to_s))
     end
 
-    def prefix
-      @prefix ||= (Prefix.find(@prefix_code) if @prefix_code)
-    end
-
-    def atom_code
-      @atom_code ||= (@atom.primary_code if @atom)
-    end
-
-    def atom
-      @atom ||= (Atom.find(@atom_code) if @atom_code)
+    def prefix=(value)
+      value.is_a?(Prefix) ? super(value) : super(Prefix.find(value.to_s))
     end
 
     def special?
@@ -84,8 +75,8 @@ module Unitwise
     end
 
     def to_s
-      [(factor if factor != 1), prefix_code,
-        atom_code, (exponent if exponent != 1)].compact.join('')
+      [(factor if factor != 1), prefix.to_s,
+        atom.to_s, (exponent if exponent != 1)].compact.join('')
     end
 
   end
