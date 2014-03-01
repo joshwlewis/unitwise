@@ -59,12 +59,6 @@ module Unitwise
       end
     end
 
-    def to_hash
-      [:prefix, :atom, :exponent, :factor, :annotation].inject({}) do |h, a|
-        h[a] = send a; h
-      end
-    end
-
     def *(other)
       if other.respond_to?(:terms)
         Unit.new(other.terms << self)
@@ -92,10 +86,6 @@ module Unitwise
     def to_s
       [(factor if factor != 1), prefix_code,
         atom_code, (exponent if exponent != 1)].compact.join('')
-    end
-
-    def inspect
-      "<#{self.class} #{to_s}>"
     end
 
   end

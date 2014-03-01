@@ -2,7 +2,9 @@ module Unitwise
   # A Unitwise::Scale represents a value and a unit, sort of like a vector, it 
   # has two components. In this case, it's a value and unit rather than a
   # magnitude and direction. This class should be considered mostly privateish.
-  class Scale < Liner.new(:value, :unit)
+  class Scale
+    liner :value, :unit
+
     include Unitwise::Composable
 
     # The unit associated with this scale.

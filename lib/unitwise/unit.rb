@@ -1,5 +1,7 @@
 module Unitwise
   class Unit
+    liner :expression, :terms
+
     include Unitwise::Composable
 
     def initialize(input)
@@ -85,10 +87,5 @@ module Unitwise
     def to_s
       expression
     end
-
-    def inspect
-      "<#{self.class} #{to_s}>"
-    end
-
   end
 end
