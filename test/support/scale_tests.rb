@@ -36,16 +36,6 @@ module ScaleTests
         end
       end
 
-      describe "#dup" do
-        it "must return a new instance" do
-          subject.must_respond_to(:dup)
-          subject.dup.must_be_instance_of(described_class)
-          subject.dup.value.must_equal subject.value
-          subject.dup.unit.to_s.must_equal subject.unit.to_s
-          subject.dup.object_id.wont_equal subject.dup.object_id
-        end
-      end
-
       describe "#terms" do
         it "must return an array of terms" do
           subject.terms.must_be_kind_of(Enumerable)
@@ -90,12 +80,6 @@ module ScaleTests
         end
       end
 
-      describe "#terminal?" do
-        it "must return true for the last of kind in the chain" do
-          subject.terminal?.must_equal false
-          k.terminal?.must_equal true
-        end
-      end
     end
   end
 end

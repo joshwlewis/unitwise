@@ -34,16 +34,8 @@ module Unitwise
       terms.first.functional(x, forward)
     end
 
-    def dup
-      self.class.new(expression)
-    end
-
     def depth
       terms.map(&:depth).max + 1
-    end
-
-    def terminal?
-      depth <= 3
     end
 
     def root_terms
@@ -51,11 +43,7 @@ module Unitwise
     end
 
     def scalar
-      if terms.empty?
-        1
-      else
-        terms.map(&:scalar).inject(&:*)
-      end
+      terms.map(&:scalar).inject(&:*)
     end
 
     def *(other)

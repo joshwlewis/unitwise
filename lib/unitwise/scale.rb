@@ -14,13 +14,6 @@ module Unitwise
       @unit.is_a?(Unit) ? @unit : Unit.new(@unit)
     end
 
-    # Duplicate this instance
-    # @return [Unitwise::Unit]
-    # @api public
-    def dup
-      self.class.new(value, unit)
-    end
-
     # List the atoms associated with this scale's unit.
     # @return [Array]
     # @api public
@@ -28,7 +21,7 @@ module Unitwise
       unit.atoms
     end
 
-    # List the atoms associated with this scale's unit.
+    # List the terms associated with this scale's unit.
     # @return [Array]
     # @api public
     def terms
@@ -72,13 +65,6 @@ module Unitwise
     # @api public
     def depth
       unit.depth + 1
-    end
-
-    # Is this the deepest level scale in the scale chain?
-    # @return [true, false]
-    # @api public
-    def terminal?
-      depth <= 3
     end
 
     # Convert to a simple string representing the scale.
