@@ -23,10 +23,10 @@ module Unitwise
     # @param other_unit [String, Measurement::Unit] Either a string expression
     # or a Measurement::Unit
     # @example
-    #   measurement1.convert('foot')
-    #   measurement2.convert('kilogram')
+    #   measurement1.convert_to('foot')
+    #   measurement2.convert_to('kilogram')
     # @api public
-    def convert(other_unit)
+    def convert_to(other_unit)
       other_unit = Unit.new(other_unit)
       if similar_to?(other_unit)
         new(converted_value(other_unit), other_unit)
@@ -126,13 +126,17 @@ module Unitwise
       Rational(value)
     end
 
-    # Will attempt to convert to a unit by the method name.
+    # Will attempt to convert to a unit by method name.
     # @example
-    #   measurement.foot # => <Unitwise::Measurement 4 foot>
+    #   measurement.to_foot # => <Unitwise::Measurement 4 foot>
     # @api semipublic
     def method_missing(meth, *args, &block)
-      if Unitwise::Expression.decompose(meth)
-        self.convert(meth)
+      if args.empty? && !block_given? && (match = /\Ato_(\w+)\Z/.match(meth))
+        begin
+          convert_to(match[1])
+        rescue ExpressionError
+          super(meth, *args, &block)
+        end
       else
         super(meth, *args, &block)
       end
@@ -168,7 +172,7 @@ module Unitwise
     # @api private
     def combine(operator, other)
       if similar_to?(other)
-        new(value.send(operator, other.convert(unit).value), unit)
+        new(value.send(operator, other.convert_to(unit).value), unit)
       end
     end
 
@@ -179,7 +183,7 @@ module Unitwise
         new(value.send(operator, other), unit)
       elsif other.respond_to?(:composition)
         if similar_to?(other)
-          converted = other.convert(unit)
+          converted = other.convert_to(unit)
           new(value.send(operator, converted.value), unit.send(operator, converted.unit))
         else
           new(value.send(operator, other.value), unit.send(operator, other.unit))

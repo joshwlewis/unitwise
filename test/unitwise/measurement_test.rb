@@ -11,27 +11,27 @@ describe Unitwise::Measurement do
     end
   end
 
-  describe "#convert" do
+  describe "#convert_to" do
     it "must convert to a similar unit code" do
-      mph.convert('km/h').value.must_equal 96.56063999999999
+      mph.convert_to('km/h').value.must_equal 96.56063999999999
     end
     it "must raise an error if the units aren't similar" do
-      ->{ mph.convert('N') }.must_raise Unitwise::ConversionError
+      ->{ mph.convert_to('N') }.must_raise Unitwise::ConversionError
     end
     it "must convert special units to their base units" do
-      cel.convert('K').value.must_equal 295.15
+      cel.convert_to('K').value.must_equal 295.15
     end
     it "must convert base units to special units" do
-      k.convert('Cel').value.must_equal 100
+      k.convert_to('Cel').value.must_equal 100
     end
     it "must convert special units to special units" do
-      f.convert('Cel').value.must_equal 37
+      f.convert_to('Cel').value.must_equal 37
     end
     it "must convert special units to non-special units" do
-      cel.convert("[degR]").value.must_equal 531.27
+      cel.convert_to("[degR]").value.must_equal 531.27
     end
     it "must convert derived units to special units" do
-      r.convert("Cel").value.round.must_equal 0
+      r.convert_to("Cel").value.round.must_equal 0
     end
   end
 
@@ -127,20 +127,24 @@ describe Unitwise::Measurement do
 
   describe "#method_missing" do
     let(:meter) { Unitwise::Measurement.new(1, 'm')}
-    it "must convert 'mm'" do
-      convert = meter.mm
+    it "must convert 'to_mm'" do
+      convert = meter.to_mm
       convert.must_be_instance_of Unitwise::Measurement
       convert.value.must_equal 1000
     end
 
-    it "must convert 'foot'" do
-      convert = meter.foot
+    it "must convert 'to_foot'" do
+      convert = meter.to_foot
       convert.must_be_instance_of Unitwise::Measurement
       convert.value.must_equal 3.280839895013123
     end
 
     it "must not convert 'foo'" do
       ->{ meter.foo }.must_raise NoMethodError
+    end
+
+    it "must not convert 'to_foo'" do
+      ->{ meter.to_foo }.must_raise NoMethodError
     end
 
   end
