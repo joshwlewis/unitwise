@@ -1,4 +1,4 @@
-# Unitwise
+# [Unitwise](//github.com/joshwlewis/unitwise)
 
 [![Gem Version](https://badge.fury.io/rb/unitwise.png)](http://badge.fury.io/rb/unitwise)
 [![Build Status](https://travis-ci.org/joshwlewis/unitwise.png)](https://travis-ci.org/joshwlewis/unitwise)
