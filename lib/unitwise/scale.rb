@@ -73,5 +73,8 @@ module Unitwise
       "#{value} #{unit}"
     end
 
+    def inspect
+      "#<#{self.class} value=#{value} unit=#{unit}>"
+    end
   end
 end
