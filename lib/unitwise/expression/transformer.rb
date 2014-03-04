@@ -5,8 +5,8 @@ module Unitwise
       rule(integer: simple(:i)) { i.to_i }
       rule(fixnum: simple(:f)) { f.to_f }
 
-      rule(prefix_code: simple(:c)) { |ctx| Prefix.find_by(ctx[:key], ctx[:c]) }
-      rule(atom_code: simple(:c))   { |ctx| Atom.find_by(ctx[:key], ctx[:c]) }
+      rule(prefix_code: simple(:c)) { |ctx| Prefix.find(ctx[:c], ctx[:key]) }
+      rule(atom_code: simple(:c))   { |ctx| Atom.find(ctx[:c], ctx[:key]) }
       rule(term: subtree(:h))       { Term.new(h) }
 
       rule(operator: simple(:o), right: simple(:r)) do

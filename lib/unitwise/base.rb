@@ -7,11 +7,7 @@ module Unitwise
       @all ||= data.map{|d| self.new d }
     end
 
-    def self.find(term)
-      all.find { |i| i.search_strings.any? { |string| string == term } }
-    end
-
-    def self.find_by(method, string)
+    def self.find(string, method=:primary_code)
       self.all.find do |i|
         key = i.send(method)
         if key.respond_to?(:each)
@@ -19,12 +15,6 @@ module Unitwise
         else
           key == string
         end
-      end
-    end
-
-    def self.search(term)
-      self.all.select do |i|
-        i.search_strings.any? { |string| string =~ /#{term}/i }
       end
     end
 
@@ -36,10 +26,6 @@ module Unitwise
       names.map do |n|
         n.downcase.strip.gsub(/\s/, '_').gsub(/\W/, '')
       end
-    end
-
-    def search_strings
-      [primary_code, secondary_code, names, slugs, symbol].flatten.compact
     end
 
     def to_s
