@@ -41,26 +41,29 @@ module Unitwise
     # prefixes.
     # @return [true, false]
     # @api public
-    def metric?
-      base? ? true : !!metric
+    def metric
+      base? ? true : !!@metric
     end
+    alias_method :metric?, :metric
 
     # Determine if a unit is special. Special atoms are not defined on a
     # traditional ratio scale.
     # @return [true, false]
     # @api public
-    def special?
-      !!special
+    def special
+      !!@special
     end
+    alias_method :special?, :special
 
     # Determine if a unit is arbitrary. Arbitrary atoms are not of any specific 
     # dimension and have no general meaning, therefore cannot be compared with
     # any other unit.
     # @return [true, false]
     # @api public
-    def arbitrary?
-      !!arbitrary
+    def arbitrary
+      !!@arbitrary
     end
+    alias_method :arbitrary?, :arbitrary
 
     # Determine how far away a unit is from a base unit.
     # @return [Integer]
