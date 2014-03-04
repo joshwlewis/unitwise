@@ -11,6 +11,7 @@ require 'unitwise/atom'
 require 'unitwise/prefix'
 require 'unitwise/term'
 require 'unitwise/unit'
+require 'unitwise/compound'
 require 'unitwise/errors'
 
 # Unitwise is a library for performing mathematical operations and conversions 
