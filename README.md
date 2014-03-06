@@ -89,7 +89,8 @@ compatible unit.
 # => #<Unitwise::Measurement value=3.106849747474748 unit=mile>
 ```
 
-The prettier version of `convert(unit)` is just calling the unit as a method
+The prettier version of `convert_to(unit)` is appending the unit code, name, etc.
+to a `to_` message.
 name.
 
 ```ruby
@@ -157,9 +158,16 @@ You can multiply or divide measurements and numbers.
 You can multiply or divide measurements with measurements.
 
 ```ruby
-20.gram / 1.liter
-# => #<Unitwise::Measurement value=20 unit=g/l>
+20.milligram / 1.liter
+# => #<Unitwise::Measurement value=20 unit=mg/l>
 
+```
+
+Exponentiation is also supported.
+
+```ruby
+(10.cm ** 3).to_liter
+# => #<Unitwise::Measurement value=1.0 unit=liter>
 ```
 
 ### Unit Names and Atom Codes
@@ -177,17 +185,18 @@ Just as an example, you can see here that there are actually a few versions of i
 and foot:
 
 ```ruby
-1.convert('[ft_i]') == 1.convert('[ft_us]') # => false
+1.convert_to('[ft_i]') == 1.convert_to('[ft_us]') # => false
 
-3.convert('[in_br]') == 3.convert('[in_i]') # => false
+3.convert_to('[in_br]') == 3.convert_to('[in_i]') # => false
 ```
 
 ### Available Units
 
-If you are looking for a particular unit, you can search for a string.
+If you are looking for a particular unit, you can search with a string or
+Regexp.
 
 ```ruby
-Unitwise::Compound.search('fathom')
+Unitwise.search('fathom')
 # => [ ... ]
 
 ```

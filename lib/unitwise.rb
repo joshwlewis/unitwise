@@ -14,9 +14,19 @@ require 'unitwise/unit'
 require 'unitwise/compound'
 require 'unitwise/errors'
 
-# Unitwise is a library for performing mathematical operations and conversions 
+# Unitwise is a library for performing mathematical operations and conversions
 # on all units defined by the [Unified Code for Units of Measure(UCUM).
 module Unitwise
+
+  # Search for available compounds. This is just a helper method for
+  # convenience
+  # @param term [String, Regexp]
+  # @return [Array]
+  # @api public
+  def self.search(term)
+    Compound.search(term)
+  end
+  
   # The system path for the installed gem
   # @api private
   def self.path
@@ -45,4 +55,3 @@ def Unitwise(first, last=nil)
     Unitwise::Measurement.new(1, first)
   end
 end
-

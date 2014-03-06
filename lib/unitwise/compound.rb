@@ -1,6 +1,6 @@
 module Unitwise
   # A compound is a combination of an atom and a prefix.
-  # This class is isolated from the rest of the code base and primarily exists 
+  # This class is isolated from the rest of the code base and primarily exists
   # for the convenience of listing and searching possible combinations
   # of atoms and prefixes.
   class Compound < Liner.new(:atom, :prefix)
@@ -24,21 +24,21 @@ module Unitwise
       end
       @all = compounds
     end
-    
+
     # Search for compounds with a search term
-    # @param [term] What to search for
+    # @param [String, Regexp] What to search for
     # @return [Array]
     # @api public
     def self.search(term)
       all.select do |compound|
-        compound.search_strings.any? { |string| string =~ /#{term}/i }
+        compound.search_strings.any? { |string| Regexp.new(term).match(string) }
       end
     end
 
     [:primary_code, :secondary_code, :symbol].each do |attr|
       define_method attr do
-        instance_variable_get("@#{attr}") || 
-        instance_variable_set("@#{attr}", 
+        instance_variable_get("@#{attr}") ||
+        instance_variable_set("@#{attr}",
           prefix ? "#{prefix.send attr}#{atom.send attr}" : atom.send(attr))
       end
     end
@@ -58,7 +58,7 @@ module Unitwise
     def atom=(value)
       value.is_a?(Atom) ? super(value) : super(Atom.find value)
     end
-    
+
     def prefix=(value)
       value.is_a?(Prefix) ? super(value) : super(Prefix.find value)
     end
