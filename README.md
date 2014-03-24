@@ -49,8 +49,8 @@ of units. For instance it needed to understand that a unit of
 'kilogram.(meter/second)2' was equivalent to 'kilogram.meter.(meter/second2)'.
 This resulted in two unique features:
 
-- An expression grammer built with a PEG parser. This makes expression
-parsing more efficient and allows nestable parentheses. For example, this is possible: '(kilogram.(meter/second)2)2'
+- An expression grammar built with a PEG parser. This makes expression
+parsing more efficient and allows nested parentheses. For example, this is possible: '(kilogram.(meter/second)2)2'
 
 - Smart compatibility detection. Each unit is reduced down to its most elementary
 atoms to determine compatibility with another unit. For example, it knows that
