@@ -6,7 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/joshwlewis/unitwise/badge.png)](https://coveralls.io/r/joshwlewis/unitwise)
 [![Code Climate](https://codeclimate.com/github/joshwlewis/unitwise.png)](https://codeclimate.com/github/joshwlewis/unitwise)
 [![Inline docs](http://inch-pages.github.io/github/joshwlewis/unitwise.png)](http://inch-pages.github.io/github/joshwlewis/unitwise)
-![Analytics](https://ga-beacon.appspot.com/UA-49481499-1/joshwlewis/unitwise?pixel)](https://github.com/igrigorik/ga-beacon)
+![Analytics](https://ga-beacon.appspot.com/UA-49481499-1/joshwlewis/unitwise?pixel)
 
 Unitwise is a Ruby library for unit measurement conversion and math.
 
