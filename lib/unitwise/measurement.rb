@@ -31,7 +31,7 @@ module Unitwise
       if similar_to?(other_unit)
         new(converted_value(other_unit), other_unit)
       else
-        raise ConversionError, "Can't convert #{inspect} to #{other_unit}."
+        raise ConversionError, "Can't convert #{self} to #{other_unit}."
       end
     end
 
@@ -42,7 +42,7 @@ module Unitwise
     #   measurement * some_other_measurement
     # @api public
     def *(other)
-      operate(:*, other) || raise(TypeError, "Can't multiply #{inspect} by #{other}.")
+      operate(:*, other) || raise(TypeError, "Can't multiply #{self} by #{other}.")
     end
 
     # Divide this measurement by a number or another measurement
@@ -52,7 +52,7 @@ module Unitwise
     #   measurement / some_other_measurement
     # @api public
     def /(other)
-      operate(:/, other) || raise(TypeError, "Can't divide #{inspect} by #{other}")
+      operate(:/, other) || raise(TypeError, "Can't divide #{self} by #{other}")
     end
 
     # Add another measurement to this unit. Units must be compatible.
@@ -61,7 +61,7 @@ module Unitwise
     #   measurement + some_other_measurement
     # @api public
     def +(other)
-      combine(:+, other) || raise(TypeError, "Can't add #{other} to #{inspect}.")
+      combine(:+, other) || raise(TypeError, "Can't add #{other} to #{self}.")
     end
 
     # Subtract another measurement from this unit. Units must be compatible.
@@ -70,7 +70,7 @@ module Unitwise
     #   measurement - some_other_measurement
     # @api public
     def -(other)
-      combine(:-, other) || raise(TypeError, "Can't subtract #{other} from #{inspect}.")
+      combine(:-, other) || raise(TypeError, "Can't subtract #{other} from #{self}.")
     end
 
     # Raise a measurement to a numeric power.
@@ -82,7 +82,7 @@ module Unitwise
       if number.is_a?(Numeric)
         new( value ** number, unit ** number )
       else
-        raise TypeError, "Can't raise #{inspect} to #{number} power."
+        raise TypeError, "Can't raise #{self} to #{number} power."
       end
     end
 
@@ -171,7 +171,7 @@ module Unitwise
     # Add or subtract other unit
     # @api private
     def combine(operator, other)
-      if similar_to?(other)
+      if other.respond_to?(:composition) && similar_to?(other)
         new(value.send(operator, other.convert_to(unit).value), unit)
       end
     end

@@ -7,6 +7,11 @@ module Unitwise
 
     include Unitwise::Composable
 
+    def initialize(*args)
+      super(*args)
+      freeze
+    end
+
     # The unit associated with this scale.
     # @return [Unitwise::Unit]
     # @api public

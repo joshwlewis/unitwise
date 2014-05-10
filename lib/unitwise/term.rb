@@ -1,8 +1,12 @@
 require 'signed_multiset'
 module Unitwise
   class Term < Liner.new(:atom, :prefix, :factor, :exponent, :annotation)
-
     include Unitwise::Composable
+
+    def initialize(*args)
+      super(*args)
+      freeze
+    end
 
     def atom=(value)
       value.is_a?(Atom) ? super(value) : super(Atom.find(value.to_s))
@@ -25,11 +29,11 @@ module Unitwise
     end
 
     def factor
-      @factor ||= 1
+      super || 1
     end
 
     def exponent
-      @exponent ||= 1
+      super || 1
     end
 
     def scalar

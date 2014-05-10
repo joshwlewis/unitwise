@@ -45,8 +45,8 @@ module Unitwise
     attr_reader :function_name
 
     def initialize(value, unit, function_name)
-      super(value, unit)
       @function_name = function_name
+      super(value, unit)
     end
 
     def functional(x=scalar, forward = true)
