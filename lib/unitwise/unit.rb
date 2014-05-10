@@ -1,8 +1,7 @@
 module Unitwise
   class Unit
     liner :expression, :terms
-
-    include Unitwise::Composable
+    include Unitwise::Compatible
 
     def initialize(input)
       if input.respond_to?(:expression)

@@ -1,7 +1,7 @@
 require 'signed_multiset'
 module Unitwise
   class Term < Liner.new(:atom, :prefix, :factor, :exponent, :annotation)
-    include Unitwise::Composable
+    include Unitwise::Compatible
 
     def initialize(*args)
       super(*args)

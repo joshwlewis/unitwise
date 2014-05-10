@@ -3,7 +3,7 @@ require 'liner'
 require "unitwise/version"
 require 'unitwise/base'
 require 'unitwise/expression'
-require 'unitwise/composable'
+require 'unitwise/compatible'
 require 'unitwise/scale'
 require 'unitwise/functional'
 require 'unitwise/measurement'

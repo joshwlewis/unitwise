@@ -1,8 +1,8 @@
 module Unitwise
-  # Composable provides methods for determing the composition of unit, term, or 
-  # measurement. This is used to establish compatibility between units, terms,
-  # or measurements.
-  module Composable
+  # Compatible is used to establish compatibility between units, terms, or
+  # measurements. This is done by determining the objects atomic composition
+  # represented as a Signed Multiset.
+  module Compatible
 
     # @api private
     def self.included(base)
@@ -37,7 +37,7 @@ module Unitwise
     # Determine if this instance is similar to or compatible with other
     # @return [true false]
     # @api public
-    def similar_to?(other)
+    def compatible_with?(other)
       self.composition == other.composition
     end
 
@@ -45,10 +45,9 @@ module Unitwise
     # @return [-1 0 1]
     # @api public
     def <=>(other)
-      if other.respond_to?(:composition) && similar_to?(other)
+      if other.respond_to?(:composition) && compatible_with?(other)
         scalar <=> other.scalar
       end
     end
-
   end
 end

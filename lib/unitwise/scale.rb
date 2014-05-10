@@ -5,7 +5,7 @@ module Unitwise
   class Scale
     liner :value, :unit
 
-    include Unitwise::Composable
+    include Unitwise::Compatible
 
     def initialize(*args)
       super(*args)

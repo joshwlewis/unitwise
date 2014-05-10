@@ -5,7 +5,7 @@ module Unitwise
   class Atom < Base
     liner :classification, :property, :metric, :special, :arbitrary, :dim
 
-    include Unitwise::Composable
+    include Unitwise::Compatible
 
     class << self
       # Array of hashes representing atom properties.

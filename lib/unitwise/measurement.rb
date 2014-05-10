@@ -28,7 +28,7 @@ module Unitwise
     # @api public
     def convert_to(other_unit)
       other_unit = Unit.new(other_unit)
-      if similar_to?(other_unit)
+      if compatible_with?(other_unit)
         new(converted_value(other_unit), other_unit)
       else
         raise ConversionError, "Can't convert #{self} to #{other_unit}."
@@ -171,7 +171,7 @@ module Unitwise
     # Add or subtract other unit
     # @api private
     def combine(operator, other)
-      if other.respond_to?(:composition) && similar_to?(other)
+      if other.respond_to?(:composition) && compatible_with?(other)
         new(value.send(operator, other.convert_to(unit).value), unit)
       end
     end
@@ -182,7 +182,7 @@ module Unitwise
       if other.is_a?(Numeric)
         new(value.send(operator, other), unit)
       elsif other.respond_to?(:composition)
-        if similar_to?(other)
+        if compatible_with?(other)
           converted = other.convert_to(unit)
           new(value.send(operator, converted.value), unit.send(operator, converted.unit))
         else
