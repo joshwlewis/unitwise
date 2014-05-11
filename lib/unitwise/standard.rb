@@ -24,7 +24,6 @@ module Unitwise
       def hash
         Nori.new.parse(body)["root"]
       end
-
     end
   end
 end

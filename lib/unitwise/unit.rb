@@ -1,8 +1,14 @@
 module Unitwise
+  # A Unit is essentially a collection of Unitwise::Term. Terms can be combined
+  # through multiplication or division to create a unit. A unit does not have
+  # a magnitude, but it does have a scale.
   class Unit
     liner :expression, :terms
     include Unitwise::Compatible
 
+    # Create a new unit. You can send an expression or a collection of terms
+    # @param input [String, Unit, [Term]] A string expression, a unit, or a
+    # collection of tems.
     def initialize(input)
       if input.respond_to?(:expression)
         @expression = input.expression
@@ -29,7 +35,7 @@ module Unitwise
       terms.count == 1 && terms.all?(&:special?)
     end
 
-    def functional(x=scalar, forward=true)
+    def functional(x = scalar, forward = true)
       terms.first.functional(x, forward)
     end
 
@@ -42,7 +48,7 @@ module Unitwise
     end
 
     def scalar
-      terms.map(&:scalar).inject(&:*)
+      terms.map(&:scalar).reduce(&:*)
     end
 
     def *(other)
@@ -51,24 +57,28 @@ module Unitwise
       elsif other.respond_to?(:atom)
         self.class.new(terms << other)
       elsif other.is_a?(Numeric)
-        self.class.new(terms.map{ |t| t * other })
+        self.class.new(terms.map { |t| t * other })
       else
-        raise TypeError, "Can't multiply #{inspect} by #{other}."
+        fail TypeError, "Can't multiply #{self} by #{other}."
       end
     end
 
     def /(other)
       if other.respond_to?(:terms)
-        self.class.new(terms + other.terms.map{ |t| t ** -1})
+        self.class.new(terms + other.terms.map { |t| t ** -1 })
       elsif other.respond_to?(:atom)
         self.class.new(terms << other ** -1)
       else
-        raise TypeError, "Can't divide #{inspect} by #{other}."
+        fail TypeError, "Can't divide #{self} by #{other}."
       end
     end
 
-    def **(number)
-      self.class.new(terms.map{ |t| t ** number })
+    def **(other)
+      if other.is_a?(Numeric)
+        self.class.new(terms.map { |t| t ** other })
+      else
+        fail TypeError, "Can't raise #{self} to #{other}."
+      end
     end
 
     def to_s

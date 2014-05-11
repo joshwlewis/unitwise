@@ -1,6 +1,6 @@
 require 'liner'
 
-require "unitwise/version"
+require 'unitwise/version'
 require 'unitwise/base'
 require 'unitwise/expression'
 require 'unitwise/compatible'
@@ -36,7 +36,7 @@ module Unitwise
   # A helper to get the location of a yaml data file
   # @api private
   def self.data_file(key)
-    File.join path, "data", "#{key}.yaml"
+    File.join path, 'data', "#{key}.yaml"
   end
 end
 

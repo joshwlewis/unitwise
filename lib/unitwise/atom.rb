@@ -1,6 +1,6 @@
 module Unitwise
   # Atoms are the most basic elements in Unitwise. They are named coded and
-  # scaled units without prefixes, multipliers, exponents, etc. Examples are 
+  # scaled units without prefixes, multipliers, exponents, etc. Examples are
   # 'meter', 'hour', 'pound force'.
   class Atom < Base
     liner :classification, :property, :metric, :special, :arbitrary, :dim
@@ -11,13 +11,13 @@ module Unitwise
       # Array of hashes representing atom properties.
       # @api private
       def data
-        @data ||= data_files.reduce([]){|m,f| m += YAML::load File.open(f)}
+        @data ||= data_files.map { |file| YAML.load(File.open file) }.flatten
       end
 
       # Data files containing atom data
       # @api private
       def data_files
-        %w(base_unit derived_unit).map{|type| Unitwise.data_file type}
+        %w(base_unit derived_unit).map { |type| Unitwise.data_file type }
       end
     end
 
@@ -26,10 +26,10 @@ module Unitwise
     # @return [true, false]
     # @api public
     def base?
-      scale.nil? && !@dim.nil?
+      !!(@dim && !scale)
     end
 
-    # Determine if an atom is derived. Derived atoms are defined with respect 
+    # Determine if an atom is derived. Derived atoms are defined with respect
     # to other atoms.
     # @return [true, false]
     # @api public
@@ -55,7 +55,7 @@ module Unitwise
     end
     alias_method :special?, :special
 
-    # Determine if a unit is arbitrary. Arbitrary atoms are not of any specific 
+    # Determine if a unit is arbitrary. Arbitrary atoms are not of any specific
     # dimension and have no general meaning, therefore cannot be compared with
     # any other unit.
     # @return [true, false]
@@ -98,7 +98,7 @@ module Unitwise
       end
     end
 
-    # Get a numeric value that can be used to with other atoms to compare with 
+    # Get a numeric value that can be used to with other atoms to compare with
     # or operate on. Base units have a scalar of 1.
     # @return [Numeric]
     # @api public
@@ -111,7 +111,7 @@ module Unitwise
     # @param x [Numeric] The number to convert to or convert from
     # @param forward [true, false] Convert to or convert from
     # @return [Numeric] The converted value
-    def functional(x=scalar, forward=true)
+    def functional(x = scalar, forward = true)
       scale.functional(x, forward)
     end
 
@@ -121,6 +121,5 @@ module Unitwise
     def root_terms
       base? ? [Term.new(atom_code: primary_code)] : scale.root_terms
     end
-
   end
 end

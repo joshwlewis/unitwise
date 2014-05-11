@@ -4,19 +4,16 @@ module Unitwise
   # the value is the magnitued. This is the primary class that outside code
   # will interact with. Comes with conversion, comparison, and math methods.
   class Measurement < Scale
-
     # Create a new Measurement
     # @param value [Numeric] The scalar value for the measurement
     # @param unit  [String, Measurement::Unit] Either a string expression, or a
     # Measurement::Unit
     # @example
-    #   Unitwise::Measurement.new(20, 'm/s') # => #<Unitwise::Measurement 20 m/s>
+    #   Unitwise::Measurement.new(20, 'm/s')
     # @api public
     def initialize(*args)
       super(*args)
-      if terms.nil?
-        raise ExpressionError, "Could not evaluate `#{unit}`."
-      end
+      fail ExpressionError, "Could not evaluate `#{unit}`." if terms.nil?
     end
 
     # Convert this measurement to a compatible unit.
@@ -31,7 +28,7 @@ module Unitwise
       if compatible_with?(other_unit)
         new(converted_value(other_unit), other_unit)
       else
-        raise ConversionError, "Can't convert #{self} to #{other_unit}."
+        fail ConversionError, "Can't convert #{self} to #{other_unit}."
       end
     end
 
@@ -42,7 +39,8 @@ module Unitwise
     #   measurement * some_other_measurement
     # @api public
     def *(other)
-      operate(:*, other) || raise(TypeError, "Can't multiply #{self} by #{other}.")
+      operate(:*, other) ||
+        fail(TypeError, "Can't multiply #{self} by #{other}.")
     end
 
     # Divide this measurement by a number or another measurement
@@ -52,7 +50,7 @@ module Unitwise
     #   measurement / some_other_measurement
     # @api public
     def /(other)
-      operate(:/, other) || raise(TypeError, "Can't divide #{self} by #{other}")
+      operate(:/, other) || fail(TypeError, "Can't divide #{self} by #{other}")
     end
 
     # Add another measurement to this unit. Units must be compatible.
@@ -61,7 +59,7 @@ module Unitwise
     #   measurement + some_other_measurement
     # @api public
     def +(other)
-      combine(:+, other) || raise(TypeError, "Can't add #{other} to #{self}.")
+      combine(:+, other) || fail(TypeError, "Can't add #{other} to #{self}.")
     end
 
     # Subtract another measurement from this unit. Units must be compatible.
@@ -70,7 +68,8 @@ module Unitwise
     #   measurement - some_other_measurement
     # @api public
     def -(other)
-      combine(:-, other) || raise(TypeError, "Can't subtract #{other} from #{self}.")
+      combine(:-, other) ||
+        fail(TypeError, "Can't subtract #{other} from #{self}.")
     end
 
     # Raise a measurement to a numeric power.
@@ -78,11 +77,11 @@ module Unitwise
     # @example
     #   measurement ** 2
     # @api public
-    def **(number)
-      if number.is_a?(Numeric)
-        new( value ** number, unit ** number )
+    def **(other)
+      if other.is_a?(Numeric)
+        new(value ** other, unit ** other)
       else
-        raise TypeError, "Can't raise #{self} to #{number} power."
+        fail TypeError, "Can't raise #{self} to #{other} power."
       end
     end
 
@@ -97,7 +96,7 @@ module Unitwise
       when Numeric
         return self.class.new(other, '1'), self
       else
-        raise TypeError, "#{self.class} can't be coerced into #{other.class}"
+        fail TypeError, "#{self.class} can't be coerced into #{other.class}"
       end
     end
 
@@ -108,7 +107,7 @@ module Unitwise
     def to_i
       Integer(value)
     end
-    alias :to_int :to_i
+    alias_method :to_int, :to_i
 
     # Convert a measurement to a Float.
     # @example
@@ -184,12 +183,13 @@ module Unitwise
       elsif other.respond_to?(:composition)
         if compatible_with?(other)
           converted = other.convert_to(unit)
-          new(value.send(operator, converted.value), unit.send(operator, converted.unit))
+          new(value.send(operator, converted.value),
+              unit.send(operator, converted.unit))
         else
-          new(value.send(operator, other.value), unit.send(operator, other.unit))
+          new(value.send(operator, other.value),
+              unit.send(operator, other.unit))
         end
       end
     end
-
   end
 end

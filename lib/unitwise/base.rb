@@ -1,14 +1,16 @@
 require 'yaml'
 module Unitwise
+  # The base class that Atom and Prefix are extended from. This class includes
+  # shared functionality from those classes only.
   class Base
     liner :names, :primary_code, :secondary_code, :symbol, :scale
 
     def self.all
-      @all ||= data.map{|d| self.new d }
+      @all ||= data.map { |d| new d }
     end
 
-    def self.find(string, method=:primary_code)
-      self.all.find do |i|
+    def self.find(string, method = :primary_code)
+      all.find do |i|
         key = i.send(method)
         if key.respond_to?(:each)
           key.include?(string)
@@ -36,6 +38,5 @@ module Unitwise
     def to_s
       primary_code
     end
-
   end
 end

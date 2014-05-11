@@ -3,7 +3,6 @@ module Unitwise
   # measurements. This is done by determining the objects atomic composition
   # represented as a Signed Multiset.
   module Compatible
-
     # @api private
     def self.included(base)
       base.send :include, Comparable
@@ -14,7 +13,8 @@ module Unitwise
     # @api public
     def composition
       root_terms.reduce(SignedMultiset.new) do |s, t|
-        s.increment(t.atom.dim, t.exponent) if t.atom; s
+        s.increment(t.atom.dim, t.exponent) if t.atom
+        s
       end
     end
 
@@ -29,7 +29,7 @@ module Unitwise
     # @return [String]
     # @api public
     def composition_string
-      composition.sort.map do |k,v|
+      composition.sort.map do |k, v|
         v == 1 ? k.to_s : "#{k}#{v}"
       end.join('.')
     end
@@ -38,7 +38,7 @@ module Unitwise
     # @return [true false]
     # @api public
     def compatible_with?(other)
-      self.composition == other.composition
+      composition == other.composition
     end
 
     # Compare whether the instance is greater, less than or equal to other.

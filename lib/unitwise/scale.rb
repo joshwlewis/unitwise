@@ -1,5 +1,5 @@
 module Unitwise
-  # A Unitwise::Scale represents a value and a unit, sort of like a vector, it 
+  # A Unitwise::Scale represents a value and a unit, sort of like a vector, it
   # has two components. In this case, it's a value and unit rather than a
   # magnitude and direction. This class should be considered mostly privateish.
   class Scale
@@ -46,7 +46,7 @@ module Unitwise
     # @param forward [true, false] whether to convert to this unit or from it.
     # @return [Numeric]
     # @api public
-    def functional(x=value, forward=true)
+    def functional(x = value, forward = true)
       unit.functional(x, forward)
     end
 
@@ -58,7 +58,7 @@ module Unitwise
       value * unit.scalar
     end
 
-    # The base units this scale's unit is derived from
+    # The base terms this scale's unit is derived from
     # @return [Array] An array of Unitwise::Term
     # @api public
     def root_terms
