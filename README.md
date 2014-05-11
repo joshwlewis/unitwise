@@ -1,11 +1,10 @@
 # [Unitwise](//github.com/joshwlewis/unitwise)
 
-[![Gem Version](https://badge.fury.io/rb/unitwise.png)](http://badge.fury.io/rb/unitwise)
-[![Build Status](https://travis-ci.org/joshwlewis/unitwise.png)](https://travis-ci.org/joshwlewis/unitwise)
-[![Dependency Status](https://gemnasium.com/joshwlewis/unitwise.png)](https://gemnasium.com/joshwlewis/unitwise)
-[![Coverage Status](https://coveralls.io/repos/joshwlewis/unitwise/badge.png)](https://coveralls.io/r/joshwlewis/unitwise)
-[![Code Climate](https://codeclimate.com/github/joshwlewis/unitwise.png)](https://codeclimate.com/github/joshwlewis/unitwise)
-[![Inline docs](http://inch-pages.github.io/github/joshwlewis/unitwise.png)](http://inch-pages.github.io/github/joshwlewis/unitwise)
+[![Gem Version](http://img.shields.io/gem/v/unitwise.svg?style=flat)](https://rubygems.org/gems/unitwise)
+[![Build Status](http://img.shields.io/travis/joshwlewis/unitwise.svg?style=flat)](https://travis-ci.org/joshwlewis/unitwise)
+[![Dependency Status](http://img.shields.io/gemnasium/joshwlewis/unitwise.svg?style=flat)](https://gemnasium.com/joshwlewis/unitwise)
+[![Coverage Status](http://img.shields.io/coveralls/joshwlewis/unitwise.svg?style=flat)](https://coveralls.io/r/joshwlewis/unitwise)
+[![Code Climate](http://img.shields.io/codeclimate/github/joshwlewis/unitwise.svg?style=flat)](https://codeclimate.com/github/joshwlewis/unitwise)
 ![Analytics](https://ga-beacon.appspot.com/UA-49481499-1/joshwlewis/unitwise?pixel)
 
 Unitwise is a Ruby library for unit measurement conversion and math.
