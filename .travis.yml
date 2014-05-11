@@ -15,6 +15,7 @@ matrix:
     - rvm: jruby-head
       env: JRUBY_OPTS="$JRUBY_OPTS --debug"
   allow_failure:
+    - rvm: rbx
     - rvm: ruby-head
     - rvm: jruby-head
   fast_finish: true
