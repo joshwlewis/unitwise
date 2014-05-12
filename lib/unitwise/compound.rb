@@ -31,7 +31,7 @@ module Unitwise
     # @api public
     def self.search(term)
       all.select do |compound|
-        compound.search_strings.any? { |string| Regexp.new(term).match(string) }
+        compound.search_strings.any? { |str| Regexp.new(term).match(str) }
       end
     end
 
@@ -48,7 +48,7 @@ module Unitwise
         instance_variable_get("@#{attr}") ||
         instance_variable_set("@#{attr}",
           if prefix
-            prefix.send(attr).zip(atom.send(attr)).map{ |set| set.join('') }
+            prefix.send(attr).zip(atom.send(attr)).map { |set| set.join('') }
           else
             atom.send(attr)
           end)
@@ -64,11 +64,13 @@ module Unitwise
     end
 
     def search_strings
-      @search_strings ||= [primary_code, secondary_code, symbol, names, slugs].flatten.uniq
+      @search_strings ||= [primary_code, secondary_code, symbol,
+                           names, slugs].flatten.uniq
     end
 
     def attribute_string
-      [:atom, :prefix, :primary_code, :secondary_code, :symbol, :names, :slugs].map do |attr|
+      [:atom, :prefix, :primary_code, :secondary_code,
+       :symbol, :names, :slugs].map do |attr|
         "#{attr}='#{send attr}'"
       end.join(', ')
     end
