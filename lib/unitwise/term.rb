@@ -31,7 +31,7 @@ module Unitwise
     # Is this term special?
     # @return [true, false]
     def special?
-      atom.special rescue false
+      atom.special? rescue false
     end
 
     # Determine how far away a unit is from a base unit.
@@ -62,26 +62,20 @@ module Unitwise
       super || 1
     end
 
-    # The unitless value for this term. This is the equivalent value of it's
-    # base atom
-    # @return [Numeric]
+    # The unitless scalar value for this term.
+    # @param magnitude [Numeric] The magnitude to calculate the scalar for.
+    # @return [Numeric] The unitless linear scalar value.
     # @api public
-    def scalar
-      (factor * (prefix ? prefix.scalar : 1) *
-        (atom ? atom.scalar : 1)) ** exponent
+    def scalar(magnitude = 1)
+      calculate(atom ? atom.scalar(magnitude) : 1)
     end
 
-    # Get the equivalent scalar value of a unit based on the atom's function.
-    # @params x [Numeric]
-    # @params forward [true, false] The direction of the conversion. Use true
-    # when converting from the special, use false when converting to the
-    # special.
-    # @return [Numeric]
+    # Calculate the magnitude for this term
+    # @param scalar [Numeric] The scalar for which you want the magnitude
+    # @return [Numeric] The magnitude on this scale.
     # @api public
-    # @param x [Numeric] The value
-    def functional(x = scalar, forward = true)
-      (factor * (prefix ? prefix.scalar : 1)) *
-        (atom ? atom.functional(x, forward) : 1) ** exponent
+    def inverse_scalar(scalar = scalar)
+      calculate(atom ? atom.inverse_scalar(scalar) : 1)
     end
 
     # The base units this term is derived from
@@ -139,6 +133,13 @@ module Unitwise
     def to_s
       [(factor if factor != 1), prefix.to_s,
         atom.to_s, (exponent if exponent != 1)].compact.join('')
+    end
+
+    private
+
+    # @api private
+    def calculate(value)
+      (factor * (prefix ? prefix.scalar : 1) * value) ** exponent
     end
   end
 end

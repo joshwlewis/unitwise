@@ -152,18 +152,10 @@ module Unitwise
     # Determine value of the unit after conversion to another unit
     # @api private
     def converted_value(other_unit)
-      if unit.special?
-        if other_unit.special?
-          other_unit.functional functional(value, false)
-        else
-          functional(value, false) / other_unit.scalar
-        end
+      if other_unit.special?
+        other_unit.inverse_scalar scalar
       else
-        if other_unit.special?
-          other_unit.functional(scalar)
-        else
-          scalar / other_unit.scalar
-        end
+        scalar / other_unit.scalar
       end
     end
 

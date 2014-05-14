@@ -51,7 +51,6 @@ describe Unitwise::Measurement do
       mult.value.must_equal 180
       mult.unit.must_equal Unitwise::Unit.new("[mi_i]2/h")
     end
-
     it "must multiply canceling units" do
       mult = mph * hpm
       mult.value.must_equal 360

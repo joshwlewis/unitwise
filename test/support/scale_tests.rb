@@ -54,15 +54,13 @@ module ScaleTests
         it "must return value relative to terminal atoms" do
           subject.scalar.must_equal 4000
           mph.scalar.must_equal 26.8224
+          cel.scalar.must_equal 295.15
         end
       end
 
-      describe "#functional" do
-        it "must return a converted value" do
-          cel.functional(0,true).must_equal -273.15
-        end
-        it "must return a de-converted value" do
-          cel.functional(0,false).must_equal 273.15
+      describe "#inverse_scalar" do
+        it "must return the magnitude" do
+          cel.inverse_scalar.must_equal(22)
         end
       end
 

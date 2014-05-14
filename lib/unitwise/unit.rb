@@ -35,9 +35,6 @@ module Unitwise
       terms.count == 1 && terms.all?(&:special?)
     end
 
-    def functional(x = scalar, forward = true)
-      terms.first.functional(x, forward)
-    end
 
     def depth
       terms.map(&:depth).max + 1
@@ -47,8 +44,16 @@ module Unitwise
       terms.flat_map(&:root_terms)
     end
 
-    def scalar
-      terms.map(&:scalar).reduce(&:*)
+    def scalar(x = 1)
+      terms.reduce(1) do |prod, term|
+        prod * term.scalar(x)
+      end
+    end
+
+    def inverse_scalar(x = 1)
+      terms.reduce(1) do |prod, term|
+        prod * term.inverse_scalar(x)
+      end
     end
 
     def *(other)

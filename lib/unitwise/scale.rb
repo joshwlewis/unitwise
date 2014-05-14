@@ -46,16 +46,26 @@ module Unitwise
     # @param forward [true, false] whether to convert to this unit or from it.
     # @return [Numeric]
     # @api public
-    def functional(x = value, forward = true)
-      unit.functional(x, forward)
+
+    # Get a scalar value for this scale.
+    # @param magnitude [Numeric] An optional magnitude on this scale.
+    # @return [Numeric] A scalar value on a linear scale
+    # @api public
+    def scalar(magnitude = value)
+      if special?
+        unit.scalar(magnitude)
+      else
+        value * unit.scalar
+      end
     end
 
-    # Return a scalar value for non-special units, this will be some ratio of a
-    # child base unit.
-    # @return [Numeric]
+    # Get a magnitude based on a linear scale value. Only used by scales with 
+    # special atoms in it's hierarchy.
+    # @param scalar [Numeric] A linear scalar value
+    # @return [Numeric] The equivalent magnitude on this scale
     # @api public
-    def scalar
-      value * unit.scalar
+    def inverse_scalar(scalar = scalar)
+      unit.inverse_scalar(scalar)
     end
 
     # The base terms this scale's unit is derived from
