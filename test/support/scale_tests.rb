@@ -58,9 +58,10 @@ module ScaleTests
         end
       end
 
-      describe "#inverse_scalar" do
+      describe "#magnitude" do
         it "must return the magnitude" do
-          cel.inverse_scalar.must_equal(22)
+          mph.magnitude.must_equal(60)
+          cel.magnitude.must_equal(22)
         end
       end
 

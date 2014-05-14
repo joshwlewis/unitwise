@@ -102,20 +102,13 @@ module Unitwise
     # or operate on. Base units have a scalar of 1.
     # @return [Numeric]
     # @api public
-    def scalar(x = 1)
-      base? ? 1 : scale.scalar(x)
+    def scalar(magnitude = 1)
+      base? ? magnitude : scale.scalar(magnitude)
     end
 
-    def inverse_scalar(x = 1)
-      base? ? 1 : scale.inverse_scalar(x)
+    def magnitude(scalar = scalar)
+      special? ? scale.magnitude(scalar) : 1
     end
-
-    # Get a functional value that can be used with other atoms to compare with
-    # or operate on.
-    # @param x [Numeric] The number to convert to or convert from
-    # @param forward [true, false] Convert to or convert from
-    # @return [Numeric] The converted value
-
 
     # An atom may have a complex scale with several base atoms at various
     # depths. This method returns all of this atoms base level terms.

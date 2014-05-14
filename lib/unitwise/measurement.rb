@@ -153,7 +153,7 @@ module Unitwise
     # @api private
     def converted_value(other_unit)
       if other_unit.special?
-        other_unit.inverse_scalar scalar
+        other_unit.magnitude scalar
       else
         scalar / other_unit.scalar
       end

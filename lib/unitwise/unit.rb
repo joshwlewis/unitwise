@@ -44,15 +44,15 @@ module Unitwise
       terms.flat_map(&:root_terms)
     end
 
-    def scalar(x = 1)
+    def scalar(magnitude = 1)
       terms.reduce(1) do |prod, term|
-        prod * term.scalar(x)
+        prod * term.scalar(magnitude)
       end
     end
 
-    def inverse_scalar(x = 1)
+    def magnitude(scalar = scalar)
       terms.reduce(1) do |prod, term|
-        prod * term.inverse_scalar(x)
+        prod * term.magnitude(scalar)
       end
     end
 

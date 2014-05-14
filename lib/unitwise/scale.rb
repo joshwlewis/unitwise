@@ -64,8 +64,12 @@ module Unitwise
     # @param scalar [Numeric] A linear scalar value
     # @return [Numeric] The equivalent magnitude on this scale
     # @api public
-    def inverse_scalar(scalar = scalar)
-      unit.inverse_scalar(scalar)
+    def magnitude(scalar = scalar)
+      if special?
+        unit.magnitude(scalar)
+      else
+        value * unit.magnitude
+      end
     end
 
     # The base terms this scale's unit is derived from

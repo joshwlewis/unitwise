@@ -74,8 +74,8 @@ module Unitwise
     # @param scalar [Numeric] The scalar for which you want the magnitude
     # @return [Numeric] The magnitude on this scale.
     # @api public
-    def inverse_scalar(scalar = scalar)
-      calculate(atom ? atom.inverse_scalar(scalar) : 1)
+    def magnitude(scalar = scalar)
+      calculate(atom ? atom.magnitude(scalar) : 1)
     end
 
     # The base units this term is derived from
