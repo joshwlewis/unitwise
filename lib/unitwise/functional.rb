@@ -49,7 +49,7 @@ module Unitwise
     def self.to_ph(x)
       to_hpX(x)
     end
-    
+
     def self.from_ph(x)
       from_hpX(x)
     end
@@ -113,6 +113,6 @@ module Unitwise
     def magnitude(scalar = scalar)
       self.class.send(:"to_#{function_name}", scalar)
     end
-
   end
 end
+
