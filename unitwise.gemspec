@@ -24,6 +24,8 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'signed_multiset', '~> 0.2'
   gem.add_dependency 'parslet', '~> 1.5'
 
+  gem.add_dependency 'parslet', RUBY_VERSION > '1.8.7' ? '~> 1.5' : '~> 1.5.0'
+
   gem.add_development_dependency 'minitest',  '>= 5.0'
   gem.add_development_dependency 'rake',      '>= 10.0'
   if RUBY_VERSION > '1.8.7'
