@@ -20,9 +20,8 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(/^test\//)
   gem.require_paths = ['lib']
 
-  gem.add_dependency 'liner', '~> 0.2'
-  gem.add_dependency 'signed_multiset', '~> 0.2'
-
+  gem.add_dependency 'liner', '~> 0.2.4'
+  gem.add_dependency 'signed_multiset', '~> 0.2.0'
   gem.add_dependency 'parslet', RUBY_VERSION > '1.8.7' ? '~> 1.5' : '~> 1.5.0'
 
   gem.add_development_dependency 'minitest',  '>= 5.0'
