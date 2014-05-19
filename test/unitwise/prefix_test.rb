@@ -12,7 +12,7 @@ describe Unitwise::Prefix do
   describe "::all" do
     it "should be an array of prefixes" do
       subject.all.must_be_instance_of Array
-      subject.all.sample.must_be_instance_of Unitwise::Prefix
+      subject.all.first.must_be_instance_of Unitwise::Prefix
     end
   end
 

@@ -26,7 +26,9 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'minitest',  '>= 5.0'
   gem.add_development_dependency 'rake',      '>= 10.0'
-  gem.add_development_dependency 'nori',      '~> 2.3'
-  gem.add_development_dependency 'nokogiri',  '~> 1.6'
-  gem.add_development_dependency 'coveralls', '~> 0.6'
+  if RUBY_VERSION > '1.8.7'
+    gem.add_development_dependency 'nori',      '~> 2.3'
+    gem.add_development_dependency 'nokogiri',  '~> 1.6'
+    gem.add_development_dependency 'coveralls', '~> 0.6'
+  end
 end

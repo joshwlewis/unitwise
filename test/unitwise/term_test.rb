@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Unitwise::Term do
   describe "instance" do
-    subject { Unitwise::Term.new(atom: 'J', prefix: 'k')}
+    subject { Unitwise::Term.new(:atom => 'J', :prefix => 'k')}
     describe "#atom" do
       it "should be an atom" do
         subject.atom.must_be_instance_of Unitwise::Atom
@@ -24,7 +24,7 @@ describe Unitwise::Term do
     describe "#root_terms" do
       it "should be an array of terms" do
         subject.root_terms.must_be_kind_of Array
-        subject.root_terms.sample.must_be_instance_of Unitwise::Term
+        subject.root_terms.first.must_be_instance_of Unitwise::Term
       end
     end
 

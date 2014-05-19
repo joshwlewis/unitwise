@@ -10,7 +10,7 @@ module Unitwise::Standard
     end
 
     def to_hash
-      super().merge(scalar: scale)
+      super().merge(:scalar => scale)
     end
 
   end

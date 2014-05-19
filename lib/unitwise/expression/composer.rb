@@ -8,7 +8,7 @@ module Unitwise
 
       def set
         @set ||= terms.reduce(SignedMultiset.new) do |s, t|
-          s.increment({f: t.factor, p: t.prefix, a: t.atom}, t.exponent); s
+          s.increment({:f => t.factor, :p => t.prefix, :a => t.atom}, t.exponent); s
         end
       end
 

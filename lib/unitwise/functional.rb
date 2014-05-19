@@ -55,7 +55,7 @@ module Unitwise
     end
 
     def self.to_ld(x)
-      log2(x)
+      Math.log(x) / Math.log(2)  
     end
 
     def self.from_ld(x)
@@ -115,4 +115,3 @@ module Unitwise
     end
   end
 end
-

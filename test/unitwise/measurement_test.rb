@@ -7,7 +7,7 @@ describe Unitwise::Measurement do
 
   describe "#new" do
     it "should raise an error for unknown units" do
-      ->{ Unitwise::Measurement.new(1,"funkitron") }.must_raise(Unitwise::ExpressionError)
+      lambda { Unitwise::Measurement.new(1,"funkitron") }.must_raise(Unitwise::ExpressionError)
     end
   end
 
@@ -16,7 +16,7 @@ describe Unitwise::Measurement do
       mph.convert_to('km/h').value.must_equal 96.56063999999999
     end
     it "must raise an error if the units aren't similar" do
-      ->{ mph.convert_to('N') }.must_raise Unitwise::ConversionError
+      lambda { mph.convert_to('N') }.must_raise Unitwise::ConversionError
     end
     it "must convert special units to their base units" do
       cel.convert_to('K').value.must_equal 295.15
@@ -110,7 +110,7 @@ describe Unitwise::Measurement do
       exp.unit.to_s.must_equal "1/[mi_i]3"
     end
     it "must not raise to a weird power" do
-      -> { mile ** 'weird' }.must_raise TypeError
+      lambda { mile ** 'weird' }.must_raise TypeError
     end
   end
 
@@ -120,7 +120,7 @@ describe Unitwise::Measurement do
       meter.coerce(5).must_equal [ Unitwise::Measurement.new(5, '1'), meter ]
     end
     it "should raise an error for other crap" do
-      -> { meter.coerce("foo") }.must_raise TypeError
+      lambda { meter.coerce("foo") }.must_raise TypeError
     end
   end
 
@@ -139,11 +139,11 @@ describe Unitwise::Measurement do
     end
 
     it "must not convert 'foo'" do
-      ->{ meter.foo }.must_raise NoMethodError
+      lambda { meter.foo }.must_raise NoMethodError
     end
 
     it "must not convert 'to_foo'" do
-      ->{ meter.to_foo }.must_raise NoMethodError
+      lambda { meter.to_foo }.must_raise NoMethodError
     end
 
   end

@@ -10,12 +10,13 @@ module Unitwise
     # @param input [String, Unit, [Term]] A string expression, a unit, or a
     # collection of tems.
     def initialize(input)
-      if input.respond_to?(:expression)
+      case input
+      when Compatible
         @expression = input.expression
-      elsif input.respond_to?(:each)
-        @terms = input
-      else
+      when String, Symbol
         @expression = input.to_s
+      else
+        @terms = input
       end
     end
 
@@ -35,13 +36,12 @@ module Unitwise
       terms.count == 1 && terms.all?(&:special?)
     end
 
-
     def depth
       terms.map(&:depth).max + 1
     end
 
     def root_terms
-      terms.flat_map(&:root_terms)
+      terms.map(&:root_terms).flatten
     end
 
     def scalar(magnitude = 1)

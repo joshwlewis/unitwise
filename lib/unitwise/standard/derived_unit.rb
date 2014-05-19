@@ -40,9 +40,9 @@ module Unitwise::Standard
     def to_hash
       hash = super()
       hash[:scale] = (special? ? function.to_hash : scale.to_hash)
-      hash.merge({classification: classification,
-                  property: property, metric: metric?,
-                  special: special?, arbitrary: arbitrary?})
+      hash.merge({:classification => classification,
+                  :property => property, :metric => metric?,
+                  :special => special?, :arbitrary => arbitrary?})
     end
 
   end

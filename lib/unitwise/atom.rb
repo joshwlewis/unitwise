@@ -114,7 +114,7 @@ module Unitwise
     # depths. This method returns all of this atoms base level terms.
     # @return [Array] An array containing base Unitwise::Term
     def root_terms
-      base? ? [Term.new(atom_code: primary_code)] : scale.root_terms
+      base? ? [Term.new(:atom_code => primary_code)] : scale.root_terms
     end
   end
 end

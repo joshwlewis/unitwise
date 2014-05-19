@@ -130,7 +130,7 @@ module Unitwise
     #   measurement.to_foot # => <Unitwise::Measurement 4 foot>
     # @api semipublic
     def method_missing(meth, *args, &block)
-      if args.empty? && !block_given? && (match = /\Ato_(\w+)\Z/.match(meth))
+      if args.empty? && !block_given? && (match = /\Ato_(\w+)\Z/.match(meth.to_s))
         begin
           convert_to(match[1])
         rescue ExpressionError

@@ -19,7 +19,7 @@ module Unitwise::Standard
     end
 
     def to_hash
-      {value: value, unit_code: primary_unit_code}
+      {:value => value, :unit_code => primary_unit_code}
     end
   end
 end

@@ -38,11 +38,11 @@ describe Numeric do
     end
 
     it "must not match 'foo'" do
-      ->{ 1.foo }.must_raise NoMethodError
+      lambda { 1.foo }.must_raise NoMethodError
     end
 
     it "must not match 'to_foo'" do
-      ->{ 1.to_foo }.must_raise NoMethodError
+      lambda { 1.to_foo }.must_raise NoMethodError
     end
 
   end

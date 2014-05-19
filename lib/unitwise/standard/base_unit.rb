@@ -14,7 +14,7 @@ module Unitwise::Standard
     end
 
     def to_hash
-      super.merge property: property, dim: dim
+      super.merge :property => property, :dim => dim
     end
 
   end

@@ -86,7 +86,7 @@ module Unitwise
         [self]
       else
         atom.scale.root_terms.map do |t|
-          self.class.new(atom: t.atom, exponent: t.exponent * exponent)
+          self.class.new(:atom => t.atom, :exponent => t.exponent * exponent)
         end
       end
     end
@@ -100,7 +100,7 @@ module Unitwise
       elsif other.respond_to?(:atom)
         Unit.new([self, other])
       elsif other.is_a?(Numeric)
-        self.class.new(to_hash.merge(factor: factor * other))
+        self.class.new(to_hash.merge(:factor => factor * other))
       end
     end
 
@@ -113,7 +113,7 @@ module Unitwise
       elsif other.respond_to?(:atom)
         Unit.new([self, other ** -1])
       elsif other.is_a?(Numeric)
-        self.class.new(to_hash.merge(factor: factor / other))
+        self.class.new(to_hash.merge(:factor => factor / other))
       end
     end
 
@@ -122,7 +122,7 @@ module Unitwise
     # @return [Term]
     def **(other)
       if other.is_a?(Numeric)
-        self.class.new(to_hash.merge(exponent: exponent * other))
+        self.class.new(to_hash.merge(:exponent => exponent * other))
       else
         fail TypeError, "Can't raise #{self} to #{other}."
       end

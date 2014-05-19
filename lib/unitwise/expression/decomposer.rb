@@ -22,7 +22,7 @@ module Unitwise
       def transform
         PARSERS.reduce(nil) do |foo, (method, parser)|
           if parsed = parser.parse(expression) rescue next
-            return TRANSFORMER.apply(parsed, key: method)
+            return TRANSFORMER.apply(parsed, :key => method)
           end
         end
       end

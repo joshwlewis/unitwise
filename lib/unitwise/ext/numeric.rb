@@ -16,7 +16,7 @@ class Numeric
   # @api semipublic
   def method_missing(meth, *args, &block)
     if args.empty? && !block_given?
-      unit = (match = /\Ato_(\w+)\Z/.match(meth)) ? match[1] : meth
+      unit = (match = /\Ato_(\w+)\Z/.match(meth.to_s)) ? match[1] : meth
       begin
         convert_to(unit)
       rescue Unitwise::ExpressionError

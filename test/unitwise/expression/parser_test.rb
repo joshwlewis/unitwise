@@ -28,19 +28,19 @@ describe Unitwise::Expression::Parser do
 
   describe "#factor" do
     it "must match positives and fixnums" do
-      subject.factor.parse('3.2')[:factor].must_equal(fixnum: '3.2')
+      subject.factor.parse('3.2')[:factor].must_equal(:fixnum => '3.2')
     end
     it "must match negatives and integers" do
-      subject.factor.parse('-5')[:factor].must_equal(integer: '-5')
+      subject.factor.parse('-5')[:factor].must_equal(:integer => '-5')
     end
   end
 
   describe "#exponent" do
     it "must match positives integers" do
-      subject.exponent.parse('4')[:exponent].must_equal(integer: '4')
+      subject.exponent.parse('4')[:exponent].must_equal(:integer => '4')
     end
     it "must match negative integers" do
-      subject.exponent.parse('-5')[:exponent].must_equal(integer: '-5')
+      subject.exponent.parse('-5')[:exponent].must_equal(:integer => '-5')
     end
   end
 

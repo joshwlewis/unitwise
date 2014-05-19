@@ -22,10 +22,10 @@ module Unitwise
     def self.find(string, method = :primary_code)
       all.find do |i|
         key = i.send(method)
-        if key.respond_to?(:each)
-          key.include?(string)
-        else
+        if key.is_a? String
           key == string
+        else
+          key.include?(string)
         end
       end
     end

@@ -3,7 +3,7 @@ module ScaleTests
   def self.included(base)
     base.class_eval do
       subject { described_class.new(4, "J") }
-      
+
       let(:mph)  { Unitwise::Measurement.new(60, '[mi_i]/h') }
       let(:kmh)  { Unitwise::Measurement.new(100, 'km/h') }
       let(:mile) { Unitwise::Measurement.new(3, '[mi_i]') }
@@ -32,21 +32,21 @@ module ScaleTests
         it "must be a collection of terms" do
           subject.must_respond_to(:root_terms)
           subject.root_terms.must_be_kind_of Enumerable
-          subject.root_terms.sample.must_be_instance_of(Unitwise::Term)
+          subject.root_terms.first.must_be_instance_of(Unitwise::Term)
         end
       end
 
       describe "#terms" do
         it "must return an array of terms" do
           subject.terms.must_be_kind_of(Enumerable)
-          subject.terms.sample.must_be_kind_of(Unitwise::Term)
+          subject.terms.first.must_be_kind_of(Unitwise::Term)
         end
       end
-      
+
       describe "#atoms" do
         it "must return an array of atoms" do
           subject.atoms.must_be_kind_of(Enumerable)
-          subject.atoms.sample.must_be_kind_of(Unitwise::Atom)
+          subject.atoms.first.must_be_kind_of(Unitwise::Atom)
         end
       end
 
