@@ -95,5 +95,17 @@ module Unitwise
     def inspect
       "#<#{self.class} value=#{value} unit=#{unit}>"
     end
+
+    # Redefine hash for apropriate hash/key lookup
+    # @api semipublic
+    def hash
+      [value, unit.to_s, self.class].hash
+    end
+
+    # Redefine hash equality to match the hashes
+    # @api semipublic
+    def eql?(other)
+      hash == other.hash
+    end
   end
 end

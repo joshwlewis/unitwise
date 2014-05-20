@@ -124,6 +124,37 @@ describe Unitwise::Measurement do
     end
   end
 
+  describe "equality" do
+    let(:m)    { Unitwise::Measurement.new(1,'m') }
+    let(:mm)   { Unitwise::Measurement.new(1000,'mm') }
+    let(:foot) { Unitwise::Measurement.new(1,'foot') }
+    let(:g)    { Unitwise::Measurement.new(1,'gram') }
+    it "should be ==" do
+      assert m == m
+      assert m == mm
+      refute m == foot
+      refute m == g
+    end
+    it "should be ===" do
+      assert m == m
+      assert m === mm
+      refute m === foot
+      refute m == g
+    end
+    it "should be equal?" do
+      assert m.equal?(m)
+      refute m.equal?(mm)
+      refute m.equal?(foot)
+      refute m.equal?(g)
+    end
+    it "should be eql?" do
+      assert m.eql?(m)
+      refute m.equal?(mm)
+      refute m.equal?(foot)
+      refute m.equal?(g)
+    end
+  end
+
   describe "#method_missing" do
     let(:meter) { Unitwise::Measurement.new(1, 'm')}
     it "must convert 'to_mm'" do
