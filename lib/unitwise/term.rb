@@ -4,14 +4,8 @@ module Unitwise
   # Not all properties have to be present. Examples: 'g', 'mm', 'mi2', '4[pi]',
   # 'kJ{Electric Potential}'
   class Term < Liner.new(:atom, :prefix, :factor, :exponent, :annotation)
+    include Adamantium::Flat
     include Unitwise::Compatible
-
-    # Setup a new term. Send a hash of properties, or ordered property values.
-    # @api public
-    def initialize(*args)
-      super(*args)
-      freeze
-    end
 
     # Set the atom.
     # @param value [String, Atom] Either a string representing an Atom, or an
@@ -40,6 +34,7 @@ module Unitwise
     def depth
       atom ? atom.depth + 1 : 0
     end
+    memoize :depth
 
     # Determine if this is the last term in the scale chain
     # @return [true, false]
@@ -90,6 +85,7 @@ module Unitwise
         end
       end
     end
+    memoize :root_terms
 
     # Term multiplication. Multiply by a Unit, another Term, or a Numeric.
     # params other [Unit, Term, Numeric]
@@ -134,6 +130,7 @@ module Unitwise
       [(factor if factor != 1), prefix.to_s,
         atom.to_s, (exponent if exponent != 1)].compact.join('')
     end
+    memoize :to_s
 
     private
 

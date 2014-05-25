@@ -4,6 +4,7 @@ module Unitwise
   # shared functionality for said classes.
   class Base
     liner :names, :primary_code, :secondary_code, :symbol, :scale
+    include Adamantium::Flat
 
     # The list of tracked items.
     # @return [Array] An array of memoized instances.
@@ -30,14 +31,6 @@ module Unitwise
       end
     end
 
-    # Setup a new instance. Takes a hash of attributes, or an array of
-    # attribute values.
-    # @api public
-    def initialize(*args)
-      super(*args)
-      freeze
-    end
-
     # Setter for the names attribute. Will always set as an array.
     # @api semipublic
     def names=(names)
@@ -52,6 +45,7 @@ module Unitwise
         n.downcase.strip.gsub(/\s/, '_').gsub(/\W/, '')
       end
     end
+    memoize :slugs
 
     # String representation for the instance.
     # @return [String]

@@ -4,6 +4,7 @@ module Unitwise
   # a magnitude, but it does have a scale.
   class Unit
     liner :expression, :terms
+    include Adamantium::Flat
     include Unitwise::Compatible
 
     # Create a new unit. You can send an expression or a collection of terms
@@ -17,32 +18,33 @@ module Unitwise
         @expression = input.to_s
       else
         @terms = input
+        @expression = Expression.compose(input)
       end
     end
 
-    def expression
-      @expression ||= (Expression.compose(@terms) if @terms)
-    end
-
     def terms
-      @terms ||= (Expression.decompose(@expression) if @expression)
+      @terms || Expression.decompose(expression)
     end
 
     def atoms
       terms.map(&:atom)
     end
+    memoize :atoms
 
     def special?
       terms.count == 1 && terms.all?(&:special?)
     end
+    memoize :special?
 
     def depth
       terms.map(&:depth).max + 1
     end
+    memoize :depth
 
     def root_terms
       terms.map(&:root_terms).flatten
     end
+    memoize :root_terms
 
     def scalar(magnitude = 1)
       terms.reduce(1) do |prod, term|

@@ -6,6 +6,7 @@ module Unitwise
     # @api private
     def self.included(base)
       base.send :include, Comparable
+      base.send :memoize, :composition, :composition_string
     end
 
     # A representation of a unit based on the atoms it's derived from.

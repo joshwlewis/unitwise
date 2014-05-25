@@ -117,7 +117,7 @@ describe Unitwise::Measurement do
   describe "#coerce" do
     let(:meter) { Unitwise::Measurement.new(1, 'm') }
     it "must coerce numerics" do
-      meter.coerce(5).must_equal [ Unitwise::Measurement.new(5, '1'), meter ]
+      (5 * meter).must_equal Unitwise::Measurement.new(5, 'm')
     end
     it "should raise an error for other crap" do
       lambda { meter.coerce("foo") }.must_raise TypeError

@@ -4,19 +4,14 @@ module Unitwise
   # magnitude and direction. This class should be considered mostly privateish.
   class Scale
     liner :value, :unit
-
+    include Adamantium::Flat
     include Unitwise::Compatible
 
-    def initialize(*args)
-      super(*args)
-      freeze
-    end
-
-    # The unit associated with this scale.
-    # @return [Unitwise::Unit]
+    # Set the unit vector.
+    # @param value [String, Unitwise::Unit]
     # @api public
-    def unit
-      @unit.is_a?(Unit) ? @unit : Unit.new(@unit)
+    def unit=(value)
+      @unit = value.is_a?(Unit) ? value : Unit.new(value)
     end
 
     # List the atoms associated with this scale's unit.
@@ -40,13 +35,6 @@ module Unitwise
       unit.special?
     end
 
-    # Return a converted value for this scale, based on it's function for
-    # scales with special units.
-    # @param x [Numeric] Value to convert to or from
-    # @param forward [true, false] whether to convert to this unit or from it.
-    # @return [Numeric]
-    # @api public
-
     # Get a scalar value for this scale.
     # @param magnitude [Numeric] An optional magnitude on this scale.
     # @return [Numeric] A scalar value on a linear scale
@@ -59,7 +47,7 @@ module Unitwise
       end
     end
 
-    # Get a magnitude based on a linear scale value. Only used by scales with 
+    # Get a magnitude based on a linear scale value. Only used by scales with
     # special atoms in it's hierarchy.
     # @param scalar [Numeric] A linear scalar value
     # @return [Numeric] The equivalent magnitude on this scale
@@ -78,6 +66,7 @@ module Unitwise
     def root_terms
       unit.root_terms
     end
+    memoize :root_terms
 
     # How far away is this instances unit from the deepest leve atom.
     # @return [Integer]
@@ -85,6 +74,7 @@ module Unitwise
     def depth
       unit.depth + 1
     end
+    memoize :depth
 
     # Convert to a simple string representing the scale.
     # @api public
@@ -101,6 +91,7 @@ module Unitwise
     def hash
       [value, unit.to_s, self.class].hash
     end
+    memoize :hash
 
     # Redefine hash equality to match the hashes
     # @api semipublic

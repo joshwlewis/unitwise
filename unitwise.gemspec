@@ -8,11 +8,11 @@ Gem::Specification.new do |gem|
   gem.version       = Unitwise::VERSION
   gem.authors       = ['Josh Lewis']
   gem.email         = ['josh.w.lewis@gmail.com']
-  gem.description   = 'Ruby implementation of the Unified Code for Units of ' \
-                      'Measure (UCUM)'
-  gem.summary       = 'Unitwise is a library for performing mathematical '\
-                      'operations and conversions on all units defined by '\
-                      'the Unified Code for Units of Measure(UCUM).'
+  gem.description   = 'Physical quantity and units of measure conversion '    \
+                      'and math library'
+  gem.summary       = 'Convert between and perform mathematical operations '  \
+                      'on physical quantities and units of measure defined '  \
+                      'by the Unified Code for Units of Measure.'
   gem.homepage      = 'http://github.com/joshwlewis/unitwise'
   gem.license       = 'MIT'
 
@@ -20,8 +20,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(/^test\//)
   gem.require_paths = ['lib']
 
-  gem.add_dependency 'liner', '~> 0.2.4'
-  gem.add_dependency 'signed_multiset', '~> 0.2.0'
+  gem.add_dependency 'liner',           '~> 0.2'
+  gem.add_dependency 'signed_multiset', '~> 0.2'
+  gem.add_dependency 'adamantium',      '~> 0.2'
 
   if RUBY_VERSION > '1.8.7'
     gem.add_dependency 'parslet', '~> 1.5'
@@ -32,6 +33,7 @@ Gem::Specification.new do |gem|
     gem.add_development_dependency 'nokogiri', '~> 1.5.10'
   end
 
+  gem.add_development_dependency 'pry',       '>= 0.9'
   gem.add_development_dependency 'minitest',  '>= 5.0'
   gem.add_development_dependency 'rake',      '>= 10.0'
   gem.add_development_dependency 'nori',      '~> 2.3'

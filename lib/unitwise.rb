@@ -1,4 +1,5 @@
 require 'liner'
+require 'adamantium'
 
 require 'unitwise/version'
 require 'unitwise/base'

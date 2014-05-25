@@ -4,7 +4,6 @@ module Unitwise
   # 'meter', 'hour', 'pound force'.
   class Atom < Base
     liner :classification, :property, :metric, :special, :arbitrary, :dim
-
     include Unitwise::Compatible
 
     class << self
@@ -71,6 +70,7 @@ module Unitwise
     def depth
       base? ? 0 : scale.depth + 1
     end
+    memoize :depth
 
     # Determine if this is the last atom in the scale chain
     # @return [true, false]
@@ -116,5 +116,6 @@ module Unitwise
     def root_terms
       base? ? [Term.new(:atom_code => primary_code)] : scale.root_terms
     end
+    memoize :root_terms
   end
 end
