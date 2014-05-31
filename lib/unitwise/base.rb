@@ -1,10 +1,9 @@
-require 'yaml'
 module Unitwise
   # The base class that Atom and Prefix are extended from. This class provides
   # shared functionality for said classes.
   class Base
     liner :names, :primary_code, :secondary_code, :symbol, :scale
-    include Adamantium::Flat
+    include Memoizable
 
     # The list of tracked items.
     # @return [Array] An array of memoized instances.

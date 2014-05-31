@@ -1,10 +1,9 @@
-require 'signed_multiset'
 module Unitwise
   # A Term is the combination of an atom, prefix, factor and annotation.
   # Not all properties have to be present. Examples: 'g', 'mm', 'mi2', '4[pi]',
   # 'kJ{Electric Potential}'
   class Term < Liner.new(:atom, :prefix, :factor, :exponent, :annotation)
-    include Adamantium::Flat
+    include Memoizable
     include Unitwise::Compatible
 
     # Set the atom.

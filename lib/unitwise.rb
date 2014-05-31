@@ -1,5 +1,8 @@
 require 'liner'
-require 'adamantium'
+require 'memoizable'
+require 'parslet'
+require 'signed_multiset'
+require 'yaml'
 
 require 'unitwise/version'
 require 'unitwise/base'

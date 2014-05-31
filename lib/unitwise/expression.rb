@@ -1,5 +1,3 @@
-require 'parslet'
-
 require 'unitwise/expression/matcher'
 require 'unitwise/expression/parser'
 require 'unitwise/expression/transformer'

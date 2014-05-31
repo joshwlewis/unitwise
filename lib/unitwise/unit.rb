@@ -4,7 +4,7 @@ module Unitwise
   # a magnitude, but it does have a scale.
   class Unit
     liner :expression, :terms
-    include Adamantium::Flat
+    include Memoizable
     include Unitwise::Compatible
 
     # Create a new unit. You can send an expression or a collection of terms
