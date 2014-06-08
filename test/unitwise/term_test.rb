@@ -40,5 +40,10 @@ describe Unitwise::Term do
       end
     end
 
+    describe "#frozen?" do
+      it "should be frozen" do
+        subject.frozen?.must_equal true
+      end
+    end
   end
 end

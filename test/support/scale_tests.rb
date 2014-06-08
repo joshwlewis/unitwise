@@ -4,15 +4,15 @@ module ScaleTests
     base.class_eval do
       subject { described_class.new(4, "J") }
 
-      let(:mph)  { Unitwise::Measurement.new(60, '[mi_i]/h') }
-      let(:kmh)  { Unitwise::Measurement.new(100, 'km/h') }
-      let(:mile) { Unitwise::Measurement.new(3, '[mi_i]') }
-      let(:hpm)  { Unitwise::Measurement.new(6, 'h/[mi_i]') }
-      let(:cui)  { Unitwise::Measurement.new(12, "[in_i]3") }
-      let(:cel)  { Unitwise::Measurement.new(22, 'Cel') }
-      let(:k)    { Unitwise::Measurement.new(373.15, 'K') }
-      let(:f)    { Unitwise::Measurement.new(98.6, '[degF]')}
-      let(:r)    { Unitwise::Measurement.new(491.67, '[degR]') }
+      let(:mph)  { described_class.new(60, '[mi_i]/h') }
+      let(:kmh)  { described_class.new(100, 'km/h') }
+      let(:mile) { described_class.new(3, '[mi_i]') }
+      let(:hpm)  { described_class.new(6, 'h/[mi_i]') }
+      let(:cui)  { described_class.new(12, "[in_i]3") }
+      let(:cel)  { described_class.new(22, 'Cel') }
+      let(:k)    { described_class.new(373.15, 'K') }
+      let(:f)    { described_class.new(98.6, '[degF]')}
+      let(:r)    { described_class.new(491.67, '[degR]') }
 
       describe "#new" do
         it "must set attributes" do
@@ -76,6 +76,12 @@ module ScaleTests
         it "must return a number indicating how far down the rabbit hole goes" do
           subject.depth.must_equal 11
           k.depth.must_equal 3
+        end
+      end
+
+      describe "#frozen?" do
+        it "must be frozen" do
+          subject.frozen?.must_equal true
         end
       end
 

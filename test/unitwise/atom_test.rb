@@ -120,4 +120,10 @@ describe Unitwise::Atom do
       skip("need to figure out mocking and stubbing with minitest")
     end
   end
+
+  describe "#frozen?" do
+    it "should be frozen" do
+      second.frozen?.must_equal true
+    end
+  end
 end

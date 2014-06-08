@@ -50,16 +50,22 @@ describe Unitwise::Unit do
   describe "#*" do
     it "should multiply units" do
       mult = kg * ms2
-      mult.expression.to_s.must_match /kg.*\/s2/
-      mult.expression.to_s.must_match /m.*\/s2/
+      mult.expression.to_s.must_match(/kg.*\/s2/)
+      mult.expression.to_s.must_match(/m.*\/s2/)
     end
   end
 
   describe "#/" do
     it "should divide units" do
       div = kg / ms2
-      div.expression.to_s.must_match /kg.*\/m/
-      div.expression.to_s.must_match /s2.*\/m/
+      div.expression.to_s.must_match(/kg.*\/m/)
+      div.expression.to_s.must_match(/s2.*\/m/)
+    end
+  end
+
+  describe "#frozen?" do
+    it "should be frozen" do
+      kg.frozen?.must_equal true
     end
   end
 

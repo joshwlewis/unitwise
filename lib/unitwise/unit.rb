@@ -19,6 +19,7 @@ module Unitwise
         @terms = input
         @expression = Expression.compose(input)
       end
+      freeze
     end
 
     def terms
