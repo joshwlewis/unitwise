@@ -4,7 +4,7 @@ module Unitwise
   # 'meter', 'hour', 'pound force'.
   class Atom < Base
     liner :classification, :property, :metric, :special, :arbitrary, :dim
-    include Unitwise::Compatible
+    include Compatible
 
     class << self
       # Array of hashes representing atom properties.

@@ -4,7 +4,6 @@ module Unitwise
   # magnitude and direction. This class should be considered mostly privateish.
   class Scale
     liner :value, :unit
-    include Memoizable
     include Unitwise::Compatible
 
     # Set the unit vector.

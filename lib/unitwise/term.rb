@@ -3,8 +3,7 @@ module Unitwise
   # Not all properties have to be present. Examples: 'g', 'mm', 'mi2', '4[pi]',
   # 'kJ{Electric Potential}'
   class Term < Liner.new(:atom, :prefix, :factor, :exponent, :annotation)
-    include Memoizable
-    include Unitwise::Compatible
+    include Compatible
 
     # Set the atom.
     # @param value [String, Atom] Either a string representing an Atom, or an
