@@ -20,21 +20,21 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(/^test\//)
   gem.require_paths = ['lib']
 
-  gem.add_dependency             'liner',           '~> 0.2'
-  gem.add_dependency             'signed_multiset', '~> 0.2'
-  gem.add_dependency             'memoizable',      '~> 0.4'
+  gem.add_dependency               'liner',           '~> 0.2'
+  gem.add_dependency               'signed_multiset', '~> 0.2'
+  gem.add_dependency               'memoizable',      '~> 0.4'
 
   if RUBY_VERSION > '1.8.7'
-    gem.add_dependency 'parslet', '~> 1.5'
-    gem.add_development_dependency 'nokogiri', '~> 1.5'
-    gem.add_development_dependency 'coveralls', '~> 0.6'
+    gem.add_dependency             'parslet',         '~> 1.5'
+    gem.add_development_dependency 'nokogiri',        '~> 1.5'
+    gem.add_development_dependency 'coveralls',       '~> 0.6'
   else
-    gem.add_dependency 'parslet', '~> 1.5.0'
-    gem.add_development_dependency 'nokogiri', '~> 1.5.10'
+    gem.add_dependency             'parslet',         '~> 1.5.0'
+    gem.add_development_dependency 'nokogiri',        '~> 1.5.10'
   end
 
-  gem.add_development_dependency 'pry',             '>= 0.9'
-  gem.add_development_dependency 'minitest',        '>= 5.0'
-  gem.add_development_dependency 'rake',            '>= 10.0'
-  gem.add_development_dependency 'nori',            '~> 2.3'
+  gem.add_development_dependency   'pry',             '~> 0.9'
+  gem.add_development_dependency   'minitest',        '~> 5.0'
+  gem.add_development_dependency   'rake',            '~> 10.0'
+  gem.add_development_dependency   'nori',            '~> 2.3'
 end
