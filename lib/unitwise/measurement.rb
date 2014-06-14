@@ -140,6 +140,25 @@ module Unitwise
         super(meth, *args, &block)
       end
     end
+    
+    if defined? ActiveRecord
+      def localize
+        atom=case self.terms.size
+        when 1 then self.unit.terms[0].property
+        else Atom.all.detect{|a| t=Term.new(atom: a); t.compatible_with? self }
+        end
+        
+        #not sure that raising an error is the best way to do things here 
+        begin
+          local_units=I18n.t(atom.property, scope: ['unitwise'])
+          raise if local_units=~/translation missing/
+        rescue
+          local_units=nil
+        end
+        local_units ? self.convert_to(local_units) : self
+      end 
+    end 
+
 
     private
 
@@ -183,5 +202,6 @@ module Unitwise
         end
       end
     end
+    
   end
 end
