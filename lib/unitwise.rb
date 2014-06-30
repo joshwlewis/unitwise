@@ -3,6 +3,7 @@ require 'memoizable'
 require 'parslet'
 require 'signed_multiset'
 require 'yaml'
+require 'bigdecimal'
 
 require 'unitwise/version'
 require 'unitwise/base'

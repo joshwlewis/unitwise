@@ -28,7 +28,7 @@ describe Unitwise::Measurement do
       f.convert_to('Cel').value.must_equal 37
     end
     it "must convert special units to non-special units" do
-      cel.convert_to("[degR]").value.must_equal 531.27
+      cel.convert_to("[degR]").value.must_equal 531.27000053127
     end
     it "must convert derived units to special units" do
       r.convert_to("Cel").value.round.must_equal 0

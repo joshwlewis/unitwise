@@ -155,7 +155,7 @@ module Unitwise
       if other_unit.special?
         other_unit.magnitude scalar
       else
-        scalar / other_unit.scalar
+        scalar.to_f / other_unit.scalar.to_f
       end
     end
 
