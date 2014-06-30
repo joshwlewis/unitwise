@@ -103,7 +103,7 @@ module Unitwise
     # @return [Numeric] Equivalent linear scalar value
     # @api public
     def scalar(magnitude = value)
-      self.class.send(:"from_#{function_name}", magnitude)
+      self.class.send(:"from_#{function_name}", BigDecimal(magnitude.to_s))
     end
 
     # Get the equivalent magnitude on this scale for a scalar value

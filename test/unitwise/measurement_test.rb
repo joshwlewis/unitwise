@@ -25,10 +25,10 @@ describe Unitwise::Measurement do
       k.convert_to('Cel').value.must_equal 100
     end
     it "must convert special units to special units" do
-      f.convert_to('Cel').value.must_equal 37
+      f.convert_to('Cel').value.must_almost_equal 37
     end
     it "must convert special units to non-special units" do
-      cel.convert_to("[degR]").value.must_equal 531.27000053127
+      cel.convert_to("[degR]").value.must_almost_equal 531.27
     end
     it "must convert derived units to special units" do
       r.convert_to("Cel").value.round.must_equal 0
@@ -126,24 +126,29 @@ describe Unitwise::Measurement do
 
   describe "equality" do
     let(:m)    { Unitwise::Measurement.new(1,'m') }
+    let(:inch) { Unitwise::Measurement.new(240,'inch') }
+    let(:feet) { Unitwise::Measurement.new(20, 'foot') }
     let(:mm)   { Unitwise::Measurement.new(1000,'mm') }
     let(:foot) { Unitwise::Measurement.new(1,'foot') }
     let(:g)    { Unitwise::Measurement.new(1,'gram') }
     it "should be ==" do
       assert m == m
       assert m == mm
+      assert inch == feet
       refute m == foot
       refute m == g
     end
     it "should be ===" do
       assert m == m
       assert m === mm
+      assert inch === feet
       refute m === foot
       refute m == g
     end
     it "should be equal?" do
       assert m.equal?(m)
       refute m.equal?(mm)
+      refute inch.equal?(feet)
       refute m.equal?(foot)
       refute m.equal?(g)
     end

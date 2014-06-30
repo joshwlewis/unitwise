@@ -102,8 +102,8 @@ describe Unitwise::Atom do
   describe "#scalar" do
     it "must return scalar relative to terminal atom" do
       second.scalar.must_equal 1
-      yard.scalar.must_equal 0.9144
-      pi.scalar.must_equal 3.141592653589793
+      yard.scalar.must_almost_equal 0.9144
+      pi.scalar.must_almost_equal 3.141592653589793
     end
   end
 

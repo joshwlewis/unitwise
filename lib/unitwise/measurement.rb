@@ -149,6 +149,10 @@ module Unitwise
       self.class.new(*args)
     end
 
+    def value=(value)
+      @value = value
+    end
+
     # Determine value of the unit after conversion to another unit
     # @api private
     def converted_value(other_unit)

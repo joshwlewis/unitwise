@@ -53,7 +53,7 @@ module ScaleTests
       describe "#scalar" do
         it "must return value relative to terminal atoms" do
           subject.scalar.must_equal 4000
-          mph.scalar.to_f.must_equal 26.8224
+          mph.scalar.must_almost_equal 26.8224
           cel.scalar.must_equal 295.15
         end
       end

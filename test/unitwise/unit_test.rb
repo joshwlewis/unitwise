@@ -28,8 +28,8 @@ describe Unitwise::Unit do
     it "must return value relative to terminal atoms" do
       ms2.must_respond_to :scalar
       ms2.scalar.must_equal 1
-      psi.scalar.to_f.must_equal 6894757.293168361
-      deg.scalar.to_f.must_equal 0.01745328763302139
+      psi.scalar.must_almost_equal 6894757.293168361
+      deg.scalar.must_almost_equal 0.0174532925199433
     end
   end
 

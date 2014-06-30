@@ -15,10 +15,10 @@ module Unitwise
       Unitwise.data_file 'prefix'
     end
 
-    # Set the scalar value for the prefix, always as a Fixnum
+    # Set the scalar value for the prefix, always as a BigDecimal
     # @api semipublic
     def scalar=(value)
-      @scalar = value.to_f
+      @scalar = BigDecimal(value.to_s)
     end
   end
 end
