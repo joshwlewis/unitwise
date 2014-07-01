@@ -24,7 +24,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency               'signed_multiset', '~> 0.2'
   gem.add_dependency               'memoizable',      '~> 0.4'
 
-  if defined? RUBY_ENGINE
+  if RUBY_VERSION > '1.8.7'
     unless ['jruby', 'rbx'].include?(RUBY_ENGINE)
       gem.add_dependency           'bigdecimal',      '~> 1.2'
     end
