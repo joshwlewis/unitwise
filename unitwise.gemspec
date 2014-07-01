@@ -25,6 +25,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency               'memoizable',      '~> 0.4'
 
   if RUBY_VERSION > '1.8.7'
+    gem.add_dependency             'bigdecimal',      '~> 1.2' unless RUBY_PLATFORM == 'java'
     gem.add_dependency             'parslet',         '~> 1.5'
     gem.add_development_dependency 'nokogiri',        '~> 1.5'
     gem.add_development_dependency 'coveralls',       '~> 0.6'
@@ -32,7 +33,6 @@ Gem::Specification.new do |gem|
     gem.add_dependency             'parslet',         '~> 1.5.0'
     gem.add_development_dependency 'nokogiri',        '~> 1.5.10'
   end
-
   gem.add_development_dependency   'pry',             '~> 0.9'
   gem.add_development_dependency   'minitest',        '~> 5.0'
   gem.add_development_dependency   'rake',            '~> 10.0'

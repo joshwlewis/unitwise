@@ -13,7 +13,7 @@ describe Unitwise::Measurement do
 
   describe "#convert_to" do
     it "must convert to a similar unit code" do
-      mph.convert_to('km/h').value.must_equal 96.56063999999999
+      mph.convert_to('km/h').value.must_almost_equal 96.56063
     end
     it "must raise an error if the units aren't similar" do
       lambda { mph.convert_to('N') }.must_raise Unitwise::ConversionError
@@ -43,7 +43,7 @@ describe Unitwise::Measurement do
     end
     it "must multiply similar units" do
       mult = mph * kmh
-      mult.value.must_equal 3728.227153424004
+      mult.value.must_almost_equal 3728.22715342
       mult.unit.must_equal Unitwise::Unit.new("([mi_i]/h).([mi_i]/h)")
     end
     it "must multiply unsimilar units" do
@@ -66,7 +66,7 @@ describe Unitwise::Measurement do
     end
     it "must divide by the value of similar units" do
       div = kmh / mph
-      div.value.must_equal 1.03561865372889
+      div.value.must_almost_equal 1.03561865
       div.unit.to_s.must_equal '1'
     end
     it "must divide dissimilar units" do
@@ -79,7 +79,7 @@ describe Unitwise::Measurement do
   describe "#+" do
     it "must add values when units are similar" do
       added = mph + kmh
-      added.value.must_equal 122.13711922373341
+      added.value.must_almost_equal 122.13711922
       added.unit.must_equal mph.unit
     end
     it "must raise an error when units are not similar" do
@@ -90,7 +90,7 @@ describe Unitwise::Measurement do
   describe "#-" do
     it "must add values when units are similar" do
       added = mph - kmh
-      added.value.must_equal -2.1371192237334
+      added.value.must_almost_equal(-2.1371192)
       added.unit.must_equal mph.unit
     end
     it "must raise an error when units are not similar" do
@@ -126,7 +126,6 @@ describe Unitwise::Measurement do
 
   describe "equality" do
     let(:m)    { Unitwise::Measurement.new(1,'m') }
-    let(:inch) { Unitwise::Measurement.new(240,'inch') }
     let(:feet) { Unitwise::Measurement.new(20, 'foot') }
     let(:mm)   { Unitwise::Measurement.new(1000,'mm') }
     let(:foot) { Unitwise::Measurement.new(1,'foot') }
@@ -146,7 +145,6 @@ describe Unitwise::Measurement do
     it "should be equal?" do
       assert m.equal?(m)
       refute m.equal?(mm)
-      refute inch.equal?(feet)
       refute m.equal?(foot)
       refute m.equal?(g)
     end
@@ -169,7 +167,7 @@ describe Unitwise::Measurement do
     it "must convert 'to_foot'" do
       convert = meter.to_foot
       convert.must_be_instance_of Unitwise::Measurement
-      convert.value.must_equal 3.280839895013123
+      convert.value.must_almost_equal 3.280839895
     end
 
     it "must not convert 'foo'" do
