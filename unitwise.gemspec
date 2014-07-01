@@ -24,8 +24,10 @@ Gem::Specification.new do |gem|
   gem.add_dependency               'signed_multiset', '~> 0.2'
   gem.add_dependency               'memoizable',      '~> 0.4'
 
-  if RUBY_VERSION > '1.8.7'
-    gem.add_dependency             'bigdecimal',      '~> 1.2' unless RUBY_PLATFORM == 'java'
+  if defined? RUBY_ENGINE
+    unless ['jruby', 'rbx'].include?(RUBY_ENGINE)
+      gem.add_dependency           'bigdecimal',      '~> 1.2'
+    end
     gem.add_dependency             'parslet',         '~> 1.5'
     gem.add_development_dependency 'nokogiri',        '~> 1.5'
     gem.add_development_dependency 'coveralls',       '~> 0.6'
