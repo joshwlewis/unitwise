@@ -4,6 +4,7 @@ module Unitwise
   # the value is the magnitued. This is the primary class that outside code
   # will interact with. Comes with conversion, comparison, and math methods.
   class Measurement < Scale
+    include BackConverter
     # Create a new Measurement
     # @param value [Numeric] The scalar value for the measurement
     # @param unit  [String, Measurement::Unit] Either a string expression, or a
@@ -149,8 +150,11 @@ module Unitwise
       self.class.new(*args)
     end
 
+    # Set the value for the measurement. Uses the least precise class that
+    # fully represents the value.
+    # @api private
     def value=(value)
-      @value = value
+      @value = back_convert(value)
     end
 
     # Determine value of the unit after conversion to another unit
