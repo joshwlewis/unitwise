@@ -19,7 +19,7 @@ module Unitwise
     end
 
     def self.from_degf(x)
-      5.0 / 9 * (x + 459.67)
+      5.0 / 9.0 * (x + 459.67)
     end
 
     def self.to_hpX(x)
@@ -27,23 +27,23 @@ module Unitwise
     end
 
     def self.from_hpX(x)
-      10 ** -x
+      10.0 ** -x
     end
 
     def self.to_hpC(x)
-      -log(x) / log(100)
+      -log(x) / log(100.0)
     end
 
     def self.from_hpC(x)
-      100 ** -x
+      100.0 ** -x
     end
 
     def self.to_tan100(x)
-      100 * tan(x)
+      100.0 * tan(x)
     end
 
     def self.from_tan100(x)
-      atan(x / 100)
+      atan(x / 100.0)
     end
 
     def self.to_ph(x)
@@ -55,11 +55,11 @@ module Unitwise
     end
 
     def self.to_ld(x)
-      Math.log(x) / Math.log(2)  
+      Math.log(x) / Math.log(2.0)
     end
 
     def self.from_ld(x)
-      2 ** x
+      2.0 ** x
     end
 
     def self.to_ln(x)
@@ -75,15 +75,15 @@ module Unitwise
     end
 
     def self.from_lg(x)
-      10 ** x
+      10.0 ** x
     end
 
     def self.to_2lg(x)
-      2 * log10(x)
+      2.0 * log10(x)
     end
 
     def self.from_2lg(x)
-      10 ** (x / 2)
+      10.0 ** (x / 2.0)
     end
 
     attr_reader :function_name
@@ -103,7 +103,7 @@ module Unitwise
     # @return [Numeric] Equivalent linear scalar value
     # @api public
     def scalar(magnitude = value)
-      self.class.send(:"from_#{function_name}", BigDecimal(magnitude.to_s))
+      self.class.send(:"from_#{function_name}", magnitude)
     end
 
     # Get the equivalent magnitude on this scale for a scalar value

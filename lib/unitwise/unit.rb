@@ -46,14 +46,14 @@ module Unitwise
     end
     memoize :root_terms
 
-    def scalar(magnitude = 1)
-      terms.reduce(1) do |prod, term|
+    def scalar(magnitude = 1.0)
+      terms.reduce(1.0) do |prod, term|
         prod * term.scalar(magnitude)
       end
     end
 
     def magnitude(scalar = scalar)
-      terms.reduce(1) do |prod, term|
+      terms.reduce(1.0) do |prod, term|
         prod * term.magnitude(scalar)
       end
     end

@@ -28,10 +28,10 @@ describe Unitwise::Measurement do
       f.convert_to('Cel').value.must_almost_equal 37
     end
     it "must convert special units to non-special units" do
-      cel.convert_to("[degR]").value.must_almost_equal 531.27
+      cel.convert_to("[degR]").value.must_almost_equal(531.27)
     end
     it "must convert derived units to special units" do
-      r.convert_to("Cel").value.round.must_equal 0
+      r.convert_to("Cel").value.must_almost_equal(0)
     end
   end
 
@@ -134,14 +134,12 @@ describe Unitwise::Measurement do
     it "should be ==" do
       assert m == m
       assert m == mm
-      assert inch == feet
       refute m == foot
       refute m == g
     end
     it "should be ===" do
       assert m == m
       assert m === mm
-      assert inch === feet
       refute m === foot
       refute m == g
     end

@@ -59,8 +59,8 @@ module Unitwise
     # @param magnitude [Numeric] The magnitude to calculate the scalar for.
     # @return [Numeric] The unitless linear scalar value.
     # @api public
-    def scalar(magnitude = 1)
-      calculate(atom ? atom.scalar(magnitude) : 1)
+    def scalar(magnitude = 1.0)
+      calculate(atom ? atom.scalar(magnitude) : magnitude)
     end
 
     # Calculate the magnitude for this term
@@ -68,7 +68,7 @@ module Unitwise
     # @return [Numeric] The magnitude on this scale.
     # @api public
     def magnitude(scalar = scalar)
-      calculate(atom ? atom.magnitude(scalar) : 1)
+      calculate(atom ? atom.magnitude(scalar) : 1.0)
     end
 
     # The base units this term is derived from
