@@ -85,6 +85,27 @@ module ScaleTests
         end
       end
 
+      describe "#simplified_value" do
+        describe "when the value is equivalent to an Integer" do
+          it "should convert from a Rational" do
+            result = described_class.new(Rational(20,2), 'foot').simplified_value
+            result.must_equal 10
+            result.must_be_kind_of(Integer)
+          end
+          it "should convert from a Float" do
+            result = described_class.new(4.0, 'foot').simplified_value
+            result.must_equal 4
+            result.must_be_kind_of(Integer)
+          end
+        end
+        describe "when the value is equivalent to a Float" do
+          it "should convert from a BigDecimal" do
+            result = described_class.new(BigDecimal("1.5"), 'foot').simplified_value
+            result.must_equal 1.5
+            result.must_be_kind_of(Float)
+          end
+        end
+      end
     end
   end
 end

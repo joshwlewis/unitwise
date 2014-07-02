@@ -79,14 +79,29 @@ module Unitwise
     end
     memoize :depth
 
+    def simplified_value
+      if value.is_a?(Integer)
+        value
+      elsif (i = Integer(value)) == value
+        i
+      elsif value.is_a?(Float)
+        value
+      elsif (f = Float(value)) == value
+        f
+      else
+        value
+      end
+    end
+    memoize :simplified_value
+
     # Convert to a simple string representing the scale.
     # @api public
     def to_s
-      "#{value} #{unit}"
+      "#{simplified_value} #{unit}"
     end
 
     def inspect
-      "#<#{self.class} value=#{value} unit=#{unit}>"
+      "#<#{self.class} value=#{simplified_value} unit=#{unit}>"
     end
 
     # Redefine hash for apropriate hash/key lookup
