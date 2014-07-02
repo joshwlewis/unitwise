@@ -17,7 +17,7 @@ distance = 0.25.mile # => #<Unitwise::Measurement value=0.25 unit=mile>
 time = 10.second # => #<Unitwise::Measurement value=10 unit=second>
 mass = 2800.pound # => #<Unitwise::Measurement value=2800 unit=pound>
 
-acceleration = 2 * distance / time ** 2
+acceleration = 2.0 * distance / time ** 2
 # => #<Unitwise::Measurement value=0.005 unit=[mi_us]/s2>
 
 force = (mass * acceleration).to_lbf
@@ -26,7 +26,7 @@ force = (mass * acceleration).to_lbf
 power = (force * distance / time).to_horsepower
 # => #<Unitwise::Measurement value=551.4031264140402 unit=horsepower>
 
-speed = ((2 * acceleration * distance) ** 0.5).convert_to("mile/hour")
+speed = ((2.0 * acceleration * distance) ** 0.5).convert_to("mile/hour")
 # => #<Unitwise::Measurement value=180.0 unit=mile/hour>
 ```
 
@@ -85,7 +85,7 @@ Unitwise is able to convert any unit within the UCUM spec to any other
 compatible unit.
 
 ```ruby
-5.kilometer.convert_to('mile')
+5.0.kilometer.convert_to('mile')
 # => #<Unitwise::Measurement value=3.106849747474748 unit=mile>
 ```
 
@@ -143,7 +143,7 @@ Unitwise(1000, 'kg.s-1.(m/s)2').to_kilowatt
 You can add or subtract compatible measurements.
 
 ```ruby
-2.meter + 3.inch - 1.yard
+2.0.meter + 3.0.inch - 1.0.yard
 # => #<Unitwise::Measurement value=1.1618 unit=meter>
 ```
 
@@ -166,7 +166,7 @@ Exponentiation is also supported.
 
 ```ruby
 (10.cm ** 3).to_liter
-# => #<Unitwise::Measurement value=1.0 unit=liter>
+# => #<Unitwise::Measurement value=1 unit=liter>
 ```
 
 ### Unit Names and Atom Codes
@@ -180,7 +180,7 @@ figure out most of the units by their name or symbol. If you find you need to
 (or just want to be explicit) you use the UCUM atom codes without any
 modification.
 
-Just as an example, you can see here that there are actually a few versions of inch
+Just for example, you can see here that there are actually a few versions of inch
 and foot:
 
 ```ruby
