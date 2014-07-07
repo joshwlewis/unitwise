@@ -13,7 +13,7 @@ describe Unitwise::Measurement do
 
   describe "#convert_to" do
     it "must convert to a similar unit code" do
-      mph.convert_to('km/h').value.must_almost_equal 96.56063
+      mph.convert_to('km/h').value.must_almost_equal(96.56063)
     end
     it "must raise an error if the units aren't similar" do
       lambda { mph.convert_to('N') }.must_raise Unitwise::ConversionError
@@ -32,6 +32,9 @@ describe Unitwise::Measurement do
     end
     it "must convert derived units to special units" do
       r.convert_to("Cel").value.must_almost_equal(0)
+    end
+    it "must convert to a unit of another measurement" do
+      mph.convert_to(kmh).value.must_almost_equal(96.56064)
     end
   end
 

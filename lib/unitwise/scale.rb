@@ -94,6 +94,10 @@ module Unitwise
     end
     memoize :simplified_value
 
+    def expression
+      unit.expression
+    end
+
     # Convert to a simple string representing the scale.
     # @api public
     def to_s
