@@ -100,8 +100,8 @@ module Unitwise
 
     # Convert to a simple string representing the scale.
     # @api public
-    def to_s
-      "#{simplified_value} #{unit}"
+    def to_s(mode = nil)
+      "#{simplified_value} #{unit.to_s(mode)}"
     end
 
     def inspect

@@ -201,4 +201,18 @@ describe Unitwise::Measurement do
     end
   end
 
+  describe "#to_s" do
+    it "should include the simplified value and use the mode it was created with" do
+      foot = described_class.new(7.00, "foot")
+      foot.to_s.must_equal "7 foot"
+      meter = described_class.new(Rational(22,7), "m")
+      meter.to_s.must_equal "3.142857142857143 m"
+    end
+    it "should accept a mode and print that mode string" do
+      temp = described_class.new(25, "degree Celsius")
+      temp.to_s(:primary_code).must_equal("25 Cel")
+      temp.to_s(:symbol).must_equal("25 °C")
+    end
+  end
+
 end

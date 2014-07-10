@@ -15,8 +15,8 @@ module Unitwise
       # @example
       #   Unitwise::Expression.compose(terms) # => "m2/s2"
       # @api public
-      def compose(terms)
-        Composer.new(terms).expression
+      def compose(terms, method=:primary_code)
+        Composer.new(terms, method).expression
       end
 
       # Convert a string representation of a unit, and turn it into a

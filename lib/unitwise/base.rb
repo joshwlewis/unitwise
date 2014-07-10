@@ -47,10 +47,12 @@ module Unitwise
     memoize :slugs
 
     # String representation for the instance.
+    # @param mode [symbol] The attribute to for stringification
     # @return [String]
     # @api public
-    def to_s
-      primary_code
+    def to_s(mode = :primary_code)
+      res = self.send(mode)
+      res.respond_to?(:each) ? res.first.to_s : res.to_s
     end
   end
 end

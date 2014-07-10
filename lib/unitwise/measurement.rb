@@ -1,7 +1,7 @@
 module Unitwise
   # A Measurement is a combination of a numeric value and a unit. You can think
   # of this as a type of vector where the direction is the unit designation and
-  # the value is the magnitued. This is the primary class that outside code
+  # the value is the magnitude. This is the primary class that outside code
   # will interact with. Comes with conversion, comparison, and math methods.
   class Measurement < Scale
     # Create a new Measurement
@@ -13,7 +13,7 @@ module Unitwise
     # @api public
     def initialize(*args)
       super(*args)
-      fail ExpressionError, "Could not evaluate `#{unit}`." if terms.nil?
+      terms
     end
 
     # Convert this measurement to a compatible unit.

@@ -106,6 +106,7 @@ module ScaleTests
           end
         end
       end
+
     end
   end
 end

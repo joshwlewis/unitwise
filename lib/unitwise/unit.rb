@@ -17,13 +17,23 @@ module Unitwise
         @expression = input.to_s
       else
         @terms = input
-        @expression = Expression.compose(input)
       end
-      freeze
     end
 
     def terms
-      @terms || Expression.decompose(expression)
+      unless frozen?
+        unless @terms
+          decomposer = Expression::Decomposer.new(@expression)
+          @mode  = decomposer.mode
+          @terms = decomposer.terms
+        end
+        freeze
+      end
+      @terms
+    end
+
+    def expression(mode = mode)
+      Expression.compose(terms, mode)
     end
 
     def atoms
@@ -88,8 +98,14 @@ module Unitwise
       end
     end
 
-    def to_s
-      expression
+    def to_s(mode = mode)
+      expression(mode || self.mode)
     end
+
+    def mode
+      terms
+      @mode || :primary_code
+    end
+
   end
 end

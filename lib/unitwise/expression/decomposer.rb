@@ -2,39 +2,40 @@ module Unitwise
   module Expression
     class Decomposer
 
-      METHODS = [:primary_code, :secondary_code, :names, :slugs, :symbol]
+      MODES = [:primary_code, :secondary_code, :names, :slugs, :symbol]
 
-      PARSERS = METHODS.reduce({}) do |hash, method|
-        hash[method] = Parser.new(method); hash
+      PARSERS = MODES.reduce({}) do |hash, mode|
+        hash[mode] = Parser.new(mode); hash
       end
 
       TRANSFORMER = Transformer.new
 
-      attr_reader :expression
+      attr_reader :expression, :mode
 
       def initialize(expression)
         @expression = expression.to_s
         if terms.nil? || terms.empty?
-          raise ExpressionError, "Could not evaluate '#{@expression}'."
+          fail ExpressionError, "Could not evaluate '#{@expression}'."
+        end
+      end
+
+      def parse
+        @parse ||= PARSERS.reduce(nil) do |null,(mode, parser)|
+          parsed = parser.parse(expression) rescue next
+          @mode = mode
+          break parsed
         end
       end
 
       def transform
-        PARSERS.reduce(nil) do |foo, (method, parser)|
-          if parsed = parser.parse(expression) rescue next
-            return TRANSFORMER.apply(parsed, :key => method)
-          end
-        end
+        @transform ||= TRANSFORMER.apply(parse, :mode => mode)
       end
 
       def terms
-        @terms ||= begin
-          transformation = transform
-          if transformation.respond_to?(:terms)
-            transformation.terms
-          else
-            Array(transformation)
-          end
+        @terms ||= if transform.respond_to?(:terms)
+          transform.terms
+        else
+          Array(transform)
         end
       end
 

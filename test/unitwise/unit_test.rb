@@ -65,7 +65,21 @@ describe Unitwise::Unit do
 
   describe "#frozen?" do
     it "should be frozen" do
+      kg.to_s
       kg.frozen?.must_equal true
+    end
+  end
+
+  describe "#to_s" do
+    it "should return an expression in the same mode it was initialized with" do
+      ['meter','m', 'mm', '%'].each do |name|
+        Unitwise::Unit.new(name).to_s.must_equal(name)
+      end
+    end
+    it "should accept an optional mode to build the expression with" do
+      temp_change = Unitwise::Unit.new("degree Celsius/hour")
+      temp_change.to_s(:primary_code).must_equal("Cel/h")
+      temp_change.to_s(:symbol).must_equal("°C/h")
     end
   end
 

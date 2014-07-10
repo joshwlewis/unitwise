@@ -122,13 +122,10 @@ module Unitwise
       end
     end
 
-    # String representation for this term.
-    # @return [String]
-    def to_s
-      [(factor if factor != 1), prefix.to_s,
-        atom.to_s, (exponent if exponent != 1)].compact.join('')
+    def to_s(mode = :primary_code)
+      [(factor if factor != 1), (prefix.send(mode) if prefix),
+        (atom.send(mode) if atom), (exponent if exponent != 1)].compact.join('')
     end
-    memoize :to_s
 
     private
 
