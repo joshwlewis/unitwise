@@ -204,6 +204,46 @@ You can also get the official list from the UCUM website in XML format at
 or a YAML version within this repo
 [github.com/joshwlewis/unitwise/tree/master/data](//github.com/joshwlewis/unitwise/tree/master/data).
 
+### UCUM designations
+UCUM defines several designations for it's units: `names`,
+`primary_code`, `secondary_code`, and `symbol`. You can see them all when
+inspecting an atom:
+
+```ruby
+Unitwise::Atom.all.sample
+# => #<Unitwise::Atom names=["British thermal unit"], primary_code="[Btu]", secondary_code="[BTU]", symbol="btu", scale=#<Unitwise::Scale value=1 unit=[Btu_th]>, classification="heat", property="energy", metric=false, special=false, arbitrary=false, dim="L2.M.T-2">
+```
+
+When initializing a measurement, you can use any of the designations:
+
+```ruby
+Unitwise(1, '[Btu]') == Unitwise(1, 'British thermal unit')
+# => true
+Unitwise(1, 'btu') == Unitwise(1, "[BTU]")
+# => true
+```
+
+When inspecting or printing (`to_s`) that measurement, it will remember the
+desigation you used. However, if you want to print it with another designation,
+that's also possible:
+
+```ruby
+temperature_change = Unitwise(10, "Cel/h")
+temperature_change.to_s # => "10 Cel/h"
+temperature_change.to_s(:names) # => "10 degree Celsius/hour"
+temperature_change.to_s(:symbol) # => "10 °C/h"
+```
+
+There is on caveat here. You must use the same designation for each atom in a
+complex unit. Meaning you can't mix designations within a unit.
+
+```ruby
+Unitwise(1, "m/s")          # Works, both atoms use their primary_code
+Unitwise(1, "meter/second") # Works, both atoms use a name
+Unitwise(1, "meter/s")      # Does not work, mixed designations (name and primary_code)
+Unitwise(1, "meter") / Unitwise(1, "s") # Also works
+```
+
 ## Supported Ruby Versions
 
 This library aims to support and is tested against the following Ruby
