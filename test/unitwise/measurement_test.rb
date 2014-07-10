@@ -206,7 +206,7 @@ describe Unitwise::Measurement do
       foot = described_class.new(7.00, "foot")
       foot.to_s.must_equal "7 foot"
       meter = described_class.new(Rational(22,7), "m")
-      meter.to_s.must_equal "3.142857142857143 m"
+      meter.to_s.must_match(/3\.142\d+ m/)
     end
     it "should accept a mode and print that mode string" do
       temp = described_class.new(25, "degree Celsius")
