@@ -74,5 +74,10 @@ module Unitwise
         "#{attr}='#{send attr}'"
       end.join(', ')
     end
+
+    def to_s(mode = :primary_code)
+      res = send(mode)
+      res.respond_to?(:each) ? res.first : res
+    end
   end
 end
