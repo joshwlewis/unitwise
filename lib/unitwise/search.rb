@@ -1,7 +1,7 @@
 module Unitwise
   module Search
     class << self
-      # An abbreviated list of possible units. These are known combinations 
+      # An abbreviated list of possible units. These are known combinations
       # of atoms and prefixes. Since units can be combined to create more
       # complex units (and thus an infinite number), a full list can't be
       # provided.
