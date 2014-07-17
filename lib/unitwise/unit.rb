@@ -102,6 +102,13 @@ module Unitwise
       expression(mode || self.mode)
     end
 
+    def aliases
+      [:names, :primary_code, :secondary_code, :symbol].map do |mode| 
+        to_s(mode)
+      end.uniq
+    end
+    memoize :aliases
+
     def mode
       terms
       @mode || :primary_code

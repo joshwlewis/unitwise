@@ -16,7 +16,7 @@ require 'unitwise/atom'
 require 'unitwise/prefix'
 require 'unitwise/term'
 require 'unitwise/unit'
-require 'unitwise/compound'
+require 'unitwise/search'
 require 'unitwise/errors'
 
 # Unitwise is a library for performing mathematical operations and conversions
@@ -29,7 +29,7 @@ module Unitwise
   # @return [Array]
   # @api public
   def self.search(term)
-    Compound.search(term)
+    Search.search(term)
   end
   
   # The system path for the installed gem
