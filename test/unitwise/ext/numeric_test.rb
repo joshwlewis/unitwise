@@ -1,7 +1,6 @@
 require 'test_helper'
 require 'unitwise/ext'
 describe Numeric do
-
   describe "#convert" do
     it "must work for Integer" do
       measurement = 22.convert_to("kg")
@@ -30,11 +29,15 @@ describe Numeric do
       mm = 2.5.mm
       mm.must_be_instance_of(Unitwise::Measurement)
       mm.value.must_equal 2.5
+      1.0.respond_to?(:mm).must_equal true
+      3.respond_to?(:to_mm).must_equal true
     end
     it "must match 'to_mm'" do
       mm = 2.5.to_mm
       mm.must_be_instance_of(Unitwise::Measurement)
       mm.value.must_equal 2.5
+      4.0.methods.grep(/mm/).count.must_equal 2
+      1.methods.grep(/mm/).count.must_equal 2
     end
 
     it "must not match 'foo'" do
