@@ -6,6 +6,16 @@ module Unitwise
     liner :value, :unit
     include Unitwise::Compatible
 
+    def initialize(value, unit)
+      self.value = if value.is_a? self.class
+        value.convert_to(unit).value
+      else
+        value
+      end
+      self.unit = unit
+      freeze
+    end
+
     # Set the unit vector.
     # @param value [String, Unitwise::Unit]
     # @api public

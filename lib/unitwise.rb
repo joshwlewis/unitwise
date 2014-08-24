@@ -53,10 +53,6 @@ end
 #   Unitwise(20, 'mile') # => #<Unitwise::Measurement 20 mile>
 #   Unitwise('km') # => #<Unitwise::Measurement 1 km>
 # @api public
-def Unitwise(first, last=nil)
-  if last
-    Unitwise::Measurement.new(first, last)
-  else
-    Unitwise::Measurement.new(1, first)
-  end
+def Unitwise(*args)
+  Unitwise::Measurement.new(*args)
 end
