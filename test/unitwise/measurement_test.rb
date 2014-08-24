@@ -191,9 +191,11 @@ describe Unitwise::Measurement do
       result.value.must_be_kind_of(Integer)
     end
     it "must round Floats to Floats" do
-      result = Unitwise::Measurement.new(17.625, "J").round(2)
-      result.value.must_equal(17.63)
-      result.value.must_be_kind_of(Float)
+      if RUBY_VERSION > '1.8.7'
+        result = Unitwise::Measurement.new(17.625, "J").round(2)
+        result.value.must_equal(17.63)
+        result.value.must_be_kind_of(Float)
+      end
     end
   end
   describe "#to_f" do

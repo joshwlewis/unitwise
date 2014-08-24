@@ -88,8 +88,9 @@ module Unitwise
     # Round the measurement value. Delegates to the value's class.
     # @return [Integer, Float]
     # @api public
-    def round(digits=0)
-      self.class.new(value.round(digits), unit)
+    def round(digits=nil)
+      rounded_value = digits ? value.round(digits) : value.round
+      self.class.new(rounded_value, unit)
     end
 
     # Coerce a numeric to a a measurement for mathematical operations
