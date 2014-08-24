@@ -79,12 +79,17 @@ module Unitwise
     end
     memoize :depth
 
+    # Attempts to coerce the value to the simplest Numeric that fully expresses
+    # it's value. For instance a value of 1.0 would return 1, a value of
+    # #<BigDecimal:7f9558d559b8,'0.45E1',18(18)> would return 4.5.
+    # @return [Numeric]
+    # @api public
     def simplified_value
       if value.is_a?(Integer)
         value
       elsif (i = Integer(value)) == value
         i
-      elsif value.is_a?(Float)
+      elsif value.is_a?(Float) || value.is_a?(Rational)
         value
       elsif (f = Float(value)) == value
         f

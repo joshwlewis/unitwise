@@ -206,8 +206,8 @@ describe Unitwise::Measurement do
     it "should include the simplified value and use the mode it was created with" do
       foot = described_class.new(7.00, "foot")
       foot.to_s.must_equal "7 foot"
-      meter = described_class.new(Rational(22,7), "m")
-      meter.to_s.must_match(/3\.142\d+ m/)
+      meter = described_class.new(BigDecimal("3.142"), "m")
+      meter.to_s.must_equal("3.142 m")
     end
     it "should accept a mode and print that mode string" do
       temp = described_class.new(25, "degree Celsius")

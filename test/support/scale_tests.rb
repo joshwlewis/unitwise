@@ -97,6 +97,11 @@ module ScaleTests
             result.must_equal 4
             result.must_be_kind_of(Integer)
           end
+          it "should convert from a BigDecimal" do
+            result = described_class.new(BigDecimal("4.5"), "volt").simplified_value
+            result.must_equal 4.5
+            result.must_be_kind_of(Float)
+          end
         end
         describe "when the value is equivalent to a Float" do
           it "should convert from a BigDecimal" do
