@@ -184,6 +184,18 @@ describe Unitwise::Measurement do
 
   end
 
+  describe "#round" do
+    it "must round Floats to Integers" do
+      result = Unitwise::Measurement.new(98.6, "[degF]").round
+      result.value.must_equal(99)
+      result.value.must_be_kind_of(Integer)
+    end
+    it "must round Floats to Floats" do
+      result = Unitwise::Measurement.new(17.625, "J").round(2)
+      result.value.must_equal(17.63)
+      result.value.must_be_kind_of(Float)
+    end
+  end
   describe "#to_f" do
     it "must convert to a float" do
       f.to_f.must_be_kind_of(Float)
