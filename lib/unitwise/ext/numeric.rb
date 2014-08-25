@@ -1,3 +1,6 @@
+# Unitwise extends Numeric to add these dyanmic method conveniences: `1.meter`,
+# `26.2.to_mile`, and `4.convert_to("Joule")`. These overrides are optional due
+# to their controversial nature. `require 'unitwise/ext'` to enable them.
 class Numeric
   # Converts numeric to a measurement
   # @param unit [Unitwise::Unit, String] The unit to use in the measurement
@@ -29,14 +32,11 @@ class Numeric
     end
   end
 
-  protected
-
   def self.define_unit_conversion_methods_for(name)
     [name.to_sym, "to_#{ name }".to_sym].each do |meth|
-      unless method_defined?(meth)
-        define_method meth do
-          convert_to(name)
-        end
+      next if method_defined?(meth)
+      define_method meth do
+        convert_to(name)
       end
     end
   end

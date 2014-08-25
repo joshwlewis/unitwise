@@ -1,5 +1,7 @@
 module Unitwise
   module Expression
+    # Composer creates string expressions for arrays of terms, following
+    # UCUM's conventions.
     class Composer
       attr_reader :terms, :mode
       def initialize(terms, mode)
@@ -17,15 +19,15 @@ module Unitwise
       end
 
       def numerator
-        @numerator ||= set.select{|k,v| v > 0}.map do |k,v|
-          "#{k[:f] if k[:f] != 1}#{k[:p]}#{k[:a]}#{v if v != 1}"
-        end.select{|t| !t.empty?}.join('.')
+        @numerator ||= set.select{ |_, v| v > 0 }.map do |k, v|
+          "#{ k[:f] if k[:f] != 1 }#{ k[:p] }#{ k[:a] }#{ v if v != 1 }"
+        end.select { |t| !t.empty? }.join('.')
       end
 
       def denominator
-        @denominator ||= set.select{|k,v| v < 0}.map do |k,v|
-          "#{k[:f] if k[:f] != 1}#{k[:p]}#{k[:a]}#{-v if v != -1}"
-        end.select{|t| !t.empty?}.join('.')
+        @denominator ||= set.select{ |_, v| v < 0 }.map do |k, v|
+          "#{ k[:f] if k[:f] != 1 }#{ k[:p] }#{ k[:a] }#{ -v if v != -1 }"
+        end.select { |t| !t.empty? }.join('.')
       end
 
       def expression

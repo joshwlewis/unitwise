@@ -1,8 +1,10 @@
 module Unitwise
   module Expression
+    # Parses a string expression into a hash tree representing the
+    # expression's terms, prefixes, and atoms.
     class Parser < Parslet::Parser
       attr_reader :key
-      def initialize(key=:primary_code)
+      def initialize(key = :primary_code)
         @key = key
       end
 
@@ -37,15 +39,18 @@ module Unitwise
       rule (:operator) { (str('.') | str('/')).as(:operator) }
 
       rule (:term) do
-        ((factor >> simpleton | simpleton | factor) >> exponent.maybe >> annotation.maybe).as(:term)
+        ((factor >> simpleton | simpleton | factor) >>
+          exponent.maybe >> annotation.maybe).as(:term)
       end
 
       rule (:group) do
-        (factor.maybe >> str('(') >> expression.as(:nested) >> str(')') >> exponent.maybe).as(:group)
+        (factor.maybe >> str('(') >> expression.as(:nested) >> str(')') >>
+          exponent.maybe).as(:group)
       end
 
       rule (:expression) do
-        ((group | term).as(:left)).maybe >> (operator >> expression.as(:right)).maybe
+        ((group | term).as(:left)).maybe >>
+          (operator >> expression.as(:right)).maybe
       end
 
     end

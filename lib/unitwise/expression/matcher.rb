@@ -1,5 +1,7 @@
 module Unitwise
   module Expression
+    # Matcher is responsible for building up Parslet alternatives of atoms and
+    # prefixes to be used by Unitwise::Expression::Parser.
     class Matcher
       class << self
         def atom(mode)
@@ -17,19 +19,19 @@ module Unitwise
 
       attr_reader :collection, :mode
 
-      def initialize(collection, mode=:primary_code)
+      def initialize(collection, mode = :primary_code)
         @collection = collection
         @mode = mode
       end
 
       def strings
-        @stings ||= collection.map(&mode).flatten.compact.sort do |x,y|
+        @stings ||= collection.map(&mode).flatten.compact.sort do |x, y|
           y.length <=> x.length
         end
       end
 
       def matchers
-        @matchers ||= strings.map {|s| Parslet::Atoms::Str.new(s) }
+        @matchers ||= strings.map { |s| Parslet::Atoms::Str.new(s) }
       end
 
       def alternative

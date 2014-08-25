@@ -51,7 +51,7 @@ module Unitwise
     # @return [String]
     # @api public
     def to_s(mode = :primary_code)
-      res = self.send(mode)
+      res = send(mode)
       res.respond_to?(:each) ? res.first.to_s : res.to_s
     end
   end
