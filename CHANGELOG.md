@@ -15,4 +15,6 @@ Unitwise uses semantic versioning.
 - Respect Rationals when inspecting/printing a Unitwise::Measurement.
 
 ### Deprecated
-- Unitwise() and Unitwise::Measurement.new() now requires two non-optional arguments (value and unit).
+- Unitwise() and Unitwise::Measurement.new() now requires two non-optional
+  arguments (value and unit).
+- Unitwise::Measurement no longer has an implicit Integer conversion.

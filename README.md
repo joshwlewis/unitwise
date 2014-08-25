@@ -30,6 +30,9 @@ speed = ((2.0 * acceleration * distance) ** 0.5).convert_to("mile/hour")
 # => #<Unitwise::Measurement value=180.0 unit=mile/hour>
 ```
 
+[RubyTapas](http://rubytapas.com) subscribers can also view a screencast:
+[225-Unitwise](https://rubytapas.dpdcart.com/subscriber/post?id=563)
+
 ## Rationale
 
 Unitwise is based on the [Unified Code for Units of Measure(UCUM)](http://unitsofmeasure.org/),
@@ -65,12 +68,11 @@ Measurements can be instantiated with `Unitwise()`.
 require 'unitwise'
 
 Unitwise(2.3, 'kilogram') # => #<Unitwise::Measurement value=2.3 unit=kilogram>
-Unitwise('pound')         # => #<Unitwise::Measurement value=1 unit=pound>
+Unitwise(100, 'pound')    # => #<Unitwise::Measurement value=100 unit=pound>
 ```
 
-Unitwise doesn't mess with the Ruby core library by default. So if you want
-the syntactic sugar shown throughout this document, you'll need to require the
-core extensions.
+Unitwise doesn't mess with the core library by default. However, you can
+optionally require the core extensions for some handy helpers.
 
 ```ruby
 require 'unitwise/ext'
@@ -103,7 +105,7 @@ It also has the ability to compare measurements with the same or different units
 
 ```ruby
 12.inch == 1.foot # => true
-1.meter > 1.yard # => true
+1.meter > 1.yard  # => true
 ```
 
 Again, you have to compare compatible units. For example, comparing two
@@ -114,7 +116,7 @@ temperatures will work, comparing a mass to a length would fail.
 You can use shorthand for SI units.
 
 ```ruby
-1000.m == 1.km # => true
+1000.m == 1.km  # => true
 1.ml == 0.001.l # => true
 ```
 
@@ -184,9 +186,9 @@ Just for example, you can see here that there are actually a few versions of inc
 and foot:
 
 ```ruby
-1.convert_to('[ft_i]') == 1.convert_to('[ft_us]') # => false
+Unitwise(1, '[ft_i]') == Unitwise(1, '[ft_us]') # => false
 
-3.convert_to('[in_br]') == 3.convert_to('[in_i]') # => false
+Unitwise(3, '[in_br]') == Unitwise(3, '[in_i]') # => false
 ```
 
 ### Available Units
@@ -228,10 +230,10 @@ desigation you used. However, if you want to print it with another designation,
 that's also possible:
 
 ```ruby
-temperature_change = Unitwise(10, "Cel/h")
-temperature_change.to_s # => "10 Cel/h"
-temperature_change.to_s(:names) # => "10 degree Celsius/hour"
-temperature_change.to_s(:symbol) # => "10 °C/h"
+temperature = Unitwise(10, "Cel")
+temperature.to_s # => "10 Cel"
+temperature.to_s(:names) # => "10 degree Celsius"
+temperature.to_s(:symbol) # => "10 °C"
 ```
 
 There is on caveat here. You must use the same designation for each atom in a
