@@ -115,7 +115,6 @@ module Unitwise
     def to_i
       Integer(value)
     end
-    alias_method :to_int, :to_i
 
     # Convert a measurement to a Float.
     # @example
