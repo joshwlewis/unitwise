@@ -5,7 +5,7 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
-## Unreleased
+## 1.0.0 - 2014-08-25
 
 ### Added
 - Uniwise() now accepts a Unitwise::Measurement as the first argument.
@@ -13,6 +13,8 @@ Unitwise uses semantic versioning.
 
 ### Fixed
 - Respect Rationals when inspecting/printing a Unitwise::Measurement.
+- Dynamically created methods from unitwise/ext now work with #respond_to?
+  and #methods appropriately.
 
 ### Deprecated
 - Unitwise() and Unitwise::Measurement.new() now requires two non-optional
