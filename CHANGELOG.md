@@ -5,6 +5,12 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
+## Unreleased
+
+### Fixed
+- Move conditional dependencies to Gemfile in order to allow proper 
+  installation issues on rbx and jruby.
+
 ## 1.0.0 - 2014-08-25
 
 ### Added
