@@ -108,15 +108,8 @@ module Unitwise
     # @return [Unitwise::Unit]
     # @api public
     def *(other)
-      if other.respond_to?(:terms)
-        self.class.new(terms + other.terms)
-      elsif other.respond_to?(:atom)
-        self.class.new(terms << other)
-      elsif other.is_a?(Numeric)
-        self.class.new(terms.map { |t| t * other })
-      else
-        fail TypeError, "Can't multiply #{self} by #{other}."
-      end
+      operate('*', other) ||
+        fail(TypeError, "Can't multiply #{ self } by #{ other }.")
     end
 
     # Divide this unit by another unit,term, or number.
@@ -124,16 +117,10 @@ module Unitwise
     # @return [Unitwise::Unit]
     # @api public
     def /(other)
-      if other.respond_to?(:terms)
-        self.class.new(terms + other.terms.map { |t| t ** -1 })
-      elsif other.respond_to?(:atom)
-        self.class.new(terms << other ** -1)
-      elsif other.is_a?(Numeric)
-        self.class.new(terms.map { |t| t / other })
-      else
-        fail TypeError, "Can't divide #{self} by #{other}."
-      end
+      operate('/', other) ||
+        fail(TypeError, "Can't divide #{ self } by #{ other }.")
     end
+
 
     # Raise this unit to a numeric power.
     # @param other [Numeric]
@@ -173,6 +160,21 @@ module Unitwise
     def mode
       terms
       @mode || :primary_code
+    end
+
+    private
+
+    # Multiply or divide units
+    # @api private
+    def operate(operator, other)
+      exp = operator == '/' ? -1 : 1
+      if other.respond_to?(:terms)
+        self.class.new(terms + other.terms.map { |t| t ** exp })
+      elsif other.respond_to?(:atom)
+        self.class.new(terms << other ** exp)
+      elsif other.is_a?(Numeric)
+        self.class.new(terms.map { |t| t.send(operator, other) })
+      end
     end
 
   end
