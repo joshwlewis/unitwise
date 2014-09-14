@@ -81,7 +81,7 @@ module Unitwise
     end
     memoize :root_terms
 
-    # How far away is this instances unit from the deepest leve atom.
+    # How far away is this instances unit from the deepest level atom.
     # @return [Integer]
     # @api public
     def depth

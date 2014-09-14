@@ -5,15 +5,19 @@ module Unitwise
     class Matcher
       class << self
         def atom(mode)
-          new(Atom.all, mode).alternative
+          @atom ||= {}
+          @atom[mode] ||= new(Atom.all, mode).alternative
         end
 
         def metric_atom(mode)
-          new(Atom.all.select(&:metric?), mode).alternative
+          @metric_atom ||= {}
+          @metric_atom[mode] ||=
+            new(Atom.all.select(&:metric?), mode).alternative
         end
 
         def prefix(mode)
-          new(Prefix.all, mode).alternative
+          @prefix ||= {}
+          @prefix[mode] ||= new(Prefix.all, mode).alternative
         end
       end
 
@@ -25,17 +29,17 @@ module Unitwise
       end
 
       def strings
-        @stings ||= collection.map(&mode).flatten.compact.sort do |x, y|
+        collection.map(&mode).flatten.compact.sort do |x, y|
           y.length <=> x.length
         end
       end
 
       def matchers
-        @matchers ||= strings.map { |s| Parslet::Atoms::Str.new(s) }
+        strings.map { |s| Parslet::Atoms::Str.new(s) }
       end
 
       def alternative
-        @alternative ||= Parslet::Atoms::Alternative.new(*matchers)
+        Parslet::Atoms::Alternative.new(*matchers)
       end
 
     end

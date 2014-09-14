@@ -19,8 +19,7 @@ module Unitwise
         Composer.new(terms, method).expression
       end
 
-      # Convert a string representation of a unit, and turn it into a
-      # an array of terms
+      # Convert a string representation of a unit into an array of terms
       # @param expression [String] The string you wish to convert
       # @return [Array]
       # @example
@@ -28,26 +27,9 @@ module Unitwise
       #   # => [<Unitwise::Term m2>, <Unitwise::Term s-2>]
       # @api public
       def decompose(expression)
-        expression = expression.to_s
-        if decomposed.key?(expression)
-          decomposed[expression]
-        else
-          decomposed[expression] = begin
-            Decomposer.new(expression).terms
-          rescue ExpressionError
-            nil
-          end
-        end
+        Decomposer.parse(expression)
       end
 
-      private
-
-      # A cache of decomposed strings.
-      # @return [Hash]
-      # @api private
-      def decomposed
-        @decomposed ||= {}
-      end
     end
   end
 end

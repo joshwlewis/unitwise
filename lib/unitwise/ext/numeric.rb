@@ -20,13 +20,15 @@ class Numeric
   def method_missing(meth, *args, &block)
     if args.empty? && !block_given?
       unit = (match = /\Ato_(\w+)\Z/.match(meth.to_s)) ? match[1] : meth
-      begin
-        res = convert_to(unit)
-        Numeric.define_unit_conversion_methods_for(unit)
-        res
+      converted = begin
+        convert_to(unit)
       rescue Unitwise::ExpressionError
-        super(meth, *args, &block)
+        nil
       end
+    end
+    if converted
+      Numeric.define_unit_conversion_methods_for(unit)
+      converted
     else
       super(meth, *args, &block)
     end

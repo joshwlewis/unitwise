@@ -13,17 +13,38 @@ module Unitwise
 
       TRANSFORMER = Transformer.new
 
+      class << self
+
+        # Parse an expression to an array of terms and cache the results
+        def parse(expression)
+          expression = expression.to_s
+          if cache.key?(expression)
+            cache[expression]
+          elsif decomposer = new(expression)
+            cache[expression] = decomposer
+          end
+        end
+
+        private
+
+        # A simple cache to prevent re-decomposing the same units
+        # api private
+        def cache
+          @cache ||= {}
+        end
+      end
+
       attr_reader :expression, :mode
 
       def initialize(expression)
         @expression = expression.to_s
         if terms.nil? || terms.empty?
-          fail ExpressionError, "Could not evaluate '#{@expression}'."
+          fail(ExpressionError, "Could not evaluate '#{ expression }'.")
         end
       end
 
       def parse
-        @parse ||= PARSERS.reduce(nil) do |_, (mode, parser)|
+        PARSERS.reduce(nil) do |_, (mode, parser)|
           parsed = parser.parse(expression) rescue next
           @mode = mode
           break parsed
@@ -41,7 +62,7 @@ module Unitwise
           Array(transform)
         end
       end
-      
+
     end
   end
 end

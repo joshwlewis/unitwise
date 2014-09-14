@@ -27,7 +27,7 @@ module Unitwise
     def terms
       unless frozen?
         unless @terms
-          decomposer = Expression::Decomposer.new(@expression)
+          decomposer = Expression.decompose(@expression)
           @mode  = decomposer.mode
           @terms = decomposer.terms
         end
@@ -48,7 +48,6 @@ module Unitwise
         Expression.compose(terms, mode || self.mode)
       end
     end
-
 
     # The collection of atoms that compose this unit. Essentially delegated to
     # terms.
