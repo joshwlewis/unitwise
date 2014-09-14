@@ -45,5 +45,11 @@ describe Unitwise::Term do
         subject.frozen?.must_equal true
       end
     end
+
+    describe "#to_s" do
+      it "should return the UCUM code" do
+        subject.to_s.must_equal "kJ"
+      end
+    end
   end
 end

@@ -89,27 +89,18 @@ module Unitwise
     # params other [Unit, Term, Numeric]
     # @return [Term]
     def *(other)
-      if other.respond_to?(:terms)
-        Unit.new(other.terms << self)
-      elsif other.respond_to?(:atom)
-        Unit.new([self, other])
-      elsif other.is_a?(Numeric)
-        self.class.new(to_hash.merge(:factor => factor * other))
-      end
+      operate('*', other) ||
+        fail(TypeError, "Can't multiply #{ self } by #{ other }.")
     end
 
     # Term division. Divide by a Unit, another Term, or a Numeric.
     # params other [Unit, Term, Numeric]
     # @return [Term]
     def /(other)
-      if other.respond_to?(:terms)
-        Unit.new(other.terms.map { |t| t ** -1 } << self)
-      elsif other.respond_to?(:atom)
-        Unit.new([self, other ** -1])
-      elsif other.is_a?(Numeric)
-        self.class.new(to_hash.merge(:factor => factor / other))
-      end
+      operate('/', other) ||
+        fail(TypeError, "Can't divide #{ self } by #{ other }.")
     end
+
 
     # Term exponentiation. Raise a term to a numeric power.
     # params other [Numeric]
@@ -133,5 +124,19 @@ module Unitwise
     def calculate(value)
       (factor * (prefix ? prefix.scalar : 1) * value) ** exponent
     end
+
+    # Multiply or divide a term
+    # @api private
+    def operate(operator, other)
+      exp = operator == '/' ? -1 : 1
+      if other.respond_to?(:terms)
+        Unit.new(other.terms.map { |t| t ** exp } << self)
+      elsif other.respond_to?(:atom)
+        Unit.new([self, other ** exp])
+      elsif other.is_a?(Numeric)
+        self.class.new(to_hash.merge(:factor => factor.send(operator, other)))
+      end
+    end
+
   end
 end
