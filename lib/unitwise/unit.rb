@@ -41,8 +41,12 @@ module Unitwise
     # (:primary_code, :names, :secondary_code).
     # @return [String]
     # @api public
-    def expression(mode = mode)
-      Expression.compose(terms, mode)
+    def expression(mode=nil)
+      if @expression && (mode.nil? || mode == self.mode)
+        @expression
+      else
+        Expression.compose(terms, mode || self.mode)
+      end
     end
 
 
@@ -149,8 +153,8 @@ module Unitwise
     # (:primary_code, :names, :secondary_code)
     # @return [String]
     # @api public
-    def to_s(mode = mode)
-      expression(mode || self.mode)
+    def to_s(mode = nil)
+      expression(mode)
     end
 
     # A collection of the possible string representations of this unit.

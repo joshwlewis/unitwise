@@ -66,7 +66,7 @@ describe Unitwise::Unit do
 
   describe "#frozen?" do
     it "should be frozen" do
-      kg.to_s
+      kg.scalar
       kg.frozen?.must_equal true
     end
   end
