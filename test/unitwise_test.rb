@@ -19,6 +19,15 @@ describe Unitwise do
     end
   end
 
+  describe 'valid?' do
+    it 'should reutrn true for valid unit strings' do
+      Unitwise.valid?('millimeter').must_equal true
+    end
+    it 'should return false for invalid unit strings' do
+      Unitwise.valid?('foo').must_equal false
+    end
+  end
+
   it "should have a path" do
     Unitwise.path.must_match(/unitwise$/)
   end

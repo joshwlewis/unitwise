@@ -31,6 +31,18 @@ module Unitwise
   def self.search(term)
     Search.search(term)
   end
+
+  # Determine if a given string is a valid unit expression
+  # @param expression [String]
+  # @return [true, false]
+  # @api public
+  def self.valid?(expression)
+    begin
+      !!Unitwise::Expression.decompose(expression)
+    rescue ExpressionError
+      false
+    end
+  end
   
   # The system path for the installed gem
   # @api private

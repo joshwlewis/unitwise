@@ -5,10 +5,14 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
+## Unreleased
+
+### Added
+- Unitwise.valid? for checking validity of expressions
+
 ## 1.0.2 - 2014-09-14
 
-## Fixed
-
+### Fixed
 - Decomposer caching is now a little smarter. This resulted in a mild
   performance increase.
 
