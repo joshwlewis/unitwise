@@ -5,7 +5,7 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
-## Unreleased
+## 1.0.3 - 2014-10-05
 
 ### Added
 - Unitwise.valid? for checking validity of expressions
