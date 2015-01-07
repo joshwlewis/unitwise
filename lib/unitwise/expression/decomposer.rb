@@ -38,7 +38,7 @@ module Unitwise
 
       def initialize(expression)
         @expression = expression.to_s
-        if terms.nil? || terms.empty?
+        if expression.empty? || terms.nil? || terms.empty?
           fail(ExpressionError, "Could not evaluate '#{ expression }'.")
         end
       end
