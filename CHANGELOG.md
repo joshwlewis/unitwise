@@ -5,6 +5,11 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
+## 1.0.4 - 2015-01-10
+
+- Added Ruby 2.2 support.
+- Empty strings are no longer valid units.
+
 ## 1.0.3 - 2014-10-05
 
 ### Added
