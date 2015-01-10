@@ -97,7 +97,7 @@ module Unitwise
     # @param scalar [Numeric] A linear scalar value
     # @return [Numeric] The equivalent magnitude on this scale
     # @api public
-    def magnitude(scalar = scalar)
+    def magnitude(scalar = scalar())
       terms.reduce(1.0) do |prod, term|
         prod * term.magnitude(scalar)
       end

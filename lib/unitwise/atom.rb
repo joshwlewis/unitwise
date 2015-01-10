@@ -106,7 +106,7 @@ module Unitwise
       base? ? BigDecimal(magnitude.to_s) : scale.scalar(magnitude)
     end
 
-    def magnitude(scalar = scalar)
+    def magnitude(scalar = scalar())
       special? ? scale.magnitude(scalar) : BigDecimal('1')
     end
 

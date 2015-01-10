@@ -67,7 +67,7 @@ module Unitwise
     # @param scalar [Numeric] The scalar for which you want the magnitude
     # @return [Numeric] The magnitude on this scale.
     # @api public
-    def magnitude(scalar = scalar)
+    def magnitude(scalar = scalar())
       calculate(atom ? atom.magnitude(scalar) : 1.0)
     end
 
