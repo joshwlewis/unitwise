@@ -1,10 +1,8 @@
 language: ruby
 cache: bundler
 bundler_args: --without yard pry
+sudo: false
 rvm:
-  - ree
-  - 1.8.7
-  - 1.9.2
   - 1.9.3
   - 2.0.0
   - 2.1
@@ -13,8 +11,6 @@ rvm:
   - rbx-2
 matrix:
   include:
-    - rvm: jruby-18mode
-      env: JRUBY_OPTS="$JRUBY_OPTS --debug"
     - rvm: jruby-19mode
       env: JRUBY_OPTS="$JRUBY_OPTS --debug"
     - rvm: jruby-head
