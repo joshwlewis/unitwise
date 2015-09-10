@@ -228,6 +228,10 @@ describe Unitwise::Measurement do
       temp.to_s(:primary_code).must_equal("25 Cel")
       temp.to_s(:symbol).must_equal("25 °C")
     end
+    it "should fallback when there is no value for the provided mode" do
+      vol = described_class.new(12, "teaspoon")
+      vol.to_s(:symbol).must_equal("12 [tsp_us]")
+    end
   end
 
 end
