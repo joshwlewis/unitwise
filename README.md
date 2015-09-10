@@ -13,9 +13,11 @@ For an over the top example, consider a car (2800 lb) completing the quarter
 mile in 10 seconds (with uniform acceleration).
 
 ```ruby
-distance = 0.25.mile # => #<Unitwise::Measurement value=0.25 unit=mile>
-time = 10.second # => #<Unitwise::Measurement value=10 unit=second>
-mass = 2800.pound # => #<Unitwise::Measurement value=2800 unit=pound>
+require 'unitwise'
+
+distance = Unitwise(0.25, 'mile')   # => #<Unitwise::Measurement value=0.25 unit=mile>
+time     = Unitwise(10,   'second') # => #<Unitwise::Measurement value=10 unit=second>
+mass     = Unitwise(2800, 'pound')  # => #<Unitwise::Measurement value=2800 unit=pound>
 
 acceleration = 2.0 * distance / time ** 2
 # => #<Unitwise::Measurement value=0.005 unit=[mi_us]/s2>
@@ -71,23 +73,13 @@ Unitwise(2.3, 'kilogram') # => #<Unitwise::Measurement value=2.3 unit=kilogram>
 Unitwise(100, 'pound')    # => #<Unitwise::Measurement value=100 unit=pound>
 ```
 
-Unitwise doesn't mess with the core library by default. However, you can
-optionally require the core extensions for some handy helpers.
-
-```ruby
-require 'unitwise/ext'
-
-1.convert_to('liter') # => #<Unitwise::Measurement value=1 unit=liter>
-4.teaspoon            # => #<Unitwise::Measurement value=4 unit=teaspoon>
-```
-
 ### Conversion
 
 Unitwise is able to convert any unit within the UCUM spec to any other
 compatible unit.
 
 ```ruby
-5.0.kilometer.convert_to('mile')
+Unitwise(5.0, 'kilometer').convert_to('mile')
 # => #<Unitwise::Measurement value=3.106849747474748 unit=mile>
 ```
 
@@ -104,8 +96,8 @@ Unitwise(26.2, 'mile').to_kilometer
 It also has the ability to compare measurements with the same or different units.
 
 ```ruby
-12.inch == 1.foot # => true
-1.meter > 1.yard  # => true
+Unitwise(12, 'inch') == Unitwise(1, 'foot') # => true
+Unitwise(1, 'meter') > Unitwise(1, 'yard')  # => true
 ```
 
 Again, you have to compare compatible units. For example, comparing two
@@ -116,8 +108,8 @@ temperatures will work, comparing a mass to a length would fail.
 You can use shorthand for SI units.
 
 ```ruby
-1000.m == 1.km  # => true
-1.ml == 0.001.l # => true
+Unitwise(1000, 'm') == Unitwise(1, 'km')  # => true
+Unitwise(1, 'ml') == Unitwise(0.001, 'l') # => true
 ```
 
 ### Complex Units
@@ -145,29 +137,28 @@ Unitwise(1000, 'kg.s-1.(m/s)2').to_kilowatt
 You can add or subtract compatible measurements.
 
 ```ruby
-2.0.meter + 3.0.inch - 1.0.yard
+Unitwise(2.0, 'meter') + Unitwise(3.0, 'inch') - Unitwise(1.0, 'yard')
 # => #<Unitwise::Measurement value=1.1618 unit=meter>
 ```
 
 You can multiply or divide measurements and numbers.
 
 ```ruby
-110.volt * 2
+Unitwise(110, 'volt') * 2
 # => #<Unitwise::Measurement value=220 unit=volt>
 ```
 
 You can multiply or divide measurements with measurements.
 
 ```ruby
-20.milligram / 1.liter
+Unitwise(20, 'milligram') / Unitwise(1, 'liter')
 # => #<Unitwise::Measurement value=20 unit=mg/l>
-
 ```
 
 Exponentiation is also supported.
 
 ```ruby
-(10.cm ** 3).to_liter
+(Unitwise(10, 'cm') ** 3).to_liter
 # => #<Unitwise::Measurement value=1 unit=liter>
 ```
 
@@ -244,6 +235,21 @@ Unitwise(1, "m/s")          # Works, both atoms use their primary_code
 Unitwise(1, "meter/second") # Works, both atoms use a name
 Unitwise(1, "meter/s")      # Does not work, mixed designations (name and primary_code)
 Unitwise(1, "meter") / Unitwise(1, "s") # Also works
+```
+
+## Core extensions (deprecated)
+
+Unitwise doesn't mess with the core library by default. However, you can
+optionally require the core extensions for some handy helpers. I find these
+fun for doing calculations in an irb or pry session, but use them in your
+application at your own risk. These extensions have been known to negatively
+impact performance, and will be removed in a future version.
+
+```ruby
+require 'unitwise/ext'
+
+4.teaspoon            # => #<Unitwise::Measurement value=4 unit=teaspoon>
+1.convert_to('liter') # => #<Unitwise::Measurement value=1 unit=liter>
 ```
 
 ## Supported Ruby Versions

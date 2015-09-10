@@ -5,6 +5,13 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
+## Unreleased
+
+- `require unitwise/ext` has been deprecated as it is a performance drag, and
+  violates Ruby best practices. Use `require unitwise` instead. Any use of the
+  Numeric helpers like `1.meter`, `2.to_foot` will need to change to 
+  `Unitwise(1, 'meter')`, and `Unitwise(2, 'foot')`.
+
 ## 1.0.4 - 2015-01-10
 
 - Added Ruby 2.2 support.
