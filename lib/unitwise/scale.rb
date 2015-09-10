@@ -116,7 +116,12 @@ module Unitwise
     # Convert to a simple string representing the scale.
     # @api public
     def to_s(mode = nil)
-      "#{simplified_value} #{unit.to_s(mode)}"
+      unit_string = unit.to_s(mode)
+      if unit_string && unit_string != '1'
+        "#{simplified_value} #{unit_string}"
+      else
+        simplified_value.to_s
+      end
     end
 
     def inspect

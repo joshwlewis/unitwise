@@ -232,6 +232,10 @@ describe Unitwise::Measurement do
       vol = described_class.new(12, "teaspoon")
       vol.to_s(:symbol).must_equal("12 [tsp_us]")
     end
+    it "should not return '1 1' for dimless measurements" do
+      dimless = described_class.new(1, "1")
+      dimless.to_s.must_equal("1")
+    end
   end
 
 end

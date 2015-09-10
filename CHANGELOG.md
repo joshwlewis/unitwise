@@ -7,12 +7,13 @@ Unitwise uses semantic versioning.
 
 ## Unreleased
 
-- `#to_s(mode)` will fall back to using the atom's `primary_code` if the mode
-  isn't available.
 - `require unitwise/ext` has been deprecated as it is a performance drag and
   violates Ruby best practices. Use `require unitwise` instead. Any use of the
   Numeric helpers like `1.meter`, `2.to_foot` will need to change to
   `Unitwise(1, 'meter')`, and `Unitwise(2, 'foot')`.
+- `#to_s` should no longer return the unexpected ' 1' suffix for dimless measurements.
+- `#to_s(mode)` will fall back to using the atom's `primary_code` if the mode
+  isn't available.
 
 ## 1.0.4 - 2015-01-10
 

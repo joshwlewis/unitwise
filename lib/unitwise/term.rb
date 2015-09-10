@@ -114,8 +114,12 @@ module Unitwise
     end
 
     def to_s(mode = :primary_code)
-      [(factor if factor != 1), (prefix.send(mode) if prefix),
-        (atom.send(mode) if atom), (exponent if exponent != 1)].compact.join('')
+      [
+        (factor if factor != 1),
+        (prefix.send(mode) if prefix),
+        (atom.send(mode) if atom),
+        (exponent if exponent != 1)
+      ].compact.join('')
     end
 
     private
