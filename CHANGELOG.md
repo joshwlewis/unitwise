@@ -5,7 +5,7 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
-## Unreleased
+## 1.1.0 - 2015-09-10
 
 - `require unitwise/ext` has been deprecated as it is a performance drag and
   violates Ruby best practices. Use `require unitwise` instead. Any use of the
