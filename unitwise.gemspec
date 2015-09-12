@@ -29,5 +29,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency   'pry',             '~> 0.9'
   gem.add_development_dependency   'minitest',        '~> 5.0'
   gem.add_development_dependency   'rake',            '~> 10.0'
-  gem.add_development_dependency   'nori',            '~> 2.3'
+  gem.add_development_dependency   'nori',            '~> 2.3.0'
 end
