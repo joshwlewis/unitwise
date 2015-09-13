@@ -237,21 +237,6 @@ Unitwise(1, "meter/s")      # Does not work, mixed designations (name and primar
 Unitwise(1, "meter") / Unitwise(1, "s") # Also works
 ```
 
-## Core extensions (deprecated)
-
-Unitwise doesn't mess with the core library by default. However, you can
-optionally require the core extensions for some handy helpers. I find these
-fun for doing calculations in an irb or pry session, but use them in your
-application at your own risk. These extensions have been known to negatively
-impact performance, and will be removed in a future version.
-
-```ruby
-require 'unitwise/ext'
-
-4.teaspoon            # => #<Unitwise::Measurement value=4 unit=teaspoon>
-1.convert_to('liter') # => #<Unitwise::Measurement value=1 unit=liter>
-```
-
 ## Supported Ruby Versions
 
 This library aims to support and is tested against the following Ruby

@@ -7,19 +7,32 @@ Unitwise uses semantic versioning.
 
 ## Unreleased
 
+### Fixed
+
+- Gem dependencies are less restrictive; now works with additional versions of
+  parslet and blankslate.
+
+### Removed
+
+- 'unitwise/ext' is now officially removed. The core Numeric extensions are no
+  longer available. Instead of `1.volt` or `2.0.to_joule`, use `Unitwise(1,
+  'volt')` and `Unitwise(2.0, 'Joule')`.
 - Dropped support for Ruby 1.8.7, 1.9.2, and REE.
-- Gem dependencies are less restrictive (works with additional versions of 
-  parslet, and blankslate)
 
 ## 1.1.0 - 2015-09-10
+
+### Fixed
+
+- `#to_s` should no longer return the unexpected ' 1' suffix for dimless measurements.
+- `#to_s(mode)` will fall back to using the atom's `primary_code` if the mode
+  isn't available.
+
+### Deprecated
 
 - `require unitwise/ext` has been deprecated as it is a performance drag and
   violates Ruby best practices. Use `require unitwise` instead. Any use of the
   Numeric helpers like `1.meter`, `2.to_foot` will need to change to
   `Unitwise(1, 'meter')`, and `Unitwise(2, 'foot')`.
-- `#to_s` should no longer return the unexpected ' 1' suffix for dimless measurements.
-- `#to_s(mode)` will fall back to using the atom's `primary_code` if the mode
-  isn't available.
 
 ## 1.0.4 - 2015-01-10
 
