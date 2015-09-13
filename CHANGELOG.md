@@ -5,7 +5,7 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
-## Unreleased
+## 2.0.0 - 2015-09-13
 
 ### Fixed
 
