@@ -5,6 +5,12 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
+## Unreleased
+
+- Dropped support for Ruby 1.8.7, 1.9.2, and REE.
+- Gem dependencies are less restrictive (works with additional versions of 
+  parslet, and blankslate)
+
 ## 1.1.0 - 2015-09-10
 
 - `require unitwise/ext` has been deprecated as it is a performance drag and

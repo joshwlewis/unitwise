@@ -25,9 +25,9 @@ Gem::Specification.new do |gem|
   gem.add_dependency               'memoizable',      '~> 0.4'
   gem.add_dependency               'parslet',         '~> 1.5'
 
-  gem.add_development_dependency   'nokogiri',        '~> 1.5.10'
+  gem.add_development_dependency   'nokogiri',        '~> 1.5'
   gem.add_development_dependency   'pry',             '~> 0.9'
   gem.add_development_dependency   'minitest',        '~> 5.0'
   gem.add_development_dependency   'rake',            '~> 10.0'
-  gem.add_development_dependency   'nori',            '~> 2.3.0'
+  gem.add_development_dependency   'nori',            '~> 2.3'
 end

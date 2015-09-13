@@ -263,7 +263,6 @@ implementations:
 * Ruby 2.2
 * [JRuby](http://jruby.org/)
 * [Rubinius](http://rubini.us/)
-* [Ruby Enterprise Edition](http://www.rubyenterpriseedition.com/)
 
 If something doesn't work on one of these versions, it's a bug.
 
