@@ -3540,3 +3540,15 @@
   :metric: true
   :special: false
   :arbitrary: false
+  
+- :names: chris
+  :symbol: Ch
+  :primary_code: Ch
+  :secondary_code: CH
+  :scale:
+    :value: 1.0
+    :unit_code: "[cft_i]"
+  :property: volume
+  :metric: false
+  :special: false
+  :arbitrary: false
