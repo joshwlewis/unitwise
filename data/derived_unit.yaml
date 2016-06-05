@@ -3542,9 +3542,9 @@
   :arbitrary: false
   
 - :names: chris
-  :symbol: Ch
-  :primary_code: Ch
-  :secondary_code: CH
+  :symbol: Chris
+  :primary_code: Chris
+  :secondary_code: Chris
   :scale:
     :value: 1.0
     :unit_code: "[cft_i]"
