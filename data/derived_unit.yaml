@@ -3540,15 +3540,94 @@
   :metric: true
   :special: false
   :arbitrary: false
-  
-- :names: chris
-  :symbol: Chris
-  :primary_code: Chris
-  :secondary_code: Chris
+
+- :names: kg/min
+  :symbol: kg/min
+  :primary_code: kg/min
+  :secondary_code: kg/min
   :scale:
     :value: 1.0
-    :unit_code: "[cft_i]"
-  :property: volume
+    :unit_code: "kg/'"
+  :property: mass flowrate
+  :metric: true
+  :special: false
+  :arbitrary: false
+
+- :names: lb/hr
+  :symbol: lb/hr
+  :primary_code: lb/hr
+  :secondary_code: lb/hr
+  :scale:
+    :value: 1.0
+    :unit_code: "[lbf_av]/h"
+  :property: mass flowrate
   :metric: false
   :special: false
   :arbitrary: false
+  
+- :names: lb/min
+  :symbol: lb/min
+  :primary_code: lb/min
+  :secondary_code: lb/min
+  :scale:
+    :value: 60.0
+    :unit_code: "lb/hr"
+  :property: mass flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+
+- :names: psig
+  :symbol: psig
+  :primary_code: psig
+  :secondary_code: psig
+  :scale:
+    :value: 1.0
+    :unit_code: "[psi]"
+  :classification: misc
+  :property: pressure
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+- :names: kg/m3
+  :symbol: kg/m3
+  :primary_code: kg/m3
+  :secondary_code: kg/m3
+  :scale:
+    :value: 1.0
+    :unit_code: "kg/m3"
+  :classification: misc
+  :property: density
+  :metric: true
+  :special: false
+  :arbitrary: false
+  
+- :names: integer
+  :symbol: integer
+  :primary_code: integer
+  :secondary_code: integer
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: number
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+- :names: boolean
+  :symbol: boolean
+  :primary_code: boolean
+  :secondary_code: boolean
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: boolean
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+  
