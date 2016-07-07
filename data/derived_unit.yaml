@@ -3630,4 +3630,171 @@
   :special: false
   :arbitrary: false
 
+# Fouling rate
+- :names: m2K/Wd
+  :symbol: m2K/Wd
+  :primary_code: m2K/Wd
+  :secondary_code: m2K/Wd
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: fouling_rate
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: m2K/kWd
+  :symbol: m2K/kWd
+  :primary_code: m2K/kWd
+  :secondary_code: m2K/kWd
+  :scale:
+    :value: 1000.0
+    :unit_code: "m2K/Wd" 
+  :classification: misc
+  :property: fouling_rate
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: ft2F/BTUd
+  :symbol: ft2F/BTUd
+  :primary_code: ft2F/BTUd
+  :secondary_code: ft2F/BTUd
+  :scale:
+    :value: 0.176110183682
+    :unit_code: "m2K/Wd" 
+  :classification: misc
+  :property: fouling_rate
+  :metric: false
+  :special: false
+  :arbitrary: false
   
+# Fouling resistance
+- :names: m2K/W
+  :symbol: m2K/W
+  :primary_code: m2K/W
+  :secondary_code: m2K/W
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: fouling_resistance
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: m2K/kW
+  :symbol: m2K/kW
+  :primary_code: m2K/kW
+  :secondary_code: m2K/kW
+  :scale:
+    :value: 1000.0
+    :unit_code: 'm2K/W'
+  :classification: misc
+  :property: fouling_resistance
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: ft2F/BTU
+  :symbol: ft2F/BTU
+  :primary_code: ft2F/BTU
+  :secondary_code: ft2F/BTU
+  :scale:
+    :value: 0.176110183682
+    :unit_code: 'm2K/W'
+  :classification: misc
+  :property: fouling_resistance
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+# Heat Transfer Coefficient
+- :names: W/m2K
+  :symbol: W/m2K
+  :primary_code: W/m2K
+  :secondary_code: W/m2K
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: heat_transfer_coefficient
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kW/m2K
+  :symbol: kW/m2K
+  :primary_code: kW/m2K
+  :secondary_code: kW/m2K
+  :scale:
+    :value: 1000.0
+    :unit_code: 'W/m2K'
+  :classification: misc
+  :property: heat_transfer_coefficient
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: BTU/ft2F
+  :symbol: BTU/ft2F
+  :primary_code: BTU/ft2F
+  :secondary_code: BTU/ft2F
+  :scale:
+    :value: 5.67826334112
+    :unit_code: 'W/m2K'
+  :classification: misc
+  :property: heat_transfer_coefficient
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Power/Duty
+- :names: Btu/hr
+  :symbol: Btu/hr
+  :primary_code: Btu/hr
+  :secondary_code: Btu/hr
+  :scale:
+    :value: 3412.141633128
+    :unit_code: 'kW'
+  :classification: misc
+  :property: power
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kBtu/hr
+  :symbol: kBtu/hr
+  :primary_code: kBtu/hr
+  :secondary_code: kBtu/hr
+  :scale:
+    :value: 3.412141633128
+    :unit_code: 'kW'
+  :classification: misc
+  :property: power
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Heat Flux
+- :names: Btu/hr.ft2
+  :symbol: Btu/hr.ft2
+  :primary_code: Btu/hr.ft2
+  :secondary_code: Btu/hr.ft2
+  :scale:
+    :value: 3154.59074506454659
+    :unit_code: 'W/m2'
+  :classification: misc
+  :property: heat_flux
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kBtu/hr.ft2
+  :symbol: kBtu/hr.ft2
+  :primary_code: kBtu/hr.ft2
+  :secondary_code: kBtu/hr.ft2
+  :scale:
+    :value: 3.15459074506454659
+    :unit_code: 'W/m2'
+  :classification: misc
+  :property: heat_flux
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+
+
