@@ -3796,5 +3796,122 @@
   :special: false
   :arbitrary: false
 
+# Dynamic Viscosity
+- :names: Pa.s
+  :symbol: Pa.s
+  :primary_code: Pa.s
+  :secondary_code: Pa.s
+  :scale:
+    :value: 1000.0
+    :unit_code: 'cP'
+  :classification: misc
+  :property: dynamic viscosity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: lbm/h.ft
+  :symbol: lbm/h.ft
+  :primary_code: lbm/h.ft
+  :secondary_code: lbm/h.ft
+  :scale:
+    :value: 0.00041337887321
+    :unit_code: 'Pa.s'
+  :classification: misc
+  :property: dynamic viscosity
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+# Thermal Conductivity  
+- :names: W/mK
+  :symbol: W/mK
+  :primary_code: W/mK
+  :secondary_code: W/mK
+  :scale:
+    :value: 1
+    :unit_code: '1'
+  :classification: misc
+  :property: thermal conductivity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: Btu/hftF
+  :symbol: Btu/hftF
+  :primary_code: Btu/hftF
+  :secondary_code: Btu/hftF
+  :scale:
+    :value: 1.73073466500247
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: thermal conductivity
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Heat Capacity  
+- :names: J/gK
+  :symbol: J/gK
+  :primary_code: J/gK
+  :secondary_code: J/gK
+  :scale:
+    :value: 1
+    :unit_code: '1'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: J/kgK
+  :symbol: J/kgK
+  :primary_code: J/kgK
+  :secondary_code: J/kgK
+  :scale:
+    :value: 0.001
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kJ/kgK
+  :symbol: kJ/kgK
+  :primary_code: kJ/kgK
+  :secondary_code: kJ/kgK
+  :scale:
+    :value: 1.0
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: btu/lbmF
+  :symbol: btu/lbmF
+  :primary_code: btu/lbmF
+  :secondary_code: btu/lbmF
+  :scale:
+    :value: 4.18679999347027
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+
+
+# Kinematic Viscosity
+- :names: "[ft2/s]"
+  :symbol: "[ft2/s]"
+  :primary_code: ft2/s
+  :secondary_code: ft2/s
+  :scale:
+    :value: 1
+    :unit_code: '[ft_i]2/s'
+  :classification: misc
+  :property: kinematic viscosity
+  :metric: false
+  :special: false
+  :arbitrary: false
 
 
