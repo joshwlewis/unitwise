@@ -3578,6 +3578,35 @@
   :arbitrary: false
 
 
+- :names: gpm
+  :symbol: gpm
+  :primary_code: gpm
+  :secondary_code: gpm
+  :scale:
+    :value: 1.0
+    :unit_code: "1"
+  :property: volumetric flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+- :names: "ft3/minn"
+  :symbol: "ft3/minn"
+  :primary_code: "ft3/minn"
+  :secondary_code: "ft3/minn"
+  :scale:
+    :value: 28316.846711706134
+    :unit_code: "gpm"
+  :property: volumetric flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+
+  
+  
+
+
 - :names: psig
   :symbol: psig
   :primary_code: psig
