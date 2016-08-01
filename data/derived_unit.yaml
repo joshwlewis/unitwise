@@ -3620,13 +3620,13 @@
   :special: false
   :arbitrary: false
   
-- :names: kg/m3
-  :symbol: kg/m3
-  :primary_code: kg/m3
-  :secondary_code: kg/m3
+- :names: _kg/m3
+  :symbol: _kg/m3
+  :primary_code: _kg/m3
+  :secondary_code: _kg/m3
   :scale:
     :value: 1.0
-    :unit_code: "kg/m3"
+    :unit_code: "1"
   :classification: misc
   :property: density
   :metric: true
