@@ -3590,18 +3590,17 @@
   :special: false
   :arbitrary: false
 
-- :names: "ft3/minn"
-  :symbol: "ft3/minn"
-  :primary_code: "ft3/minn"
-  :secondary_code: "ft3/minn"
+- :names: ft3/minn
+  :symbol: ft3/minn
+  :primary_code: ft3/minn
+  :secondary_code: ft3/minn
   :scale:
-    :value: 28316.846711706134
+    :value: 448.831169
     :unit_code: "gpm"
   :property: volumetric flowrate
   :metric: false
   :special: false
   :arbitrary: false
-  
 
   
   
