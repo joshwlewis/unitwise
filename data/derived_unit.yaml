@@ -3590,17 +3590,18 @@
   :special: false
   :arbitrary: false
 
-- :names: ft3/minn
-  :symbol: ft3/minn
-  :primary_code: ft3/minn
-  :secondary_code: ft3/minn
+- :names: "ft3/minn"
+  :symbol: "ft3/minn"
+  :primary_code: "ft3/minn"
+  :secondary_code: "ft3/minn"
   :scale:
-    :value: 448.831169
+    :value: 28316.846711706134
     :unit_code: "gpm"
   :property: volumetric flowrate
   :metric: false
   :special: false
   :arbitrary: false
+  
 
   
   
@@ -3629,6 +3630,19 @@
   :classification: misc
   :property: density
   :metric: true
+  :special: false
+  :arbitrary: false
+
+- :names: lb/ft3
+  :symbol: lb/ft3
+  :primary_code: lb/ft3
+  :secondary_code: lb/ft3
+  :scale:
+    :value: 77.855493914
+    :unit_code: "kg/m3"
+  :classification: misc
+  :property: density
+  :metric: false
   :special: false
   :arbitrary: false
   
