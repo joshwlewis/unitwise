@@ -3590,18 +3590,17 @@
   :special: false
   :arbitrary: false
 
-- :names: "ft3/minn"
-  :symbol: "ft3/minn"
-  :primary_code: "ft3/minn"
-  :secondary_code: "ft3/minn"
+- :names: ft3/minn
+  :symbol: ft3/minn
+  :primary_code: ft3/minn
+  :secondary_code: ft3/minn
   :scale:
-    :value: 28316.846711706134
+    :value: 7.48052
     :unit_code: "gpm"
   :property: volumetric flowrate
   :metric: false
   :special: false
   :arbitrary: false
-  
 
   
   
@@ -3619,7 +3618,7 @@
   :metric: false
   :special: false
   :arbitrary: false
-  
+
 - :names: _kg/m3
   :symbol: _kg/m3
   :primary_code: _kg/m3
@@ -3638,8 +3637,8 @@
   :primary_code: lb/ft3
   :secondary_code: lb/ft3
   :scale:
-    :value: 77.855493914
-    :unit_code: "kg/m3"
+    :value: 16.01846
+    :unit_code: "_kg/m3"
   :classification: misc
   :property: density
   :metric: false
@@ -3940,6 +3939,32 @@
   :special: false
   :arbitrary: false
 
+# Velocity
+- :names: _m/s
+  :symbol: _m/s
+  :primary_code: _m/s
+  :secondary_code: _m/s
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: velocity
+  :metric: true
+  :special: false
+  :arbitrary: false
+  
+- :names: _ft/s
+  :symbol: _ft/s
+  :primary_code: _ft/s
+  :secondary_code: _ft/s
+  :scale:
+    :value: 0.3048
+    :unit_code: '_m/s'
+  :classification: misc
+  :property: velocity
+  :metric: false
+  :special: false
+  :arbitrary: false
 
 
 # Kinematic Viscosity
