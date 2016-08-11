@@ -3595,7 +3595,7 @@
   :primary_code: "ft3/minn"
   :secondary_code: "ft3/minn"
   :scale:
-    :value: 0.133680556
+    :value: 7.480519
     :unit_code: "gpm"
   :property: volumetric flowrate
   :metric: false
@@ -3618,13 +3618,14 @@
   :special: false
   :arbitrary: false
 
-- :names: _m/s
+# 1 _ft/s = 0.3048 _m/s
+- :names: _m/s # put 1 next to this
   :symbol: _m/s
   :primary_code: _m/s
   :secondary_code: _m/s
   :scale:
-    :value: 0.3048
-    :unit_code: "_ft/s"
+    :value: 3.280839 # put number next to '_ft/s' here
+    :unit_code: "_ft/s" 
   :classification: misc
   :property: velocity
   :metric: false
@@ -3659,18 +3660,19 @@
   :special: false
   :arbitrary: false
 
-- :names: lb/ft3
+- :names: lb/ft3 # put 1 here
   :symbol: lb/ft3
   :primary_code: lb/ft3
   :secondary_code: lb/ft3
   :scale:
-    :value: 0.062427961
+    :value: 16.0184633
     :unit_code: "_kg/m3"
   :classification: misc
   :property: density
   :metric: false
   :special: false
   :arbitrary: false
+
   
 - :names: integer
   :symbol: integer
