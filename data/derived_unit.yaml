@@ -3577,6 +3577,18 @@
   :special: false
   :arbitrary: false
 
+- :names: kg/hr
+  :symbol: kg/hr
+  :primary_code: kg/hr
+  :secondary_code: kg/hr
+  :scale:
+    :value: 2.204622
+    :unit_code: "lb/hr"
+  :property: mass flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+
 
 - :names: gpm
   :symbol: gpm
@@ -3610,7 +3622,7 @@
   :primary_code: _ft/s
   :secondary_code: _ft/s
   :scale:
-    :value: 1.687809857
+    :value: 0.592483801
     :unit_code: "knot"
   :classification: misc
   :property: velocity
@@ -3815,12 +3827,12 @@
   :arbitrary: false
 
 # Power/Duty
-- :names: Btu/hr
+- :names: Btu/hr # put 1 here
   :symbol: Btu/hr
   :primary_code: Btu/hr
   :secondary_code: Btu/hr
   :scale:
-    :value: 3412.141633128
+    :value: 0.000293071
     :unit_code: 'kW'
   :classification: misc
   :property: power
@@ -3832,8 +3844,8 @@
   :primary_code: kBtu/hr
   :secondary_code: kBtu/hr
   :scale:
-    :value: 3.412141633128
-    :unit_code: 'kW'
+    :value: 1000.0
+    :unit_code: 'Btu/hr'
   :classification: misc
   :property: power
   :metric: false
@@ -3841,12 +3853,12 @@
   :arbitrary: false
 
 # Heat Flux
-- :names: Btu/hr.ft2
+- :names: Btu/hr.ft2 # put 1 here
   :symbol: Btu/hr.ft2
   :primary_code: Btu/hr.ft2
   :secondary_code: Btu/hr.ft2
   :scale:
-    :value: 3154.59074506454659
+    :value: 3.154590745
     :unit_code: 'W/m2'
   :classification: misc
   :property: heat_flux
@@ -3858,8 +3870,8 @@
   :primary_code: kBtu/hr.ft2
   :secondary_code: kBtu/hr.ft2
   :scale:
-    :value: 3.15459074506454659
-    :unit_code: 'W/m2'
+    :value: 1000.0
+    :unit_code: 'Btu/hr.ft2'
   :classification: misc
   :property: heat_flux
   :metric: false
@@ -3879,7 +3891,7 @@
   :metric: false
   :special: false
   :arbitrary: false
-- :names: lbm/h.ft
+- :names: lbm/h.ft # 1 here
   :symbol: lbm/h.ft
   :primary_code: lbm/h.ft
   :secondary_code: lbm/h.ft
@@ -3976,8 +3988,8 @@
   :primary_code: ft2/s
   :secondary_code: ft2/s
   :scale:
-    :value: 1
-    :unit_code: '[ft_i]2/s'
+    :value: 929.030400001
+    :unit_code: 'stokes'
   :classification: misc
   :property: kinematic viscosity
   :metric: false
