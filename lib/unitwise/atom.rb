@@ -7,13 +7,13 @@ module Unitwise
     include Compatible
 
     class << self
-      # Array of hashes representing atom properties.
+      # Array of hashes representing default atom properties.
       # @api private
       def data
         @data ||= data_files.map { |file| YAML.load(File.open file) }.flatten
       end
 
-      # Data files containing atom data
+      # Data files containing default atom data
       # @api private
       def data_files
         %w(base_unit derived_unit).map { |type| Unitwise.data_file type }

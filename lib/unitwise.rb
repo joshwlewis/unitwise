@@ -43,7 +43,14 @@ module Unitwise
       false
     end
   end
-  
+
+  # Add additional atoms. Useful for registering uncommon or custom units.
+  # @param properties [Hash] Properties of the atom
+  def self.register(atom_hash)
+    Unitwise::Atom.register(atom_hash)
+    Unitwise::Expression::Decomposer.send(:reset)
+  end
+
   # The system path for the installed gem
   # @api private
   def self.path

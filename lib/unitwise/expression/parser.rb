@@ -5,14 +5,21 @@ module Unitwise
     class Parser < Parslet::Parser
       attr_reader :key
       def initialize(key = :primary_code)
-        @key = key
+        @key                 = key
+        @atom_matcher        = Matcher.atom(key)
+        @metric_atom_matcher = Matcher.metric_atom(key)
+        @prefix_matcher      = Matcher.prefix(key)
       end
+
+      private
+
+      attr_reader :atom_matcher, :metric_atom_matcher, :prefix_matcher
 
       root :expression
 
-      rule (:atom) { Matcher.atom(key).as(:atom_code) }
-      rule (:metric_atom) { Matcher.metric_atom(key).as(:atom_code) }
-      rule (:prefix) { Matcher.prefix(key).as(:prefix_code) }
+      rule (:atom) { atom_matcher.as(:atom_code) }
+      rule (:metric_atom) { metric_atom_matcher.as(:atom_code) }
+      rule (:prefix) { prefix_matcher.as(:prefix_code) }
 
       rule (:simpleton) do
         (prefix.as(:prefix) >> metric_atom.as(:atom) | atom.as(:atom))

@@ -7,10 +7,6 @@ module Unitwise
 
       MODES = [:primary_code, :secondary_code, :names, :slugs, :symbol]
 
-      PARSERS = MODES.reduce({}) do |hash, mode|
-        hash[mode] = Parser.new(mode); hash
-      end
-
       TRANSFORMER = Transformer.new
 
       class << self
@@ -25,12 +21,30 @@ module Unitwise
           end
         end
 
+        def parsers
+          @parsers ||= MODES.reduce({}) do |hash, mode|
+            hash[mode] = Parser.new(mode); hash
+          end
+        end
+
+        def transformer
+          @transformer = Transformer.new
+        end
+
         private
 
         # A simple cache to prevent re-decomposing the same units
         # api private
         def cache
           @cache ||= {}
+        end
+
+        # Reset memoized data. Allows rebuilding of parsers, transformers, and
+        # the cache after list of atoms has been modified.
+        def reset
+          @parsers = nil
+          @transformer = nil
+          @cache = nil
         end
       end
 
@@ -44,7 +58,7 @@ module Unitwise
       end
 
       def parse
-        PARSERS.reduce(nil) do |_, (mode, parser)|
+        self.class.parsers.reduce(nil) do |_, (mode, parser)|
           parsed = parser.parse(expression) rescue next
           @mode = mode
           break parsed
@@ -52,7 +66,7 @@ module Unitwise
       end
 
       def transform
-        @transform ||= TRANSFORMER.apply(parse, :mode => mode)
+        @transform ||= self.class.transformer.apply(parse, :mode => mode)
       end
 
       def terms
