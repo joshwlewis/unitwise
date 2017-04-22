@@ -5,9 +5,7 @@ module Unitwise
     # of a string, as well as caching the results.
     class Decomposer
 
-      MODES = [:primary_code, :secondary_code, :names, :slugs, :symbol]
-
-      TRANSFORMER = Transformer.new
+      MODES = [:primary_code, :secondary_code, :names, :slugs, :symbol].freeze
 
       class << self
 
