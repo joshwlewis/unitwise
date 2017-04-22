@@ -5,6 +5,16 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
+## Unreleased
+
+### Removed
+
+- Support for Ruby MRI 1.9.3, MRI 2.0, and Rubinius
+
+### Added
+
+- Support for MRI 2.3 and 2.4
+
 ## 2.0.0 - 2015-09-13
 
 ### Fixed
