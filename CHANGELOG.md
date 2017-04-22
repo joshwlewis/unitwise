@@ -9,11 +9,11 @@ Unitwise uses semantic versioning.
 
 ### Removed
 
-- Support for Ruby 1.9.3 and 2.0
+- Support for Ruby MRI 1.9.3, MRI 2.0, and Rubinius
 
 ### Added
 
-- Support for Ruby 2.3 and 2.4
+- Support for MRI 2.3 and 2.4
 
 ## 2.0.0 - 2015-09-13
 
