@@ -31,7 +31,7 @@ describe Unitwise::Atom do
   let(:joule)   { Unitwise::Atom.find("J")}
   describe "#scale" do
     it "must be nil for base atoms" do
-      second.scale.must_equal nil
+      second.scale.must_be_nil
     end
     it "sould be a Scale object for derived atoms" do
       yard.scale.must_be_instance_of Unitwise::Scale
