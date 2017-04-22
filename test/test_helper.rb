@@ -9,9 +9,8 @@ require 'minitest/pride'
 require 'unitwise'
 
 module Minitest::Assertions
-  def assert_almost_equal(expected, actual)
+  def assert_almost_equal(expected, actual, range=0.0001)
     message = "Expected #{actual} to be almost equal to #{expected}"
-    range   = 0.00001
     assert expected + range > actual && expected - range < actual, message
   end
 end

@@ -5,6 +5,16 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
+## Unreleased
+
+### Removed
+
+- Support for Ruby 1.9.3 and 2.0
+
+### Added
+
+- Support for Ruby 2.3 and 2.4
+
 ## 2.0.0 - 2015-09-13
 
 ### Fixed
