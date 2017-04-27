@@ -126,4 +126,41 @@ describe Unitwise::Atom do
       second.frozen?.must_equal true
     end
   end
+
+  describe "validate!" do
+    it "returns true for a valid atom" do
+      atom = Unitwise::Atom.new(
+        primary_code: "warp",
+        secondary_code: "[warp]",
+        names: ["Warp", "Warp Factor"],
+        scale: {
+          value: 1,
+          unit_code: "[c]"
+        }
+      )
+
+      atom.validate!.must_equal true
+    end
+
+    it "returns an error for an atom with missing properties" do
+      atom = Unitwise::Atom.new(names: "hot dog")
+
+      assert_raises { atom.validate! }
+    end
+
+    it "returns an error for an atom that doesn't resolve" do
+      atom = Unitwise::Atom.new(
+        primary_code: "feels",
+        secondary_code: "FEELS",
+        names: ["feels"],
+        scale: {
+          value: 1,
+          unit_code: "hearts"
+        }
+      )
+
+      atom.validate!
+      assert_raises { atom.validate! }
+    end
+  end
 end
