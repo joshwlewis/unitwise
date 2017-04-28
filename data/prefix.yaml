@@ -65,7 +65,7 @@
   :secondary_code: M
   :scalar: 1e-3
 - :names: micro
-  :symbol: "μ"
+  :symbol: μ
   :primary_code: u
   :secondary_code: U
   :scalar: 1e-6

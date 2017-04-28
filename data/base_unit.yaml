@@ -23,13 +23,13 @@
   :secondary_code: RAD
   :property: plane angle
   :dim: A
-- :names: Kelvin
+- :names: kelvin
   :symbol: K
   :primary_code: K
   :secondary_code: K
   :property: temperature
   :dim: C
-- :names: Coulomb
+- :names: coulomb
   :symbol: C
   :primary_code: C
   :secondary_code: C
