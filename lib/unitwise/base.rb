@@ -12,13 +12,6 @@ module Unitwise
       @all ||= data.map { |d| new d }
     end
 
-    # Add another instance to the collection.
-    # @param properties [Hash] properties for the new instance
-    # @return [Array] The updated collection
-    def self.register(properties)
-      all.push(new properties)
-    end
-
     # Find a matching instance by a specified attribute.
     # @param string [String] The search term
     # @param method [Symbol] The attribute to search by
