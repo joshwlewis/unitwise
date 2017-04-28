@@ -15,8 +15,8 @@ describe Unitwise::Expression::Matcher do
     it "must be an Alternative list of names" do
       subject.must_be_instance_of Parslet::Atoms::Alternative
     end
-    it "must parse 'Joule'" do
-      subject.parse('Joule').must_equal('Joule')
+    it "must parse 'joule'" do
+      subject.parse('joule').must_equal('joule')
     end
   end
 
