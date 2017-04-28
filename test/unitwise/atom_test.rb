@@ -159,7 +159,6 @@ describe Unitwise::Atom do
         }
       )
 
-      atom.validate!
       assert_raises { atom.validate! }
     end
   end
