@@ -16,6 +16,10 @@ Unitwise uses semantic versioning.
 - `Unitwise.register` is a new method that allows user defined units
 - Support for MRI 2.3 and 2.4
 
+### Changed
+
+- Synchronized unit data with UCUM spec
+
 ## 2.0.0 - 2015-09-13
 
 ### Fixed
