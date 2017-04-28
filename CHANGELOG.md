@@ -18,7 +18,8 @@ Unitwise uses semantic versioning.
 
 ### Changed
 
-- Synchronized unit data with UCUM spec
+- Unit data refreshed from latest UCUM spec. Most notably, some metric atoms
+  names have seen case changes.
 
 ## 2.0.0 - 2015-09-13
 
