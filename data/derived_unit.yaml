@@ -24,7 +24,7 @@
   :special: false
   :arbitrary: false
 - :names: the number pi
-  :symbol: "π"
+  :symbol: π
   :primary_code: "[pi]"
   :secondary_code: "[PI]"
   :scale:
@@ -119,7 +119,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Hertz
+- :names: hertz
   :symbol: Hz
   :primary_code: Hz
   :secondary_code: HZ
@@ -131,7 +131,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Newton
+- :names: newton
   :symbol: N
   :primary_code: N
   :secondary_code: N
@@ -143,7 +143,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Pascal
+- :names: pascal
   :symbol: Pa
   :primary_code: Pa
   :secondary_code: PAL
@@ -155,7 +155,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Joule
+- :names: joule
   :symbol: J
   :primary_code: J
   :secondary_code: J
@@ -167,7 +167,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Watt
+- :names: watt
   :symbol: W
   :primary_code: W
   :secondary_code: W
@@ -179,7 +179,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Ampère
+- :names: ampère
   :symbol: A
   :primary_code: A
   :secondary_code: A
@@ -191,7 +191,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Volt
+- :names: volt
   :symbol: V
   :primary_code: V
   :secondary_code: V
@@ -203,7 +203,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Farad
+- :names: farad
   :symbol: F
   :primary_code: F
   :secondary_code: F
@@ -215,8 +215,8 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Ohm
-  :symbol: "Ω"
+- :names: ohm
+  :symbol: Ω
   :primary_code: Ohm
   :secondary_code: OHM
   :scale:
@@ -227,7 +227,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Siemens
+- :names: siemens
   :symbol: S
   :primary_code: S
   :secondary_code: SIE
@@ -239,7 +239,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Weber
+- :names: weber
   :symbol: Wb
   :primary_code: Wb
   :secondary_code: WB
@@ -264,7 +264,7 @@
   :metric: true
   :special: true
   :arbitrary: false
-- :names: Tesla
+- :names: tesla
   :symbol: T
   :primary_code: T
   :secondary_code: T
@@ -276,7 +276,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Henry
+- :names: henry
   :symbol: H
   :primary_code: H
   :secondary_code: H
@@ -312,7 +312,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Becquerel
+- :names: becquerel
   :symbol: Bq
   :primary_code: Bq
   :secondary_code: BQ
@@ -324,7 +324,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Gray
+- :names: gray
   :symbol: Gy
   :primary_code: Gy
   :secondary_code: GY
@@ -336,7 +336,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: Sievert
+- :names: sievert
   :symbol: Sv
   :primary_code: Sv
   :secondary_code: SV
@@ -666,7 +666,7 @@
   :primary_code: "[h]"
   :secondary_code: "[H]"
   :scale:
-    :value: 6.6260755e-24
+    :value: 6.6260755e-34
     :unit_code: J.s
   :classification: const
   :property: action
@@ -1069,7 +1069,7 @@
   :metric: false
   :special: false
   :arbitrary: false
-- :names: statute mile
+- :names: mile
   :symbol: mi
   :primary_code: "[mi_i]"
   :secondary_code: "[MI_I]"
@@ -2244,6 +2244,19 @@
   :metric: false
   :special: false
   :arbitrary: false
+- :names: degree Réaumur
+  :symbol: "°Ré"
+  :primary_code: "[degRe]"
+  :secondary_code: "[degRe]"
+  :scale:
+    :function_code: degre
+    :value: 5.0
+    :unit_code: K/4
+  :classification: heat
+  :property: temperature
+  :metric: false
+  :special: true
+  :arbitrary: false
 - :names: calorie at 15 °C
   :symbol: cal<sub>15°C</sub>
   :primary_code: cal_[15]
@@ -3138,6 +3151,19 @@
   :metric: false
   :special: false
   :arbitrary: true
+- :names: index of reactivity
+  :symbol: IR
+  :primary_code: "[IR]"
+  :secondary_code: "[IR]"
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: chemical
+  :property: amount of an allergen callibrated through in-vivo testing using the Stallergenes®
+    method.
+  :metric: false
+  :special: false
+  :arbitrary: true
 - :names: bioequivalent allergen unit
   :symbol: BAU
   :primary_code: "[BAU]"
@@ -3372,8 +3398,8 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: "Ångström"
-  :symbol: "Å"
+- :names: Ångström
+  :symbol: Å
   :primary_code: Ao
   :secondary_code: AO
   :scale:
@@ -3490,6 +3516,18 @@
   :property: length
   :metric: false
   :special: false
+  :arbitrary: false
+- :names: meter per square seconds per square root of hertz
+  :primary_code: "[m/s2/Hz^(1/2)]"
+  :secondary_code: "[M/S2/HZ^(1/2)]"
+  :scale:
+    :function_code: sqrt
+    :value: 1.0
+    :unit_code: m2/s4/Hz
+  :classification: misc
+  :property: amplitude spectral density
+  :metric: false
+  :special: true
   :arbitrary: false
 - :names: bit
   :symbol: bit<sub>s</sub>
