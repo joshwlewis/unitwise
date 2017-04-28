@@ -127,7 +127,8 @@ module Unitwise
     # @raise [Unitwise::DefinitionError]
     def validate!
       missing_properties = %i{primary_code names}.select do |prop|
-        send(prop).blank?
+        val = send(prop)
+        val.nil? || val.empty?
       end
 
       if !missing_properties.empty?
