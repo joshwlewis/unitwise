@@ -126,9 +126,9 @@ module Unitwise
     # @return [true] returns true if the atom is valid
     # @raise [Unitwise::DefinitionError]
     def validate!
-      missing_properties = %i{primary_code names}.select do |prop|
-        val = send(prop)
-        val.nil? || val.empty?
+      missing_properties = %i{primary_code names scale}.select do |prop|
+        val = liner_get(prop)
+        val.nil? || (val.respond_to?(:empty) && val.empty?)
       end
 
       if !missing_properties.empty?
