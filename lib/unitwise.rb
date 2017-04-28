@@ -46,6 +46,8 @@ module Unitwise
 
   # Add additional atoms. Useful for registering uncommon or custom units.
   # @param properties [Hash] Properties of the atom
+  # @return [Unitwise::Atom] The newly created atom
+  # @raise [Unitwise::DefinitionError]
   def self.register(atom_hash)
     atom = Unitwise::Atom.new(atom_hash)
     atom.validate!

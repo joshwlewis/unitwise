@@ -123,8 +123,8 @@ module Unitwise
     # and that it's scalar and magnitude can be resolved. Note that this method
     # requires the units it depends on to already exist, so it is not used
     # when loading the initial data from UCUM.
-    # @return true returns true if the atom is valid
-    # @raise Unitwise::DefinitionError otherwise
+    # @return [true] returns true if the atom is valid
+    # @raise [Unitwise::DefinitionError]
     def validate!
       missing_properties = %i{primary_code names}.select do |prop|
         send(prop).blank?
