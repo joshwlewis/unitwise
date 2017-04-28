@@ -7,13 +7,13 @@ module Unitwise
     include Compatible
 
     class << self
-      # Array of hashes representing atom properties.
+      # Array of hashes representing default atom properties.
       # @api private
       def data
         @data ||= data_files.map { |file| YAML.load(File.open file) }.flatten
       end
 
-      # Data files containing atom data
+      # Data files containing default atom data
       # @api private
       def data_files
         %w(base_unit derived_unit).map { |type| Unitwise.data_file type }
@@ -117,5 +117,34 @@ module Unitwise
       base? ? [Term.new(:atom_code => primary_code)] : scale.root_terms
     end
     memoize :root_terms
+
+
+    # A basic validator for atoms. It checks for the bare minimum properties
+    # and that it's scalar and magnitude can be resolved. Note that this method
+    # requires the units it depends on to already exist, so it is not used
+    # when loading the initial data from UCUM.
+    # @return [true] returns true if the atom is valid
+    # @raise [Unitwise::DefinitionError]
+    def validate!
+      missing_properties = %i{primary_code names scale}.select do |prop|
+        val = liner_get(prop)
+        val.nil? || (val.respond_to?(:empty) && val.empty?)
+      end
+
+      if !missing_properties.empty?
+        missing_list = missing_properties.join(',')
+        raise Unitwise::DefinitionError,
+          "Atom has missing properties: #{missing_list}."
+      end
+
+      msg = "Atom definition could not be resolved. Ensure that it is a base " \
+            "unit or is defined relative to existing units."
+
+      begin
+        !scalar.nil? && !magnitude.nil? || raise(Unitwise::DefinitionError, msg)
+      rescue Unitwise::ExpressionError
+        raise Unitwise::DefinitionError,  msg
+      end
+    end
   end
 end

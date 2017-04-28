@@ -5,19 +5,15 @@ module Unitwise
     class Matcher
       class << self
         def atom(mode)
-          @atom ||= {}
-          @atom[mode] ||= new(Atom.all, mode).alternative
+          new(Atom.all, mode).alternative
         end
 
         def metric_atom(mode)
-          @metric_atom ||= {}
-          @metric_atom[mode] ||=
-            new(Atom.all.select(&:metric?), mode).alternative
+          new(Atom.all.select(&:metric?), mode).alternative
         end
 
         def prefix(mode)
-          @prefix ||= {}
-          @prefix[mode] ||= new(Prefix.all, mode).alternative
+          new(Prefix.all, mode).alternative
         end
       end
 
@@ -41,7 +37,6 @@ module Unitwise
       def alternative
         Parslet::Atoms::Alternative.new(*matchers)
       end
-
     end
   end
 end

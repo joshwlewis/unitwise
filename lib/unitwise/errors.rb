@@ -1,7 +1,10 @@
 module Unitwise
-  class ExpressionError < Exception
+  class ExpressionError < StandardError
   end
 
-  class ConversionError < Exception
+  class ConversionError < StandardError
+  end
+
+  class DefinitionError < StandardError
   end
 end

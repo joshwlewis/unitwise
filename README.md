@@ -237,6 +237,37 @@ Unitwise(1, "meter/s")      # Does not work, mixed designations (name and primar
 Unitwise(1, "meter") / Unitwise(1, "s") # Also works
 ```
 
+
+### Adding custom units
+
+While UCUM's list of units is rather exhaustive, there may still be occasions
+where you need custom or uncommon measurements. You can add them yourself
+with `Unitwise.register`, which will allow you to convert to or from the new
+unit.
+
+For example, if your app needed to pour "3 fingers" of bourbon, you could
+register an atom for that:
+
+```ruby
+Unitwise.register(
+  names: ["finger", "fingers"],
+  symbol: "🥃",
+  primary_code: "fng",
+  secondary_code: "fng",
+  scale: {
+    value: 1.0,
+    unit_code: '[foz_us]'
+  },
+  property: 'fluid volume'
+)
+
+Unitwise(1, "gallon").to_fingers
+# => #<Unitwise::Measurement value=0.153721590464621430998E3 unit=fingers>
+
+Unitwise(1, "🥃").to_cup
+# => #<Unitwise::Measurement value=0.125 unit=cup>
+```
+
 ## Supported Ruby Versions
 
 This library aims to support and is tested against the following Ruby

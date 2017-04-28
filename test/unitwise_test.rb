@@ -28,8 +28,28 @@ describe Unitwise do
     end
   end
 
+  describe 'register' do
+    it 'should allow custom units to be registered' do
+      josh = {
+        names: ["Josh W Lewis", "joshwlewis"],
+        symbol: "JWL",
+        primary_code: "jwl",
+        secondary_code: "jwl",
+        scale: {
+          value: 71.875,
+          unit_code: "[in_i]"
+        }
+      }
+
+      Unitwise.register(josh)
+
+      joshes = Unitwise(1, 'mile').to_jwl
+
+      joshes.to_i.must_equal(881)
+    end
+  end
+
   it "should have a path" do
     Unitwise.path.must_match(/unitwise$/)
   end
-
 end
