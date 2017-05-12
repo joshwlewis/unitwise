@@ -166,6 +166,17 @@
   :property: energy
   :metric: true
   :special: false
+- :names: Watt Hour
+  :symbol: Wh 
+  :primary_code: Wh
+  :secondary_code: Wh
+  :scale:
+    :value: 3600.0
+    :unit_code: J
+  :classification: si
+  :property: energy
+  :metric: true
+  :special: false
   :arbitrary: false
 - :names: watt
   :symbol: W
