@@ -7,6 +7,10 @@ Unitwise uses semantic versioning.
 
 ## Unreleased
 
+### Removed
+
+- Support for MRI 2.1
+
 ## 2.1.0 - 2017-04-28
 
 ### Removed
