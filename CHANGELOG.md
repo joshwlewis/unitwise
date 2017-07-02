@@ -7,6 +7,11 @@ Unitwise uses semantic versioning.
 
 ## Unreleased
 
+### Fixed
+
+- Default units now stored as BigDecimal or Integer to reduce floating point
+  accuracy loss.
+
 ### Removed
 
 - Support for MRI 2.1
