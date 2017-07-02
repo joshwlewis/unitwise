@@ -99,6 +99,13 @@ module ScaleTests
         end
       end
 
+      describe "#inspect" do
+        it "must show the unit and value" do
+          result = described_class.new(12, 'meter').inspect
+          result.must_include("value=12")
+          result.must_include("unit=meter")
+        end
+      end
     end
   end
 end
