@@ -95,17 +95,7 @@ module Unitwise
     # @return [Numeric]
     # @api public
     def simplified_value
-      if value.is_a?(Integer)
-        value
-      elsif (i = Integer(value)) == value
-        i
-      elsif value.is_a?(Float) || value.is_a?(Rational)
-        value
-      elsif (f = Float(value)) == value
-        f
-      else
-        value
-      end
+      Unitwise::Number.simplify(value)
     end
     memoize :simplified_value
 
