@@ -273,7 +273,6 @@ Unitwise(1, "🥃").to_cup
 This library aims to support and is tested against the following Ruby
 implementations:
 
-* Ruby 2.1
 * Ruby 2.2
 * Ruby 2.3
 * Ruby 2.4
