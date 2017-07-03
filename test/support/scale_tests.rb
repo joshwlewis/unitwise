@@ -86,32 +86,26 @@ module ScaleTests
       end
 
       describe "#simplified_value" do
-        describe "when the value is equivalent to an Integer" do
-          it "should convert from a Rational" do
-            result = described_class.new(Rational(20,2), 'foot').simplified_value
-            result.must_equal 10
-            result.must_be_kind_of(Integer)
-          end
-          it "should convert from a Float" do
-            result = described_class.new(4.0, 'foot').simplified_value
-            result.must_equal 4
-            result.must_be_kind_of(Integer)
-          end
-          it "should convert from a BigDecimal" do
-            result = described_class.new(BigDecimal("4.5"), "volt").simplified_value
-            result.must_equal 4.5
-            result.must_be_kind_of(Float)
-          end
+        it "must simplify to an Integer" do
+          result = described_class.new(4.0, 'foot').simplified_value
+          result.must_equal 4
+          result.must_be_kind_of(Integer)
         end
-        describe "when the value is equivalent to a Float" do
-          it "should convert from a BigDecimal" do
-            result = described_class.new(BigDecimal("1.5"), 'foot').simplified_value
-            result.must_equal 1.5
-            result.must_be_kind_of(Float)
-          end
+
+        it "must simplify to a Float" do
+          result = described_class.new(BigDecimal("1.5"), 'foot').simplified_value
+          result.must_equal 1.5
+          result.must_be_kind_of(Float)
         end
       end
 
+      describe "#inspect" do
+        it "must show the unit and value" do
+          result = described_class.new(12, 'meter').inspect
+          result.must_include("value=12")
+          result.must_include("unit=meter")
+        end
+      end
     end
   end
 end

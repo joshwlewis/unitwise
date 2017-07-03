@@ -6,7 +6,7 @@ module Unitwise::Standard
     end
 
     def scale
-      attributes["value"].attributes["value"]
+      Unitwise::Number.simplify(attributes["value"].attributes["value"])
     end
 
     def to_hash

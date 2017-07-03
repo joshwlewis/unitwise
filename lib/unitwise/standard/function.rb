@@ -12,7 +12,7 @@ module Unitwise::Standard
     end
 
     def value
-      attributes["function"]["@value"].to_f
+      Unitwise::Number.simplify(attributes["function"]["@value"])
     end
 
     def unit
