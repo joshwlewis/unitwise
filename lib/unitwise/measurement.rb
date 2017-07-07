@@ -156,10 +156,6 @@ module Unitwise
       self.class.new(*args)
     end
 
-    # Set the value for the measurement.
-    # @api private
-    attr_writer :value
-
     # Determine value of the unit after conversion to another unit
     # @api private
     def converted_value(other_unit)

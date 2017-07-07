@@ -14,11 +14,5 @@ module Unitwise
     def self.data_file
       Unitwise.data_file 'prefix'
     end
-
-    # Set the scalar value for the prefix, always as a BigDecimal
-    # @api semipublic
-    def scalar=(value)
-      @scalar = BigDecimal(value.to_s)
-    end
   end
 end

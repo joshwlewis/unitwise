@@ -30,10 +30,6 @@ module Unitwise
       unit.atoms
     end
 
-    def value=(value)
-      @value = BigDecimal(value.to_s)
-    end
-
     # List the terms associated with this scale's unit.
     # @return [Array]
     # @api public
