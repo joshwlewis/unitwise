@@ -52,7 +52,7 @@ module Unitwise
       if special?
         unit.scalar(magnitude)
       else
-        value * unit.scalar
+        value.to_r * unit.scalar.to_r
       end
     end
 
