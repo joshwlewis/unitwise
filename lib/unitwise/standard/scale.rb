@@ -7,7 +7,7 @@ module Unitwise::Standard
     end
 
     def value
-      Unitwise::Number.simplify(nori.attributes["value"])
+      Unitwise::Number.coefficify(nori.attributes.fetch('value'))
     end
 
     def primary_unit_code

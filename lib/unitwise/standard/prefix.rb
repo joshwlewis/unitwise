@@ -6,12 +6,13 @@ module Unitwise::Standard
     end
 
     def scale
-      Unitwise::Number.simplify(attributes["value"].attributes["value"])
+      Unitwise::Number.coefficify(
+        attributes.fetch('value').attributes.fetch('value')
+      )
     end
 
     def to_hash
       super().merge(:scalar => scale)
     end
-
   end
 end
