@@ -86,8 +86,8 @@ module Unitwise
     # @param magnitude [Numeric] An optional magnitude on this unit's scale.
     # @return [Numeric] A scalar value on a linear scale
     # @api public
-    def scalar(magnitude = 1.0)
-      terms.reduce(1.0) do |prod, term|
+    def scalar(magnitude = 1)
+      terms.reduce(1) do |prod, term|
         prod * term.scalar(magnitude)
       end
     end
@@ -98,7 +98,7 @@ module Unitwise
     # @return [Numeric] The equivalent magnitude on this scale
     # @api public
     def magnitude(scalar = scalar())
-      terms.reduce(1.0) do |prod, term|
+      terms.reduce(1) do |prod, term|
         prod * term.magnitude(scalar)
       end
     end
