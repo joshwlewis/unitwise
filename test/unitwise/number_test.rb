@@ -41,4 +41,12 @@ describe Unitwise::Number do
       end
     end
   end
+
+  describe ".rationalize" do
+    it "coerces numbers to rationals" do
+      [1.5, "1.5", BigDecimal.new("1.5")].each do |n|
+        assert_equal Unitwise::Number.rationalize(n), Rational(3, 2)
+      end
+    end
+  end
 end
