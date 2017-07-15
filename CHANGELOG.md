@@ -7,10 +7,13 @@ Unitwise uses semantic versioning.
 
 ## Unreleased
 
+## 2.2.0 - 2017-07-14
+
 ### Fixed
 
 - Default units now stored as BigDecimal or Integer to reduce floating point
   accuracy loss.
+- Added missing conversion for Degree Réaumur.
 
 ### Changed
 
