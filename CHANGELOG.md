@@ -12,6 +12,14 @@ Unitwise uses semantic versioning.
 - Default units now stored as BigDecimal or Integer to reduce floating point
   accuracy loss.
 
+### Changed
+
+- Performing mathematical operations or converting units will now use Rational
+  math to prevent accuracy loss. In most cases, this means converted/operated
+  on `Measurement`s will have a `Rational` `#value`. If you have an explicit
+  dependency on the exact `Numeric` type that `Measurement#value` returns,
+  consider using `#to_f` or `#to_i` instead.
+
 ### Removed
 
 - Support for MRI 2.1
