@@ -126,7 +126,7 @@ module Unitwise
 
     # @api private
     def calculate(value)
-      (factor * (prefix ? prefix.scalar : 1) * value) ** exponent
+      (factor * (prefix ? prefix.scalar : 1) * value.to_s.to_r) ** exponent
     end
 
     # Multiply or divide a term
