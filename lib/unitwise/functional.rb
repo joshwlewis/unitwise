@@ -22,6 +22,14 @@ module Unitwise
       5.0 / 9.0 * (x + 459.67)
     end
 
+    def self.to_degre(x)
+      4.0 * x / 5.0 - 218.52
+    end
+
+    def self.from_degre(x)
+      5.0 / 4.0 * (x + 218.52)
+    end
+
     def self.to_hpX(x)
       -log10(x)
     end
