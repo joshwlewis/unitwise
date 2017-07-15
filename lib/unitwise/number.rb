@@ -52,7 +52,7 @@ module Unitwise
     # @param number [Numeric]
     # @return Rational
     def self.rationalize(number)
-      if number.is_a?(BigDecimal) && RUBY_PLATFORM == 'jruby'
+      if number.is_a?(BigDecimal) && RUBY_PLATFORM == 'java'
         number.to_s.to_r
       else
         number.to_r
