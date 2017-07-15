@@ -28,7 +28,7 @@
   :primary_code: "[pi]"
   :secondary_code: "[PI]"
   :scale:
-    :value: !ruby/object:BigDecimal 81:0.31415926535897932384626433832795028841971693993751058209749445923E1
+    :value: !ruby/object:BigDecimal 81:0.31415926535897932384626433832795028841971693993751058209749445923e1
     :unit_code: '1'
   :classification: dimless
   :property: number
@@ -100,7 +100,7 @@
   :primary_code: mol
   :secondary_code: MOL
   :scale:
-    :value: 6.0221367
+    :value: !ruby/object:BigDecimal 18:0.60221367e1
     :unit_code: 10*23
   :classification: si
   :property: amount of substance
@@ -355,7 +355,7 @@
   :primary_code: gon
   :secondary_code: GON
   :scale:
-    :value: 0.9
+    :value: !ruby/object:BigDecimal 18:0.9e0
     :unit_code: deg
   :classification: iso1000
   :property: plane angle
@@ -474,7 +474,7 @@
   :primary_code: a_t
   :secondary_code: ANN_T
   :scale:
-    :value: 365.24219
+    :value: !ruby/object:BigDecimal 18:0.36524219e3
     :unit_code: d
   :classification: iso1000
   :property: time
@@ -486,7 +486,7 @@
   :primary_code: a_j
   :secondary_code: ANN_J
   :scale:
-    :value: 365.25
+    :value: !ruby/object:BigDecimal 18:0.36525e3
     :unit_code: d
   :classification: iso1000
   :property: time
@@ -498,7 +498,7 @@
   :primary_code: a_g
   :secondary_code: ANN_G
   :scale:
-    :value: 365.2425
+    :value: !ruby/object:BigDecimal 18:0.3652425e3
     :unit_code: d
   :classification: iso1000
   :property: time
@@ -534,7 +534,7 @@
   :primary_code: mo_s
   :secondary_code: MO_S
   :scale:
-    :value: 29.53059
+    :value: !ruby/object:BigDecimal 18:0.2953059e2
     :unit_code: d
   :classification: iso1000
   :property: time
@@ -606,7 +606,7 @@
   :primary_code: u
   :secondary_code: AMU
   :scale:
-    :value: 1.6605402e-24
+    :value: !ruby/object:BigDecimal 18:0.16605402e-23
     :unit_code: g
   :classification: iso1000
   :property: mass
@@ -630,7 +630,7 @@
   :primary_code: AU
   :secondary_code: ASU
   :scale:
-    :value: 149597.870691
+    :value: !ruby/object:BigDecimal 27:0.149597870691e6
     :unit_code: Mm
   :classification: iso1000
   :property: length
@@ -666,7 +666,7 @@
   :primary_code: "[h]"
   :secondary_code: "[H]"
   :scale:
-    :value: 6.6260755e-34
+    :value: !ruby/object:BigDecimal 18:0.66260755e-33
     :unit_code: J.s
   :classification: const
   :property: action
@@ -678,7 +678,7 @@
   :primary_code: "[k]"
   :secondary_code: "[K]"
   :scale:
-    :value: 1.380658e-23
+    :value: !ruby/object:BigDecimal 18:0.1380658e-22
     :unit_code: J/K
   :classification: const
   :property: "(unclassified)"
@@ -690,7 +690,7 @@
   :primary_code: "[eps_0]"
   :secondary_code: "[EPS_0]"
   :scale:
-    :value: 8.854187817e-12
+    :value: !ruby/object:BigDecimal 27:0.8854187817e-11
     :unit_code: F/m
   :classification: const
   :property: electric permittivity
@@ -714,7 +714,7 @@
   :primary_code: "[e]"
   :secondary_code: "[E]"
   :scale:
-    :value: 1.60217733e-19
+    :value: !ruby/object:BigDecimal 18:0.160217733e-18
     :unit_code: C
   :classification: const
   :property: electric charge
@@ -726,7 +726,7 @@
   :primary_code: "[m_e]"
   :secondary_code: "[M_E]"
   :scale:
-    :value: 9.1093897e-28
+    :value: !ruby/object:BigDecimal 18:0.91093897e-27
     :unit_code: g
   :classification: const
   :property: mass
@@ -738,7 +738,7 @@
   :primary_code: "[m_p]"
   :secondary_code: "[M_P]"
   :scale:
-    :value: 1.6726231e-24
+    :value: !ruby/object:BigDecimal 18:0.16726231e-23
     :unit_code: g
   :classification: const
   :property: mass
@@ -750,7 +750,7 @@
   :primary_code: "[G]"
   :secondary_code: "[GC]"
   :scale:
-    :value: 6.67259e-11
+    :value: !ruby/object:BigDecimal 18:0.667259e-10
     :unit_code: m3.kg-1.s-2
   :classification: const
   :property: "(unclassified)"
@@ -762,7 +762,7 @@
   :primary_code: "[g]"
   :secondary_code: "[G]"
   :scale:
-    :value: !ruby/object:BigDecimal 18:0.980665E1
+    :value: !ruby/object:BigDecimal 18:0.980665e1
     :unit_code: m/s2
   :classification: const
   :property: acceleration
@@ -906,7 +906,7 @@
   :primary_code: Mx
   :secondary_code: MX
   :scale:
-    :value: 1.0e-08
+    :value: !ruby/object:BigDecimal 18:0.1e-7
     :unit_code: Wb
   :classification: cgs
   :property: flux of magnetic induction
@@ -918,7 +918,7 @@
   :primary_code: G
   :secondary_code: GS
   :scale:
-    :value: 0.0001
+    :value: !ruby/object:BigDecimal 18:0.1e-3
     :unit_code: T
   :classification: cgs
   :property: magnetic flux density
@@ -978,7 +978,7 @@
   :primary_code: ph
   :secondary_code: PHT
   :scale:
-    :value: 0.0001
+    :value: !ruby/object:BigDecimal 18:0.1e-3
     :unit_code: lx
   :classification: cgs
   :property: illuminance
@@ -1002,7 +1002,7 @@
   :primary_code: R
   :secondary_code: ROE
   :scale:
-    :value: 0.000258
+    :value: !ruby/object:BigDecimal 18:0.258e-3
     :unit_code: C/kg
   :classification: cgs
   :property: ion dose
@@ -1038,7 +1038,7 @@
   :primary_code: "[in_i]"
   :secondary_code: "[IN_I]"
   :scale:
-    :value: 2.54
+    :value: !ruby/object:BigDecimal 18:0.254e1
     :unit_code: cm
   :classification: intcust
   :property: length
@@ -1211,7 +1211,7 @@
   :primary_code: "[mil_i]"
   :secondary_code: "[MIL_I]"
   :scale:
-    :value: 0.001
+    :value: !ruby/object:BigDecimal 18:0.1e-2
     :unit_code: "[in_i]"
   :classification: intcust
   :property: length
@@ -1280,7 +1280,7 @@
   :primary_code: "[rd_us]"
   :secondary_code: "[RD_US]"
   :scale:
-    :value: 16.5
+    :value: !ruby/object:BigDecimal 18:0.165e2
     :unit_code: "[ft_us]"
   :classification: us-lengths
   :property: length
@@ -1427,7 +1427,7 @@
   :primary_code: "[mil_us]"
   :secondary_code: "[MIL_US]"
   :scale:
-    :value: 0.001
+    :value: !ruby/object:BigDecimal 18:0.1e-2
     :unit_code: "[in_us]"
   :classification: us-lengths
   :property: length
@@ -1438,7 +1438,7 @@
   :primary_code: "[in_br]"
   :secondary_code: "[IN_BR]"
   :scale:
-    :value: 2.539998
+    :value: !ruby/object:BigDecimal 18:0.2539998e1
     :unit_code: cm
   :classification: brit-length
   :property: length
@@ -1460,7 +1460,7 @@
   :primary_code: "[rd_br]"
   :secondary_code: "[RD_BR]"
   :scale:
-    :value: 16.5
+    :value: !ruby/object:BigDecimal 18:0.165e2
     :unit_code: "[ft_br]"
   :classification: brit-length
   :property: length
@@ -1504,7 +1504,7 @@
   :primary_code: "[pc_br]"
   :secondary_code: "[PC_BR]"
   :scale:
-    :value: 2.5
+    :value: !ruby/object:BigDecimal 18:0.25e1
     :unit_code: "[ft_br]"
   :classification: brit-length
   :property: length
@@ -1670,7 +1670,7 @@
   :primary_code: "[bu_us]"
   :secondary_code: "[BU_US]"
   :scale:
-    :value: 2150.42
+    :value: !ruby/object:BigDecimal 18:0.215042e4
     :unit_code: "[in_i]3"
   :classification: us-volumes
   :property: dry volume
@@ -1803,7 +1803,7 @@
   :primary_code: "[gal_br]"
   :secondary_code: "[GAL_BR]"
   :scale:
-    :value: 4.54609
+    :value: !ruby/object:BigDecimal 18:0.454609e1
     :unit_code: l
   :classification: brit-volumes
   :property: volume
@@ -1902,7 +1902,7 @@
   :primary_code: "[gr]"
   :secondary_code: "[GR]"
   :scale:
-    :value: !ruby/object:BigDecimal 18:0.6479891E2
+    :value: !ruby/object:BigDecimal 18:0.6479891e2
     :unit_code: mg
   :classification: avoirdupois
   :property: mass
@@ -2136,7 +2136,7 @@
   :primary_code: "[pnt_pr]"
   :secondary_code: "[PNT_PR]"
   :scale:
-    :value: 0.013837
+    :value: !ruby/object:BigDecimal 18:0.13837e-1
     :unit_code: "[in_i]"
   :classification: typeset
   :property: length
@@ -2160,7 +2160,7 @@
   :primary_code: "[pied]"
   :secondary_code: "[PIED]"
   :scale:
-    :value: 32.48
+    :value: !ruby/object:BigDecimal 18:0.3248e2
     :unit_code: cm
   :classification: typeset
   :property: length
@@ -2262,7 +2262,7 @@
   :primary_code: cal_[15]
   :secondary_code: CAL_[15]
   :scale:
-    :value: 4.1858
+    :value: !ruby/object:BigDecimal 18:0.41858e1
     :unit_code: J
   :classification: heat
   :property: energy
@@ -2274,7 +2274,7 @@
   :primary_code: cal_[20]
   :secondary_code: CAL_[20]
   :scale:
-    :value: 4.1819
+    :value: !ruby/object:BigDecimal 18:0.41819e1
     :unit_code: J
   :classification: heat
   :property: energy
@@ -2286,7 +2286,7 @@
   :primary_code: cal_m
   :secondary_code: CAL_M
   :scale:
-    :value: 4.19002
+    :value: !ruby/object:BigDecimal 18:0.419002e1
     :unit_code: J
   :classification: heat
   :property: energy
@@ -2298,7 +2298,7 @@
   :primary_code: cal_IT
   :secondary_code: CAL_IT
   :scale:
-    :value: 4.1868
+    :value: !ruby/object:BigDecimal 18:0.41868e1
     :unit_code: J
   :classification: heat
   :property: energy
@@ -2310,7 +2310,7 @@
   :primary_code: cal_th
   :secondary_code: CAL_TH
   :scale:
-    :value: 4.184
+    :value: !ruby/object:BigDecimal 18:0.4184e1
     :unit_code: J
   :classification: heat
   :property: energy
@@ -2346,7 +2346,7 @@
   :primary_code: "[Btu_39]"
   :secondary_code: "[BTU_39]"
   :scale:
-    :value: 1.05967
+    :value: !ruby/object:BigDecimal 18:0.105967e1
     :unit_code: kJ
   :classification: heat
   :property: energy
@@ -2358,7 +2358,7 @@
   :primary_code: "[Btu_59]"
   :secondary_code: "[BTU_59]"
   :scale:
-    :value: 1.0548
+    :value: !ruby/object:BigDecimal 18:0.10548e1
     :unit_code: kJ
   :classification: heat
   :property: energy
@@ -2370,7 +2370,7 @@
   :primary_code: "[Btu_60]"
   :secondary_code: "[BTU_60]"
   :scale:
-    :value: 1.05468
+    :value: !ruby/object:BigDecimal 18:0.105468e1
     :unit_code: kJ
   :classification: heat
   :property: energy
@@ -2382,7 +2382,7 @@
   :primary_code: "[Btu_m]"
   :secondary_code: "[BTU_M]"
   :scale:
-    :value: 1.05587
+    :value: !ruby/object:BigDecimal 18:0.105587e1
     :unit_code: kJ
   :classification: heat
   :property: energy
@@ -2394,7 +2394,7 @@
   :primary_code: "[Btu_IT]"
   :secondary_code: "[BTU_IT]"
   :scale:
-    :value: 1.05505585262
+    :value: !ruby/object:BigDecimal 27:0.105505585262e1
     :unit_code: kJ
   :classification: heat
   :property: energy
@@ -2406,7 +2406,7 @@
   :primary_code: "[Btu_th]"
   :secondary_code: "[BTU_TH]"
   :scale:
-    :value: 1.05435
+    :value: !ruby/object:BigDecimal 18:0.105435e1
     :unit_code: kJ
   :classification: heat
   :property: energy
@@ -2465,7 +2465,7 @@
   :primary_code: m[H2O]
   :secondary_code: M[H2O]
   :scale:
-    :value: !ruby/object:BigDecimal 18:0.980665E1
+    :value: !ruby/object:BigDecimal 18:0.980665e1
     :unit_code: kPa
   :classification: clinical
   :property: pressure
@@ -2477,7 +2477,7 @@
   :primary_code: m[Hg]
   :secondary_code: M[HG]
   :scale:
-    :value: 133.322
+    :value: !ruby/object:BigDecimal 18:0.133322e3
     :unit_code: kPa
   :classification: clinical
   :property: pressure
@@ -2624,7 +2624,7 @@
   :primary_code: "[MET]"
   :secondary_code: "[MET]"
   :scale:
-    :value: 3.5
+    :value: !ruby/object:BigDecimal 18:0.35e1
     :unit_code: mL/min/kg
   :classification: clinical
   :property: metabolic cost of physical activity
@@ -3403,7 +3403,7 @@
   :primary_code: Ao
   :secondary_code: AO
   :scale:
-    :value: 0.1
+    :value: !ruby/object:BigDecimal 18:0.1e0
     :unit_code: nm
   :classification: misc
   :property: length
@@ -3487,7 +3487,7 @@
   :primary_code: "[car_m]"
   :secondary_code: "[CAR_M]"
   :scale:
-    :value: 0.2
+    :value: !ruby/object:BigDecimal 18:0.2e0
     :unit_code: g
   :classification: misc
   :property: mass

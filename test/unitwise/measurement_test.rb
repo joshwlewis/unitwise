@@ -37,6 +37,13 @@ describe Unitwise::Measurement do
     it "must convert to a unit of another measurement" do
       mph.convert_to(kmh).value.must_almost_equal(96.56064)
     end
+    it "must convert to and from another unit without losing precision" do
+      circle = Unitwise::Measurement.new(1, "circle")
+      circle.to_degree.to_circle.must_equal circle
+
+      meter = Unitwise::Measurement.new(10, "meter")
+      meter.to_mile.to_meter.must_equal meter
+    end
   end
 
   describe "#*" do

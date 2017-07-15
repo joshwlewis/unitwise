@@ -103,11 +103,11 @@ module Unitwise
     # @return [Numeric]
     # @api public
     def scalar(magnitude = 1)
-      base? ? BigDecimal(magnitude.to_s) : scale.scalar(magnitude)
+      base? ? magnitude : scale.scalar(magnitude)
     end
 
     def magnitude(scalar = scalar())
-      special? ? scale.magnitude(scalar) : BigDecimal('1')
+      special? ? scale.magnitude(scalar) : 1
     end
 
     # An atom may have a complex scale with several base atoms at various
