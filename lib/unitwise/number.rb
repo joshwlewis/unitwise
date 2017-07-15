@@ -45,5 +45,18 @@ module Unitwise
         d
       end
     end
+
+    # Coerce a numeric to a Rational, but avoid inaccurate conversions by
+    # jruby. More details here: https://github.com/jruby/jruby/issues/4711.
+    # @api public
+    # @param number [Numeric]
+    # @return Rational
+    def self.rationalize(number)
+      if number.is_a?(BigDecimal) && RUBY_PLATFORM == 'jruby'
+        number.to_s.to_r
+      else
+        number.to_r
+      end
+    end
   end
 end

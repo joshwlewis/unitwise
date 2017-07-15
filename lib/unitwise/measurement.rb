@@ -129,7 +129,7 @@ module Unitwise
     #   measurement.to_r # => (17/4)
     # @api public
     def to_r
-      Rational(value)
+      Number.rationalize(value)
     end
 
     # Will attempt to convert to a unit by method name.
