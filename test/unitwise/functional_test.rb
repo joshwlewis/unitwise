@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Unitwise::Functional do
   subject { Unitwise::Functional }
-  %w{cel degf hpX hpC tan100 ph ld ln lg 2lg}.each do |function|
+  %w{cel degf degre hpX hpC tan100 ph ld ln lg 2lg}.each do |function|
     describe function do
       it 'should convert back and forth' do
         number = rand(1000) / 1000.0
