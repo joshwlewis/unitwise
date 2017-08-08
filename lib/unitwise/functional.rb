@@ -46,19 +46,19 @@ module Unitwise
       100.0 ** -x
     end
 
-    def self.to_tan100(x)
+    def self.to_100tan(x)
       100.0 * tan(x)
     end
 
-    def self.from_tan100(x)
+    def self.from_100tan(x)
       atan(x / 100.0)
     end
 
-    def self.to_ph(x)
+    def self.to_pH(x)
       to_hpX(x)
     end
 
-    def self.from_ph(x)
+    def self.from_pH(x)
       from_hpX(x)
     end
 
