@@ -94,6 +94,14 @@ module Unitwise
       10.0 ** (x / 2.0)
     end
 
+    def self.to_sqrt
+      sqrt(x)
+    end
+
+    def self.from_sqrt
+      x**2
+    end
+
     attr_reader :function_name
 
     # Setup a new functional.
