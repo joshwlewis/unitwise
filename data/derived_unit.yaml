@@ -3659,6 +3659,19 @@
   :special: false
   :arbitrary: false
   
+- :names: inh2o
+  :symbol: inh2o
+  :primary_code: inh2o
+  :secondary_code: inh2o
+  :scale:
+    :value: 27.707258364
+    :unit_code: "psi"
+  :classification: misc
+  :property: pressure
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
 - :names: _kg/m3
   :symbol: _kg/m3
   :primary_code: _kg/m3
