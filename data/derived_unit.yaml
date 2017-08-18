@@ -3664,8 +3664,8 @@
   :primary_code: inh2o
   :secondary_code: inh2o
   :scale:
-    :value: 27.707258364
-    :unit_code: "psi"
+    :value: 0.036091625770498
+    :unit_code: "psig"
   :classification: misc
   :property: pressure
   :metric: false
