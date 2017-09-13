@@ -3788,10 +3788,10 @@
   :metric: false
   :special: false
   :arbitrary: false
-- :names: ft2F/BTU
-  :symbol: ft2F/BTU
-  :primary_code: ft2F/BTU
-  :secondary_code: ft2F/BTU
+- :names: hrft2F/BTU
+  :symbol: hrft2F/BTU
+  :primary_code: hrft2F/BTU
+  :secondary_code: hrft2F/BTU
   :scale:
     :value: 0.176110183682
     :unit_code: 'm2K/W'
