@@ -3578,3 +3578,473 @@
   :metric: true
   :special: false
   :arbitrary: false
+
+- :names: kg/min
+  :symbol: kg/min
+  :primary_code: kg/min
+  :secondary_code: kg/min
+  :scale:
+    :value: 1
+    :unit_code: "kg/'"
+  :property: mass flowrate
+  :metric: true
+  :special: false
+  :arbitrary: false
+
+- :names: lb/min
+  :symbol: lb/min
+  :primary_code: lb/min
+  :secondary_code: lb/min
+  :scale:
+    :value: 0.45359290943564
+    :unit_code: "kg/min"
+  :property: mass flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+- :names: lb/hr
+  :symbol: lb/hr
+  :primary_code: lb/hr
+  :secondary_code: lb/hr
+  :scale:
+    :value: 0.01666666666667
+    :unit_code: "lb/min"
+  :property: mass flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+- :names: kg/hr
+  :symbol: kg/hr
+  :primary_code: kg/hr
+  :secondary_code: kg/hr
+  :scale:
+    :value: 2.204622
+    :unit_code: "lb/hr"
+  :property: mass flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+
+- :names: gpm
+  :symbol: gpm
+  :primary_code: gpm
+  :secondary_code: gpm
+  :scale:
+    :value: 1.0
+    :unit_code: "1"
+  :property: volumetric flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+- :names: "ft3/minn"
+  :symbol: "ft3/minn"
+  :primary_code: "ft3/minn"
+  :secondary_code: "ft3/minn"
+  :scale:
+    :value: 7.480519
+    :unit_code: "gpm"
+  :property: volumetric flowrate
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+
+  
+
+- :names: _ft/s
+  :symbol: _ft/s
+  :primary_code: _ft/s
+  :secondary_code: _ft/s
+  :scale:
+    :value: 0.592483801
+    :unit_code: "knot"
+  :classification: misc
+  :property: velocity
+  :metric: true
+  :special: false
+  :arbitrary: false
+
+# 1 _ft/s = 0.3048 _m/s
+- :names: _m/s # put 1 next to this
+  :symbol: _m/s
+  :primary_code: _m/s
+  :secondary_code: _m/s
+  :scale:
+    :value: 3.280839 # put number next to '_ft/s' here
+    :unit_code: "_ft/s" 
+  :classification: misc
+  :property: velocity
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+
+
+- :names: psig
+  :symbol: psig
+  :primary_code: psig
+  :secondary_code: psig
+  :scale:
+    :value: 1.0
+    :unit_code: "[psi]"
+  :classification: misc
+  :property: pressure
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+- :names: inh2o
+  :symbol: inh2o
+  :primary_code: inh2o
+  :secondary_code: inh2o
+  :scale:
+    :value: 0.036091625770498
+    :unit_code: "psig"
+  :classification: misc
+  :property: pressure
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+- :names: _kg/m3
+  :symbol: _kg/m3
+  :primary_code: _kg/m3
+  :secondary_code: _kg/m3
+  :scale:
+    :value: 1.0
+    :unit_code: "1"
+  :classification: misc
+  :property: density
+  :metric: true
+  :special: false
+  :arbitrary: false
+
+- :names: lb/ft3 # put 1 here
+  :symbol: lb/ft3
+  :primary_code: lb/ft3
+  :secondary_code: lb/ft3
+  :scale:
+    :value: 16.0184633
+    :unit_code: "_kg/m3"
+  :classification: misc
+  :property: density
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+  
+- :names: integer
+  :symbol: integer
+  :primary_code: integer
+  :secondary_code: integer
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: number
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+- :names: boolean
+  :symbol: boolean
+  :primary_code: boolean
+  :secondary_code: boolean
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: boolean
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Fouling rate
+- :names: m2K/Wd
+  :symbol: m2K/Wd
+  :primary_code: m2K/Wd
+  :secondary_code: m2K/Wd
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: fouling_rate
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: m2K/kWd
+  :symbol: m2K/kWd
+  :primary_code: m2K/kWd
+  :secondary_code: m2K/kWd
+  :scale:
+    :value: 1000.0
+    :unit_code: "m2K/Wd" 
+  :classification: misc
+  :property: fouling_rate
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: ft2F/BTUd
+  :symbol: ft2F/BTUd
+  :primary_code: ft2F/BTUd
+  :secondary_code: ft2F/BTUd
+  :scale:
+    :value: 0.176110183682
+    :unit_code: "m2K/Wd" 
+  :classification: misc
+  :property: fouling_rate
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+# Fouling resistance
+- :names: m2K/W
+  :symbol: m2K/W
+  :primary_code: m2K/W
+  :secondary_code: m2K/W
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: fouling_resistance
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: m2K/kW
+  :symbol: m2K/kW
+  :primary_code: m2K/kW
+  :secondary_code: m2K/kW
+  :scale:
+    :value: 1000.0
+    :unit_code: 'm2K/W'
+  :classification: misc
+  :property: fouling_resistance
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: hrft2F/BTU
+  :symbol: hrft2F/BTU
+  :primary_code: hrft2F/BTU
+  :secondary_code: hrft2F/BTU
+  :scale:
+    :value: 0.176110183682
+    :unit_code: 'm2K/W'
+  :classification: misc
+  :property: fouling_resistance
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+# Heat Transfer Coefficient
+- :names: W/m2K
+  :symbol: W/m2K
+  :primary_code: W/m2K
+  :secondary_code: W/m2K
+  :scale:
+    :value: 1.0
+    :unit_code: '1'
+  :classification: misc
+  :property: heat_transfer_coefficient
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kW/m2K
+  :symbol: kW/m2K
+  :primary_code: kW/m2K
+  :secondary_code: kW/m2K
+  :scale:
+    :value: 1000.0
+    :unit_code: 'W/m2K'
+  :classification: misc
+  :property: heat_transfer_coefficient
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: BTU/ft2F
+  :symbol: BTU/ft2F
+  :primary_code: BTU/ft2F
+  :secondary_code: BTU/ft2F
+  :scale:
+    :value: 5.67826334112
+    :unit_code: 'W/m2K'
+  :classification: misc
+  :property: heat_transfer_coefficient
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Power/Duty
+- :names: Btu/hr # put 1 here
+  :symbol: Btu/hr
+  :primary_code: Btu/hr
+  :secondary_code: Btu/hr
+  :scale:
+    :value: 0.000293071
+    :unit_code: 'kW'
+  :classification: misc
+  :property: power
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kBtu/hr
+  :symbol: kBtu/hr
+  :primary_code: kBtu/hr
+  :secondary_code: kBtu/hr
+  :scale:
+    :value: 1000.0
+    :unit_code: 'Btu/hr'
+  :classification: misc
+  :property: power
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Heat Flux
+- :names: Btu/hr.ft2 # put 1 here
+  :symbol: Btu/hr.ft2
+  :primary_code: Btu/hr.ft2
+  :secondary_code: Btu/hr.ft2
+  :scale:
+    :value: 3.154590745
+    :unit_code: 'W/m2'
+  :classification: misc
+  :property: heat_flux
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kBtu/hr.ft2
+  :symbol: kBtu/hr.ft2
+  :primary_code: kBtu/hr.ft2
+  :secondary_code: kBtu/hr.ft2
+  :scale:
+    :value: 1000.0
+    :unit_code: 'Btu/hr.ft2'
+  :classification: misc
+  :property: heat_flux
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Dynamic Viscosity
+- :names: Pa.s
+  :symbol: Pa.s
+  :primary_code: Pa.s
+  :secondary_code: Pa.s
+  :scale:
+    :value: 1000.0
+    :unit_code: 'cP'
+  :classification: misc
+  :property: dynamic viscosity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: lbm/h.ft # 1 here
+  :symbol: lbm/h.ft
+  :primary_code: lbm/h.ft
+  :secondary_code: lbm/h.ft
+  :scale:
+    :value: 0.00041337887321
+    :unit_code: 'Pa.s'
+  :classification: misc
+  :property: dynamic viscosity
+  :metric: false
+  :special: false
+  :arbitrary: false
+  
+# Thermal Conductivity  
+- :names: W/mK
+  :symbol: W/mK
+  :primary_code: W/mK
+  :secondary_code: W/mK
+  :scale:
+    :value: 1
+    :unit_code: '1'
+  :classification: misc
+  :property: thermal conductivity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: Btu/hftF
+  :symbol: Btu/hftF
+  :primary_code: Btu/hftF
+  :secondary_code: Btu/hftF
+  :scale:
+    :value: 1.73073466500247
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: thermal conductivity
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+# Heat Capacity  
+- :names: J/gK
+  :symbol: J/gK
+  :primary_code: J/gK
+  :secondary_code: J/gK
+  :scale:
+    :value: 1
+    :unit_code: '1'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: J/kgK
+  :symbol: J/kgK
+  :primary_code: J/kgK
+  :secondary_code: J/kgK
+  :scale:
+    :value: 0.001
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: kJ/kgK
+  :symbol: kJ/kgK
+  :primary_code: kJ/kgK
+  :secondary_code: kJ/kgK
+  :scale:
+    :value: 1.0
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+- :names: btu/lbmF
+  :symbol: btu/lbmF
+  :primary_code: btu/lbmF
+  :secondary_code: btu/lbmF
+  :scale:
+    :value: 4.18679999347027
+    :unit_code: 'W/mK'
+  :classification: misc
+  :property: heat capacity
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+
+
+# Kinematic Viscosity
+- :names: "[ft2/s]"
+  :symbol: "[ft2/s]"
+  :primary_code: ft2/s
+  :secondary_code: ft2/s
+  :scale:
+    :value: 929.030400001
+    :unit_code: 'stokes'
+  :classification: misc
+  :property: kinematic viscosity
+  :metric: false
+  :special: false
+  :arbitrary: false
+
+
