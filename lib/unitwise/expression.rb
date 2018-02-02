@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
+require 'unitwise/expression/atomic_parser'
+require 'unitwise/expression/composer'
+require 'unitwise/expression/decomposer'
 require 'unitwise/expression/matcher'
 require 'unitwise/expression/parser'
 require 'unitwise/expression/transformer'
-require 'unitwise/expression/composer'
-require 'unitwise/expression/decomposer'
 
 module Unitwise
   # The Expression module encompases all functions around encoding and decoding
