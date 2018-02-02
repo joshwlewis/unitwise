@@ -1,0 +1,12 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - Gemfile
+    - unitwise.gemspec
+  TargetRubyVersion: 2.4
+Documentation:
+  Enabled: true
+Metrics/LineLength:
+  Max: 80
