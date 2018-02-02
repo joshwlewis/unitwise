@@ -25,14 +25,14 @@ module Unitwise
     # @return [Array]
     # @api public
     def terms
-      unless frozen?
-        unless @terms
-          decomposer = Expression.decompose(@expression)
-          @mode  = decomposer.mode
-          @terms = decomposer.terms
-        end
-        freeze
-      end
+      return @terms if frozen?
+      return @terms if !@terms.nil? && @terms.any?
+
+      decomposer = Expression.decompose(@expression)
+      @mode  = decomposer.mode
+      @terms = decomposer.terms
+      freeze
+
       @terms
     end
 
