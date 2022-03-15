@@ -6,7 +6,7 @@ module Unitwise
     # The data loaded from the UCUM spec files
     # @api semipublic
     def self.data
-      @data ||= YAML.safe_load(File.open(data_file), permitted_classes: [BigDecimal])
+      @data ||= YAML.safe_load(File.open(data_file), permitted_classes: [BigDecimal, Symbol])
     end
 
     # The location of the UCUM spec prefix data file
