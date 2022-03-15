@@ -10,7 +10,8 @@ module Unitwise
       # Array of hashes representing default atom properties.
       # @api private
       def data
-        @data ||= data_files.map { |file| YAML.unsafe_load(File.open file) }.flatten
+        puts('Loading units yaml with safe_load...') if ENV['VERIFY_UNITWISE_SAFE']
+        @data ||= data_files.map { |file| YAML.safe_load(File.open file, permitted_classes: [Symbol, BigDecimal]) }.flatten
       end
 
       # Data files containing default atom data
