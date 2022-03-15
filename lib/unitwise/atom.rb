@@ -11,7 +11,7 @@ module Unitwise
       # @api private
       def data
         puts('Loading units yaml with safe_load...') if ENV['VERIFY_UNITWISE_SAFE']
-        @data ||= data_files.map { |file| YAML.safe_load(File.open file, permitted_classes: [Symbol, BigDecimal]) }.flatten
+        @data ||= data_files.map { |file| YAML.safe_load(File.open(file), permitted_classes: [Symbol, BigDecimal]) }.flatten
       end
 
       # Data files containing default atom data
