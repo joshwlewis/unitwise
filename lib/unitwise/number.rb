@@ -38,7 +38,7 @@ module Unitwise
     # @param value Something that can be represented as a string number
     # @return [Integer, BigDecimal]
     def self.coefficify(value)
-      d = BigDecimal.new(value.to_s)
+      d = BigDecimal(value.to_s)
       if (i = d.to_i) == d
         i
       else
