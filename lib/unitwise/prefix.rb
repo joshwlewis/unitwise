@@ -6,7 +6,8 @@ module Unitwise
     # The data loaded from the UCUM spec files
     # @api semipublic
     def self.data
-      @data ||= YAML.load File.open(data_file)
+      f = File.open(data_file)
+      @data ||= ::YAML.respond_to?(:unsafe_load) ? ::YAML.unsafe_load(f) : ::YAML.load(f)
     end
 
     # The location of the UCUM spec prefix data file
