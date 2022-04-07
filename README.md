@@ -1,11 +1,9 @@
 # [Unitwise](//github.com/joshwlewis/unitwise)
 
 [![Gem Version](http://img.shields.io/gem/v/unitwise.svg?style=flat)](https://rubygems.org/gems/unitwise)
-[![Build Status](http://img.shields.io/travis/joshwlewis/unitwise.svg?style=flat)](https://travis-ci.org/joshwlewis/unitwise)
-[![Dependency Status](http://img.shields.io/gemnasium/joshwlewis/unitwise.svg?style=flat)](https://gemnasium.com/joshwlewis/unitwise)
+[![Build Status](https://github.com/joshwlewis/unitwise/actions/workflows/ruby.yml/badge.svg)](https://github.com/joshwlewis/unitwise/actions/workflows/ruby.yml)
 [![Coverage Status](http://img.shields.io/coveralls/joshwlewis/unitwise.svg?style=flat)](https://coveralls.io/r/joshwlewis/unitwise)
 [![Code Climate](http://img.shields.io/codeclimate/github/joshwlewis/unitwise.svg?style=flat)](https://codeclimate.com/github/joshwlewis/unitwise)
-![Analytics](https://ga-beacon.appspot.com/UA-49481499-1/joshwlewis/unitwise?pixel)
 
 Unitwise is a Ruby library for unit measurement conversion and math.
 
@@ -273,10 +271,9 @@ Unitwise(1, "🥃").to_cup
 This library aims to support and is tested against the following Ruby
 implementations:
 
-* Ruby 2.2
-* Ruby 2.3
-* Ruby 2.4
+* Ruby 2.6 - 3.1
 * [JRuby](http://jruby.org/)
+* [TruffleRuby](https://github.com/oracle/truffleruby)
 
 If something doesn't work on one of these versions, it's a bug.
 
