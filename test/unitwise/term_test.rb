@@ -5,50 +5,50 @@ describe Unitwise::Term do
     subject { Unitwise::Term.new(:atom => 'J', :prefix => 'k')}
     describe "#atom" do
       it "should be an atom" do
-        subject.atom.must_be_instance_of Unitwise::Atom
+        _(subject.atom).must_be_instance_of Unitwise::Atom
       end
     end
 
     describe "#prefix" do
       it "should be a prefix" do
-        subject.prefix.must_be_instance_of Unitwise::Prefix
+        _(subject.prefix).must_be_instance_of Unitwise::Prefix
       end
     end
 
     describe "#exponent" do
       it "should be an integer" do
-        subject.exponent.must_equal 1
+        _(subject.exponent).must_equal 1
       end
     end
 
     describe "#root_terms" do
       it "should be an array of terms" do
-        subject.root_terms.must_be_kind_of Array
-        subject.root_terms.first.must_be_instance_of Unitwise::Term
+        _(subject.root_terms).must_be_kind_of Array
+        _(subject.root_terms.first).must_be_instance_of Unitwise::Term
       end
     end
 
     describe "#composition" do
       it "should be a Multiset" do
-        subject.composition.must_be_instance_of SignedMultiset
+        _(subject.composition).must_be_instance_of SignedMultiset
       end
     end
 
     describe "#scale" do
       it "should return value relative to terminal atoms" do
-        subject.scalar.must_equal 1000000.0
+        _(subject.scalar).must_equal 1000000.0
       end
     end
 
     describe "#frozen?" do
       it "should be frozen" do
-        subject.frozen?.must_equal true
+        _(subject.frozen?).must_equal true
       end
     end
 
     describe "#to_s" do
       it "should return the UCUM code" do
-        subject.to_s.must_equal "kJ"
+        _(subject.to_s).must_equal "kJ"
       end
     end
   end
