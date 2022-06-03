@@ -7,6 +7,9 @@ Unitwise uses semantic versioning.
 
 ## Unreleased
 
+- Added support for newer Rubies (2.6+) & drops support for older ones (2.6 is EOL but will continue to support for now)
+- Support Psych 4. Note: unit data YAML files in the gem are loaded using `unsafe_load`
+
 ## 2.2.0 - 2017-07-14
 
 ### Fixed
