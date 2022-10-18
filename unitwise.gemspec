@@ -23,11 +23,11 @@ Gem::Specification.new do |gem|
   gem.add_dependency               'liner',           '~> 0.2'
   gem.add_dependency               'signed_multiset', '~> 0.2'
   gem.add_dependency               'memoizable',      '~> 0.4'
-  gem.add_dependency               'parslet',         '~> 1.5'
+  gem.add_dependency               'parslet',         '~> 2.0'
 
-  gem.add_development_dependency   'nokogiri',        '~> 1.5'
-  gem.add_development_dependency   'pry',             '~> 0.9'
-  gem.add_development_dependency   'minitest',        '~> 5.0'
-  gem.add_development_dependency   'rake',            '~> 10.0'
-  gem.add_development_dependency   'nori',            '~> 2.3'
+  gem.add_development_dependency   'nokogiri',        '~> 1.13'
+  gem.add_development_dependency   'pry',             '~> 0.14'
+  gem.add_development_dependency   'minitest',        '~> 5.15'
+  gem.add_development_dependency   'rake',            '~> 13.0'
+  gem.add_development_dependency   'nori',            '~> 2.6'
 end
