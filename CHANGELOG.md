@@ -7,7 +7,7 @@ Unitwise uses semantic versioning.
 
 ## Unreleased
 
-## 2.3.0 - 2022-10-08
+## 2.3.0 - 2022-10-19
 
 ### Added
 
