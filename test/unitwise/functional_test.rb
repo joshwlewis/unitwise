@@ -9,7 +9,7 @@ describe Unitwise::Functional do
         there = subject.send "to_#{function}", number
         back_again = subject.send "from_#{function}", there
         rounded_result = (back_again * 1000).round / 1000.0
-        rounded_result.must_equal number
+        _(rounded_result).must_equal number
       end
     end
   end
