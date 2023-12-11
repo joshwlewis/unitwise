@@ -57,6 +57,13 @@ module Unitwise
     atom
   end
 
+  def self.register_custom_base_unit(atom_hash)
+    atom = Unitwise::Atom.new(atom_hash.merge(custom: true))
+    Unitwise::Atom.all.push(atom)
+    Unitwise::Expression::Decomposer.send(:reset)
+    atom
+  end
+
   # The system path for the installed gem
   # @api private
   def self.path

@@ -66,6 +66,11 @@ module Unitwise
     end
     memoize :special?
 
+    def custom?
+      atoms.any?(&:custom?)
+    end
+    memoize :custom?
+
     # A number representing this unit's distance from it's deepest terminal atom.
     # @return [Integer]
     # @api public

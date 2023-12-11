@@ -3,7 +3,7 @@ module Unitwise
   # scaled units without prefixes, multipliers, exponents, etc. Examples are
   # 'meter', 'hour', 'pound force'.
   class Atom < Base
-    liner :classification, :property, :metric, :special, :arbitrary, :dim
+    liner :classification, :property, :metric, :special, :arbitrary, :dim, :custom
     include Compatible
 
     class << self
@@ -27,6 +27,10 @@ module Unitwise
     # @api public
     def base?
       !!(@dim && !scale)
+    end
+
+    def custom?
+      !!@custom
     end
 
     # Determine if an atom is derived. Derived atoms are defined with respect
