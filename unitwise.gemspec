@@ -20,6 +20,8 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(/^test\//)
   gem.require_paths = ['lib']
 
+  gem.required_ruby_version = '>= 2.6'
+
   gem.add_dependency               'liner',           '~> 0.2'
   gem.add_dependency               'signed_multiset', '~> 0.2'
   gem.add_dependency               'memoizable',      '~> 0.4'

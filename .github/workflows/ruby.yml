@@ -22,6 +22,8 @@ jobs:
           - '2.7'
           - '3.0'
           - '3.1'
+          - '3.2'
+          - '3.3'
           - 'jruby'
           - 'truffleruby'
 
@@ -30,7 +32,7 @@ jobs:
     env:
       BUNDLE_WITHOUT: 'yard pry'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
