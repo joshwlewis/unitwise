@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(/^test\//)
   gem.require_paths = ['lib']
 
-  gem.required_ruby_version = '>= 2.6'
+  gem.required_ruby_version = '>= 3.1'
 
   gem.add_dependency               'liner',           '~> 0.2'
   gem.add_dependency               'signed_multiset', '~> 0.2'
@@ -29,7 +29,7 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency   'nokogiri',        '~> 1.13'
   gem.add_development_dependency   'pry',             '~> 0.14'
-  gem.add_development_dependency   'minitest',        '~> 5.15'
+  gem.add_development_dependency   'minitest',        '~> 5.26'
   gem.add_development_dependency   'rake',            '~> 13.0'
   gem.add_development_dependency   'nori',            '~> 2.6'
 end
