@@ -5,7 +5,17 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
-## Unreleased
+## Unreleased (2.4.0)
+
+### Fixed
+
+
+
+### Changed
+
+- Test against Ruby 3.1 -> 3.4
+- Bumped minimum required Ruby version to 3.1 (dropped support for EOL Ruby versions 2.6, 2.7, and 3.0)
+
 
 ## 2.3.0 - 2022-10-19
 
