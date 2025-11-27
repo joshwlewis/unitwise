@@ -5,7 +5,23 @@ version 1.0.0.
 
 Unitwise uses semantic versioning.
 
-## Unreleased
+## Unreleased (2.4.0)
+
+### Added
+
+- Square root (`sqrt`) function and its inverse for functional units ([#84](https://github.com/joshwlewis/unitwise/pull/84) - @pinkynrg)
+
+### Fixed
+
+- Fixed Weber unit typo in derived_unit.yaml ([#72](https://github.com/joshwlewis/unitwise/issues/72) - @fabiengagne)
+- Fixed PSI unit typo in derived_unit.yaml ([#55](https://github.com/joshwlewis/unitwise/pull/55) - @kurtronshausen)
+- Fixed mistyped function names in functional.rb ([#84](https://github.com/joshwlewis/unitwise/pull/84) - @pinkynrg)
+
+### Changed
+
+- Test against Ruby 3.1 -> 3.4
+- Bumped minimum required Ruby version to 3.1 (dropped support for EOL Ruby versions 2.6, 2.7, and 3.0)
+
 
 ## 2.3.0 - 2022-10-19
 
