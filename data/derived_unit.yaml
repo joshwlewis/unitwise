@@ -247,7 +247,7 @@
     :value: 1
     :unit_code: V.s
   :classification: si
-  :property: magentic flux
+  :property: magnetic flux
   :metric: true
   :special: false
   :arbitrary: false
