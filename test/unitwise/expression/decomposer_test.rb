@@ -1,4 +1,6 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require "test_helper"
 
 describe Unitwise::Expression::Decomposer do
   subject { Unitwise::Expression::Decomposer }
@@ -24,9 +26,24 @@ describe Unitwise::Expression::Decomposer do
       saff = subject.new("<i>g<sub>n</sub></i>").terms
       _(saff.count).must_equal 1
     end
+    it "should accept exact symbol match over prefixed matches" do
+      ft = subject.new("ft").terms
+      _(ft.count).must_equal 1
+      _(ft.first.atom.primary_code).must_equal "[ft_i]"
+    end
+    it "should accept prefixed units" do
+      kg = subject.new("kg").terms
+      _(kg.count).must_equal 1
+      _(kg.first.prefix.primary_code).must_equal "k"
+    end
     it "should accept complex units" do
       complex = subject.new("(mg.(km/s)3/J)2.Pa").terms
       _(complex.count).must_equal 5
+    end
+    it "should accept complex units with symbol match over prefixed match" do
+      complex = subject.new("((ft/s)3/J)2.Pa").terms
+      _(complex.count).must_equal 4
+      _(complex.first.atom.primary_code).must_equal "[ft_i]"
     end
     it "should accept more complex units" do
       complex = subject.new("4.1(mm/2s3)4.7.3J-2").terms
@@ -36,10 +53,14 @@ describe Unitwise::Expression::Decomposer do
       frequency = subject.new("/s").terms
       _(frequency.count).must_equal 1
     end
+    it "should accept weird exact symbol match units over prefixed match" do
+      per_foot = subject.new("/ft").terms
+      _(per_foot.count).must_equal 1
+      _(per_foot.first.atom.primary_code).must_equal "[ft_i]"
+    end
     it "should accept units with a factor and unit" do
       oddity = subject.new("2ms2").terms
       _(oddity.count).must_equal 1
     end
   end
-
 end

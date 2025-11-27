@@ -2,9 +2,9 @@
 
 require "test_helper"
 
-describe Unitwise::Expression::Parser do
+describe Unitwise::Expression::AtomicParser do
   describe "when parser is initialized with :primary_code as key" do
-    subject { Unitwise::Expression::Parser.new }
+    subject { Unitwise::Expression::AtomicParser.new }
 
     describe "#metric_atom" do
       it "must match 'N'" do
@@ -23,16 +23,6 @@ describe Unitwise::Expression::Parser do
 
       it "must match '[ft_i]'" do
         _(subject.atom.parse("[ft_i]")[:atom_code]).must_equal("[ft_i]")
-      end
-    end
-
-    describe "#prefix" do
-      it "must match 'k'" do
-        _(subject.prefix.parse("k")[:prefix_code]).must_equal("k")
-      end
-
-      it "must match 'f'" do
-        _(subject.prefix.parse("f")[:prefix_code]).must_equal("f")
       end
     end
 
@@ -67,16 +57,15 @@ describe Unitwise::Expression::Parser do
         _(subject.term.parse("[in_i]")[:term][:atom][:atom_code]).must_equal("[in_i]")
       end
 
-      it "must match prefixed atoms" do
-        match = subject.term.parse("ks")[:term]
-        _(match[:atom][:atom_code]).must_equal("s")
-        _(match[:prefix][:prefix_code]).must_equal("k")
+      it "must not match prefixed terms" do
+        assert_raises Parslet::ParseFailed do
+          subject.term.parse("cm3")[:term]
+        end
       end
 
       it "must match exponential atoms" do
-        match = subject.term.parse("cm3")[:term]
+        match = subject.term.parse("m3")[:term]
         _(match[:atom][:atom_code]).must_equal "m"
-        _(match[:prefix][:prefix_code]).must_equal "c"
         _(match[:exponent][:integer]).must_equal "3"
       end
 
@@ -92,16 +81,27 @@ describe Unitwise::Expression::Parser do
     end
 
     describe "#group" do
+      it "must not match prefixed term within parentheses" do
+        assert_raises Parslet::ParseFailed do
+          subject.term.parse("(kg)")
+        end
+      end
+
       it "must match parentheses with a term" do
         match = subject.group.parse("(s2)")[:group][:nested][:left][:term]
         _(match[:atom][:atom_code]).must_equal "s"
         _(match[:exponent][:integer]).must_equal "2"
       end
 
+      it "must not match nested groups with prefix" do
+        assert_raises Parslet::ParseFailed do
+          subject.term.parse("((kg))")
+        end
+      end
+
       it "must match nested groups" do
-        match = subject.group.parse("((kg))")[:group][:nested][:left][:group][:nested][:left][:term]
+        match = subject.group.parse("((g))")[:group][:nested][:left][:group][:nested][:left][:term]
         _(match[:atom][:atom_code]).must_equal "g"
-        _(match[:prefix][:prefix_code]).must_equal "k"
       end
 
       it "must pass exponents down" do
@@ -109,9 +109,25 @@ describe Unitwise::Expression::Parser do
         _(match[:exponent][:integer]).must_equal "3"
         _(match[:nested][:left][:term][:atom][:atom_code]).must_equal "[in_i]"
       end
+
+      it "must not match prefixed terms with exponents" do
+        assert_raises Parslet::ParseFailed do
+          subject.term.parse("kg2")
+        end
+      end
     end
 
     describe "#expression" do
+      it "must not match prefixed expressions" do
+        assert_raises Parslet::ParseFailed do
+          subject.term.parse("ft/s")
+        end
+
+        assert_raises Parslet::ParseFailed do
+          subject.term.parse("km/s")
+        end
+      end
+
       it "must match left only" do
         match = subject.expression.parse("m")
         _(match[:left][:term][:atom][:atom_code]).must_equal("m")
@@ -132,28 +148,8 @@ describe Unitwise::Expression::Parser do
     end
   end
 
-  describe "when parser is initialized with :names as key" do
-    subject { Unitwise::Expression::Parser.new(:names) }
-
-    describe "#metric_atom" do
-      it "must match 'newton'" do
-        _(subject.metric_atom.parse("newton")[:atom_code]).must_equal("newton")
-      end
-    end
-
-    describe "#atom" do
-      it "must match 'inch'" do
-        _(subject.atom.parse("inch")[:atom_code]).must_equal("inch")
-      end
-
-      it "must match 'foot'" do
-        _(subject.atom.parse("foot")[:atom_code]).must_equal("foot")
-      end
-    end
-  end
-
   describe "when parser is initialized with :symbol as key" do
-    subject { Unitwise::Expression::Parser.new(:symbol) }
+    subject { Unitwise::Expression::AtomicParser.new(:symbol) }
 
     describe "#metric_atom" do
       it "must match 'N'" do
@@ -168,6 +164,26 @@ describe Unitwise::Expression::Parser do
 
       it "must match 'ft'" do
         _(subject.atom.parse("ft")[:atom_code]).must_equal("ft")
+      end
+    end
+
+    describe "#expression" do
+      it "must match left only" do
+        match = subject.expression.parse("ft")
+        _(match[:left][:term][:atom][:atom_code]).must_equal("ft")
+      end
+
+      it "must match left + right + operator" do
+        match = subject.expression.parse("ft.s")
+        _(match[:left][:term][:atom][:atom_code]).must_equal("ft")
+        _(match[:operator]).must_equal(".")
+        _(match[:right][:left][:term][:atom][:atom_code]).must_equal("s")
+      end
+
+      it "must match operator + right" do
+        match = subject.expression.parse("/s")
+        _(match[:operator]).must_equal("/")
+        _(match[:right][:left][:term][:atom][:atom_code]).must_equal("s")
       end
     end
   end
