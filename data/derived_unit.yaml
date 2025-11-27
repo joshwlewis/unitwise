@@ -3446,7 +3446,7 @@
   :metric: true
   :special: false
   :arbitrary: false
-- :names: pound per sqare inch
+- :names: pound per square inch
   :symbol: psi
   :primary_code: "[psi]"
   :secondary_code: "[PSI]"
