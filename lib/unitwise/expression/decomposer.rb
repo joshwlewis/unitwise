@@ -24,13 +24,13 @@ module Unitwise
         def parsers
           return @parsers if !@parsers.nil? && @parsers.any?
 
-          @parsers = ATOMIC_MODES.each_with_object({}) do |mode, parsers|
-            parsers[AtomicParser.new(mode)] = mode
+          @parsers = ATOMIC_MODES.each_with_object({}) do |mode, hash|
+            hash[AtomicParser.new(mode)] = mode
           end
 
           MODES.each { |mode| @parsers[Parser.new(mode)] = mode }
 
-          @parsers = parsers.to_h
+          @parsers
         end
 
         def transformer
