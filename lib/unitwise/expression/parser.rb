@@ -24,7 +24,7 @@ module Unitwise
       rule(:metric_atom) { metric_atom_matcher.as(:atom_code) }
       rule(:prefix) { prefix_matcher.as(:prefix_code) }
 
-      rule(:simpleton) do
+      rule(:basic_unit) do
         prefix.as(:prefix) >> metric_atom.as(:atom) | atom.as(:atom)
       end
 
@@ -49,7 +49,7 @@ module Unitwise
       rule(:operator) { (str(".") | str("/")).as(:operator) }
 
       rule(:term) do
-        ((factor >> simpleton | simpleton | factor) >>
+        ((factor >> basic_unit | basic_unit | factor) >>
           exponent.maybe >> annotation.maybe).as(:term)
       end
 

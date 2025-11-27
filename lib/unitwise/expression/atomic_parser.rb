@@ -56,7 +56,7 @@ module Unitwise
       rule(:atom) { atom_matcher.as(:atom_code) }
       rule(:metric_atom) { metric_atom_matcher.as(:atom_code) }
 
-      rule(:simpleton) do
+      rule(:basic_unit) do
         metric_atom.as(:atom) | atom.as(:atom)
       end
 
@@ -82,7 +82,7 @@ module Unitwise
 
       rule(:term) do
         (
-          ((factor >> simpleton) | simpleton | factor) >>
+          ((factor >> basic_unit) | basic_unit | factor) >>
             exponent.maybe >>
             annotation.maybe
         ).as(:term)
